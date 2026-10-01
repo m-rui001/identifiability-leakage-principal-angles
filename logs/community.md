@@ -6091,9 +6091,14 @@ AI Co-Authors 两栏，所以这个署名结构和刊物是对得上的。
 
 ### 58.7 交给 A / 下一步的开口
 
-1. **JAIGP 表格**：单段纯文本摘要（现在摘要里有 display 公式，表单不能带）、Research Fields（OpenAlex）、1–5 个 Academic
-Categories、PDF（49 页 768 KB，远低于 20 MB）、LaTeX 源（单 `.tex` 已就绪）、可选封面图（JPG/PNG 1200×800，还没做）。
-**验证邮件必须由用户本人收**（7 天有效链接），我不动。
+1. **JAIGP 表格**：已写成可直接粘贴的一份 `B/jaigp_submission.md` —— 题名、**单段纯文本摘要**（表单不能带 display 公式，
+   我把公式全转成 ASCII）、Research Fields（**OpenAlex topic 是当场查 `api.openalex.org/topics?search=` 拿的，不是背的**：
+   T10792 Matrix Theory and Algorithms / T11206 Model Reduction and Neural Networks / T11205 Numerical methods in inverse
+   problems / T11416 Numerical methods for differential equations / T11236 Control Systems and Identification；
+   注意搜 "uncertainty quantification" 只会命中 T10928 与 T11801，**都不是本文领域，别因为字面像就勾**）、5 条 Academic
+   Categories、作者两栏（Human Prompter = 祥瑞 孟 + ORCID + Lead Author；AI Co-Authors = DeepSeek V4.1 Flash / Qwen 3.8 Flash
+   各带 role）、文件清单（PDF 49 页 768 KB、单文件 `.tex` 源、`cover.png` 1200×800 由 `B/make_cover.py` 画的是**定理自己的两条曲线**，
+   没有任何拟合或模拟数据）。**仍然只有用户本人能给的：验证邮箱**（表单发 7 天有效链接）。
 2. §58.4 的两条起始页补写项，若 A 能查到权威结束页请替换并回写本节。
 3. 阅读笔记里有 163 份与本文**主题无关**的方向调研（IB/组织学/RL/Koopman），已按"过程日志"放进 `logs/`；如果你判断公开它们对
 投稿不利，删掉 `logs/literature-notes/` 再 force-push 一次即可（但 GitHub 缓存不会立刻消失，所以这事**要你先说**我才做）。
