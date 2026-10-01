@@ -6103,3 +6103,59 @@ AI Co-Authors 两栏，所以这个署名结构和刊物是对得上的。
 3. 阅读笔记里有 163 份与本文**主题无关**的方向调研（IB/组织学/RL/Koopman），已按"过程日志"放进 `logs/`；如果你判断公开它们对
 投稿不利，删掉 `logs/literature-notes/` 再 force-push 一次即可（但 GitHub 缓存不会立刻消失，所以这事**要你先说**我才做）。
 4. 数值/测量循环仍然**停着**（用户 9 月指令）：本轮没有新增 b6x 轮次。
+
+---
+
+## 59. [B] 2026-10-01 —— 自查：第 58 节把"正文去 log 腔"记成了已完成，其实没做完；44 处短语级改写 + 一个集合等式闸门
+
+### 59.1 我先撤自己一条
+
+§58 之后的收尾检查里 `grep -c "texttt{b" chapter4.tex` 在**正文区**（`\section{Reproduction}` 之前）仍有 **69** 处命中，
+而任务 #3"focus pass: remove log-speak from body prose"当时已被我标成 completed。**结论：那条完成标记是假的**，
+D1（脚本编号不得当叙事主语）我只做了零星几处就宣布收工。任务已重开，本轮做完后再次核验，记录写在下面。
+**How to apply**：一个"清理/规范化"类任务，完成判据必须是一条能跑的 grep/断言，不能是我改了几处的印象。
+
+### 59.2 44 处改写，和它的第一版闸门把自己拦住了
+
+`B/demote_script_ids_in_body.py`（同文件已随公开仓库 `tools/` 发布）：一个显式 `(old, new)` 短语表，每条
+`assert text.count(old) == 1`，改完再查 `\begin`/`\end` 环境数守恒。手法是把 ID 从**主语/所有格**降为**出处标签**：
+
+- `\texttt{b48} adds a fifth that searches` → `a fifth test (\texttt{b48}) searches`
+- `the flips of \texttt{b45} must go` → `the flips found by the two-cosine scan (\texttt{b45}) must go`
+- `\texttt{b44}'s tally is a statement about size` → `That design's tally is a statement about size`
+- `in \S19 of the collaboration log, script \texttt{b11}` → `verified numerically (script \texttt{b11})`
+
+第一版闸门写成"token 总数不得下降超过 4"，**直接拒绝写入**：降为标签必然重复点名同一 ID，总数从 166 掉到 156 是设计意图，
+不是事故。换成正确的不变量——**正文区出现的 distinct ID 集合必须与改动前相等**（允许少一次点名，只允许在"同 ID 的首次点名仍保留"处少）：
+`body script-ID set unchanged (34 ids); mentions 76 -> 66`。闸门本身没错，是我给它定了个与目标无关的量纲（第 16 条老毛病的变体）。
+两处编辑瑕疵在写入前被抓出：一条 `old == new` 的恒等编辑（会撞 `assert old != new`），和一条跨行换位的 span
+（`\texttt{b52} read analytically` 跨行，压成单行后语法断裂）——后者我**放弃**了，没有为凑数硬改。
+
+写入后脚本在 `io.open(...).write(out)` **之后**崩在一条陈旧 print（`%d` 传了 set）。因为崩在写入之后，我没有重跑
+（重跑会撞唯一性 assert），而是用 grep + 重新编译确认磁盘状态。
+
+### 59.3 编译与余量核验
+
+无条件 `pdflatex × 2`：RC1=0、RC2=0、`^!`=0、`LaTeX Warning`=0、**49 页 / 768,492 字节**（13:01:34）。
+剩余所有格形式只出现在 `2165/2206/2228/2251/2381/2416`（Reproduction 台账，ID 即行名，属设计）与 `2702`（附录）。
+正文余下 59 处命中都是出处标签或"描述+ID"形式（`(Script: \texttt{b13_two_sided_bound.py}.)`、
+`Script \texttt{b44} checks \eqref{eq:iso} on $18$ cells`）。三处边缘site（`1096`、`1852`、`1880`）留着：
+它们的 ID 是句子真正的主语且读起来不像实验记录，强改反而丢信息。
+
+### 59.4 同步 + 打包（用户指令"同步 打包"）
+
+- **单文件可编译性**：`grep` 证明 `main.tex` 无 `\input`、无 `\includegraphics`、无 `\bibliography`，preamble 只有
+  geometry/amsmath/amssymb/amsthm/booktabs/array/microtype/url。**把它拷到全新目录 `jaigp_scratch/` 独立编译**：0 error、
+  0 warning、49 页、768,492 字节——与 out/rc 构建**体积一致、字节不同**，差异只有 PDF `/CreationDate` 时间戳。
+  所以 JAIGP 的"single .tex"选项是**真能独立编译**的，不是我推的。
+- **公开仓库**：`manuscript/main.{tex,pdf}` 换成 13:01 版（md5 与 `chapter4.tex` 相同），`tools/demote_script_ids_in_body.py` 入库，
+  `logs/community.md` 补本节；push 后 GitHub 上那份与要投的那份才是同一个文件。
+- **本地投递物** `B/jaigp_upload/`：`main.tex` 209,035 B、`main.pdf` 768,492 B（用 scratch 那份，即"由随附 .tex 直接编译得到"的证据链）、
+  `cover.png` 85,007 B、`SOURCE-NOTES.txt`（编译两遍、无需 bibtex、包列表、复现仓库 URL）；打包脚本 `B/make_jaigp_zip.py` 带
+  `testzip()` 与 30 MB 上限 assert → `jaigp_submission_materials.zip` **904,404 B**（表单上限 30 MB）。
+
+### 59.5 交给 A / 下一步的开口
+
+1. §58.4 两条起始页补写项仍待 A 给权威结束页（Björck–Golub 1973、Frisch–Waugh 1933）。
+2. 投递物已齐，**只有用户能给的是验证邮箱**（7 天链接）；PDF 与 zip 各上传哪一个由表单决定，两个都已就绪。
+3. 数值/测量循环仍停着；本轮无新脚本轮次（`demote_*`、`make_jaigp_zip` 是编辑/打包工具，不产数）。

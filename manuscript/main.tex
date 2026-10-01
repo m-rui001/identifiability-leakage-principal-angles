@@ -102,7 +102,7 @@ while the noise one is the
 Gaussian quantile $z_{1-\delta/2}/\sqrt n$, with no $d$ at all and no mechanism in
 between. Fitting a single pair $(c_1,c_2)$ averages two regimes whose scalings disagree
 and tells a reader nothing about which regime their experiment sits in. The disagreement is
-not a technicality: in the two-arm least-squares experiment of the collaboration log (design
+not a technicality: in the two-arm least-squares experiment behind this note (design
 by Agent A, audit \texttt{b40}, \texttt{b41}, \texttt{b40b}, $q=3$), the measured model-form constant is
 the random-projection fraction $\mathbb{E}\|P_{\mathcal F}\Delta\|/\|\Delta\|$ --- a Beta mean
 $B(q/2+\tfrac12,(d^{2}-q)/2)/B(q/2,(d^{2}-q)/2)$, leading term $\kappa(q)\sqrt q/d$ with $\kappa$ the
@@ -495,7 +495,7 @@ $\operatorname{cf}(t,\alpha)$.
 \label{rem:w0}
 The direction selected by Theorem~\ref{thm:exact} is a top eigenvector of $B(\lambda^{\star})$, not
 of $C^{\top}C$; for $q<p$ the two differ, and $w_0$-optimality is \emph{false}. A dense search over
-$S^1$ ($4000$ points) beats $\mu(w_0)$ in $157$ of the $840$ dictionaries of \texttt{b37}, and the
+$S^1$ ($4000$ points) beats $\mu(w_0)$ in $157$ of the $840$ dictionaries tested in \texttt{b37}, and the
 breakdown is the point: of the $180$ draws in the two non-square $q=2$ cells with
 $\alpha\ge20^\circ$ --- where a circle search is \emph{exhaustive}, so the count is a measurement and
 not a sampling rate --- $143$ admit a direction with $\mu(w)<\mu(w_0)$, i.e.\ the failure is the norm
@@ -678,7 +678,7 @@ Corollary~\ref{cor:iso} gives $f=g$ on the whole interval.
 \end{proof}
 
 \begin{remark}[what the side-bound test measured, and what it did not]\label{rem:side}
-Proposition~\ref{prop:side} was written after \texttt{b44} left the size of the residual attributed
+Proposition~\ref{prop:side} exists because the size of the residual had been attributed by \texttt{b44}
 but its \emph{direction} unexplained. Script \texttt{b45} tests (i)--(iii) on ${\sim}6650$ draws,
 $\operatorname{eigvalsh}$-based floors included, and the pre-registered reading is the measured one:
 (i) gives $\operatorname{sgn}D(\operatorname{cf})\ne\operatorname{sgn}(\operatorname{cf}-\lambda_{\min})$
@@ -757,19 +757,19 @@ iff $t_1=t$, which is $\operatorname{slack}=0$.
 \begin{remark}[what the chord-surrogate tests measured]\label{rem:chord}
 $\operatorname{cf}_1$ was derived \emph{before} it was run, as the surrogate that replaces $g$ by the
 chord through the two moments it should have used; the pre-registered tests were four, and
-\texttt{b48} adds a fifth that searches rather than samples.
-\emph{One:} the flips of \texttt{b45} must go. On the same cells $\operatorname{cf}$ lands below
+a fifth test (\texttt{b48}) searches rather than samples.
+\emph{One:} the flips found by the two-cosine scan (\texttt{b45}) must go. On the same cells $\operatorname{cf}$ lands below
 $\lambda_{\min}(\Gr)$ in $100/100$, $100/100$ and $98/100$ draws while $\operatorname{cf}_1$ does so in
-$0/100$ in every cell, uncapped and capped alike ($1600$ further draws in \texttt{b47}: $0$ resolved
+$0/100$ in every cell, uncapped and capped alike ($1600$ further draws in the capped rescan \texttt{b47}: $0$ resolved
 sign flips, $\min\operatorname{gap}_1=1.1\cdot10^{-11}$ over the thirteen cells whose gap clears the
 floor; the three isotropy cells report $0/0$ because there the gap is identically zero). \emph{Two:} the correction should
 cancel the first-order term and leave the remainder. The ratio
 $\operatorname{med}|\operatorname{gap}_1|/\operatorname{med}|\operatorname{gap}|$ is $0.001$--$0.31$
 in every cell where $\operatorname{slack}$ dominates, and $1.00$--$1.10$ in the ten where the slope
 inflation is absent or negligible --- the five $q=1$ controls, the two equal-angle cells, and the three
-cells (\texttt{b45}'s $30$-$88$-$89$ family) that run left unexplained; among them the cell of
+cells (the $30$-$88$-$89$ family of that scan) that run left unexplained; among them the cell of
 retraction~(m), which $\operatorname{cf}_1$ leaves untouched, as it must: the correction removes only
-what the slope inflation put there. Along \texttt{b45}'s top-cosine ladder the log-log slope of
+what the slope inflation put there. Along that scan's top-cosine ladder the log-log slope of
 $|\operatorname{gap}_1|$ against $\operatorname{cf}_1$ is $2.081$, the predicted value being $2$ and
 the falsifier $1$. \emph{Three:} the $q=1$ and isotropy nulls must be unchanged, for $t_1=t$ there:
 $\max|\operatorname{cf}_1-\operatorname{cf}|=1.3\cdot10^{-15}$ over five $q=1$ cells, and at
@@ -781,7 +781,7 @@ $\phi_{v_1}-s_{v_1}$ is $\ge0$ at $\lambda=0.3,0.7,0.95$ of $\operatorname{cf}_1
 $-5.6\cdot10^{-16}$, in the isotropy cells where the gap is identically $0$), and the whole family
 $\lambda(v)$ of \eqref{eq:family} stayed above $\lambda_{\min}(\Gr)$ for all $200$ random directions of
 all $1600$ draws --- $320{,}000$ tests, $0$ violations. That scan also seemed to show nothing beats
-$\operatorname{cf}_1$, and \texttt{b48}, searching a $96\times240$ polar net instead of sampling,
+$\operatorname{cf}_1$, and the polar-net search (\texttt{b48}, $96\times240$ directions) instead
 found that it does: the first variation of $\lambda(v)$ at $v_1$ is
 $-2\,v_1^{\top}K^{\top}\Le^{-2}Ku\cdot\lambda(1-\lambda)/|\partial_\lambda F|$ along
 $v(t)=\cos t\,v_1+\sin t\,u$, $u\perp v_1$, generally nonzero because $t_1$ maximises $C$ over $E_0$
@@ -793,7 +793,7 @@ the median ($0.58$ worst), every competitor buys slope with intercept
 ($C/(c^{2}t_1)=1.000005\ldots1.000499$ against $B/c^{2}\le1-10^{-6}$), and no family member drops below
 $\lambda_{\min}(\Gr)$ on the net or on $144{,}000$ ray points, so the proposition stands
 (retraction~(n) records the two artifacts of that run, a mis-chosen $v_1$ and a normalised noise
-direction). \texttt{b49} then sizes that descent in closed form, without an optimiser. On the steepest
+direction). The closed-form sizing of that descent (\texttt{b49}) needs no optimiser. On the steepest
 ray, $u\parallel P_{v_1^{\perp}}K^{\top}\Le^{-2}Kv_1$, the two jets are
 $B(t)=c^{2}+b_{2}t^{2}+O(t^{4})$ --- no linear term, since $B$ is an exact trigonometric quadratic on a
 great circle when $A_0v_1=c^{2}v_1$ --- and $C(t)=C(v_1)+c_{1}t+c_{2}t^{2}+O(t^{3})$ with
@@ -810,7 +810,7 @@ $\operatorname{dip}=-L_1^{2}/(4L_2)$:
 $280$ saddle draws, $\operatorname{dip}_{\mathrm{meas}}/\operatorname{dip}=1$ to within
 $6\cdot10^{-6}\ldots1.0\cdot10^{-3}$ per cell and $t_{\mathrm{meas}}/t^{*}\in[0.993,1.008]$, with
 $L_2>0$ in $280/280$; the single ray step removes $0.0004$--$0.50$ of $\operatorname{cf}_1$'s
-over-estimate at the median ($0.76$ worst), reproducing \texttt{b48}'s net range on a different seed by
+over-estimate at the median ($0.76$ worst), reproducing the net's range on a different seed by
 a different method. \emph{$\operatorname{cf}_1+\operatorname{dip}$ is not offered as a bound} ---
 one-sidedness would need a signed third jet, and the measured drift with $|c_1|$ has no consistent sign,
 which is exactly the audit I ask of other people's closed forms. What is a bound is the family member
@@ -856,7 +856,7 @@ verified bibliographically --- DOI, authors, title, venue --- and the connection
 abstract level, not against those papers' theorems; if the rank-$q$ case is already spelled out
 somewhere in that literature, Proposition~\ref{prop:multi} should be replaced by a citation to it.)}
 \emph{(ii) Relaxing the angle buys almost nothing for $\lambda_{\min}$, and the residual
-$\operatorname{cf}$ leaves behind is not an angle effect at all.} Script \texttt{b42} prescribes
+$\operatorname{cf}$ leaves behind is not an angle effect at all.} The prescribed-spectrum run \texttt{b42} prescribes
 cosine spectra in place of the constructed single angle ($p=4$, $q=3$, $q=2$ cells, $80$--$120$ draws
 per cell).
 Proposition~\ref{prop:multi} reproduces $\lambda_{\min}(\Gr)$ to $\le1.6\cdot10^{-12}$ relative over
@@ -864,31 +864,31 @@ spread spectra, and to $\le1.3\cdot10^{-15}$ against the independent closed answ
 $\lambda_{\min}(\Gr)=1-c_1$ available at $\Le=I_p$; on the equal-angle cells it agrees with
 \eqref{eq:exact} to $\le4.8\cdot10^{-13}$, so it is a generalisation and not a correction. Yet
 $\operatorname{cf}(t,\alpha)$, given the most generous angle available (the top cosine) and the
-rescaled $t$, is still within $3.4\%$ of $\lambda_{\min}(\Gr)$ --- and \texttt{b44}'s $2\times5$
-design settles \emph{which} hypothesis that residual is paying for. It is not the angle distribution,
+rescaled $t$, is still within $3.4\%$ of $\lambda_{\min}(\Gr)$ --- and the $2\times5$
+design (\texttt{b44}) settles \emph{which} hypothesis that residual is paying for. It is not the angle distribution,
 as a first reading of these numbers said (retraction~(l) of Section~\ref{sec:notclaims}): with the
 cosine spectrum fixed, replacing a generic Gram by $\Le=\gamma I_p$ cuts the median relative gap by
 eight to twelve orders of magnitude ($1.3\cdot10^{-4}\!\to\!5.5\cdot10^{-15}$ at $20^\circ$,
 $1.8\cdot10^{-3}\!\to\!4.0\cdot10^{-13}$ at $2$--$45$--$88^\circ$), exactly the collapse
 Corollary~\ref{cor:iso} asserts; with $\Le$ fixed, replacing the equal angle by a spread spectrum
 raises it by only thirteen to three hundred. The anisotropy of $\Le$ is the variable, and
-\texttt{b45} says of what: by Proposition~\ref{prop:side} the residual is a \emph{moment defect}, the
+the two-cosine scan says of what: by Proposition~\ref{prop:side} the residual is a \emph{moment defect}, the
 gap between the measure $\nu_v$ that $f$ integrates and the single atom $\hat\nu=(c^{2}/t)\delta_{1/t}$
 that $\operatorname{cf}$ integrates. The correct reading is therefore not ``the angles are spread'' but
 ``$\nu_v$ carries more than one atom, and the leading term \eqref{eq:slack} beats the remainder'' ---
 in which a second cosine is neither necessary nor sufficient. I wrote that it was necessary
-(retraction~(m) of Section~\ref{sec:notclaims}): with the geometry held multi-atom, \texttt{b45}
+(retraction~(m) of Section~\ref{sec:notclaims}): with the geometry held multi-atom, the same scan
 measures the flip in $100/100$ draws at a second cosine of $0.087$ and again in $100/100$ at
 $\operatorname{cf}=0.133$, while the \emph{same} spectra placed on a single-atom geometry leave every
 gap on the $\operatorname{eigvalsh}$ floor ($12$ cells, $\operatorname{slack}=0$ to round-off). So
-\texttt{b44}'s tally is a statement about size, not about which hypothesis licenses a flip:
+That design's tally is a statement about size, not about which hypothesis licenses a flip:
 $\operatorname{cf}-\lambda_{\min}$ is $\ge0$ on all $240$ equal-angle draws and $\le0$ on $100/100$
 ($5$--$40$--$75^\circ$) and $99/100$ ($2$--$45$--$88^\circ$) of the spread draws, whereas
 $30$--$88$--$89^\circ$, spread but with secondary cosines $\approx0.03$, does not flip ($0/100$) ---
 there too $\operatorname{slack}>0$, but $\operatorname{cf}\cdot\operatorname{slack}$ is smaller than
 the gap by a factor $126$--$394$, which is the remainder winning, exactly as \eqref{eq:slack}'s $o(\lambda)$
-allows. \texttt{b44} also closes the audit
-\texttt{b42} left open: the smallest violating gap in the two flipping cells is $9.1\cdot10^{5}$ and
+allows. The anisotropy design \texttt{b44} also closes the audit
+the prescribed-spectrum run left open: the smallest violating gap in the two flipping cells is $9.1\cdot10^{5}$ and
 $1.1\cdot10^{4}$ times the per-draw $\operatorname{eigvalsh}$ floor $100\epsilon\|\Gr\|_2$, with no
 draw below its own floor, so the flip is algebraic and not round-off --- while at $\Le=I_p$, where the
 true gap is identically zero, the same tally comes out as a coin flip ($35$--$50$ of $100$), which is
@@ -897,7 +897,7 @@ The upper-side reading of \eqref{eq:cf} is an equal-angle statement too --- whic
 Remark~\ref{rem:cf}: no estimate in this chapter uses $\operatorname{cf}$, and a future one that
 called it a bound for a learned dictionary would be overstepping the hypotheses of
 Proposition~\ref{prop:plane}.
-\emph{(iii) The root find is accurate in absolute terms, and \texttt{b43} measures where that stops
+\emph{(iii) The root find is accurate in absolute terms, and the conditioning scan measures where that stops
 being enough.} Over $60$ draws per cell at $p=q=3$ and $\alpha=45^\circ$ down to $0.001^\circ$, the
 relative deviation of the bisection from $\operatorname{eigvalsh}(\Gr)$ obeys
 $\mathrm{relerr}\times\lambda_{\min}(\Gr)\in[1.6,1.8]\cdot10^{-15}$ with no trend across six decades of
@@ -907,7 +907,7 @@ chapter proves for the error ($\lambda_{\min}(\Gr)\approx\sin^{2}\alpha/(1+\cos^
 Two operational consequences. The bracket endpoint must sit a distance $\gg\epsilon\|\Le\|$ below the
 pole $\lambda_{\min}(\Le)$: a relative gap of $10^{-12}$ makes the resolvent return garbage of order
 $1$, and the ``no root, report the cap'' branch then fires silently --- that, not \eqref{eq:multi}, was
-the source of the order-$100$ errors of \texttt{b43}'s first scan, and the guarded endpoint restores
+the source of the order-$100$ errors of the first version of that scan, and the guarded endpoint restores
 the absolute floor down to $\lambda_{\min}(\Gr)\approx10^{-9}$. Below
 $\lambda_{\min}(\Gr)\approx\epsilon\|\Le\|$ no tuning of the bracket helps, which is exactly the regime
 the high-relative-accuracy arrowhead solvers of \cite{stor2013} are built for. None of this
@@ -1044,7 +1044,7 @@ reads $Q(\mu)\le0$, i.e.\ $(1-\mu)(1-t\mu)\le B$. Taking $\mu=\operatorname{cf}_
 $1-\mu>0$ and substituting $(1-\mu)(1-t_1\mu)=c^{2}$ --- the root equation at $(c^{2},t_1)$ --- turns
 that into $1-t\mu\le(1-\delta/c^{2})(1-t_1\mu)$, which is the right hand side of \eqref{eq:margin};
 every step is reversible, so the only side conditions are $\mu\le(1+t)/(2t)$, $\mu<1$ and
-$1-t_1\mu>0$, and \texttt{b55} verifies each on every draw. Finally
+$1-t_1\mu>0$, and the ray scan \texttt{b55} verifies each on every draw. Finally
 $\frac{\partial r}{\partial t}\cdot\frac{\delta}{c^{2}}\frac{1-t_1\mu}{\mu}
 =\delta\,\frac{\partial r}{\partial B}$ by the two displayed identities, which is the collapse in
 \eqref{eq:firstorder}.
@@ -1148,7 +1148,7 @@ calibration --- and because $q_4$ is the quantity that says what that choice cos
 The certificate needs $\minr G$, but only $\Gr$ is a property of the dictionary. The
 bridge is
 $\mathbb{E}[G^{\top}G]=n\Gr$ \emph{exactly} (the expectation identity is analytic; the
-finite-sample version was verified in \S19 of the collaboration log, script \texttt{b11}),
+finite-sample version was verified numerically (script \texttt{b11}),
 so all that can go wrong is the concentration of
 $G^{\top}G/n$ around $\Gr$ in the small directions.
 
@@ -1420,7 +1420,7 @@ two independent designs (the adversarial table, and A's two-arm least-squares ex
 \texttt{b40}, \texttt{b41}). An earlier version of this Remark wrote that number as
 $(1/d)\times\sqrt{1+2\cos^{2}\alpha\,\Cnorm}=0.10\times1.08$, which is $0.108$, not the $0.155$ it
 claimed to reproduce; the missing factor is $\sqrt q$, i.e.\ block aggregation, and the $q$-scan of
-\texttt{b41} decides the question rather than the arithmetic: $c_1$ at $q=1,2,3,4,6$ is
+the $q$-scan \texttt{b41} decides the question rather than the arithmetic: $c_1$ at $q=1,2,3,4,6$ is
 $0.077$, $0.124$, $0.151$, $0.183$, $0.227$, so it is not $q$-blind, and
 $c_1/(\kappa(q)\sqrt q/d)\in[0.94,0.99]$ with no trend in $q$. Both factors are computable before
 seeing data ($\Cnorm$ measured $0.123$--$0.134\approx1/d$). The companion constant $c_2\approx0.063$
@@ -1701,14 +1701,14 @@ the top right-singular direction $w_0$ --- falsified by an exhaustive circle sea
 $3200$ random-direction draws had missed it because random points do not resolve $S^2$
 (Remark~\ref{rem:w0}); (j) the decomposition of the fitted $c_1\approx0.16$ as $(1/d)\times
 \sqrt{1+2\cos^2\alpha\,\Cnorm}$ --- that product is $0.108$, and the missing $\sqrt q$ is block
-aggregation, settled by the $q$-scan of \texttt{b41} rather than by arithmetic; Corollary~\ref{cor:dilution}
+aggregation, settled by the $q$-scan \texttt{b41} rather than by arithmetic; Corollary~\ref{cor:dilution}
 carried the same omission; (k) the sentence that $\lambda_{\min}(\Gr)$ is ``obtainable to round-off''
 by the root find of Theorem~\ref{thm:exact} --- it is obtainable to \emph{absolute} round-off, and
-\texttt{b43} measures the law $\mathrm{relerr}\times\lambda_{\min}(\Gr)\approx1.7\cdot10^{-15}$ over six
+the conditioning scan \texttt{b43} measures the law $\mathrm{relerr}\times\lambda_{\min}(\Gr)\approx1.7\cdot10^{-15}$ over six
 decades, so at $\alpha=0.001^\circ$ the same code is good only to $10^{-5}$ relative. The overclaim
 survived three rounds of QA because every script that checked it ($\alpha\ge1^\circ$) sat in the regime
 where absolute and relative agree; (l) the \emph{attribution} of that $\le3.4\%$ residual and of the
-$\operatorname{cf}-\lambda_{\min}$ sign flip to ``the angle distribution''. \texttt{b44} holds the
+$\operatorname{cf}-\lambda_{\min}$ sign flip to ``the angle distribution''. The anisotropy design \texttt{b44} holds the
 cosine spectrum fixed and switches $\Le$ from a generic Gram to $\gamma I_p$, which removes eight to
 twelve orders of the gap, and holds $\Le$ fixed and switches the spectrum, which moves it by a factor
 $13$--$300$: the variable is the anisotropy of $\Le$, and the flip additionally requires a second
@@ -1718,7 +1718,7 @@ dictionary direction from its size failed --- its ``aligned'' and ``transverse''
 same ensemble, because the coupling's singular vectors were drawn independently of $\Le$ --- so
 alignment is untested here, not ruled out;
 (m) the surviving clause of (l) itself, that the flip ``\emph{additionally} requires a second
-substantial cosine''. \texttt{b45} fixes the geometry and runs the two cosines as independent axes ---
+substantial cosine''. The two-cosine scan \texttt{b45} fixes the geometry and runs the two cosines as independent axes ---
 a clean $2\times2$ plus two seven-point ladders, $1800$ draws --- and $\operatorname{cf}$ lands below
 $\lambda_{\min}(\Gr)$ in $100/100$ draws at a second cosine of $0.087$, and again in $100/100$ at
 $\operatorname{cf}=0.133$. Neither ``a second substantial cosine'' nor the substitute I had ready
@@ -1732,8 +1732,8 @@ $\operatorname{slack}$; it does not select its sign. That run also repaired (l)'
 drawing $\Le$ \emph{after} $K$ and pinning the weak eigenvector to $K$'s own left singular structure
 --- so the two families agree: alignment is not a competing explanation, it is the atom count seen
 from the other side;
-(n) the reading of \texttt{b47}'s family scan as evidence that no direction beats
-$\operatorname{cf}_{1}$. \texttt{b48} searched instead of sampling --- a polar net of $96\times240$
+(n) the reading of the family scan \texttt{b47} as evidence that no direction beats
+$\operatorname{cf}_{1}$. The polar-net search \texttt{b48} replaced sampling --- a net of $96\times240$
 directions per draw, $7{,}380{,}480$ family values --- and directions \emph{do} beat it, at
 \emph{first} order: along $v(t)=\cos t\,v_{1}+\sin t\,u$ with $u\perp v_{1}$ one has
 $B'(0)=0$ but $C'(0)=2v_{1}^{\top}K^{\top}\Le^{-2}Ku$, so
@@ -1744,7 +1744,7 @@ measured slope matching the formula to $1.7\cdot10^{-2}$ relative). The correct 
 criterion: $v_{1}$ is stationary iff $K^{\top}\Le^{-2}Kv_{1}\parallel v_{1}$, which holds on the
 $\operatorname{slack}=0$ loci ($\dim E_{0}=q$: equal angles, isotropy; there the search finds
 $0$ competitors and $\|P_{v_{1}^{\perp}}\cdot\|\le6.2\cdot10^{-16}$) and fails generically. Two
-artifacts of my own are retracted with it: the first \texttt{b48} took $v_{1}$ to be an arbitrary
+artifacts of my own are retracted with it: the first version of that search took $v_{1}$ to be an arbitrary
 eigenvector of $E_{0}$, which at $\dim E_{0}=3$ is not the $C$-maximiser --- its self-check caught a
 $1.4\cdot10^{-2}$ discrepancy; and a degenerate-cell ``violation'' of Proposition~\ref{prop:chord}
 ($15{,}793$ of them) came from normalising a round-off-sized vector, which amplifies its leftover
@@ -1763,14 +1763,14 @@ $\operatorname{dim}E_0=3$ cell even above $\operatorname{cf}_1=\lambda_1(v_1)$ o
 $\lambda_1(v)$ is smaller at good $v$) but removes the motivation for the search. The residual is
 truncational (Remark~\ref{rem:tight}).
 (p) the use of uniform or semi-uniform direction nets as evidence about $\min_v\lambda_n(v)$, and with
-it the acceptance thresholds \texttt{b51} was run to test. Its $\min_{\rm net}\lambda_1=0.0000$ in
+it the acceptance thresholds tested by the direction-net run \texttt{b51}. Its $\min_{\rm net}\lambda_1=0.0000$ in
 $7$ of $8$ cells is a property of the angle list, not of the functional: the left endpoint of a
 $\operatorname{linspace}(10^{-3},\pi/2,n_t)$ list is that statistic's ceiling once the descent set has
 width $t_{\rm hi}\le1.6\cdot10^{-3}$, so flatness in $n_t$ was construction, and the $>0.99$ /
 $\le0.90$ thresholds of the previous draft measured the grid. Uniform nets are retired as a measurement
 device for this question; grid-free routes (the analytic ray, the eigenvector block) replace them.
 (q) the strength of the ray leg's gap fraction, and with it the reading of (iv) as a per-draw
-guarantee. \texttt{b55} falsified the claim exactly as it had been falsified-in-advance: on new tables
+guarantee. The ray scan \texttt{b55} falsified the claim exactly as it had been falsified-in-advance: on new tables
 (doubled $p$, doubled $q$, new seed) the analytic two-jet ray's $\lambda_2$ value drops to $0.7387$
 (median) in one $q=6$ cell, and along a $q$-ladder the per-cell medians fall from $1.0000$ at $q=2$ to
 $0.6547$ at $q=8$ with $20/20$ draws below $0.90$ at the top of the ladder. Since the ranges I quoted in
@@ -1809,13 +1809,13 @@ measured defect of the $\operatorname{cf}$ surrogate there is $\le1.9\cdot10^{-3
 (is the closed form adequate without a root find?) is answered yes in the scanned regime, and the
 theoretical one (a $q<p$ closed form) is not answered. Proposition~\ref{prop:multi} sharpens which of
 the two is left: the \emph{root find} needs no equal-angle hypothesis at all, so the open question
-concerns the closed form only. And \texttt{b42} put a price on the other relaxation one might reach
+concerns the closed form only. And the prescribed-spectrum run \texttt{b42} put a price on the other relaxation one might reach
 for --- a distribution of principal angles in place of the constructed single one:
 $\lambda_{\min}(\Gr)$ moves by $\le3.4\%$, while the \emph{sign} of
 $\operatorname{cf}-\lambda_{\min}$ moves by a full $180^\circ$. That price is right and its label was
-wrong (retractions~(l) and (m) below): \texttt{b44}'s $2\times5$ design attributes both effects to the
+wrong (retractions~(l) and (m) below): the $2\times5$ design \texttt{b44} attributes both effects to the
 \emph{anisotropy} of $\Le$ --- at $\Le=\gamma I_p$ the gap is identically zero for every spectrum
-(Corollary~\ref{cor:iso}) --- and \texttt{b45} names the anisotropy: the sign of the gap is the sign of
+(Corollary~\ref{cor:iso}) --- and the two-cosine scan \texttt{b45} names the anisotropy: the sign of the gap is the sign of
 the moment defect $D(\operatorname{cf})$ of Proposition~\ref{prop:side}, whose leading term is
 $\operatorname{cf}\cdot\operatorname{slack}$ with
 $\operatorname{slack}=c^{2}t-\lambda_{\max}(E_0^{\top}K^{\top}\Le^{-2}KE_0)$, one joint functional of
@@ -1829,9 +1829,9 @@ that actually attains it --- $t_{1}$ of \eqref{eq:chord} --- turns the diagnosis
 $\operatorname{cf}_{1}$ bounds $\lambda_{\min}(\Gr)$ from above with \emph{no} angle, isotropy or
 simplicity hypothesis (Proposition~\ref{prop:chord}), and its residual is second order (measured
 log-log slope $2.081$, pre-registered as $2$). Two items stay open and the first has been settled in
-the direction that matters for practice while staying open as a closed form: \texttt{b48} settled the
+the direction that matters for practice while staying open as a closed form: the polar-net search \texttt{b48} settled the
 question ``is $\operatorname{cf}_{1}$ the smallest member of \eqref{eq:family}?'' in the
-\emph{negative} (retraction~(n)), and \texttt{b49} sized what the negative costs and buys. Along the
+\emph{negative} (retraction~(n)), and the ray computation \texttt{b49} sized what the negative costs and buys. Along the
 eigenvalue-free ray $u\parallel P_{v_{1}^{\perp}}K^{\top}\Le^{-2}Kv_{1}$ the depth of the descent is
 $\operatorname{dip}=-L_1^{2}/(4L_2)$ of Remark~\ref{rem:chord}, verified to $10^{-3}$ relative on $280$
 draws, and one step on that ray removes $0.0004$--$0.50$ of $\operatorname{cf}_{1}$'s gap at the median
@@ -1847,17 +1847,17 @@ open, but its remaining marginal is now measured, and we stopped on it for that 
 lack of a technique. Proposition~\ref{prop:gauss} changes the shape of that open item, not its status:
 since $\lambda_2(v)$ is a certified bound for \emph{every} unit $v$ and an explicit cubic root in four
 scalars, $\min_{v}\lambda_2(v)$ over any finite set of directions is again certified (and at every
-direction \texttt{b50} evaluated, $\lambda_2(v)\le\lambda_1(v)$; the pointwise ordering of successive
+direction tested by \texttt{b50}, $\lambda_2(v)\le\lambda_1(v)$; the pointwise ordering of successive
 Gauss rules is measured, not proved). What
 \texttt{b50} measures is that at
 fixed $v=v_1$ the moment side is already exhausted ($|\lambda_2-\lambda_{\rm ex}|\le2\cdot10^{-3}$ of
-the gap). \texttt{b51}--\texttt{b53} then settle the direction half of that alternative, and settle it
+the gap). The three direction runs \texttt{b51}--\texttt{b53} then settle the direction half of that alternative, and settle it
 against the programme: the descent set of $v\mapsto\lambda_n(v)$ from $v_1$ has angular width
 $t_{\rm hi}\approx2.5\cdot10^{-5}\ldots1.6\cdot10^{-3}$ (so the $64\times64$ net above, and every net
 starting at $10^{-3}$, is blind to it by construction --- retraction~(p)), and at the fibre direction
 $v_\ast$ --- the minimiser of the \emph{exact} crossing $\lambda_{\rm ex}$, not of $\lambda_1$ ---
 the $n=1$ member is still $0.50$--$1.01$ of the gap short while $\lambda_2(v_\ast)$ is within
-$5\cdot10^{-4}$ (Remark~\ref{rem:tight}). \texttt{b55} then replaces the trade-off that these runs
+$5\cdot10^{-4}$ (Remark~\ref{rem:tight}). The ray scan \texttt{b55} then replaces the trade-off that these runs
 described with the criterion of Lemma~\ref{lem:margin}, closes the direction question in the
 equal-angle cells (Corollary~\ref{cor:equal}: $\min_v\lambda_1(v)=\operatorname{cf}_1$, attained at the
 $C$-maximisers and \emph{not} at $v_\ast$), and falsifies the small-$q$ universality of the ray
@@ -1865,10 +1865,10 @@ $C$-maximisers and \emph{not} at $v_\ast$), and falsifies the small-$q$ universa
 $\min_v\lambda_n(v)$ descend on a net'' --- that question was a grid artifact --- but two sharper ones:
 whether $\inf_{\|v\|=1}\lambda_1(v)$ ever reaches $\lambda_{\min}(\Gr)$ in a generic table (the
 inequality $\lambda_1\ge\lambda_{\min}(\Gr)$ is \eqref{eq:chain1}, and no draw has attained it;
-\texttt{b59} narrows it without closing it --- on $264$ rays through $v_1$, minimised exactly and
+The leverage gate \texttt{b59} narrows it without closing it --- on $264$ rays through $v_1$, minimised exactly and
 grid-free by the stationary numerator $G$ of Remark~\ref{rem:tight}(vii), every ray infimum stays at
 least $0.2357$ of the gap \emph{above} $\lambda_{\min}(\Gr)$, and $120$ random rays on a $q=4$ draw beat
-neither $v_\ast$ nor that floor. \texttt{b60} then replaced that sampling by the exact sphere gradient of
+neither $v_\ast$ nor that floor. The cross-lane run \texttt{b60} then replaced that sampling by the exact sphere gradient of
 Remark~\ref{rem:tight}(viii) --- no grid, no finite differences, $60$ starts per draw over five cells ---
 and the sphere infimum stays at least $0.3378$ of the gap above $\lambda_{\min}(\Gr)$ on all $50$ draws,
 while on $38$ of them a direction strictly below $\lambda_1(v_\ast)$ clears that draw's own evaluator
@@ -2012,7 +2012,7 @@ whether the specific two-moment bound is stated classically under the name Cheby
 is \emph{not} verified entry by entry, so no reference is attached to Proposition~\ref{prop:chord}; and if
 verification succeeds, the correct edit is to demote the inequality step of its proof to that citation
 while keeping the eigensystem construction, which is the part that would then remain.
-\texttt{b50} sharpens that caveat in the unfavourable direction and I record it here rather than only in
+The two-atom check \texttt{b50} sharpens that caveat in the unfavourable direction, and it is recorded here rather than only in
 the log: Proposition~\ref{prop:gauss} replaces the one-atom approximant by the $n$-point Gauss rule on
 the \emph{same} measure, whose lower-bound property is exactly the classical sign statement
 $\int h\,d\rho\ge G_n(h)$ for $h^{(2n)}\ge0$. If the name-check comes back, what is being cited then
