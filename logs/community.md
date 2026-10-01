@@ -6026,3 +6026,75 @@ standard result (source pending)"。现在**找到了**当代数值文献里把�
 - **D2 方向腿降级为附录**：`lem:cubic`、`b51–b55`、`b50` 三块（1096–1411）移入 Appendix；正文只留 3 句"方向这一腿没有买到东西：残差是截断的、不是方向的（附录 A）"。
 - **D3 保留的是能立住的三件**：四恒等式 + 两侧界（`thm:twosided`）、`λ_min` 的标量约化与两个精确轨迹（`thm:exact`/`prop:multi`/`cor:iso`）、泄漏 `1/sin α` 常数 1 + 认证 `(⋆)` 与"样本量因子结构性抵消"（`thm:tight`/`thm:cancel`）。其余（曲率律、`θ`/`deficit` 分布、单盆地）留在 `community.md`，**不进正文**。
 - 文献面：新增 `thebibliography`（本轮做出，条目全部来自 §57.3/§57.4 的**已核**集合），positioning 一节把内联 `arXiv:` 改成 `\cite{}`。
+
+## 58. [B] 2026-10-01 —— D2 附录手术 + JAIGP 题名页（AI 记为作者，不按你原话放致谢）+ 42 条已核文献 + **公开仓库已 push**
+
+用户四条指令串起来做完：题名页、参考文献、正文重点（D2）、以及"先建 public MIT 仓库、放复现脚本、过程日志放一个文件夹、push、然后在论文里提到仓库"。
+
+### 58.1 D2：方向腿进附录（机械搬，不手抄）
+
+`B/move_direction_leg_to_appendix.py` 把 `rem:tight`+`rem:gauss` 两块（源 1096–1410，共 315 行 / 28962 字节）
+搬到 `\appendix` 之后，正文只留 3 句指针 remark（`rem:dirleg`）。**写盘前的断言**是重点：块首 `\begin{remark}` 含
+`b51`、块尾 label 正确、搬前后 `\begin{remark}`/`\end{remark}` 计数各 +1、搬进去的切片与原块**逐字节相等**
+（`identical in output: True`）。行数 2669→2693。搬动本身**不改变页码**（45→46 是我另加的文献表造成的）。
+
+### 58.2 我自己犯的一次 9 号错误（规则类，报给 A）
+
+`ls *.tex *.cls *.sty && pdflatex …` 因为根本没有 `.cls/.sty`，`&&` 短路，**pdflatex 没跑**，我读了一份 55 分钟前的
+`chapter4.log` 就报"41 页、0 错误"。发现方式：`date -r chapter4.log`。修法：**无条件命令**（`pdflatex … >t1.log; echo RC=$?`），
+读日志前先看 mtime；页码基线**用 HEAD 在 /tmp/pg 编一遍量出来**（45），不是推出来的。当前真实状态：
+`chapter4.pdf` **49 页，0 error，0 LaTeX Warning**，无 undefined citation/reference。
+
+### 58.3 题名页与作者（按你的决定：算作者，不放致谢）
+
+三个 `\author`：Xiangrui Meng（上海师范大学数理学院，ORCID 0009-0006-8902-0519，通讯/lead）+ DeepSeek V4.1 Flash
+（Agent A：实验、证书构造、对本稿自身断言的否证）+ Qwen 3.8 Flash（Agent B：推导、定理、数值、文献核实）。摘要后加了
+Keywords + AMS 2020（15A18, 65F15, 62J05, 68T07）。投 JAIGP（AI Generated Papers），其表格本来就分 Human Prompters /
+AI Co-Authors 两栏，所以这个署名结构和刊物是对得上的。
+
+### 58.4 参考文献：42 条 `\bibitem`，每条都过了 DOI 或出版方自己的 meta
+
+新增 `B/bibfetch.py`（Crossref 腿拿到 20 条完整作者串；arXiv `id_list` 腿 **429/32 字节 = 不是文献结果**）、
+`B/absauthors.py`（22 条 arXiv 作者全部从 `arxiv.org/abs` 的 `<meta name="citation_author">` 拿回，`missing=0 of 22`，
+4 秒间隔）、`B/cref_extra.py`（Kutz = SIAM 书 `10.1137/1.9781611974508`）。
+**改掉的四条记忆错误**：`Knyazev–Harresh` → **Knyazev & Argentati**；Björck 1973 → **Björck & Golub**；
+1707.06000 作者是 **Fritzsche, Kirstein, Schröder, Mädler**（我原来只写两人）；Kutz 等不是 "AIAA J. 2016" 而是
+**SIAM 专著 2016**（正文已改）。另确认 `arXiv:2506.02816` 与 `arXiv:2608.24203` **是两篇不同文章**（作者集不同），不是同一篇的两个版本。
+**两条要向 A 交代的瑕疵**：Björck–Golub 1973 与 Frisch–Waugh 1933 的 Crossref 记录只给了**起始页**，
+我按通行写法补了结束页（579–594、387–407）——**这是补的，不是核到的**，若审稿要求逐字可查需换成"只写起始页/卷"。
+
+两处**诚实性**补洞（审稿人一定会撞）：`prop:gauss` 证明里那句"Gauss–Markov 符号"原先是"转述未引"，现在挂
+`\cite{gautschi1996,gautschi2004,szego1939}` 并**明说**：书目核过、公式没在他们书里逐行读过，真正用到的
+`G_n^v ≤ φ_v` 是靠矩恒等式 `Σ w_j x_j^k = m_k (k<2n)` 在每次抽样上直接验的；arrowhead/secular 一段挂
+`\cite{bunch1978,cuppen1980,gu-eisenstat1995,stor2013}` 并注明"抽象级关联，未逐条比对其定理"。
+正文残留的两处内联 `arXiv:`（`1302.7203`、`2501.05860/1707.06000`）已改 `\cite{}`，其余 22 处都在 `\bibitem` 里，属于该在的地方。
+
+### 58.5 公开仓库（**已 push，public**）
+
+`https://github.com/m-rui001/identifiability-leakage-principal-angles` —— 378 个文件，MIT（GitHub 已识别 license），
+`main` 分支。布局：`manuscript/{main.tex,main.pdf}`、`scripts/agent_a/`（18 个 d*.py）、`scripts/agent_b/`（69 个 b*.py + `enso_lib.py` + `data/`）、
+`evidence/agent_{a,b}/`（88+19 份保存的 stdout，文件名与脚本对应）、`logs/community.md` + `logs/literature-notes/`（163 份中文阅读笔记）、
+`tools/`（文献抓取与书目核实脚本、那次 LaTeX 手术脚本）、`README.md`、`requirements.txt`、`.gitignore`。
+两个工程细节：`enso_lib.DATA` 是按**文件自身位置**解析的，所以 `data/` 必须放在 `enso_lib.py` 旁边（我先放仓库根，验证后搬回去）；
+搬完在新布局里重跑 `b38_exact_scalar_formula.py`，尾 12 行与 `evidence/` 里存的那份**逐字相同**。
+公开前的扫描：无 token/私钥/凭据串（`ghp_`、`github_pat_`、`Bearer`、`api_key=`、`BEGIN` 全部 0 命中）；
+一条**第三方邮箱**（某 arXiv 源里残留的审稿期注释 `<aaron…@gmail.com>`，出现在一篇阅读笔记里）已在仓库那份笔记中脱敏，
+正文其余内容未改。`C:\Users\hp\…` 出现在一份 numpy  traceback 里 —— 那是机器用户名不是凭据，我**没有**改证据文件。
+提交里 `git add` 是按顶层目录点名的，`E:/pdf/topics` 那个仓库**没有**被 push 任何东西。
+
+### 58.6 论文里的仓库位置
+
+`\section{Reproduction}` 开头新增 code-availability 一段：URL、布局说明、以及"表中每个数由旁边点名的脚本打印，
+`evidence/` 就是那份 stdout；测量脚本只需 numpy/scipy（真实数据腿再读归档的气候指数表）；脚本跑过而后来被撤回的断言，
+撤回答写在 §Limitations 和日志里，不是悄悄删掉"。措辞我**收窄过一次**：原本写"clean checkout 复现每一个数"，
+但我只实测了 `b38` 一个脚本，所以不能那么写。`pdftotext` 已确认 URL 出现在第 31 页正文里。
+
+### 58.7 交给 A / 下一步的开口
+
+1. **JAIGP 表格**：单段纯文本摘要（现在摘要里有 display 公式，表单不能带）、Research Fields（OpenAlex）、1–5 个 Academic
+Categories、PDF（49 页 768 KB，远低于 20 MB）、LaTeX 源（单 `.tex` 已就绪）、可选封面图（JPG/PNG 1200×800，还没做）。
+**验证邮件必须由用户本人收**（7 天有效链接），我不动。
+2. §58.4 的两条起始页补写项，若 A 能查到权威结束页请替换并回写本节。
+3. 阅读笔记里有 163 份与本文**主题无关**的方向调研（IB/组织学/RL/Koopman），已按"过程日志"放进 `logs/`；如果你判断公开它们对
+投稿不利，删掉 `logs/literature-notes/` 再 force-push 一次即可（但 GitHub 缓存不会立刻消失，所以这事**要你先说**我才做）。
+4. 数值/测量循环仍然**停着**（用户 9 月指令）：本轮没有新增 b6x 轮次。
