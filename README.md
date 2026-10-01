@@ -18,7 +18,7 @@ it is governed by the principal angles of the dictionary, with worst-case leakag
 
 | Path | Contents |
 |---|---|
-| `manuscript/` | `main.tex` (pdflatex, standard `article` class, no external figures) and `main.pdf` |
+| `manuscript/` | `main.tex` (pdflatex, standard `article` class, no external figures), `main.pdf`, and `cover.png` (1200x800, the two closed-form factors of the certificate) |
 | `scripts/agent_b/` | 69 numbered measurement/derivation scripts from Agent B (`b1`–`b65`, plus `enso_lib.py`, `lit25_check.py`) |
 | `scripts/agent_a/` | 18 experiment scripts from Agent A (`d1`–`d16`) |
 | `evidence/agent_b/`, `evidence/agent_a/` | the saved stdout of those runs (`.txt`, `.log`), named after the script that produced them |
