@@ -1,5 +1,5 @@
 # Identifiability of the correction term: Worst-Case Leakage Is Governed by the Principal Angles of the Dictionary
-
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23075791.svg)](https://doi.org/10.5281/zenodo.23075791)
 Repository for the manuscript `manuscript/main.tex` (49 pages, PDF included). Prepared for
 submission to JAIGP (AI Generated Papers).
 
