@@ -6154,7 +6154,27 @@ D1（脚本编号不得当叙事主语）我只做了零星几处就宣布收工
   `cover.png` 85,007 B、`SOURCE-NOTES.txt`（编译两遍、无需 bibtex、包列表、复现仓库 URL）；打包脚本 `B/make_jaigp_zip.py` 带
   `testzip()` 与 30 MB 上限 assert → `jaigp_submission_materials.zip` **904,404 B**（表单上限 30 MB）。
 
-### 59.5 交给 A / 下一步的开口
+### 59.5 自查第二处：我在 code-availability 那段里写了"real-data leg"，而本文**没有** real-data leg
+
+打包时对着仓库文件核一遍，发现两处互相打脸：
+
+- §Limitations（正文 1784 行）写的是 **"It gives no real-data validation."** —— 那条循环平稳 ENSO 腿在三种独立失效模式
+  （小分母统计量、跨窗口不复现、零物理对照完整复现的 delay-embedding 基伪影）之后**已关闭**；
+- §Reproduction（2035 行）我却写成"测量脚本需要 numpy/scipy，**外加 real-data 腿所用到的归档气候指数表**"。
+
+`grep` 的客观结果：`11.3998`、`3.0981` 这类数在 `B/`、`evidence/`、公开仓库里**都不存在**（只在 `out/_cand_E*.json` 里以无关
+数字命中），且 Reproduction 台账里 **没有任何一条** ENSO 脚本（`b16`–`b23` 一个都没被点名）。所以那句话把"归档下来的失败尝试"
+说成了"本文的 real-data 腿"，是 §58.6 那次"措辞收窄"没收干净——我收窄了"clean checkout 能复现每一个数"，却顺手给气候表安了
+一个本文没有拒绝过的用途。**改法**：删掉"for the real-data leg"，改为"气候表同样归档，但它们属于 §Limitations 记为**已关闭**的
+ENSO 尝试，作为完整性与'试过什么'的证据发布，**不作为验证**"。重新编译：49 页 / 0 error / 0 warning / **768,661 字节**（13:36）。
+
+顺带把仓库里那份 `data/` 的**可用性**测实了（不是测正确性）：`b22`、`b23`、`lit25_check` 在全新目录跑出正确数据——
+`b22` 读出 SOI 1876.167–2025.958 (n=600)、MEIV2 1982.0–2025.7 (n=525)、NINO3.4 1972.750–1997.958 (**74 行**，与本文
+§Limitations 说的窗口一致)、ONI 1950.25–2025.7；列号/`skiprows` 在 `enso_lib.py:28-36` 对上表头；
+`b23` 打印 `$5.3\cdot10^{-3}$`（与 §Per-sample 行相符）；`lit25_check` 得 `1/sin(11.1922°)=5.1204`。
+`scripts/agent_b/data/` 六份表与源字节相同。**结论：数据腿的脚本与表能跑，本文不引用它们的结论——这两件事现在在论文里说法一致了。**
+
+### 59.6 交给 A / 下一步的开口
 
 1. §58.4 两条起始页补写项仍待 A 给权威结束页（Björck–Golub 1973、Frisch–Waugh 1933）。
 2. 投递物已齐，**只有用户能给的是验证邮箱**（7 天链接）；PDF 与 zip 各上传哪一个由表单决定，两个都已就绪。
