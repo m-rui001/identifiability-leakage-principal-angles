@@ -1,0 +1,43 @@
+=== QUERY: Temple 1923 the value of eigenvalues London Mathematical Society
+  1983 | 10.1112/plms/s3-46.1.167 | Yanagawa M | The Distribution of the Eigenvalues for Singular Semi-Elliptic Boundary Value Problems | Proceedings of the London Mathematical Society
+  1923 | 10.1112/plms.1923.s2-21.issue-1 | ? | ? | Proceedings of the London Mathematical Society
+  1972 | 10.1112/jlms/s2-4.4.718 | Bushell P | On the Number of Eigenvalues for a Boundary Value Problem with an Increasing Parameter | Journal of the London Mathematical Society
+  1923 | 10.1112/j.1460-244x.1923.tb00111.x | ? | Front Matter | Proceedings of the London Mathematical Society
+=== QUERY: Golub Welsch 1969 calculation of Gauss quadrature rules
+  1969 | 10.1090/s0025-5718-69-99647-1 | Golub G | Calculation of Gauss quadrature rules | Mathematics of Computation
+  2000 | 10.1090/s0025-5718-00-01174-1 | Calvetti D | Computation of Gauss-Kronrod quadrature rules | Mathematics of Computation
+  1997 | 10.1090/s0025-5718-97-00861-2 | Laurie D | Calculation of Gauss-Kronrod quadrature rules | Mathematics of Computation
+  2009 | 10.1515/9781400833887.139 | ? | Chapter 10. Examples of Gauss Quadrature Rules | Matrices, Moments and Quadrature with Applications
+=== QUERY: Gu Eisenstat divide and conquer algorithm symmetric tridiagonal eigenproblem SIAM
+  1995 | 10.1137/s0895479892241287 | Gu M | A Divide-and-Conquer Algorithm for the Symmetric Tridiagonal Eigenproblem | SIAM Journal on Matrix Analysis and Applications
+  1992 | 10.21236/ada262297 | Borges C | A Parallel Divide and Conquer Algorithm for the Generalized Real Symmetric Definite Tridiagonal Eigenproblem | ?
+  None | 10.1109/fmpc.1992.234887 | Gates K | A rank-two divide and conquer method for the symmetric tridiagonal eigenproblem | [Proceedings 1992] The Fourth Symposium on the Frontier
+  1980 | 10.1007/bf01396757 | Cuppen J | A divide and conquer method for the symmetric tridiagonal eigenproblem | Numerische Mathematik
+=== QUERY: Bunch Nielsen Sorensen rank-one modification of the symmetric eigenproblem Numerische Mathematik
+  1978 | 10.1007/bf01396012 | Bunch J | Rank-one modification of the symmetric eigenproblem | Numerische Mathematik
+  1980 | 10.1007/bf01396757 | Cuppen J | A divide and conquer method for the symmetric tridiagonal eigenproblem | Numerische Mathematik
+  1978 | 10.1007/bf01397471 | Bunch J | Updating the singular value decomposition | Numerische Mathematik
+  1976 | 10.1007/bf01399088 | Bunch J | Decomposition of a symmetric matrix | Numerische Mathematik
+=== QUERY: Davis Kahan the rotation of eigenvectors by a perturbation
+  1970 | 10.1137/0707001 | Davis C | The Rotation of Eigenvectors by a Perturbation. III | SIAM Journal on Numerical Analysis
+  1965 | 10.1016/0022-247x(65)90066-1 | Davis C | The rotation of eigenvectors by a perturbation¡ªII | Journal of Mathematical Analysis and Applications
+  1963 | 10.1016/0022-247x(63)90001-5 | Davis C | The rotation of eigenvectors by a perturbation | Journal of Mathematical Analysis and Applications
+  2024 | 10.1137/1.9781611977912.34 | Bhardwaj A | Matrix Perturbation: Davis-Kahan in the Infinity Norm | Proceedings of the 2024 Annual ACM-SIAM Symposium on Di
+=== QUERY: Wedin perturbation bounds in connection with singular value decomposition SIAM 1972
+  1972 | 10.1007/bf01932678 | Wedin P | Perturbation bounds in connection with singular value decomposition | BIT
+  2007 | 10.1137/060648969 | Li W | Combined Perturbation Bounds: I. Eigensystems and Singular Value Decompositions | SIAM Journal on Matrix Analysis and Applications
+  1972 | 10.1137/0503029 | Parter S | Remarks on Singular Perturbation of Certain Nonlinear Two-Point Boundary Value Problems | SIAM Journal on Mathematical Analysis
+  1972 | 10.1137/1014030 | Eckhaus W | Boundary Layers in Linear Elliptic Singular Perturbation Problems | SIAM Review
+=== QUERY: Bjorck Sundberg 1971 a solution for two subspaces Linear Algebra and its Applications
+  1997 | 10.1016/s0024-3795(96)00244-3 | Dauxois J | Canonical analysis of two euclidean subspaces and its applications | Linear Algebra and its Applications
+  1983 | 10.1016/0024-3795(83)80007-x | Bhatia R | Perturbation of spectral subspaces and solution of linear operator equations | Linear Algebra and its Applications
+  1997 | 10.1016/s0024-3795(96)00554-x | Rieck M | Totally isotropic subspaces, complementary subspaces, and generalized inverses | Linear Algebra and its Applications
+  1999 | 10.1016/s0024-3795(98)10150-7 | George A | Common invariant subspaces of two matrices | Linear Algebra and its Applications
+=== QUERY: Knyazev Harresh principal vectors SIAM Review 2012
+  1998 | 10.1137/s0036144597331383 | Kohaupt L | Basis of Eigenvectors and Principal Vectors Associated with Gauss--Seidel Matrix of A = tridiag [-1 2 -1] | SIAM Review
+  2002 | 10.1137/s1064827500377332 | Knyazev A | Principal Angles between Subspaces in an
+                    <i>A</i>
+                    -Based Scalar Produc | SIAM Journal on Scientific Computing
+  2020 | 10.1137/20m1322029 | Mignolet M | Compressed Principal Component Analysis of Non-Gaussian Vectors | SIAM/ASA Journal on Uncertainty Quantification
+  1996 | 10.1137/1038004 | Stensholt E | Circle Pictograms for Vote Vectors | SIAM Review
+ALLDONE

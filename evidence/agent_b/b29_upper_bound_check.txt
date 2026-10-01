@@ -1,0 +1,13 @@
+=== Theorem 4.5 per-sample check, d=8 p=4 q=3, 300 draws/alpha ===
+ alpha     mean lam      mean UB      viol UB mean act/UB min act/UB    viol LB
+     1   2.5988e-04   2.5988e-04      0/300      0.99999      0.99999        0/300
+     2   1.0369e-03   1.0370e-03      0/300      0.99997      0.99991        0/300
+     5   6.4687e-03   6.4698e-03      0/300      0.99983      0.99961        0/300
+    10   2.5737e-02   2.5755e-02      0/300      0.99931      0.99819        0/300
+    20   1.0125e-01   1.0149e-01      0/300      0.99756      0.99478        0/300
+    45   4.5649e-01   4.5980e-01      0/300      0.99278      0.98489        0/300
+    70   8.6228e-01   8.6546e-01      0/300      0.99632      0.99050        0/300
+    85   9.9078e-01   9.9108e-01      0/300      0.99970      0.99923        0/300
+
+note: 'mean lam' vs 'mean UB' are NOT comparable (lam and ||C||^2 are sample-correlated);
+      the per-sample violation count and act/UB are the actual test.

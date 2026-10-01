@@ -1,0 +1,209 @@
+======================================================================================================================
+[B0] does the sign flip need a second substantial cosine?  q=1 (single cosine), general Lam.
+     prediction: zero resolved flips.  top cosine swept 0.999 down to 0.2.
+   cos=0.999  n=100 capped=  0  med|gap|= 1.08e-08  min gap=  1.06e-10  max gap=  5.33e-08  resolved flips=  0  mism raw/res/n=(0, 0, 100)
+   cos=0.990  n=100 capped=  0  med|gap|= 8.45e-07  min gap=  4.93e-09  max gap=  6.15e-06  resolved flips=  0  mism raw/res/n=(0, 0, 100)
+   cos=0.900  n=100 capped=  0  med|gap|= 7.49e-05  min gap=  4.69e-07  max gap=  5.56e-04  resolved flips=  0  mism raw/res/n=(0, 0, 100)
+   cos=0.700  n=100 capped=  0  med|gap|= 8.22e-04  min gap=  7.62e-05  max gap=  5.57e-03  resolved flips=  0  mism raw/res/n=(0, 0, 100)
+   cos=0.200  n= 57 capped=  0  med|gap|= 2.10e-02  min gap=  5.80e-04  max gap=  5.61e-02  resolved flips=  0  mism raw/res/n=(0, 0, 57)
+
+[B1+B2  general Lam (unit-norm Gram)]  100 draws/cell
+                     cell  n_ok skip  mism raw/res/n   med|gap| flips  med|R-1|   med cf   E0   min slack  med|gap/lin|
+                equal 20d   100    0     0/   0/ 100   7.80e-06     0  5.35e-06  cf= 0.0547 E0=3 slack=-1.55e-15 |gap/lin|=     nan
+                 equal 5d   100    0     0/   0/ 100   1.74e-08     0  3.12e-08  cf= 0.0034 E0=3 slack=-1.78e-15 |gap/lin|=     nan
+              spread 5-75   100    0     0/   0/ 100   8.86e-06   100  4.67e-06  cf= 0.0038 E0=1 slack= 2.48e-05 |gap/lin|=9.95e-01
+           spread 2-45-88   100    0     0/   0/ 100   1.23e-06    97  6.85e-07  cf= 0.0006 E0=1 slack= 5.84e-07 |gap/lin|=9.99e-01
+          spread 30-88-89   100    0     0/   0/ 100   1.82e-04     0  1.06e-04  cf= 0.1336 E0=1 slack= 1.19e-07 |gap/lin|=3.94e+02
+
+======================================================================================================================
+[B3] isotropy null: at Lam = gamma*I the two curves are the SAME function, so D(cf) == 0 identically.
+     This is cor:iso on trial through a different door (a functional identity, not an eigenvalue identity).
+   gamma=1.0        equal 20d: n=100  max|D|= 1.11e-15  max|D|/scale= 1.18e-15  max|gap|= 6.80e-16
+   gamma=1.0         equal 5d: n=100  max|D|= 1.33e-15  max|D|/scale= 1.34e-15  max|gap|= 7.91e-16
+   gamma=1.0      spread 5-75: n=100  max|D|= 9.99e-16  max|D|/scale= 1.00e-15  max|gap|= 1.24e-15
+   gamma=1.0   spread 2-45-88: n=100  max|D|= 8.88e-16  max|D|/scale= 8.89e-16  max|gap|= 8.88e-16
+   gamma=1.0  spread 30-88-89: n=100  max|D|= 7.77e-16  max|D|/scale= 8.97e-16  max|gap|= 1.11e-15
+   gamma=1.5        equal 20d: n=100  max|D|= 1.33e-15  max|D|/scale= 1.44e-15  max|gap|= 1.11e-15
+   gamma=1.5         equal 5d: n=100  max|D|= 8.88e-16  max|D|/scale= 8.92e-16  max|gap|= 1.34e-15
+   gamma=1.5      spread 5-75: n=100  max|D|= 6.66e-16  max|D|/scale= 6.69e-16  max|gap|= 1.41e-15
+   gamma=1.5   spread 2-45-88: n=100  max|D|= 9.99e-16  max|D|/scale= 1.00e-15  max|gap|= 1.40e-15
+   gamma=1.5  spread 30-88-89: n=100  max|D|= 7.77e-16  max|D|/scale= 9.25e-16  max|gap|= 1.28e-15
+   gamma=0.6        equal 20d: n=100  max|D|= 8.88e-16  max|D|/scale= 9.30e-16  max|gap|= 9.09e-16
+   gamma=0.6         equal 5d: n=100  max|D|= 7.77e-16  max|D|/scale= 7.79e-16  max|gap|= 5.49e-16
+   gamma=0.6      spread 5-75: n=100  max|D|= 8.88e-16  max|D|/scale= 8.91e-16  max|gap|= 9.69e-16
+   gamma=0.6   spread 2-45-88: n=100  max|D|= 7.77e-16  max|D|/scale= 7.78e-16  max|gap|= 8.72e-16
+   gamma=0.6  spread 30-88-89: n=100  max|D|= 8.88e-16  max|D|/scale= 9.87e-16  max|gap|= 7.77e-16
+
+======================================================================================================================
+[B4] alignment, control FIXED: K drawn first, then Lam's weak eigenvector placed relative to K's
+     LEFT singular structure (aligned = top left singular vector; transverse = a vector in ker K^T,
+     which is exactly zero-weight in the measure of (2)).  kappa(Lam) is IDENTICAL in the two cells,
+     so any difference in the gap is the weight pattern and not the condition number.
+
+     weak direction = any of K's LEFT singular vectors, or a kernel direction.
+     Derived (and this is what the first run's floor-level numbers mean): in EVERY such cell the
+     measure has ONE atom -- for weak = u_j the weight sits on the index that maximises both
+     sigma_i^2/lam_i and sigma_i^2/lam_i^2, and those coincide unless delta >~ 1 - sigma_j/sigma_1
+     -- so f == g and cf is EXACT for top/mid/low/ker alike.  A null in the sense of (2), not in
+     the sense of b44/T4: the control works, it just selects a point of the exactness locus.
+           spread 2-45-88 d=1e-03 top: n=100  med|gap|= 2.21e-16  max|D|= 9.99e-16  flips(res/naive)=  0/ 63  mism=(30, 0, 0)  max|t-1|=1.00e-03  med cf= 0.0006 2nd= 0.707 E0=1 min slack=-1.11e-15  med|gap/lin|=     nan  med|R-1|=     nan
+           spread 2-45-88 d=1e-06 top: n=100  med|gap|= 2.48e-16  max|D|= 6.66e-16  flips(res/naive)=  0/ 57  mism=(34, 0, 0)  max|t-1|=1.00e-06  med cf= 0.0006 2nd= 0.708 E0=1 min slack=-8.88e-16  med|gap/lin|=     nan  med|R-1|=     nan
+                 equal 5d d=1e-03 top: n=100  med|gap|= 2.41e-16  max|D|= 6.66e-16  flips(res/naive)=  0/ 50  mism=(40, 0, 0)  max|t-1|=1.00e-03  med cf= 0.0038 2nd= 0.999 E0=1 min slack=-1.55e-15  med|gap/lin|=     nan  med|R-1|=     nan
+                 equal 5d d=1e-06 top: n=100  med|gap|= 2.58e-16  max|D|= 1.11e-15  flips(res/naive)=  0/ 63  mism=(41, 0, 0)  max|t-1|=1.00e-06  med cf= 0.0038 2nd= 1.000 E0=1 min slack=-1.33e-15  med|gap/lin|=     nan  med|R-1|=     nan
+     weak direction in ker K^T (zero atom -> also exact, the 41.5(a) generalisation of cor:iso):
+           spread 2-45-88 d=1e-03 ker: n=100  med|gap|= 2.96e-16  max|D|= 9.99e-16  flips(res/naive)=  0/ 46  mism=(36, 0, 0)  max|t-1|=1.33e-15  med cf= 0.0006 2nd= 0.708 E0=1 min slack=-1.44e-15  med|gap/lin|=     nan  med|R-1|=     nan
+           spread 2-45-88 d=1e-06 ker: n=100  med|gap|= 2.66e-16  max|D|= 1.11e-15  flips(res/naive)=  0/ 50  mism=(33, 0, 0)  max|t-1|=1.33e-15  med cf= 0.0006 2nd= 0.708 E0=1 min slack=-1.22e-15  med|gap/lin|=     nan  med|R-1|=     nan
+                 equal 5d d=1e-03 ker: n=100  med|gap|= 1.84e-16  max|D|= 7.77e-16  flips(res/naive)=  0/ 36  mism=(31, 0, 0)  max|t-1|=1.11e-15  med cf= 0.0038 2nd= 1.000 E0=3 min slack=-1.78e-15  med|gap/lin|=     nan  med|R-1|=     nan
+                 equal 5d d=1e-06 ker: n=100  med|gap|= 1.38e-16  max|D|= 1.33e-15  flips(res/naive)=  0/ 43  mism=(30, 0, 0)  max|t-1|=9.99e-16  med cf= 0.0038 2nd= 1.000 E0=3 min slack=-1.78e-15  med|gap/lin|=     nan  med|R-1|=     nan
+
+[B4b] the DISCRIMINATING cells: is the gap governed by the atom count of the measure (2)?
+     Prediction: mid/low stay on the floor (still one atom, slack 0) while 'mix' -- Lam's weak
+     eigenvector at 45deg to K's left basis, genuinely multi-atom -- has slack > 0 and a gap that
+     clears the floor.  If 'mix' also sits on the floor, (2) does not control the gap and the
+     whole mechanism reading collapses to B1's bare identity.
+           spread 2-45-88 d=1e-02 mid: n=100  med|gap|= 2.08e-16  max|D|= 7.77e-16  flips(res/naive)=  0/ 48  mism=(34, 0, 0)  max|t-1|=1.44e-15  med cf= 0.0006 2nd= 0.711 E0=1 min slack=-9.99e-16  med|gap/lin|=     nan  med|R-1|=     nan
+           spread 2-45-88 d=1e-02 low: n=100  med|gap|= 2.44e-16  max|D|= 9.99e-16  flips(res/naive)=  0/ 45  mism=(34, 0, 0)  max|t-1|=1.78e-15  med cf= 0.0006 2nd= 0.708 E0=1 min slack=-9.99e-16  med|gap/lin|=     nan  med|R-1|=     nan
+           spread 2-45-88 d=1e-02 mix: n=100  med|gap|= 7.69e-09  max|D|= 1.54e-08  flips(res/naive)=100/100  mism=(0, 0, 100)  max|t-1|=5.15e-03  med cf= 0.0006 2nd= 0.708 E0=1 min slack= 2.54e-05  med|gap/lin|=1.00e+00  med|R-1|=2.96e-08
+           spread 2-45-88 d=3e-02 mid: n=100  med|gap|= 2.12e-16  max|D|= 8.88e-16  flips(res/naive)=  0/ 54  mism=(39, 0, 0)  max|t-1|=1.22e-15  med cf= 0.0006 2nd= 0.718 E0=1 min slack=-1.67e-15  med|gap/lin|=     nan  med|R-1|=     nan
+           spread 2-45-88 d=3e-02 low: n=100  med|gap|= 2.20e-16  max|D|= 1.33e-15  flips(res/naive)=  0/ 41  mism=(29, 0, 0)  max|t-1|=1.33e-15  med cf= 0.0006 2nd= 0.708 E0=1 min slack=-1.22e-15  med|gap/lin|=     nan  med|R-1|=     nan
+           spread 2-45-88 d=3e-02 mix: n=100  med|gap|= 7.02e-08  max|D|= 1.42e-07  flips(res/naive)=100/100  mism=(0, 0, 100)  max|t-1|=1.64e-02  med cf= 0.0006 2nd= 0.707 E0=1 min slack= 2.34e-04  med|gap/lin|=1.00e+00  med|R-1|=3.65e-08
+          spread 30-88-89 d=1e-02 mid: n=100  med|gap|= 2.08e-16  max|D|= 9.99e-16  flips(res/naive)=  0/ 44  mism=(34, 0, 0)  max|t-1|=1.11e-15  med cf= 0.1340 2nd= 0.041 E0=1 min slack=-1.67e-15  med|gap/lin|=     nan  med|R-1|=     nan
+          spread 30-88-89 d=1e-02 low: n=100  med|gap|= 2.50e-16  max|D|= 7.77e-16  flips(res/naive)=  0/ 43  mism=(33, 0, 0)  max|t-1|=1.11e-15  med cf= 0.1340 2nd= 0.040 E0=1 min slack=-1.22e-15  med|gap/lin|=     nan  med|R-1|=     nan
+          spread 30-88-89 d=1e-02 mix: n=100  med|gap|= 2.60e-07  max|D|= 5.22e-07  flips(res/naive)=  0/  0  mism=(0, 0, 100)  max|t-1|=5.08e-03  med cf= 0.1336 2nd= 0.040 E0=1 min slack= 3.10e-08  med|gap/lin|=1.26e+02  med|R-1|=1.52e-07
+          spread 30-88-89 d=3e-02 mid: n=100  med|gap|= 2.22e-16  max|D|= 1.11e-15  flips(res/naive)=  0/ 46  mism=(33, 0, 0)  max|t-1|=1.11e-15  med cf= 0.1340 2nd= 0.041 E0=1 min slack=-1.11e-15  med|gap/lin|=     nan  med|R-1|=     nan
+          spread 30-88-89 d=3e-02 low: n=100  med|gap|= 2.50e-16  max|D|= 9.99e-16  flips(res/naive)=  0/ 38  mism=(31, 0, 0)  max|t-1|=1.44e-15  med cf= 0.1340 2nd= 0.040 E0=1 min slack=-8.88e-16  med|gap/lin|=     nan  med|R-1|=     nan
+          spread 30-88-89 d=3e-02 mix: n=100  med|gap|= 2.40e-06  max|D|= 4.85e-06  flips(res/naive)=  0/  0  mism=(0, 0, 100)  max|t-1|=1.57e-02  med cf= 0.1329 2nd= 0.040 E0=1 min slack= 2.87e-07  med|gap/lin|=1.27e+02  med|R-1|=1.42e-06
+                equal 20d d=1e-02 mid: n=100  med|gap|= 2.64e-16  max|D|= 8.88e-16  flips(res/naive)=  0/ 45  mism=(33, 0, 0)  max|t-1|=1.01e-02  med cf= 0.0600 2nd= 0.995 E0=1 min slack=-1.11e-15  med|gap/lin|=     nan  med|R-1|=     nan
+                equal 20d d=1e-02 low: n=100  med|gap|= 2.71e-16  max|D|= 1.22e-15  flips(res/naive)=  0/ 45  mism=(38, 0, 0)  max|t-1|=1.01e-02  med cf= 0.0600 2nd= 0.995 E0=1 min slack=-1.22e-15  med|gap/lin|=     nan  med|R-1|=     nan
+                equal 20d d=1e-02 mix: n=100  med|gap|= 1.94e-16  max|D|= 1.11e-15  flips(res/naive)=  0/ 40  mism=(39, 0, 0)  max|t-1|=1.01e-02  med cf= 0.0600 2nd= 0.995 E0=1 min slack=-8.88e-16  med|gap/lin|=     nan  med|R-1|=     nan
+                equal 20d d=3e-02 mid: n=100  med|gap|= 2.53e-16  max|D|= 7.77e-16  flips(res/naive)=  0/ 53  mism=(28, 0, 0)  max|t-1|=3.09e-02  med cf= 0.0594 2nd= 0.985 E0=1 min slack=-1.44e-15  med|gap/lin|=     nan  med|R-1|=     nan
+                equal 20d d=3e-02 low: n=100  med|gap|= 2.26e-16  max|D|= 1.33e-15  flips(res/naive)=  0/ 56  mism=(40, 0, 0)  max|t-1|=3.09e-02  med cf= 0.0594 2nd= 0.985 E0=1 min slack=-9.99e-16  med|gap/lin|=     nan  med|R-1|=     nan
+                equal 20d d=3e-02 mix: n=100  med|gap|= 2.46e-16  max|D|= 8.88e-16  flips(res/naive)=  0/ 65  mism=(36, 0, 0)  max|t-1|=3.09e-02  med cf= 0.0594 2nd= 0.985 E0=1 min slack=-8.88e-16  med|gap/lin|=     nan  med|R-1|=     nan
+
+======================================================================================================================
+[B5] DECISIVE test against my own published sentence (chapter4 ~line 1270, rem:multi(ii)):
+     'the sign flip ADDITIONALLY NEEDS a second substantial cosine'.  b44's five spectra vary the
+     top cosine and the second cosine TOGETHER, so that sentence is confounded: top in
+     {cos2=0.9994, cos30=0.866} x second in {cos45=0.707, cos84=0.10} is a clean 2x2 with the
+     GEOMETRY FIXED (weak atom always along K's #2 left singular vector, delta=3e-2).
+     Competing predictions on the two OFF-DIAGONAL cells:
+       published 'needs a second cosine'  -> flips only where second = 0.707
+       this derivation (second-moment)    -> flips only where top    = 0.9994
+     because cf small (top cosine near 1) is what lets the inequality f'(0) <= c^2 t, which is
+     Cauchy-Schwarz between int dnu/x^2 and the max that defines t, be the LEADING term of D.
+         B5 top 0.9994 / second 0.707: n=100  med|gap|= 7.02e-08  max|D|= 1.42e-07  flips(res/naive)=100/100  mism=(0, 0, 100)  max|t-1|=1.64e-02  med cf= 0.0006 2nd= 0.707 E0=1 min slack= 2.34e-04  med|gap/lin|=1.00e+00  med|R-1|=3.66e-08
+         B5 top 0.9994 / second 0.10 : n=100  med|gap|= 7.37e-10  max|D|= 1.48e-09  flips(res/naive)=100/100  mism=(0, 0, 100)  max|t-1|=1.57e-02  med cf= 0.0006 2nd= 0.105 E0=1 min slack= 2.60e-06  med|gap/lin|=9.45e-01  med|R-1|=3.33e-07
+         B5 top 0.866  / second 0.707: n=100  med|gap|= 2.34e-05  max|D|= 4.72e-05  flips(res/naive)=100/100  mism=(0, 0, 100)  max|t-1|=1.71e-02  med cf= 0.1328 2nd= 0.816 E0=1 min slack= 3.48e-04  med|gap/lin|=1.02e+00  med|R-1|=1.39e-05
+         B5 top 0.866  / second 0.10 : n=100  med|gap|= 2.23e-06  max|D|= 4.50e-06  flips(res/naive)=  0/  0  mism=(0, 0, 100)  max|t-1|=1.57e-02  med cf= 0.1329 2nd= 0.121 E0=1 min slack= 2.61e-06  med|gap/lin|=1.30e+01  med|R-1|=1.32e-06
+     (B5's first attempt used which='mid' and every cell came out at the floor; the derivation
+     says why -- an eigenbasis-aligned weak direction leaves a ONE-atom measure, so slack == 0
+     and cf is exact whatever the cosines.  'mix' is the multi-atom choice.)
+
+======================================================================================================================
+[B6] the threshold, one parameter at a time, in the multi-atom geometry (mix, delta=3e-2).
+     (a) top cosine ladder with the second cosine held near 0.71;  (b) second cosine ladder with
+     the top held near 0.9994.  The first-order law says the flip needs BOTH slack > 0 (a second
+     atom, hence a second cosine) AND cf small enough that cf*slack beats the O(cf^2) terms, so
+     the sign should change along BOTH ladders.  If instead the sign changes along (b) but never
+     along (a), then cf's size is irrelevant and b44's 'second cosine' reading was right after
+     all; if it changes along (a) but never (b), the second cosine is irrelevant.
+       B6a top=cos(2d) / 2nd=cos(45d): n=100  med|gap|= 7.02e-08  max|D|= 1.42e-07  flips(res/naive)=100/100  mism=(0, 0, 100)  max|t-1|=1.64e-02  med cf= 0.0006 2nd= 0.707 E0=1 min slack= 2.34e-04  med|gap/lin|=1.00e+00  med|R-1|=3.57e-08
+       B6a top=cos(3d) / 2nd=cos(45d): n=100  med|gap|= 1.58e-07  max|D|= 3.19e-07  flips(res/naive)=100/100  mism=(0, 0, 100)  max|t-1|=1.64e-02  med cf= 0.0014 2nd= 0.708 E0=1 min slack= 2.35e-04  med|gap/lin|=1.00e+00  med|R-1|=8.06e-08
+       B6a top=cos(5d) / 2nd=cos(45d): n=100  med|gap|= 4.42e-07  max|D|= 8.90e-07  flips(res/naive)=100/100  mism=(0, 0, 100)  max|t-1|=1.64e-02  med cf= 0.0038 2nd= 0.710 E0=1 min slack= 2.36e-04  med|gap/lin|=1.00e+00  med|R-1|=2.27e-07
+       B6a top=cos(8d) / 2nd=cos(45d): n=100  med|gap|= 1.14e-06  max|D|= 2.30e-06  flips(res/naive)=100/100  mism=(0, 0, 100)  max|t-1|=1.64e-02  med cf= 0.0097 2nd= 0.714 E0=1 min slack= 2.39e-04  med|gap/lin|=1.00e+00  med|R-1|=5.91e-07
+      B6a top=cos(12d) / 2nd=cos(45d): n=100  med|gap|= 2.63e-06  max|D|= 5.31e-06  flips(res/naive)=100/100  mism=(0, 0, 100)  max|t-1|=1.65e-02  med cf= 0.0217 2nd= 0.723 E0=1 min slack= 2.45e-04  med|gap/lin|=1.00e+00  med|R-1|=1.38e-06
+      B6a top=cos(20d) / 2nd=cos(45d): n=100  med|gap|= 8.01e-06  max|D|= 1.62e-05  flips(res/naive)=100/100  mism=(0, 0, 100)  max|t-1|=1.66e-02  med cf= 0.0598 2nd= 0.752 E0=1 min slack= 2.69e-04  med|gap/lin|=1.00e+00  med|R-1|=4.37e-06
+      B6a top=cos(30d) / 2nd=cos(45d): n=100  med|gap|= 2.34e-05  max|D|= 4.72e-05  flips(res/naive)=100/100  mism=(0, 0, 100)  max|t-1|=1.71e-02  med cf= 0.1328 2nd= 0.816 E0=1 min slack= 3.48e-04  med|gap/lin|=1.02e+00  med|R-1|=1.39e-05
+       B6b top=cos(2d) / 2nd=cos(10d): n=100  med|gap|= 4.99e-07  max|D|= 1.01e-06  flips(res/naive)=100/100  mism=(0, 0, 100)  max|t-1|=2.83e-02  med cf= 0.0006 2nd= 0.979 E0=1 min slack= 1.68e-03  med|gap/lin|=1.00e+00  med|R-1|=2.60e-07
+       B6b top=cos(2d) / 2nd=cos(20d): n=100  med|gap|= 4.57e-07  max|D|= 9.23e-07  flips(res/naive)=100/100  mism=(0, 0, 100)  max|t-1|=2.07e-02  med cf= 0.0006 2nd= 0.939 E0=1 min slack= 1.53e-03  med|gap/lin|=1.00e+00  med|R-1|=2.36e-07
+       B6b top=cos(2d) / 2nd=cos(30d): n=100  med|gap|= 2.06e-07  max|D|= 4.15e-07  flips(res/naive)=100/100  mism=(0, 0, 100)  max|t-1|=1.78e-02  med cf= 0.0006 2nd= 0.866 E0=1 min slack= 6.87e-04  med|gap/lin|=1.00e+00  med|R-1|=1.05e-07
+       B6b top=cos(2d) / 2nd=cos(45d): n=100  med|gap|= 7.02e-08  max|D|= 1.42e-07  flips(res/naive)=100/100  mism=(0, 0, 100)  max|t-1|=1.64e-02  med cf= 0.0006 2nd= 0.707 E0=1 min slack= 2.34e-04  med|gap/lin|=1.00e+00  med|R-1|=3.42e-08
+       B6b top=cos(2d) / 2nd=cos(60d): n=100  med|gap|= 2.35e-08  max|D|= 4.73e-08  flips(res/naive)=100/100  mism=(0, 0, 100)  max|t-1|=1.59e-02  med cf= 0.0006 2nd= 0.500 E0=1 min slack= 7.84e-05  med|gap/lin|=9.99e-01  med|R-1|=1.53e-08
+       B6b top=cos(2d) / 2nd=cos(75d): n=100  med|gap|= 5.03e-09  max|D|= 1.01e-08  flips(res/naive)=100/100  mism=(0, 0, 100)  max|t-1|=1.58e-02  med cf= 0.0006 2nd= 0.259 E0=1 min slack= 1.69e-05  med|gap/lin|=9.92e-01  med|R-1|=5.32e-08
+       B6b top=cos(2d) / 2nd=cos(85d): n=100  med|gap|= 4.97e-10  max|D|= 1.00e-09  flips(res/naive)=100/100  mism=(0, 0, 100)  max|t-1|=1.57e-02  med cf= 0.0006 2nd= 0.087 E0=1 min slack= 1.80e-06  med|gap/lin|=9.20e-01  med|R-1|=5.51e-07
+
+判读（预登记，跑前写的；实测判读附在文件末尾）：
+  B1 的 sign mismatches 必须全为 0，且 |D|<floor 的格只能出现在 gap 本身也 <floor 的格
+     （两边同时是地板才算自洽）。若某格 mism>0 而 |D| 远在 floor 之上 => (1) 的推导错，
+     整条 sign law 不能进正文，41.8 的'哪个泛函'问题回到原点。
+  B2 的 med|R-1| 若在小 gap 格 <=0.05 => 诊断量不只给符号，给量级；若 >0.3 只准写'符号预言机'。
+  B3 若 max|D| 与 gap 同量级且都在 eps 级 => cor:iso 通过第二次独立检验（泛函恒等而非特征值恒等）。
+     若某格 |D| >> eps => cor:iso 证明里有我没找到的洞，必须再撤一次。
+  B4 若 aligned 与 transverse 这次分开 => 控制量确实是'权重 vs 谱'的联合，不是 kappa(Λ)；
+     若再次撞在一起 => alignment 作为非效应关闭（这次是有有效对照的关闭，不是 §41.5(a) 那种假对照）。
+     注：B4 的 mism 只算 resolved（两侧都在地板时符号是硬币，不能当反例）。
+  B4b 若 partial-weight 三格（mid/low/mix）里 gap 离开地板，则'单原子'解释得到支持：
+     cf 精确 ⟺ 测度 ν 单原子 ⟺ Λ 的弱方向要么在 ker K^T、要么在 K 的顶 left 方向。
+  B5 两个竞争读数在 off-diagonal 两格给相反预测，必有一错、可能两错：
+     若 flip 只出现在 second=0.707 两格 => 我正文那句话是对的（但理由仍要换成测度语言）；
+     若 flip 只出现在 top=0.9994 两格 => 正文那句是**误标（第二次）**，必须改成'cf 足够小'
+     的条件；若四格都翻或都不翻 => 两个读数都错，且这个'解释'本身要撤，只保留 B1 的恒等式。
+
+======================================================================================================================
+实测判读（同一文件、同一次运行，seed 47813，逐位可复现；共 ~6650 个诊断样本）
+
+[B1] 恒等式(1) 通过：**五格 resolved sign mismatches 全部 = 0/100**（raw 也是 0），
+     即 D(cf) 的符号与 cf - lambda_min 的符号在这 500 个 general-Lam 样本里从不相反。
+     => 'cf 站在 lambda_min 哪一侧' 由标量泛函 D(cf) = f(cf) - c^2/(1-t*cf) 单值决定，
+        sign law 可以进正文。
+
+[B2] 量级律：med|R-1| 五格 = 5.35e-06 / 3.12e-08 / 4.67e-06 / 6.85e-07 / 1.06e-04，
+     最坏 1.06e-04 << 预登记的 0.05 门槛 => 诊断量不只给符号，给量级（绝对误差 4 位小数内）。
+     记法：cf - lambda_min = D(cf)/|F'(xi)|，|F'| = 1 + int dnu/(x-xi)^2 >= 1，
+     所以 |cf - lambda_min| <= |D(cf)| 是**严格不等式**，不是拟合。
+
+[B3] 各向同性零检验：15 格（gamma=1/1.5/0.6 × 5 spectrum）max|D| <= 1.33e-15、
+     max|gap| <= 1.41e-15 => D 在 Lam = gamma*I 时**恒等于 0**。
+     这是 cor:iso 的第二条独立路径（泛函恒等，不是特征值恒等），且 gamma != 1 也成立，
+     与 b44/T5、b44/T6 一致。
+
+[B4] 修正后的对照**有效**（对照的是权重型，不是 kappa(Lam)）：
+     top / ker 两族共 8 格，gap 全部在地板（2e-16 级）、max|D| <= 1.33e-15。
+     与推导一致：weak 方向取 K 的 left 奇异向量 => nu 只剩**一个原子** => f == g => cf 精确。
+     ker K^T 族额外给出 t - 1 = 1.33e-15（即使 delta=1e-3/1e-6）：
+     即 **(Lambda - lambda I)^{-1} K = (gamma-lambda)^{-1} K** 只要 Lambda 的扰动落在 ker K^T 里。
+     => cor:iso 的假设可从 'Lambda = gamma*I_p' 推广到 'Lambda = gamma*I_p + Z, ran Z ⊆ ker K^T'，
+        非空当且仅当 p > q（过完备字典）。这是本轮正文里唯一'加强'而非'改标'的结论。
+     诚实标注：B4 的 mism raw=(30..41) 不是反例 —— gap 与 D 同时是地板时符号是硬币，
+     只有 resolved 列（此格恒为 0）可读。
+
+[B4b] 判别格给出机制的正面证据：mid / low 十二格全部留在地板且 min slack ≈ -1e-15
+     （仍是单原子：Lambda 的弱方向与 K 的 left 基对齐，权重只落在一个指标上）；
+     而 'mix'（弱方向取 U[:,0]+U[:,1] 的 45°，真多原子）在 2-45-88 两格里 gap 离开地板
+     （7.69e-09 / 7.02e-08，100/100 flip，|gap/lin| = 1.00e+00）。
+     等角 20d 的 mix 仍在地板：等角使 E0 = R^q，slack_eff 在整空间上取 max => 恒 0。
+     => 'cf 精确 ⟺ nu 单原子' 这个解释成立，但**不充要**：单原子是精确的充分条件之一，
+        各向同性（B3）是另一条路，两者不互相包含。
+
+[B5 + B6] 预登记分支三命中：**两个竞争读数都错**。
+     B5 四格：top0.9994/0.707 flip 100/100；top0.9994/0.10 flip **100/100**（第二余弦只有 0.105）；
+             top0.866/0.707 flip **100/100**（cf = 0.1328，不小）；top0.866/0.10 不翻（gap>0，0/0）。
+     B6a（top 2°→30°，第二余弦钉在 ~0.71）七档**全部** 100/100 flip，cf 从 6e-4 升到 0.1328，
+          |gap/lin| 恒 1.00e+00（仅最高档 1.02）。
+     B6b（第二余弦 cos10°→cos85° = 0.979→0.087，top 钉在 cos2°）七档**全部** 100/100 flip，
+          gap 单调缩小 5.0e-07 → 5.0e-10，但符号从不反过来。
+     => 'the sign flip additionally needs a second substantial cosine'（chapter4 ~line 1270 与
+        rem:multi(ii)）**作为陈述被推翻**：第二余弦 0.087 时照样 100/100 翻。
+        我预备的替代读数'cf 足够小'同样被推翻：cf = 0.1328 时照样翻。
+        真正的判别量是**测度 nu 的原子数/几何（mix vs 与 K 的 left 基对齐）**；
+        谱（两个余弦）只缩放 slack 的大小，不决定符号能否翻转。
+     => 自我更正第 19 次（前一次 41.x #18 是同一句话的**误标**，这次是**误述**）。
+
+[一阶律的可用范围，本轮唯一'意外的负面'读数]
+     lin = -cf*slack/|F'(0)| 在**所有翻转格**里 |gap/lin| = 0.92~1.02（14 个 ladder 档 + B5 三格 + B4b 两格），
+     但在**不翻转**的两族里 |gap/lin| = 1.3e+01 (B5 0.866/0.10)、1.26e+02/3.94e+02 (30-88-89)。
+     这不是矛盾而正是预言的内容：一阶项是 -cf*slack（永远站在翻转侧），
+     只有当它压过 D 的 O(cf^2) 余项时符号才真的翻；|gap/lin| 离 1 多远就是余项占优多少。
+     所以正文只能写：'一阶展开解释翻转的**量级**（|gap/lin|≈1 处），
+     并给出翻转的必要条件 cf*slack > 余项'，**不能**写'gap ≈ -cf*slack/|F'|'作为一般式。
+
+[自伤的缺陷，如实记录（都已修，但读者应知道初版长什么样）]
+     (a) slack 最初由任意顶特征向量 v0 计算 => 等角格 A(0) 退化时完全无意义，
+         曾产出 med|gap/lin| = 9.01e-05 与负的 slack；改为 E0 顶特征子空间上取 max 的 slack_eff，
+         并把 dim E0 打印出来使退化可见。
+     (b) pred 曾写成 -D/|F'|，符号错；因为 |R-1| 取绝对值而未被发现 —— 已改 +D/|F'|。
+     (c) B4 初版把 mismatch 按 raw 计数，在地板格里报了 30~40 个假反例；改为 resolved/raw/n 三列。
+     (d) B4b/B5 的 'mix' 初版全部 "all skipped"：Lambda 在 K 画完之后重建，使 K^T Lam^{-1} K > 1
+         （top cosine > 1，𝒢 非 PSD，是**构造缺陷**而非样本缺陷）；加 rescale 后按剩余样本统计。
+     (e) B5 第一次用 which='mid'，四格全在地板（单原子，见 B4b）；这本身是机制的预言，
+         但作为'两余数的 2×2'实验它是无效对照，故改用 'mix' 重跑。

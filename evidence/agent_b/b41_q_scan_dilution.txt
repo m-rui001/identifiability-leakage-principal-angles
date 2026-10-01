@@ -1,0 +1,16 @@
+=== S1 vs S2: q-scan at d=10, p=6, alpha=20 deg, ||D||=0.05, sigma=1e-4, n=600 ===
+  q           c1    c1/sqrt q  Beta mean/d   c1*d/sqrtq     c1/exact
+  1   7.7126e-02       0.0771   7.9988e-02        0.771        0.964
+  2   1.2431e-01       0.0879   1.2565e-01        0.879        0.989
+  3   1.5083e-01       0.0871   1.5998e-01        0.871        0.943
+  4   1.8297e-01       0.0915   1.8847e-01        0.915        0.971
+  6   2.2743e-01       0.0928   2.3558e-01        0.928        0.965
+S1 (q-blind) would show c1 flat -> c1/sqrt q rising like sqrt q. S2 shows c1*d/sqrtq ~ 1/d-ish
+and c1/exact ~ 1. 'exact' is E||P_F Delta||/||Delta||, the Beta mean (no fitted parameter).
+
+=== the alpha tilt is NOT a discriminator (stated, not used) ===
+alpha           c1 sqrt(1+2cos^2 a t), t=0.12
+    5   1.7084e-01        1.113
+   20   1.4875e-01        1.101
+   45   1.6916e-01        1.058
+   80   1.5572e-01        1.004

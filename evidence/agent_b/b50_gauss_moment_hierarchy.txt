@@ -1,0 +1,185 @@
+============================================================================================================================
+[B'] HAND-COMPUTABLE CASE, run before any random draw is trusted.
+    rho = 0.2*delta_{1/3} + 0.3*delta_{1}:  m_k = 0.2*3^-k + 0.3; m_0=0.5, m_1=11/30, m_2=29/90.
+    (MASS 0.5 <= 1 ON PURPOSE: the crossing G(0)=m_0 must sit BELOW 1-0, else the smaller root
+    is negative and my bisection on [0,1) reports 0 -- the first version of this toy had m_0=3
+    and printed three meaningless zeros.)
+    1-point rule: node m1/m0 = 11/15 = 0.733333..., weight m_0 = 0.5 (exact through degree 1;
+    G_1(y^2)=0.5*(11/15)^2=0.268889 < m_2=0.322222, i.e. strictly below phi, as E_1 >= 0 says).
+    2-point rule for a 2-atom measure must reproduce the measure: nodes {1/3,1}, weights
+    {0.2,0.3}, exactness ~0, and then lambda_2 = the EXACT crossing -- the hierarchy terminates
+    at n = (number of atoms), which is the honest statement of what 'every n' buys.
+    n=1: nodes [0.733333333333]  weights [0.5]  exactness 0.000e+00  cross 0.336314761921
+    n=2: nodes [0.333333333333 1.            ]  weights [0.2 0.3]  exactness 1.806e-16  cross 0.328583506165
+    exact phi crossing on this measure (root of 0.2/(1-l/3)+0.3/(1-l)=1-l): 0.328583506165
+    explicit cubic [H] on the same toy measure: lambda_2 = 0.328583506165  (must equal the line above; this is the hand case for the closed form)
+
+============================================================================================================================
+[A-E] Gauss-moment hierarchy over prop:chord: lambda_n(v1) for n=1,2,3 points of rho_{v1},
+      against b49's one-step direction fix (cf2), the exact crossing of phi_{v1} and lam*.
+              q=3 spread 5-75: n= 40 dimE0=[1] stationary=0  [A] SIDE viol n=2:0 n=3:0 exact:0 lam*:0 cf2:0   (all must be 0)   [E] breakdown n=2:0 n=3:0 capped n=2:0 n=3:0
+                              [B'] moment exactness max_k rel err: n=1 0.0e+00  n=2 7.0e-16  n=3 4.4e-15   (must be <= 1e-10; if not, these are NOT Gauss rules and the [A] violations are my bookkeeping, not the theorem)
+                              [B] max|lambda_1-cf1| = 5.5e-16   [C] l1>=l2 40/40, l2>=l3 40/40, pointwise G-ordering 120/120
+                               [       n=2] of cf1's gap removed: med= 0.8061 min= 0.4884 max= 0.9976  n=40
+                               [       n=3] of cf1's gap removed: med= 0.8061 min= 0.4884 max= 0.9976  n=40
+                               [ exact(v1)] of cf1's gap removed: med= 0.8061 min= 0.4884 max= 0.9976  n=40
+                               [   b49 ray] of cf1's gap removed: med= 0.1930 min= 0.0021 max= 0.5058  n=40
+                               [      lam*] of cf1's gap removed: med= 1.0000 min= 1.0000 max= 1.0000  n=40
+                               [F] cf <= cf1 in 40/40 (eq:chain1, re-checked).  cf >= lam_min in 2/40 -- as expected cf is NOT valid without the angle hypothesis here, so the live target is cf1, not cf.
+                                   med(cf-lam_min) = -1.385e-05, med(cf1-lam_min) = +3.281e-07, med(cf1-cf) = +1.406e-05
+                               [G] max|lambda_n - exact(v1)|/gap: n=2 1.58e-06  n=3 4.03e-09   (atoms of rho_v1 with weight > 1e-13: [6], rule uses n=2 -> the moment truncation is NOT the bottleneck; the fixed direction is)
+                               [H] explicit-cubic lambda_2 vs eigen+bisection lambda_2: max abs diff = 2.50e-16 over 40/40 draws
+           q=3 spread 2-45-88: n= 40 dimE0=[1] stationary=0  [A] SIDE viol n=2:0 n=3:0 exact:0 lam*:0 cf2:0   (all must be 0)   [E] breakdown n=2:0 n=3:0 capped n=2:0 n=3:0
+                              [B'] moment exactness max_k rel err: n=1 0.0e+00  n=2 9.2e-16  n=3 5.4e-15   (must be <= 1e-10; if not, these are NOT Gauss rules and the [A] violations are my bookkeeping, not the theorem)
+                              [B] max|lambda_1-cf1| = 7.2e-16   [C] l1>=l2 40/40, l2>=l3 40/40, pointwise G-ordering 120/120
+                               [       n=2] of cf1's gap removed: med= 0.8692 min= 0.5396 max= 0.9992  n=40
+                               [       n=3] of cf1's gap removed: med= 0.8692 min= 0.5396 max= 0.9992  n=40
+                               [ exact(v1)] of cf1's gap removed: med= 0.8692 min= 0.5396 max= 0.9992  n=40
+                               [   b49 ray] of cf1's gap removed: med= 0.1306 min= 0.0007 max= 0.4604  n=40
+                               [      lam*] of cf1's gap removed: med= 1.0000 min= 1.0000 max= 1.0000  n=40
+                               [F] cf <= cf1 in 40/40 (eq:chain1, re-checked).  cf >= lam_min in 0/40 -- as expected cf is NOT valid without the angle hypothesis here, so the live target is cf1, not cf.
+                                   med(cf-lam_min) = -1.308e-06, med(cf1-lam_min) = +8.063e-09, med(cf1-cf) = +1.315e-06
+                               [G] max|lambda_n - exact(v1)|/gap: n=2 1.30e-07  n=3 1.54e-07   (atoms of rho_v1 with weight > 1e-13: [6], rule uses n=2 -> the moment truncation is NOT the bottleneck; the fixed direction is)
+                               [H] explicit-cubic lambda_2 vs eigen+bisection lambda_2: max abs diff = 2.10e-16 over 40/40 draws
+          q=3 spread 30-88-89: n= 40 dimE0=[1] stationary=0  [A] SIDE viol n=2:0 n=3:0 exact:0 lam*:0 cf2:0   (all must be 0)   [E] breakdown n=2:0 n=3:0 capped n=2:0 n=3:0
+                              [B'] moment exactness max_k rel err: n=1 1.4e-16  n=2 8.2e-16  n=3 5.4e-15   (must be <= 1e-10; if not, these are NOT Gauss rules and the [A] violations are my bookkeeping, not the theorem)
+                              [B] max|lambda_1-cf1| = 6.4e-16   [C] l1>=l2 40/40, l2>=l3 40/40, pointwise G-ordering 120/120
+                               [       n=2] of cf1's gap removed: med= 0.9991 min= 0.9977 max= 0.9998  n=40
+                               [       n=3] of cf1's gap removed: med= 0.9996 min= 0.9987 max= 1.0000  n=40
+                               [ exact(v1)] of cf1's gap removed: med= 0.9996 min= 0.9987 max= 1.0000  n=40
+                               [   b49 ray] of cf1's gap removed: med= 0.0004 min= 0.0000 max= 0.0013  n=40
+                               [      lam*] of cf1's gap removed: med= 1.0000 min= 1.0000 max= 1.0000  n=40
+                               [F] cf <= cf1 in 40/40 (eq:chain1, re-checked).  cf >= lam_min in 40/40 -- as expected cf is NOT valid without the angle hypothesis here, so the live target is cf1, not cf.
+                                   med(cf-lam_min) = +3.535e-04, med(cf1-lam_min) = +3.537e-04, med(cf1-cf) = +5.397e-07
+                               [G] max|lambda_n - exact(v1)|/gap: n=2 1.98e-03  n=3 2.41e-06   (atoms of rho_v1 with weight > 1e-13: [6], rule uses n=2 -> the moment truncation is NOT the bottleneck; the fixed direction is)
+                               [H] explicit-cubic lambda_2 vs eigen+bisection lambda_2: max abs diff = 1.94e-16 over 40/40 draws
+                q=3 equal 20d: n= 40 dimE0=[3] stationary=40  (no ray and no hierarchy test in this cell)
+              q=3 2-45-88 mix: n= 40 dimE0=[1] stationary=0  [A] SIDE viol n=2:0 n=3:0 exact:0 lam*:0 cf2:0   (all must be 0)   [E] breakdown n=2:0 n=3:20 capped n=2:0 n=3:0
+                              [B'] moment exactness max_k rel err: n=1 0.0e+00  n=2 6.4e-16  n=3 7.0e-15   (must be <= 1e-10; if not, these are NOT Gauss rules and the [A] violations are my bookkeeping, not the theorem)
+                              [B] max|lambda_1-cf1| = 5.9e-16   [C] l1>=l2 40/40, l2>=l3 20/40, pointwise G-ordering 120/120
+                               [       n=2] of cf1's gap removed: med= 0.4997 min= 0.4997 max= 0.4997  n=40
+                               [       n=3] of cf1's gap removed: med= 0.4997 min= 0.4997 max= 0.4997  n=20
+                               [ exact(v1)] of cf1's gap removed: med= 0.4997 min= 0.4997 max= 0.4997  n=40
+                               [   b49 ray] of cf1's gap removed: med= 0.5003 min= 0.5003 max= 0.5003  n=40
+                               [      lam*] of cf1's gap removed: med= 1.0000 min= 1.0000 max= 1.0000  n=40
+                               [F] cf <= cf1 in 40/40 (eq:chain1, re-checked).  cf >= lam_min in 0/40 -- as expected cf is NOT valid without the angle hypothesis here, so the live target is cf1, not cf.
+                                   med(cf-lam_min) = -7.023e-08, med(cf1-lam_min) = +8.654e-11, med(cf1-cf) = +7.032e-08
+                               [G] max|lambda_n - exact(v1)|/gap: n=2 2.57e-06  n=3 5.13e-06   (atoms of rho_v1 with weight > 1e-13: [2], rule uses n=2 -> the moment truncation is NOT the bottleneck; the fixed direction is)
+                               [H] explicit-cubic lambda_2 vs eigen+bisection lambda_2: max abs diff = 1.69e-16 over 40/40 draws
+             q=3 30-88-89 mix: n= 40 dimE0=[1] stationary=0  [A] SIDE viol n=2:0 n=3:0 exact:0 lam*:0 cf2:0   (all must be 0)   [E] breakdown n=2:0 n=3:20 capped n=2:0 n=3:0
+                              [B'] moment exactness max_k rel err: n=1 1.5e-16  n=2 8.5e-16  n=3 5.7e-15   (must be <= 1e-10; if not, these are NOT Gauss rules and the [A] violations are my bookkeeping, not the theorem)
+                              [B] max|lambda_1-cf1| = 4.7e-16   [C] l1>=l2 40/40, l2>=l3 19/40, pointwise G-ordering 120/120
+                               [       n=2] of cf1's gap removed: med= 0.9984 min= 0.9984 max= 0.9984  n=40
+                               [       n=3] of cf1's gap removed: med= 0.9984 min= 0.9984 max= 0.9984  n=19
+                               [ exact(v1)] of cf1's gap removed: med= 0.9984 min= 0.9984 max= 0.9984  n=40
+                               [   b49 ray] of cf1's gap removed: med= 0.0016 min= 0.0016 max= 0.0016  n=40
+                               [      lam*] of cf1's gap removed: med= 1.0000 min= 1.0000 max= 1.0000  n=40
+                               [F] cf <= cf1 in 40/40 (eq:chain1, re-checked).  cf >= lam_min in 40/40 -- as expected cf is NOT valid without the angle hypothesis here, so the live target is cf1, not cf.
+                                   med(cf-lam_min) = +2.404e-06, med(cf1-lam_min) = +2.430e-06, med(cf1-cf) = +2.527e-08
+                               [G] max|lambda_n - exact(v1)|/gap: n=2 9.14e-11  n=3 9.14e-11   (atoms of rho_v1 with weight > 1e-13: [2], rule uses n=2 -> the moment truncation is NOT the bottleneck; the fixed direction is)
+                               [H] explicit-cubic lambda_2 vs eigen+bisection lambda_2: max abs diff = 1.94e-16 over 40/40 draws
+              q=2 spread 5-40: n= 40 dimE0=[1] stationary=0  [A] SIDE viol n=2:0 n=3:0 exact:0 lam*:0 cf2:0   (all must be 0)   [E] breakdown n=2:0 n=3:0 capped n=2:0 n=3:0
+                              [B'] moment exactness max_k rel err: n=1 0.0e+00  n=2 9.6e-16  n=3 4.2e-15   (must be <= 1e-10; if not, these are NOT Gauss rules and the [A] violations are my bookkeeping, not the theorem)
+                              [B] max|lambda_1-cf1| = 6.6e-16   [C] l1>=l2 40/40, l2>=l3 40/40, pointwise G-ordering 120/120
+                               [       n=2] of cf1's gap removed: med= 0.7859 min= 0.4366 max= 0.9992  n=40
+                               [       n=3] of cf1's gap removed: med= 0.7859 min= 0.4366 max= 0.9992  n=40
+                               [ exact(v1)] of cf1's gap removed: med= 0.7859 min= 0.4366 max= 0.9992  n=40
+                               [   b49 ray] of cf1's gap removed: med= 0.2142 min= 0.0008 max= 0.5623  n=40
+                               [      lam*] of cf1's gap removed: med= 1.0000 min= 1.0000 max= 1.0000  n=40
+                               [F] cf <= cf1 in 40/40 (eq:chain1, re-checked).  cf >= lam_min in 3/40 -- as expected cf is NOT valid without the angle hypothesis here, so the live target is cf1, not cf.
+                                   med(cf-lam_min) = -9.844e-06, med(cf1-lam_min) = +2.455e-07, med(cf1-cf) = +1.000e-05
+                               [G] max|lambda_n - exact(v1)|/gap: n=2 6.26e-07  n=3 1.61e-08   (atoms of rho_v1 with weight > 1e-13: [5], rule uses n=2 -> the moment truncation is NOT the bottleneck; the fixed direction is)
+                               [H] explicit-cubic lambda_2 vs eigen+bisection lambda_2: max abs diff = 1.99e-16 over 40/40 draws
+             q=4 spread 5-75+: n= 40 dimE0=[1] stationary=0  [A] SIDE viol n=2:0 n=3:0 exact:0 lam*:0 cf2:0   (all must be 0)   [E] breakdown n=2:0 n=3:0 capped n=2:0 n=3:0
+                              [B'] moment exactness max_k rel err: n=1 1.1e-16  n=2 1.2e-15  n=3 4.3e-15   (must be <= 1e-10; if not, these are NOT Gauss rules and the [A] violations are my bookkeeping, not the theorem)
+                              [B] max|lambda_1-cf1| = 5.3e-16   [C] l1>=l2 40/40, l2>=l3 40/40, pointwise G-ordering 120/120
+                               [       n=2] of cf1's gap removed: med= 0.6266 min= 0.2597 max= 0.9463  n=40
+                               [       n=3] of cf1's gap removed: med= 0.6266 min= 0.2597 max= 0.9463  n=40
+                               [ exact(v1)] of cf1's gap removed: med= 0.6266 min= 0.2597 max= 0.9463  n=40
+                               [   b49 ray] of cf1's gap removed: med= 0.2687 min= 0.0418 max= 0.7154  n=40
+                               [      lam*] of cf1's gap removed: med= 1.0000 min= 1.0000 max= 1.0000  n=40
+                               [F] cf <= cf1 in 40/40 (eq:chain1, re-checked).  cf >= lam_min in 0/40 -- as expected cf is NOT valid without the angle hypothesis here, so the live target is cf1, not cf.
+                                   med(cf-lam_min) = -3.745e-05, med(cf1-lam_min) = +5.499e-07, med(cf1-cf) = +3.790e-05
+                               [G] max|lambda_n - exact(v1)|/gap: n=2 2.89e-06  n=3 1.84e-09   (atoms of rho_v1 with weight > 1e-13: [7], rule uses n=2 -> the moment truncation is NOT the bottleneck; the fixed direction is)
+                               [H] explicit-cubic lambda_2 vs eigen+bisection lambda_2: max abs diff = 1.74e-16 over 40/40 draws
+
+============================================================================================================================
+判读（预登记，跑前写的；实测判读附在文件末尾）：
+  A 侧面：lambda_2/lambda_3/exact(v1)/lam* 都不得落在 lam_min(G) 以下（超出 floor 即违反）。
+     违反 => 我对 Gauss 误差公式的使用错（根可能在 lam_min(Lambda) 上方，h 离开 C^{2n}），
+     层级作废，只保留 b49 的射线。
+  B 自证：max|lambda_1 - cf1| <= 1e-12，否则测度/Jacobi 归一化有错。
+  C 收紧：l1>=l2>=l3 的比例；逐点 G_1<=G_2<=G_3<=phi 的成立数。误差公式只保证'每个都偏下'，
+     不保证 n 之间单调，所以这条是探索而非预言。
+  D 支配性（路线判据，跑前定死）：med (cf1-lambda_2)/gap 必须 > med (cf1-cf2)/gap，
+     否则层级是装饰，停止投入。预言 n=2 拿走 0.3..1.0。
+  E 代价与退化：breakdown（原子数 < n）与根越过 lam_min(Lambda) 的 capped 计数。
+  F 首跑后新增、读章节后重设前提：prop:chord 只声明 lam_min<=cf1 与 cf<=cf1；无角度假设时 cf
+     可以低于 lam_min（这正是 prop:side 的 D=f-g 与撤回(m) 的内容）。故 cf 不是被比较的界，
+     cf1 才是。实测每格 med(cf-lam_min)<0 而 med(cf1-lam_min)>0，与章节一致，不是反例。
+  G |lambda_n - exact(v1)|/gap 与 rho_v1 的原子数：判'瓶颈在矩截断还是在固定方向'。
+  H n=2 的界写成 m0..m3 的显式三次方程最小根 —— 与特征值+二分版本必须一致（<=1e-12），
+     否则我手推的 w1x2+w2x1 = m0*s1 - m1 归约错，'闭式'一句作废。
+
+============================================================================================================================
+实测判读（跑完后写，7 个非退化格 x 40 抽样 = 280 个矩阵对；种子 50799；重跑 diff 逐字节一致）：
+
+  B' 先于一切：本文件前两次运行都在我自己的 Jacobi 索引上倒下 —— b_j = h_j/h_{j-1} 先存错槽位
+     （j+1），改对槽位后又因为 'if j == n-1: break' 在写入之前，使 b_{n-1} 恒为 0。第一次运行的
+     n=2/n=3 数字（拿走 4.7..108 倍 gap）是无效规则读出来的，不得作为证据引用。现在逐抽样校
+     sum_j w_j x_j^k = m_k (k<2n)：n=1 0、n=2 <=1.2e-15、n=3 <=7.0e-15；手算测度
+     0.2 d_{1/3}+0.3 d_1 上 n=1 给 node 11/15 weight 0.5、n=2 精确复原测度本身
+     （nodes {1/3,1}, weights {0.2,0.3}），并给出 lambda_1=0.336315 > lambda_2=0.328584
+     = phi 的精确交叉。层级在这里不是渐近说法而是可 Hand-check 的事实。
+     另：玩具测度初版质量取 3 使 G(0)>1，小根落在负半轴，二分在 [0,1) 上把三个交叉全打印成 0 ——
+     一个'通过'的自检也可以是哑剧，质量 <=1 是这条检验的前提，已写进注释。
+
+  A 侧面：280/280 无违反。lambda_2、lambda_3、exact(v1)、lam*、cf2 全部 >= lam_min(G)（超出
+     100 eps ||G||_2 的容差）。预登记的证伪条件（'违反则层级作废'）没有被触发。
+
+  B max|lambda_1 - cf1| <= 7.2e-16（280 个抽样）=> prop:chord 的 cf1 确实是本层级的 n=1 成员，
+     测度/Jacobi 归一化与章节证明同一条账。
+
+  C lambda_1 >= lambda_2 在 280/280；lambda_2 >= lambda_3 在 239/239（39 个 n=3 breakdown 不参与，
+     见 E）；逐点 G_1<=G_2<=G_3<=phi 在 240/240。单调性不是定理给的（误差公式只给'每个都偏下'），
+     但在这批抽样里从未被打破 —— 报为观测，不报为命题。
+
+  D 路线判据（跑前定死）：lambda_2 拿走 cf1 残余 gap 的比例 —— 各格 med 0.4997 / 0.6266 / 0.7859 /
+     0.8061 / 0.8692 / 0.9984 / 0.9991，全体 min 0.2597，max 0.9998；b49 射线对应 med 0.0004..0.5003，
+     min 0.0000，max 0.7154。预言 '0.3..1.0' 基本命中（只有一个抽样 0.2597 略低于 0.3）。
+     => 层级支配方向优化，D 不触发停止条件。结论：把精力从'家族最优方向'（b48/b49 已收口）转到
+        '矩层级'，这条判据是它的第一次被数据批准。
+
+  E breakdown：n=3 在两个 mix 格里 20/40 与 19/40 失效 —— 因为 Lambda 只有两个不同特征值
+     {1, 1-delta}，rho_v1 只带 2 个原子，n=2 已经是精确规则（[G] 里 natom=2 印证）。capped（根越过
+     lam_min(Lambda)）：0/280，两条都不需要。这是层级的诚实边界：n 至多到 rho_v 的原子数，超过就没
+     有新信息 —— '对每个 n 都成立' 不等于 '对每个 n 都有用'。
+
+  F 预登记判读里我写 '实测每格 med(cf-lam_min)<0' —— 这句不准确，实测 7 格里 5 格 <0，
+     2 格 >0（spread 30-88-89 与 30-88-89 mix：med(cf-lam_min)=+3.5e-4 / +2.4e-6，且
+     med(cf1-lam_min) 与之同量级，med(cf1-cf) 仅 +5.4e-7 / +2.5e-8）。那两格正是近各向同性、
+     slack~0、cf ~ cf1 的区域，即角度假设几乎成立的地方；其余格里 cf 确实落在 lam_min 下方。
+     这与章节 eq:chain1 只声明 'lam_min<=cf1, cf<=cf1' 一致：cf 在无角度假设的模型里不是有效界，
+     是我自己读错了'已发表的界'指哪一个。cf<=cf1 在 280/280 成立（重验 prop:chord 第二式）。
+
+  G |lambda_2 - exact(v1)|/gap，按格（5-75 / 2-45-88 / 30-88-89 / 2-45-88mix / 30-88-89mix /
+     q=2 5-40 / q=4 5-75+）= 1.6e-6 / 1.3e-7 / 2.0e-3 / 2.6e-6 / 9.1e-11 / 6.3e-7 / 2.9e-6
+     （n=3 更小或同级），而 rho_v1 实际带 2,5,6,7 个原子 —— 用 2 个节点的规则就已经把矩截断误差压到
+     gap 的 1e-3 以下。=> 瓶颈不在矩，在'方向被固定在 v1'。剩下的 (1 - 0.8) 左右 gap 是纯方向项，
+     即 §7 开项(1) 的一维分式规划本身；层级把'矩'这一侧几乎免费做完，把'方向'这一侧完整留下。
+     这条改写了投入的几何：不是'要不要更高阶的 Gauss'，而是'lambda_2 对 v 取 min 能走多远'。
+
+  H 显式三次 = 特征值+二分，max 2.5e-16，280/280；玩具测度上手算值 0.328583506165 三位小数以上全等。
+     => lambda_2 是 m0..m3（即 B, C, v'K'Λ^-3Kv, v'K'Λ^-4Kv 四个标量）的显式三次方程最小非负根，
+        无节点、无权、无特征问题。cf1 是它的 n=1 退化（二次）。'闭式'一句成立。
+
+判读总结（写进 community.md §46 与章节）：
+  1. prop:chord 的 Jensen/Cauchy-Schwarz 一步是 n=1 Gauss 规则；把同一证明里的那一步换成 n 点规则，
+     得到认证层级 lam_min(G) <= ... <= lambda_3(v) <= lambda_2(v) <= lambda_1(v) = cf1(v)（同一
+     case split，多的是矩的存在性），n 上界为 rho_v 的原子数。
+  2. n=2 成员是四个标量矩的显式三次：280/280 侧面无违反，拿走 cf1 残余 gap 的 0.26..0.9998
+     （各格 med 0.50..0.999），比 b48/b49 的方向优化（0.0004..0.72）多一到两个数量级。
+  3. 代价：两个额外标量（Lambda^-3, Lambda^-4 的二次型）+ 一个三次根；无需最优化的方向。
+  4. 路线：继续（判据 D 通过），下一步不是 n=3（[G] 说矩侧已饱和），而是 lambda_2 在方向网上的 min。
+  5. 自我更正 #25：本文件前两次运行的 n=2/n=3 数字作废（Jacobi 索引，两处）；玩具测度质量 >1 使
+     交叉打印成 0；'每格 med(cf-lam_min)<0' 一句不准确，见 F。

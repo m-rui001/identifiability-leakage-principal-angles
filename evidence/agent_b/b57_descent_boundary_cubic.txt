@@ -1,0 +1,260 @@
+==================================================================================================================================
+[T0-T6] the descent-set boundary is a CUBIC in tan(theta); its leading root 2g/P is b52's t_hi.
+Main cells = b53/b55's draws (seed 60311, same order); the ladder switches to seed 51400.
+             q=3 spread 5-75: n= 40 stationary=0 skipped=0  dimE0=[1]
+                              [T0] |v1'A0u|/c2 med=5.5936e-17 min=0.000e+00 max=3.916e-16 n=40  eB med=6.7123e-16 min=4.475e-16 max=1.007e-15 n=40  eC med=7.7718e-16 min=3.703e-16 max=1.653e-15 n=40  eT med=1.2596e-15 min=5.296e-16 max=2.089e-15 n=40  cubic-resid med=9.6368e-20 min=0.000e+00 max=8.674e-19 n=40  rand-u worst med=1.3800e-15 min=7.678e-16 max=2.393e-15 n=40
+                              [T1] theta*/atan(x_cubic)-1 med=5.8314e-11 min=-6.896e-08 max=1.212e-07 n=40  theta* med=7.0229e-04 min=7.219e-05 max=4.190e-03 n=40  x_hi=2g/P med=7.0229e-04 min=7.219e-05 max=4.190e-03 n=40  theta*/atan(x_hi)-1 med=2.9120e-07 min=-5.984e-08 max=7.504e-06 n=40  #(cubic has no positive root)=0  #(no bisected crossing)=0  #(root exists but no crossing)=0
+                              [T1b] THIRD-ORDER relative correction of x_hi: predicted kappa*D^2*x_hi^2/P med=2.9300e-07 min=2.209e-09 max=7.504e-06 n=40  measured theta*/atan(x_hi)-1 med=2.9120e-07 min=-5.984e-08 max=7.504e-06 n=40  ratio measured/pred-1 med=2.0909e-05 min=-7.565e+00 max=5.484e+01 n=40
+                              [T1c] BISECTION NOISE FLOOR (registered: implied < 1e-14): |dlambda/dtheta| at theta* med=1.8179e-04 min=1.364e-05 max=7.741e-04 n=40  implied lambda-mismatch between the two exact routes med=9.2678e-17 min=3.716e-18 max=2.995e-16 n=40  => theta-level disagreement is solver noise, not an iff exception, iff implied << gap
+                                  [T1c-selfcheck] max |implied - slop*|theta-atan(xc)||=0.00e+00  worst implied=2.995e-16 (slop=4.335e-05 theta=1.0017e-04 xcubic=1.001747e-04 r_bisect=-6.896e-08)  bound slop_max*r_max*xc_max=3.930e-13  CONSISTENT
+                              [T2] L1/(drdt*A1)-1 med=2.2204e-16 min=-7.661e-15 max=1.044e-14 n=40  L2/(drdt*A2)-1 med=3.8292e-05 min=2.896e-07 max=9.816e-04 n=40  dip b49/pred-1 med=-3.8291e-05 min=-9.806e-04 max=-2.896e-07 n=40  tp/(g/P)-1 med=-3.8291e-05 min=-9.806e-04 max=-2.896e-07 n=40
+                              [T3] EQUAL-ANGLE FALSIFIER (stationary draws ONLY: 0 draws x 3 random u)  #(lambda_1 < cf1 - floor)=0  #(grid points with a real descent)=0  deepest apparent dip n/a  gap n/a  thr=1e-12*gap n/a  #(g<=1e-12)=0/1
+                                  generic draws, STEEPEST ray (context, NOT the falsifier): #(below-floor)=74775  #(real descent)=80167  #(round-off band)=0  deepest dip med=-3.5040e-08 min=-8.112e-07 max=-2.462e-10 n=40  #(g<=1e-12)=0/40
+                              [T6] #(P<=0)=0 #(L2<=0)=0  #(no upper crossing)=0  #(P>0 but no crossing)=0
+                              [T5] angle(v*,v1) med=4.2845e-04 min=3.743e-05 max=2.158e-03 n=40  angle/theta* med=5.5130e-01 min=5.001e-01 max=6.303e-01 n=40  gapfrac(lambda_1(v*)) med=9.6393e-02 min=3.438e-03 max=5.433e-01 n=40
+          q=3 spread 2-45-88: n= 40 stationary=0 skipped=0  dimE0=[1]
+                              [T0] |v1'A0u|/c2 med=5.5579e-17 min=0.000e+00 max=3.335e-16 n=40  eB med=6.6695e-16 min=3.335e-16 max=1.112e-15 n=40  eC med=8.0821e-16 min=4.664e-16 max=1.143e-15 n=40  eT med=1.2189e-15 min=6.710e-16 max=2.133e-15 n=40  cubic-resid med=6.6562e-21 min=0.000e+00 max=6.525e-20 n=40  rand-u worst med=1.2310e-15 min=6.899e-16 max=2.765e-15 n=40
+                              [T1] theta*/atan(x_cubic)-1 med=5.5542e-09 min=-1.000e+00 max=1.072e-05 n=40  theta* med=1.4561e-04 min=1.073e-10 max=4.583e-04 n=40  x_hi=2g/P med=1.4561e-04 min=7.098e-06 max=4.583e-04 n=40  theta*/atan(x_hi)-1 med=3.1721e-08 min=-1.000e+00 max=1.072e-05 n=40  #(cubic has no positive root)=0  #(no bisected crossing)=0  #(root exists but no crossing)=0
+                              [T1b] THIRD-ORDER relative correction of x_hi: predicted kappa*D^2*x_hi^2/P med=1.0640e-08 min=2.554e-11 max=1.050e-07 n=40  measured theta*/atan(x_hi)-1 med=3.1721e-08 min=-1.000e+00 max=1.072e-05 n=40  ratio measured/pred-1 med=2.1169e-01 min=-2.354e+10 max=4.199e+05 n=40
+                              [T1c] BISECTION NOISE FLOOR (registered: implied < 1e-14): |dlambda/dtheta| at theta* med=3.4551e-05 min=1.784e-06 max=1.102e-04 n=40  implied lambda-mismatch between the two exact routes med=8.6160e-17 min=9.376e-18 max=1.084e-10 n=40  => theta-level disagreement is solver noise, not an iff exception, iff implied << gap
+                                  [T1c-selfcheck] max |implied - slop*|theta-atan(xc)||=0.00e+00  worst implied=1.084e-10 (slop=1.331e-05 theta=1.0727e-10 xcubic=8.143903e-06 r_bisect=-1.000e+00)  bound slop_max*r_max*xc_max=5.053e-08  CONSISTENT
+                              [T2] L1/(drdt*A1)-1 med=2.2204e-16 min=-8.216e-15 max=1.110e-14 n=40  L2/(drdt*A2)-1 med=8.7279e-06 min=2.095e-08 max=8.612e-05 n=40  dip b49/pred-1 med=-8.7278e-06 min=-8.612e-05 max=-2.095e-08 n=40  tp/(g/P)-1 med=-8.7278e-06 min=-8.612e-05 max=-2.095e-08 n=40
+                              [T3] EQUAL-ANGLE FALSIFIER (stationary draws ONLY: 0 draws x 3 random u)  #(lambda_1 < cf1 - floor)=0  #(grid points with a real descent)=0  deepest apparent dip n/a  gap n/a  thr=1e-12*gap n/a  #(g<=1e-12)=0/1
+                                  generic draws, STEEPEST ray (context, NOT the falsifier): #(below-floor)=56229  #(real descent)=70824  #(round-off band)=0  deepest dip med=-1.1953e-09 min=-1.263e-08 max=-3.166e-12 n=40  #(g<=1e-12)=0/40
+                              [T6] #(P<=0)=0 #(L2<=0)=0  #(no upper crossing)=0  #(P>0 but no crossing)=0
+                              [T5] angle(v*,v1) med=7.2973e-05 min=3.586e-06 max=2.293e-04 n=40  angle/theta* med=5.0033e-01 min=4.999e-01 max=4.321e+04 n=40  gapfrac(lambda_1(v*)) med=1.8265e-01 min=4.751e-04 max=4.557e-01 n=40
+         q=3 spread 30-88-89: n= 40 stationary=0 skipped=0  dimE0=[1]
+                              [T0] |v1'A0u|/c2 med=7.4015e-17 min=0.000e+00 max=4.117e-16 n=40  eB med=6.6613e-16 min=4.441e-16 max=1.628e-15 n=40  eC med=7.7330e-16 min=4.127e-16 max=1.815e-15 n=40  eT med=1.3332e-14 min=4.014e-15 max=4.665e-14 n=40  cubic-resid med=9.0213e-20 min=0.000e+00 max=6.780e-19 n=40  rand-u worst med=2.4766e-14 min=1.136e-14 max=6.306e-14 n=40
+                              [T1] theta*/atan(x_cubic)-1 med=5.8435e-11 min=-1.561e-09 max=7.240e-09 n=40  theta* med=9.1727e-04 min=1.767e-04 max=2.875e-03 n=40  x_hi=2g/P med=9.1727e-04 min=1.767e-04 max=2.875e-03 n=40  theta*/atan(x_hi)-1 med=8.4086e-07 min=3.841e-08 max=8.259e-06 n=40  #(cubic has no positive root)=0  #(no bisected crossing)=0  #(root exists but no crossing)=0
+                              [T1b] THIRD-ORDER relative correction of x_hi: predicted kappa*D^2*x_hi^2/P med=8.4060e-07 min=3.118e-08 max=8.258e-06 n=40  measured theta*/atan(x_hi)-1 med=8.4086e-07 min=3.841e-08 max=8.259e-06 n=40  ratio measured/pred-1 med=2.3073e-05 min=-6.460e-03 max=2.322e-01 n=40
+                              [T1c] BISECTION NOISE FLOOR (registered: implied < 1e-14): |dlambda/dtheta| at theta* med=3.8343e-04 min=7.270e-05 max=1.018e-03 n=40  implied lambda-mismatch between the two exact routes med=7.3658e-17 min=1.205e-18 max=5.074e-16 n=40  => theta-level disagreement is solver noise, not an iff exception, iff implied << gap
+                                  [T1c-selfcheck] max |implied - slop*|theta-atan(xc)||=0.00e+00  worst implied=5.074e-16 (slop=1.709e-04 theta=4.2696e-04 xcubic=4.269558e-04 r_bisect=6.953e-09)  bound slop_max*r_max*xc_max=2.120e-14  CONSISTENT
+                              [T2] L1/(drdt*A1)-1 med=2.7756e-16 min=-7.216e-14 max=4.508e-14 n=40  L2/(drdt*A2)-1 med=2.5318e-06 min=9.378e-08 max=2.547e-05 n=40  dip b49/pred-1 med=-2.5318e-06 min=-2.547e-05 max=-9.378e-08 n=40  tp/(g/P)-1 med=-2.5318e-06 min=-2.547e-05 max=-9.378e-08 n=40
+                              [T3] EQUAL-ANGLE FALSIFIER (stationary draws ONLY: 0 draws x 3 random u)  #(lambda_1 < cf1 - floor)=0  #(grid points with a real descent)=0  deepest apparent dip n/a  gap n/a  thr=1e-12*gap n/a  #(g<=1e-12)=0/1E:\pdf\topics\out\rc\B\b57_descent_boundary_cubic.py:401: RuntimeWarning: All-NaN axis encountered
+  bnd = (np.nanmax([t[1] for t in bad]) * np.nanmax([abs(t[4]) for t in bad])
+
+                                  generic draws, STEEPEST ray (context, NOT the falsifier): #(below-floor)=79967  #(real descent)=81602  #(round-off band)=0  deepest dip med=-8.5933e-08 min=-6.732e-07 max=-3.211e-09 n=40  #(g<=1e-12)=0/40
+                              [T6] #(P<=0)=0 #(L2<=0)=0  #(no upper crossing)=0  #(P>0 but no crossing)=0
+                              [T5] angle(v*,v1) med=4.7290e-04 min=6.268e-05 max=1.357e-03 n=40  angle/theta* med=5.0131e-01 min=3.547e-01 max=5.872e-01 n=40  gapfrac(lambda_1(v*)) med=2.4014e-04 min=6.942e-06 max=1.264e-03 n=40
+               q=3 equal 20d: n= 40 stationary=40 skipped=0  dimE0=[3]
+                              [T0] |v1'A0u|/c2 med=3.1432e-16 min=0.000e+00 max=2.078e-15 n=40  eB med=1.8859e-15 min=5.029e-16 max=7.041e-15 n=40  eC med=7.9305e-16 min=3.581e-16 max=2.147e-15 n=40  eT med=9.8787e-14 min=1.949e-14 max=3.863e-13 n=40  cubic-resid med=0.0000e+00 min=0.000e+00 max=4.977e-32 n=17  rand-u worst med=1.3470e-13 min=1.949e-14 max=3.863e-13 n=40
+                              [T1] theta*/atan(x_cubic)-1 n/a  theta* med=1.0730e-10 min=1.024e-10 max=2.701e-10 n=5  x_hi=2g/P med=-8.0610e-17 min=-7.038e-15 max=4.522e-15 n=40  theta*/atan(x_hi)-1 n/a  #(cubic has no positive root)=23  #(no bisected crossing)=35  #(root exists but no crossing)=15
+                              [T1b] THIRD-ORDER relative correction of x_hi: predicted kappa*D^2*x_hi^2/P med=1.4949e-58 min=9.289e-62 max=2.968e-57 n=17  measured theta*/atan(x_hi)-1 n/a  ratio measured/pred-1 n/a
+                              [T1c] BISECTION NOISE FLOOR (registered: implied < 1e-14): |dlambda/dtheta| at theta* med=1.0011e-06 min=6.467e-07 max=1.356e-06 n=2  implied lambda-mismatch between the two exact routes med=1.0408e-16 min=6.939e-17 max=1.388e-16 n=2  => theta-level disagreement is solver noise, not an iff exception, iff implied << gap
+                                  [T1c-selfcheck] max |implied - slop*|theta-atan(xc)||=0.00e+00  worst implied=1.388e-16 (slop=1.356e-06 theta=1.0238e-10 xcubic=1.430842e-15 r_bisect=nan)  bound slop_max*r_max*xc_max=nan  INCONSISTENT
+                              [T2] L1/(drdt*A1)-1 n/a  L2/(drdt*A2)-1 n/a  dip b49/pred-1 n/a  tp/(g/P)-1 n/a
+                              [T3] EQUAL-ANGLE FALSIFIER (stationary draws ONLY: 40 draws x 3 random u)  #(lambda_1 < cf1 - floor)=0  #(grid points with a real descent)=4713  deepest apparent dip med=3.8858e-16 min=-2.012e-16 max=2.214e-15 n=40  gap med=4.7852e-05 min=5.702e-06 max=2.032e-04 n=40  thr=1e-12*gap med=4.7852e-17 min=5.702e-18 max=2.032e-16 n=40  #(g<=1e-12)=40/40
+                                  generic draws, STEEPEST ray (context, NOT the falsifier): #(below-floor)=0  #(real descent)=0  #(round-off band)=0  deepest dip n/a  #(g<=1e-12)=0/1
+                              [T6] #(P<=0)=0 #(L2<=0)=0  #(no upper crossing)=0  #(P>0 but no crossing)=0
+                              [T5] angle(v*,v1) med=3.0863e-03 min=5.454e-04 max=1.123e-02 n=40  angle/theta* med=1.4947e+07 min=1.161e+07 max=3.414e+07 n=5  gapfrac(lambda_1(v*)) med=-1.7672e-03 min=-1.148e-02 max=-4.997e-05 n=40
+  q=3 2-45-88 mix (DETERMINISTIC: 40 replicates): n= 40 stationary=0 skipped=0  dimE0=[1]
+                              [T0] |v1'A0u|/c2 med=6.2526e-17 min=0.000e+00 max=4.168e-16 n=40  eB med=6.6695e-16 min=4.446e-16 max=1.000e-15 n=40  eC med=8.7511e-16 min=4.376e-16 max=1.313e-15 n=40  eT med=1.2674e-15 min=8.038e-16 max=2.056e-15 n=40  cubic-resid med=0.0000e+00 min=0.000e+00 max=4.203e-21 n=40  rand-u worst med=1.2266e-15 min=7.801e-16 max=5.414e-15 n=40
+                              [T1] theta*/atan(x_cubic)-1 med=5.8698e-07 min=-1.294e-06 max=1.360e-06 n=40  theta* med=2.6440e-05 min=2.644e-05 max=2.644e-05 n=40  x_hi=2g/P med=2.6440e-05 min=2.644e-05 max=2.644e-05 n=40  theta*/atan(x_hi)-1 med=5.8733e-07 min=-1.294e-06 max=1.360e-06 n=40  #(cubic has no positive root)=0  #(no bisected crossing)=0  #(root exists but no crossing)=0
+                              [T1b] THIRD-ORDER relative correction of x_hi: predicted kappa*D^2*x_hi^2/P med=3.4935e-10 min=3.494e-10 max=3.494e-10 n=40  measured theta*/atan(x_hi)-1 med=5.8733e-07 min=-1.294e-06 max=1.360e-06 n=40  ratio measured/pred-1 med=1.6802e+03 min=-3.705e+03 max=3.892e+03 n=40
+                              [T1c] BISECTION NOISE FLOOR (registered: implied < 1e-14): |dlambda/dtheta| at theta* med=6.5495e-06 min=6.549e-06 max=6.550e-06 n=40  implied lambda-mismatch between the two exact routes med=1.1755e-16 min=5.468e-18 max=2.354e-16 n=40  => theta-level disagreement is solver noise, not an iff exception, iff implied << gap
+                                  [T1c-selfcheck] max |implied - slop*|theta-atan(xc)||=0.00e+00  worst implied=2.354e-16 (slop=6.550e-06 theta=2.6440e-05 xcubic=2.643992e-05 r_bisect=1.360e-06)  bound slop_max*r_max*xc_max=2.354e-16  CONSISTENT
+                              [T2] L1/(drdt*A1)-1 med=9.9920e-16 min=-1.343e-14 max=1.399e-14 n=40  L2/(drdt*A2)-1 med=2.8648e-07 min=2.865e-07 max=2.865e-07 n=40  dip b49/pred-1 med=-2.8648e-07 min=-2.865e-07 max=-2.865e-07 n=40  tp/(g/P)-1 med=-2.8648e-07 min=-2.865e-07 max=-2.865e-07 n=40
+                              [T3] EQUAL-ANGLE FALSIFIER (stationary draws ONLY: 0 draws x 3 random u)  #(lambda_1 < cf1 - floor)=0  #(grid points with a real descent)=0  deepest apparent dip n/a  gap n/a  thr=1e-12*gap n/a  #(g<=1e-12)=0/1
+                                  generic draws, STEEPEST ray (context, NOT the falsifier): #(below-floor)=42278  #(real descent)=63800  #(round-off band)=0  deepest dip med=-4.3292e-11 min=-4.329e-11 max=-4.329e-11 n=40  #(g<=1e-12)=0/40
+                              [T6] #(P<=0)=0 #(L2<=0)=0  #(no upper crossing)=0  #(P>0 but no crossing)=0
+                              [T5] angle(v*,v1) med=1.3220e-05 min=1.322e-05 max=1.322e-05 n=40  angle/theta* med=5.0000e-01 min=5.000e-01 max=5.000e-01 n=40  gapfrac(lambda_1(v*)) med=5.0026e-01 min=5.003e-01 max=5.003e-01 n=40
+  q=3 30-88-89 mix (DETERMINISTIC: 40 replicates): n= 40 stationary=0 skipped=0  dimE0=[1]
+                              [T0] |v1'A0u|/c2 med=9.2519e-17 min=0.000e+00 max=5.227e-16 n=40  eB med=7.4015e-16 min=4.441e-16 max=1.184e-15 n=40  eC med=7.2871e-16 min=4.372e-16 max=1.457e-15 n=40  eT med=9.1594e-15 min=6.015e-15 max=2.570e-14 n=40  cubic-resid med=2.2252e-20 min=0.000e+00 max=4.450e-20 n=40  rand-u worst med=2.4700e-14 min=1.312e-14 max=6.757e-14 n=40
+                              [T1] theta*/atan(x_cubic)-1 med=3.7189e-09 min=-7.477e-09 max=2.482e-08 n=40  theta* med=1.9180e-04 min=1.918e-04 max=1.918e-04 n=40  x_hi=2g/P med=1.9180e-04 min=1.918e-04 max=1.918e-04 n=40  theta*/atan(x_hi)-1 med=4.0448e-08 min=2.925e-08 max=6.155e-08 n=40  #(cubic has no positive root)=0  #(no bisected crossing)=0  #(root exists but no crossing)=0
+                              [T1b] THIRD-ORDER relative correction of x_hi: predicted kappa*D^2*x_hi^2/P med=3.6729e-08 min=3.673e-08 max=3.673e-08 n=40  measured theta*/atan(x_hi)-1 med=4.0448e-08 min=2.925e-08 max=6.155e-08 n=40  ratio measured/pred-1 med=1.0125e-01 min=-2.036e-01 max=6.758e-01 n=40
+                              [T1c] BISECTION NOISE FLOOR (registered: implied < 1e-14): |dlambda/dtheta| at theta* med=8.2272e-05 min=8.227e-05 max=8.227e-05 n=40  implied lambda-mismatch between the two exact routes med=8.2955e-17 min=6.811e-18 max=3.917e-16 n=40  => theta-level disagreement is solver noise, not an iff exception, iff implied << gap
+                                  [T1c-selfcheck] max |implied - slop*|theta-atan(xc)||=0.00e+00  worst implied=3.917e-16 (slop=8.227e-05 theta=1.9180e-04 xcubic=1.918049e-04 r_bisect=2.482e-08)  bound slop_max*r_max*xc_max=3.917e-16  CONSISTENT
+                              [T2] L1/(drdt*A1)-1 med=-4.4409e-16 min=-3.243e-13 max=2.733e-13 n=40  L2/(drdt*A2)-1 med=1.0969e-07 min=1.097e-07 max=1.097e-07 n=40  dip b49/pred-1 med=-1.0969e-07 min=-1.097e-07 max=-1.097e-07 n=40  tp/(g/P)-1 med=-1.0969e-07 min=-1.097e-07 max=-1.097e-07 n=40
+                              [T3] EQUAL-ANGLE FALSIFIER (stationary draws ONLY: 0 draws x 3 random u)  #(lambda_1 < cf1 - floor)=0  #(grid points with a real descent)=0  deepest apparent dip n/a  gap n/a  thr=1e-12*gap n/a  #(g<=1e-12)=0/1
+                                  generic draws, STEEPEST ray (context, NOT the falsifier): #(below-floor)=65684  #(real descent)=73920  #(round-off band)=0  deepest dip med=-3.9450e-09 min=-3.945e-09 max=-3.945e-09 n=40  #(g<=1e-12)=0/40
+                              [T6] #(P<=0)=0 #(L2<=0)=0  #(no upper crossing)=0  #(P>0 but no crossing)=0
+                              [T5] angle(v*,v1) med=9.5893e-05 min=9.589e-05 max=9.589e-05 n=40  angle/theta* med=4.9995e-01 min=5.000e-01 max=5.000e-01 n=40  gapfrac(lambda_1(v*)) med=1.6238e-03 min=1.624e-03 max=1.624e-03 n=40
+             q=2 spread 5-40: n= 40 stationary=0 skipped=0  dimE0=[1]
+                              [T0] |v1'A0u|/c2 med=5.5936e-17 min=0.000e+00 max=1.119e-16 n=40  eB med=5.0342e-16 min=4.475e-16 max=7.831e-16 n=40  eC med=6.4339e-16 min=4.130e-16 max=1.025e-15 n=40  eT med=1.2313e-15 min=9.871e-16 max=1.822e-15 n=40  cubic-resid med=2.2450e-20 min=0.000e+00 max=9.035e-19 n=40  rand-u worst med=1.5303e-15 min=1.072e-15 max=5.545e-15 n=40
+                              [T1] theta*/atan(x_cubic)-1 med=-6.4641e-11 min=-1.000e+00 max=7.902e-08 n=40  theta* med=6.9232e-04 min=1.018e-10 max=3.458e-03 n=40  x_hi=2g/P med=6.9232e-04 min=2.831e-06 max=3.458e-03 n=40  theta*/atan(x_hi)-1 med=1.9663e-07 min=-1.000e+00 max=4.883e-06 n=40  #(cubic has no positive root)=0  #(no bisected crossing)=0  #(root exists but no crossing)=0
+                              [T1b] THIRD-ORDER relative correction of x_hi: predicted kappa*D^2*x_hi^2/P med=1.9591e-07 min=3.278e-12 max=4.883e-06 n=40  measured theta*/atan(x_hi)-1 med=1.9663e-07 min=-1.000e+00 max=4.883e-06 n=40  ratio measured/pred-1 med=-3.7915e-05 min=-3.051e+11 max=1.173e+01 n=40
+                              [T1c] BISECTION NOISE FLOOR (registered: implied < 1e-14): |dlambda/dtheta| at theta* med=1.3816e-04 min=1.176e-06 max=6.096e-04 n=40  implied lambda-mismatch between the two exact routes med=6.3415e-17 min=3.393e-18 max=5.594e-11 n=40  => theta-level disagreement is solver noise, not an iff exception, iff implied << gap
+                                  [T1c-selfcheck] max |implied - slop*|theta-atan(xc)||=0.00e+00  worst implied=5.594e-11 (slop=1.823e-05 theta=1.0302e-10 xcubic=3.069067e-06 r_bisect=-1.000e+00)  bound slop_max*r_max*xc_max=2.108e-06  CONSISTENT
+                              [T2] L1/(drdt*A1)-1 med=4.4409e-16 min=-1.100e-12 max=5.607e-13 n=40  L2/(drdt*A2)-1 med=2.5587e-05 min=4.278e-10 max=6.393e-04 n=40  dip b49/pred-1 med=-2.5586e-05 min=-6.389e-04 max=-4.300e-10 n=40  tp/(g/P)-1 med=-2.5586e-05 min=-6.389e-04 max=-4.289e-10 n=40
+                              [T3] EQUAL-ANGLE FALSIFIER (stationary draws ONLY: 0 draws x 3 random u)  #(lambda_1 < cf1 - floor)=0  #(grid points with a real descent)=0  deepest apparent dip n/a  gap n/a  thr=1e-12*gap n/a  #(g<=1e-12)=0/1
+                                  generic draws, STEEPEST ray (context, NOT the falsifier): #(below-floor)=69893  #(real descent)=78285  #(round-off band)=0  deepest dip med=-2.4474e-08 min=-5.272e-07 max=-4.178e-13 n=40  #(g<=1e-12)=0/40
+                              [T6] #(P<=0)=0 #(L2<=0)=0  #(no upper crossing)=0  #(P>0 but no crossing)=0
+                              [T5] angle(v*,v1) med=3.4624e-04 min=1.545e-06 max=1.728e-03 n=40  angle/theta* med=4.9995e-01 min=4.954e-01 max=3.639e+04 n=40  gapfrac(lambda_1(v*)) med=1.8063e-01 min=2.324e-06 max=5.716e-01 n=40
+            q=4 spread 5-75+: n= 40 stationary=0 skipped=0  dimE0=[1]
+                              [T0] |v1'A0u|/c2 med=7.8660e-17 min=0.000e+00 max=5.104e-16 n=40  eB med=6.7123e-16 min=4.475e-16 max=1.342e-15 n=40  eC med=9.9100e-16 min=4.446e-16 max=2.282e-15 n=40  eT med=2.6091e-15 min=7.320e-16 max=5.141e-15 n=40  cubic-resid med=1.6151e-19 min=0.000e+00 max=3.263e-18 n=40  rand-u worst med=2.0640e-15 min=8.916e-16 max=5.324e-15 n=40
+                              [T1] theta*/atan(x_cubic)-1 med=1.1126e-11 min=-1.315e-09 max=5.289e-09 n=40  theta* med=2.2604e-03 min=3.396e-04 max=8.198e-03 n=40  x_hi=2g/P med=2.2604e-03 min=3.396e-04 max=8.198e-03 n=40  theta*/atan(x_hi)-1 med=1.9676e-06 min=8.417e-08 max=1.163e-05 n=40  #(cubic has no positive root)=0  #(no bisected crossing)=0  #(root exists but no crossing)=0
+                              [T1b] THIRD-ORDER relative correction of x_hi: predicted kappa*D^2*x_hi^2/P med=1.9676e-06 min=7.888e-08 max=1.163e-05 n=40  measured theta*/atan(x_hi)-1 med=1.9676e-06 min=8.417e-08 max=1.163e-05 n=40  ratio measured/pred-1 med=-2.0346e-05 min=-1.060e-02 max=6.705e-02 n=40
+                              [T1c] BISECTION NOISE FLOOR (registered: implied < 1e-14): |dlambda/dtheta| at theta* med=3.7814e-04 min=8.296e-05 max=6.739e-04 n=40  implied lambda-mismatch between the two exact routes med=9.1002e-17 min=4.301e-19 max=3.617e-16 n=40  => theta-level disagreement is solver noise, not an iff exception, iff implied << gap
+                                  [T1c-selfcheck] max |implied - slop*|theta-atan(xc)||=0.00e+00  worst implied=3.617e-16 (slop=1.154e-04 theta=8.5502e-04 xcubic=8.550188e-04 r_bisect=3.666e-09)  bound slop_max*r_max*xc_max=2.922e-14  CONSISTENT
+                              [T2] L1/(drdt*A1)-1 med=-1.6653e-16 min=-4.441e-15 max=3.553e-15 n=40  L2/(drdt*A2)-1 med=2.5725e-04 min=1.031e-05 max=1.531e-03 n=40  dip b49/pred-1 med=-2.5718e-04 min=-1.529e-03 max=-1.031e-05 n=40  tp/(g/P)-1 med=-2.5718e-04 min=-1.529e-03 max=-1.031e-05 n=40
+                              [T3] EQUAL-ANGLE FALSIFIER (stationary draws ONLY: 0 draws x 3 random u)  #(lambda_1 < cf1 - floor)=0  #(grid points with a real descent)=0  deepest apparent dip n/a  gap n/a  thr=1e-12*gap n/a  #(g<=1e-12)=0/1
+                                  generic draws, STEEPEST ray (context, NOT the falsifier): #(below-floor)=83904  #(real descent)=86026  #(round-off band)=0  deepest dip med=-2.2565e-07 min=-1.293e-06 max=-9.237e-09 n=40  #(g<=1e-12)=0/40
+                              [T6] #(P<=0)=0 #(L2<=0)=0  #(no upper crossing)=0  #(P>0 but no crossing)=0
+                              [T5] angle(v*,v1) med=1.7507e-03 min=2.505e-04 max=4.128e-03 n=40  angle/theta* med=7.0321e-01 min=5.029e-01 max=1.032e+00 n=40  gapfrac(lambda_1(v*)) med=4.4200e-01 min=6.314e-02 max=7.852e-01 n=40
+
+==================================================================================================================================
+[T4] INTERPOLATION LADDER -- own seed 51400 (switched AFTER the shared-draw section above).
+     cosines (20-d, 20, 20+d) in DEGREES.  Registered: x_hi, g, P, dip/gap all slope 0;
+     D slope 1.  (My first instinct was x_hi ~ d; the derivation of A_0 = Q2 diag(cos^2) Q2^T
+     says v_1 does NOT move with d, so the layer should NOT collapse.  Both branches informative.)
+  q=3 equal-angled d=0.001deg: n= 30 stationary=0 skipped=0  dimE0=[1]
+                              [T0] |v1'A0u|/c2 med=1.0019e-16 min=1.572e-17 max=3.521e-16 n=30  eB med=6.2864e-16 min=5.029e-16 max=1.257e-15 n=30  eC med=7.7716e-16 min=4.688e-16 max=1.347e-15 n=30  eT med=5.8686e-14 min=1.963e-14 max=1.912e-13 n=30  cubic-resid med=1.2973e-15 min=0.000e+00 max=3.016e-13 n=12  rand-u worst med=1.1658e-13 min=3.174e-14 max=5.091e-13 n=30
+                              [T1] theta*/atan(x_cubic)-1 med=3.3307e-15 min=-8.571e-14 max=1.810e-13 n=12  theta* med=9.2904e-01 min=4.517e-01 max=1.550e+00 n=12  x_hi=2g/P med=1.3384e+00 min=4.852e-01 max=4.730e+01 n=12  theta*/atan(x_hi)-1 med=9.6065e-09 min=2.836e-09 max=2.453e-08 n=12  #(cubic has no positive root)=18  #(no bisected crossing)=18  #(root exists but no crossing)=0
+                              [T1b] THIRD-ORDER relative correction of x_hi: predicted kappa*D^2*x_hi^2/P med=7.4048e-08 min=5.240e-09 max=9.326e-04 n=12  measured theta*/atan(x_hi)-1 med=9.6065e-09 min=2.836e-09 max=2.453e-08 n=12  ratio measured/pred-1 med=-8.1499e-01 min=-1.000e+00 max=-2.962e-01 n=12
+                              [T1c] BISECTION NOISE FLOOR (registered: implied < 1e-14): |dlambda/dtheta| at theta* med=5.3297e-03 min=1.664e-03 max=1.056e-02 n=12  implied lambda-mismatch between the two exact routes med=8.3823e-17 min=2.344e-18 max=2.386e-16 n=12  => theta-level disagreement is solver noise, not an iff exception, iff implied << gap
+                                  [T1c-selfcheck] max |implied - slop*|theta-atan(xc)||=0.00e+00  worst implied=2.386e-16 (slop=4.862e-03 theta=5.7283e-01 xcubic=6.449615e-01 r_bisect=-8.571e-14)  bound slop_max*r_max*xc_max=2.961e-15  CONSISTENT
+                              [T2] L1/(drdt*A1)-1 med=3.3307e-16 min=-3.553e-15 max=8.660e-15 n=30  L2/(drdt*A2)-1 med=-4.3514e-02 min=-2.996e+01 max=7.033e+00 n=30  dip b49/pred-1 med=-1.4343e-01 min=-8.755e-01 max=-1.448e-02 n=12  tp/(g/P)-1 med=-1.4343e-01 min=-8.755e-01 max=-1.448e-02 n=12
+                              [T3] EQUAL-ANGLE FALSIFIER (stationary draws ONLY: 0 draws x 3 random u)  #(lambda_1 < cf1 - floor)=0  #(grid points with a real descent)=0  deepest apparent dip n/a  gap n/a  thr=1e-12*gap n/a  #(g<=1e-12)=0/1
+                                  generic draws, STEEPEST ray (context, NOT the falsifier): #(below-floor)=89167  #(real descent)=89167  #(round-off band)=0  deepest dip med=-4.3245e-03 min=-1.024e-02 max=-2.039e-04 n=30  #(g<=1e-12)=0/30
+                              [T6] #(P<=0)=18 #(L2<=0)=15  #(no upper crossing)=18  #(P>0 but no crossing)=0
+                              [T5] angle(v*,v1) med=1.0686e+00 min=2.872e-01 max=1.553e+00 n=30  angle/theta* med=5.0468e-01 min=4.959e-01 max=2.452e+00 n=12  gapfrac(lambda_1(v*)) med=9.9292e-01 min=8.619e-01 max=9.993e-01 n=30
+  q=3 equal-angled d=0.01deg: n= 30 stationary=0 skipped=0  dimE0=[1]
+                              [T0] |v1'A0u|/c2 med=6.8750e-17 min=0.000e+00 max=3.143e-16 n=30  eB med=6.9143e-16 min=5.029e-16 max=1.509e-15 n=30  eC med=8.6517e-16 min=6.143e-16 max=2.175e-15 n=30  eT med=5.9856e-14 min=1.665e-14 max=1.638e-13 n=30  cubic-resid med=3.2869e-15 min=4.857e-17 max=5.306e-13 n=17  rand-u worst med=1.1602e-13 min=3.055e-14 max=3.272e-12 n=30
+                              [T1] theta*/atan(x_cubic)-1 med=-4.8850e-15 min=-3.884e-13 max=1.361e-13 n=17  theta* med=1.0242e+00 min=3.490e-01 max=1.548e+00 n=17  x_hi=2g/P med=1.6436e+00 min=3.640e-01 max=4.338e+01 n=17  theta*/atan(x_hi)-1 med=9.6754e-07 min=1.121e-07 max=3.712e-06 n=17  #(cubic has no positive root)=13  #(no bisected crossing)=13  #(root exists but no crossing)=0
+                              [T1b] THIRD-ORDER relative correction of x_hi: predicted kappa*D^2*x_hi^2/P med=9.2895e-06 min=1.390e-07 max=1.673e-01 n=17  measured theta*/atan(x_hi)-1 med=9.6754e-07 min=1.121e-07 max=3.712e-06 n=17  ratio measured/pred-1 med=-8.8286e-01 min=-1.000e+00 max=-1.870e-01 n=17
+                              [T1c] BISECTION NOISE FLOOR (registered: implied < 1e-14): |dlambda/dtheta| at theta* med=6.8071e-03 min=1.720e-03 max=1.403e-02 n=17  implied lambda-mismatch between the two exact routes med=6.5888e-17 min=4.534e-18 max=3.262e-16 n=17  => theta-level disagreement is solver noise, not an iff exception, iff implied << gap
+                                  [T1c-selfcheck] max |implied - slop*|theta-atan(xc)||=0.00e+00  worst implied=3.262e-16 (slop=6.374e-03 theta=7.2812e-01 xcubic=8.915452e-01 r_bisect=-7.028e-14)  bound slop_max*r_max*xc_max=8.433e-15  CONSISTENT
+                              [T2] L1/(drdt*A1)-1 med=0.0000e+00 min=-6.217e-15 max=4.219e-15 n=30  L2/(drdt*A2)-1 med=2.7955e-02 min=-1.532e+00 max=5.197e+00 n=30  dip b49/pred-1 med=-1.7571e-01 min=-8.386e-01 max=-1.013e-02 n=17  tp/(g/P)-1 med=-1.7571e-01 min=-8.386e-01 max=-1.013e-02 n=17
+                              [T3] EQUAL-ANGLE FALSIFIER (stationary draws ONLY: 0 draws x 3 random u)  #(lambda_1 < cf1 - floor)=0  #(grid points with a real descent)=0  deepest apparent dip n/a  gap n/a  thr=1e-12*gap n/a  #(g<=1e-12)=0/1
+                                  generic draws, STEEPEST ray (context, NOT the falsifier): #(below-floor)=88849  #(real descent)=88849  #(round-off band)=0  deepest dip med=-3.2207e-03 min=-1.291e-02 max=-1.513e-04 n=30  #(g<=1e-12)=0/30
+                              [T6] #(P<=0)=13 #(L2<=0)=11  #(no upper crossing)=13  #(P>0 but no crossing)=0
+                              [T5] angle(v*,v1) med=9.1631e-01 min=1.860e-01 max=1.542e+00 n=30  angle/theta* med=5.5993e-01 min=4.930e-01 max=4.194e+00 n=17  gapfrac(lambda_1(v*)) med=9.8646e-01 min=4.881e-01 max=9.985e-01 n=30
+   q=3 equal-angled d=0.1deg: n= 30 stationary=0 skipped=0  dimE0=[1]
+                              [T0] |v1'A0u|/c2 med=1.1772e-16 min=0.000e+00 max=3.453e-16 n=30  eB med=7.5342e-16 min=5.023e-16 max=1.507e-15 n=30  eC med=9.1348e-16 min=4.696e-16 max=1.226e-15 n=30  eT med=7.5336e-14 min=2.524e-14 max=5.542e-13 n=30  cubic-resid med=1.5208e-15 min=0.000e+00 max=6.938e-14 n=17  rand-u worst med=1.3188e-13 min=2.831e-14 max=6.281e-13 n=30
+                              [T1] theta*/atan(x_cubic)-1 med=5.9952e-15 min=-9.115e-14 max=2.458e-13 n=17  theta* med=9.6469e-01 min=2.286e-01 max=1.489e+00 n=17  x_hi=2g/P med=1.4385e+00 min=2.326e-01 max=1.217e+01 n=17  theta*/atan(x_hi)-1 med=1.0994e-04 min=7.643e-06 max=1.408e-03 n=17  #(cubic has no positive root)=13  #(no bisected crossing)=13  #(root exists but no crossing)=0
+                              [T1b] THIRD-ORDER relative correction of x_hi: predicted kappa*D^2*x_hi^2/P med=9.5411e-04 min=8.344e-06 max=5.806e-01 n=17  measured theta*/atan(x_hi)-1 med=1.0994e-04 min=7.643e-06 max=1.408e-03 n=17  ratio measured/pred-1 med=-8.4105e-01 min=-9.996e-01 max=-8.401e-02 n=17
+                              [T1c] BISECTION NOISE FLOOR (registered: implied < 1e-14): |dlambda/dtheta| at theta* med=4.7480e-03 min=8.437e-04 max=1.502e-02 n=17  implied lambda-mismatch between the two exact routes med=5.1633e-17 min=9.141e-18 max=3.277e-16 n=17  => theta-level disagreement is solver noise, not an iff exception, iff implied << gap
+                                  [T1c-selfcheck] max |implied - slop*|theta-atan(xc)||=0.00e+00  worst implied=3.277e-16 (slop=1.393e-03 theta=9.5698e-01 xcubic=1.419223e+00 r_bisect=2.458e-13)  bound slop_max*r_max*xc_max=5.496e-15  CONSISTENT
+                              [T2] L1/(drdt*A1)-1 med=0.0000e+00 min=-3.664e-15 max=6.661e-15 n=30  L2/(drdt*A2)-1 med=2.6339e-02 min=-2.814e+00 max=1.687e+00 n=30  dip b49/pred-1 med=-1.0891e-01 min=-6.279e-01 max=-4.343e-03 n=17  tp/(g/P)-1 med=-1.0891e-01 min=-6.279e-01 max=-4.343e-03 n=17
+                              [T3] EQUAL-ANGLE FALSIFIER (stationary draws ONLY: 0 draws x 3 random u)  #(lambda_1 < cf1 - floor)=0  #(grid points with a real descent)=0  deepest apparent dip n/a  gap n/a  thr=1e-12*gap n/a  #(g<=1e-12)=0/1
+                                  generic draws, STEEPEST ray (context, NOT the falsifier): #(below-floor)=88870  #(real descent)=88870  #(round-off band)=0  deepest dip med=-2.5637e-03 min=-9.006e-03 max=-5.974e-05 n=30  #(g<=1e-12)=0/30
+                              [T6] #(P<=0)=13 #(L2<=0)=11  #(no upper crossing)=13  #(P>0 but no crossing)=0
+                              [T5] angle(v*,v1) med=8.2554e-01 min=1.327e-01 max=1.546e+00 n=30  angle/theta* med=5.4928e-01 min=4.957e-01 max=1.701e+00 n=17  gapfrac(lambda_1(v*)) med=9.8596e-01 min=5.511e-01 max=9.987e-01 n=30
+     q=3 equal-angled d=1deg: n= 30 stationary=0 skipped=0  dimE0=[1]
+                              [T0] |v1'A0u|/c2 med=1.2419e-16 min=0.000e+00 max=3.726e-16 n=30  eB med=6.2093e-16 min=3.726e-16 max=1.242e-15 n=30  eC med=8.3936e-16 min=5.296e-16 max=1.302e-15 n=30  eT med=4.4006e-14 min=1.690e-14 max=1.042e-13 n=30  cubic-resid med=1.4371e-16 min=0.000e+00 max=3.075e-12 n=28  rand-u worst med=4.8377e-14 min=1.614e-14 max=6.512e-13 n=30
+                              [T1] theta*/atan(x_cubic)-1 med=-2.2538e-14 min=-1.264e-11 max=3.564e-13 n=28  theta* med=5.8304e-01 min=5.378e-02 max=1.562e+00 n=28  x_hi=2g/P med=6.6303e-01 min=5.383e-02 max=1.196e+02 n=29  theta*/atan(x_hi)-1 med=3.9684e-03 min=4.089e-05 max=1.585e-02 n=28  #(cubic has no positive root)=2  #(no bisected crossing)=2  #(root exists but no crossing)=0
+                              [T1b] THIRD-ORDER relative correction of x_hi: predicted kappa*D^2*x_hi^2/P med=9.2585e-03 min=4.108e-05 max=5.482e+04 n=29  measured theta*/atan(x_hi)-1 med=3.9684e-03 min=4.089e-05 max=1.585e-02 n=28  ratio measured/pred-1 med=-4.4111e-01 min=-1.000e+00 max=-4.689e-03 n=28
+                              [T1c] BISECTION NOISE FLOOR (registered: implied < 1e-14): |dlambda/dtheta| at theta* med=5.3213e-03 min=5.518e-04 max=1.263e-02 n=28  implied lambda-mismatch between the two exact routes med=9.5541e-17 min=1.799e-18 max=3.750e-16 n=28  => theta-level disagreement is solver noise, not an iff exception, iff implied << gap
+                                  [T1c-selfcheck] max |implied - slop*|theta-atan(xc)||=0.00e+00  worst implied=3.750e-16 (slop=5.518e-04 theta=5.3780e-02 xcubic=5.383200e-02 r_bisect=-1.264e-11)  bound slop_max*r_max*xc_max=2.493e-13  CONSISTENT
+                              [T2] L1/(drdt*A1)-1 med=-5.5511e-17 min=-2.887e-15 max=4.219e-15 n=30  L2/(drdt*A2)-1 med=7.5672e-02 min=-5.061e-02 max=1.433e+01 n=30  dip b49/pred-1 med=-7.2566e-02 min=-9.348e-01 max=-5.387e-04 n=29  tp/(g/P)-1 med=-7.2566e-02 min=-9.348e-01 max=-5.387e-04 n=29
+                              [T3] EQUAL-ANGLE FALSIFIER (stationary draws ONLY: 0 draws x 3 random u)  #(lambda_1 < cf1 - floor)=0  #(grid points with a real descent)=0  deepest apparent dip n/a  gap n/a  thr=1e-12*gap n/a  #(g<=1e-12)=0/1
+                                  generic draws, STEEPEST ray (context, NOT the falsifier): #(below-floor)=86051  #(real descent)=86051  #(round-off band)=0  deepest dip med=-9.6532e-04 min=-5.913e-03 max=-7.422e-06 n=30  #(g<=1e-12)=0/30
+                              [T6] #(P<=0)=1 #(L2<=0)=1  #(no upper crossing)=2  #(P>0 but no crossing)=1
+                              [T5] angle(v*,v1) med=3.6223e-01 min=2.844e-02 max=1.291e+00 n=30  angle/theta* med=5.1049e-01 min=4.741e-01 max=7.739e+00 n=28  gapfrac(lambda_1(v*)) med=9.5503e-01 min=3.797e-01 max=9.907e-01 n=30
+     q=3 equal-angled d=5deg: n= 30 stationary=0 skipped=0  dimE0=[1]
+                              [T0] |v1'A0u|/c2 med=6.6934e-17 min=0.000e+00 max=2.975e-16 n=30  eB med=7.1396e-16 min=3.570e-16 max=1.190e-15 n=30  eC med=8.3908e-16 min=4.505e-16 max=2.125e-15 n=30  eT med=7.6097e-15 min=3.411e-15 max=1.995e-14 n=30  cubic-resid med=1.4790e-17 min=0.000e+00 max=7.876e-17 n=30  rand-u worst med=1.1038e-14 min=4.763e-15 max=2.315e-14 n=30
+                              [T1] theta*/atan(x_cubic)-1 med=1.2990e-14 min=-8.395e-12 max=4.049e-12 n=30  theta* med=9.1330e-02 min=1.322e-02 max=2.727e-01 n=30  x_hi=2g/P med=9.1495e-02 min=1.322e-02 max=2.781e-01 n=30  theta*/atan(x_hi)-1 med=8.4579e-04 min=2.115e-05 max=5.464e-03 n=30  #(cubic has no positive root)=0  #(no bisected crossing)=0  #(root exists but no crossing)=0
+                              [T1b] THIRD-ORDER relative correction of x_hi: predicted kappa*D^2*x_hi^2/P med=8.5437e-04 min=2.115e-05 max=6.087e-03 n=30  measured theta*/atan(x_hi)-1 med=8.4579e-04 min=2.115e-05 max=5.464e-03 n=30  ratio measured/pred-1 med=-1.1005e-02 min=-1.025e-01 max=-2.280e-04 n=30
+                              [T1c] BISECTION NOISE FLOOR (registered: implied < 1e-14): |dlambda/dtheta| at theta* med=3.9249e-03 min=7.267e-04 max=8.138e-03 n=30  implied lambda-mismatch between the two exact routes med=1.2247e-16 min=3.417e-18 max=3.155e-16 n=30  => theta-level disagreement is solver noise, not an iff exception, iff implied << gap
+                                  [T1c-selfcheck] max |implied - slop*|theta-atan(xc)||=0.00e+00  worst implied=3.155e-16 (slop=2.307e-03 theta=8.3636e-02 xcubic=8.383126e-02 r_bisect=-1.635e-12)  bound slop_max*r_max*xc_max=1.863e-14  CONSISTENT
+                              [T2] L1/(drdt*A1)-1 med=-2.7756e-16 min=-3.553e-15 max=3.775e-15 n=30  L2/(drdt*A2)-1 med=1.0305e-02 min=2.786e-04 max=7.271e-02 n=30  dip b49/pred-1 med=-1.0200e-02 min=-6.778e-02 max=-2.785e-04 n=30  tp/(g/P)-1 med=-1.0200e-02 min=-6.778e-02 max=-2.785e-04 n=30
+                              [T3] EQUAL-ANGLE FALSIFIER (stationary draws ONLY: 0 draws x 3 random u)  #(lambda_1 < cf1 - floor)=0  #(grid points with a real descent)=0  deepest apparent dip n/a  gap n/a  thr=1e-12*gap n/a  #(g<=1e-12)=0/1
+                                  generic draws, STEEPEST ray (context, NOT the falsifier): #(below-floor)=79002  #(real descent)=79002  #(round-off band)=0  deepest dip med=-8.9668e-05 min=-5.797e-04 max=-2.401e-06 n=30  #(g<=1e-12)=0/30
+                              [T6] #(P<=0)=0 #(L2<=0)=0  #(no upper crossing)=0  #(P>0 but no crossing)=0
+                              [T5] angle(v*,v1) med=5.1259e-02 min=7.012e-03 max=1.631e-01 n=30  angle/theta* med=5.5859e-01 min=5.024e-01 max=7.592e-01 n=30  gapfrac(lambda_1(v*)) med=8.1771e-01 min=1.191e-01 max=9.230e-01 n=30
+
+==================================================================================================================================
+[T4b] log-log slopes of the ladder medians (the registered test is on THESE numbers):
+   slope log(xhi) vs log(d) = -0.2768  band [-0.2,0.2]  FALSIFIED  vals=[1.338 1.644 1.439 0.663 0.091]
+   slope log(g) vs log(d) = +0.0209  band [-0.2,0.2]  PASS  vals=[0.091 0.11  0.086 0.105 0.118]
+   slope log(P) vs log(d) = +0.7078  band [-0.2,0.2]  FALSIFIED  vals=[0.036 0.025 0.265 2.648]
+   slope log(D) vs log(d) = +1.0064  band [0.7,1.3]  PASS  vals=[1.496e-05 1.828e-04 1.538e-03 1.542e-02 8.792e-02]
+   slope log(dipfrac): only 0 positive finite medians -- not fit, reported
+
+==================================================================================================================================
+判读（预登记，跑前写）
+  T0 恒等式门（射线闭式 vs 直接计算、T 两种算法、立方在自身根上的残差、v1'A0u=0）：任一项 >1e-10
+     就把后面全部作废 —— 这是 (p) 号撤回的失败模式，所以先跑并且逐抽样打印。
+     几何网格（1e-10..pi/2，3000 点）是按规则 11 选的：b51 的 linspace 左端点就是统计量的天花板，
+     而边界层宽度可到 1e-5，均匀网会整段漏掉下降区。
+  T1 二分出的精确边界 vs 立方根：两者都是**精确量**，比值应在 1e-8 内。>1e-6 则 lem:margin 的 iff
+     在某个方向上有例外（最贵失败，参照物是独立求根器，不是我自己的代数）。
+     x_hi=2g/P 与 tp=g/P 是**截断**，只报比值不登记方向；它们与精确值的偏离量本身是信息。
+  T2 跨道核对 L1：手算已证 F_lambda = c^2(2t1mu-1-t1)、F_C = -mu(1-mu)、c1 = 2g，于是 b49 的 L1
+     与 (dr/dt)A1 恒等，比值 >1e-6 说明章节里 rem:chord 的 dip 公式与 lem:margin 有一个是错的。
+     L2 与 dip 的比值**不预登记符号**：差的正是 r 的二阶项。
+  T3 等角端点：D=g=0，立方成 P x(x^2+1)=0 且 P=t1c^2-b>0 ⇒ 唯一实根 x=0，下降边界就坐在 v1 上，
+     也就是下降集为空。证伪器 = 任一 theta 使 lambda_1 < cf_1 - floor。
+     另：一般格里 #(g<=1e-12) 必须为 0，否则 x_hi=0 是平凡成立而非结构。
+  T4 插值（§48.11(b)）：我**先猜** x_hi ~ d，推导之后改成 x_hi 斜率 0（v1 由 A_0 的最大余弦选定，
+     与 d 无关；d=0 那一点 dimE0 跳到 q、选取规则换成 C-极大者，于是 g=0 —— 等角是孤立点，
+     不是极限）。注册的是斜率带；若 x_hi 斜率 >0.5，说明层真的塌缩，§48.11(b) 以连续陈述重开。
+     两条分支都是信息（规则 6），我不挑好看的那条。
+  T5 只测不猜：angle(v*,v1)/theta*。b53 说两个量级相同；比值不是 O(1) 则 §47.3 的「同一个量的
+     第二次计算」只是量级巧合，机制没接上，照直说。
+  T6 只数不平：#(P<=0)、#(L2<=0)、两者是否同侧、以及 #(扫描找不到上边界)。B-CLAIM-56(i) 要的
+     L2>0 在此归约为标量不等式 kappa(c^2-a)c^2 > b - t1 a；q=2 时垂直方向唯一 ⇒ 逐抽样即穷尽。
+
+==================================================================================================================================
+实测判读（跑后写，2026-10-01；三轮运行：run1 KeyError('resid')，run2 NaN→int 崩溃，run3 完整）
+----------------------------------------------------------------------------------------------------------------------------------
+[T0] 恒等式门 全部通过，且是逐抽样通过：
+     |v1'A0u|/c2 <= 2.1e-15（一般格 <= 5.1e-16）；eB <= 7.0e-15；eC <= 2.3e-15；
+     eT（射线闭式 vs 边距定义）<= 4.7e-14；立方在自身根上的残差 <= 3.1e-12（等角格 5.0e-32）；
+     三个随机 u 复核的最差恒等误差 <= 5.4e-15（等角格 <= 3.9e-13）。
+     ⇒ 后面所有数字是关于定理的，不是关于我的记账（规则 (p) 号教训的正面版）。
+
+[T1] 两条**精确**路线（立方首正根 vs 200 步二分）在 theta 上的相对偏离：一般格 med 1.1e-11..5.9e-7，
+     #(无正根)=0/#(有二分无根)=0 在全部一般格里。theta* 与 x_hi 在打印精度内相同。
+
+[T1c] 把偏离换算到求解器自己的单位（implied = |dlambda/dtheta| * |theta*-atan(x_cubic)|）：
+     十三格 med 5.2e-17..1.2e-16；除两个抽样外全部 <= 5.1e-16。
+     两个例外：spread 2-45-88 一格 1.08e-10、q=4 一格 5.59e-11，两者的 theta* 都正好是
+     1.03e-10 / 1.07e-10 = 几何网格的**左端点**（1e-10）。⇒ 这不是立方失败，而是下降判据在
+     第一个网格点上被舍入触发，二分 bracket 了一个不存在的东西。
+     b57b_implied_outlier.py（同格、新流、40 抽样）：#(下降块 > 1)=0、#(正根 > 1)=0、
+     #(nblocks != npos)=0，最差 implied 4.63e-16，#(>1e-14)=0/40 ⇒ 配对无歧义、现象不重现。
+     **[自己的缺陷 #3]**：我为规避 b51 的 linspace 左端点缺陷（撤回 (p)）改用 geomspace，却把
+     左端点取在 1e-10 —— 端点缺陷跟着参数化跑过来了。修法：要么把左端点推到 1e-14 并要求下降
+     持续 >= 2 个网格点，要么把「theta* 恰等于网格端点」直接判为伪。本轮按报告处理，不抹平。
+     **[自己的缺陷 #4]**：[T1c-selfcheck] 在等角格打印 INCONSISTENT —— 因为界用 nanmax(r_bisect)，
+     而那格的 r_bisect 全为 nan（stationary 分支不产生它）。是界的定义域问题，不是数据问题。
+
+[T1b] 二射根 x_hi=2g/P 的**一阶根位移** kappa*D^2*x^2/(P(1+x^2))：
+     可检验（位移 > 噪声底）的四格：5-75 med 2.93e-7 vs 预测 2.93e-7（比 1+2.1e-5）、
+     30-88-89 8.41e-7 vs 8.41e-7（+2.3e-5）、q=4 1.97e-6 vs 1.97e-6（-2.0e-5）、
+     q=2 1.97e-7 vs 1.96e-7（-3.8e-5）。⇒ 位移公式在 x_hi <= 2.9e-3 处对到 4e-5 相对精度。
+     其余格：预测位移低于噪声底（mix 格：预测 3.5e-10，实测 5.9e-7 全是二分噪声），
+     或 x_hi=O(1)（ladder 格：预测 9.3e-3 实测 4.0e-3，比 -0.44）⇒ 一阶微扰在自己的小量
+     失效处失效，这是**范围陈述**而不是失败。
+
+[T2] 跨道核对：L1/(drdt*A1)-1 med 2.2e-16，逐抽样最差 4.5e-14 ⇒ b49 的 L1 与
+     (dr/dt)*A1 恒等（证明已在手，这是数值确认）。L2 是截断：med 2.6e-6..2.6e-4。
+     dip 比 med -2.5e-5..-2.9e-7（同号后成立）。
+     **[自己的缺陷 #1]**：首版 pred_dip 用正号而 b49 的 dip=-L1^2/(4L2)<0，于是比值恒打印 -2.0000。
+     我差一点把它读成「量级差两倍」。**[自己的缺陷 #2]**：下降判据阈值取 1e-12*gap，而等角格
+     gap=4.8e-5 ⇒ 阈值 4.8e-17 **低于**本轮实测的 lambda 噪声底 1e-16，于是那格打印
+     「4713 个真实下降点」全是噪声；决定性的 floor 判据给 0/120 射线。规则 (9) 的绝对阈值
+     必须登记在真正被求值的表达式上 —— 这次是它的新版本：阈值必须**高于**同一轮实测的噪声底。
+
+[T3] 等角端点（cor:equal）证伪器：40 个抽样 x 3 个随机 u = 120 条射线，
+     #(lambda_1 < cf1 - floor) = **0**；最深表观下降 2.0e-16（gap 4.8e-5）；
+     #(g<=1e-12)=40/40，x_hi 的量级 8e-17。⇒ cor:equal 通过它自己的证伪器。
+
+[T4] 插值梯（§48.11(b)）：注册带 x_hi/g/P/dipfrac 斜率 [-0.2,0.2]、D 斜率 [0.7,1.3]。
+     实测：x_hi **-0.2768 证伪**、g +0.0209 通过、P **+0.7078 证伪**、D +1.0064 通过、
+     dipfrac 无正有限中位（无法拟合）。
+     读法：d<=0.1deg 时 P<=0 在 13..18/30 抽样，那些射线**没有上边界**（下降区一路到 pi/2），
+     theta* med 0.93..1.02 弧度 —— 层不塌缩，反而**爆开**。
+     ⇒ §48.11(b) 的插值问题答案是**否**：不存在以 eta=||A0-c^2 I_q|| 为参量的连续陈述，
+     因为 A0 的**顶特征值重合时 v1 不再由数据决定**（章节在 t1 定义处已有这条警告）。
+     控制这个区间的参量是顶特征值间距，不是范数缺陷。附带正面收获：近退化格里
+     lambda_1(v*) 收回 gap 的 0.986..0.993（一般格 0.09..0.44）——方向腿的价值随顶退化而增，
+     这与「小 q 才有效」的 (q) 号撤回不矛盾，但需要一个新的参量来表述。
+
+[T5] angle(v*,v1)/theta*：两个确定性 mix 格 **恰好 0.5000**（min=max），抽样格 0.493..0.551。
+     ⇒ 精确纤维极小者坐在下降层**半径的一半**，与平稳角 g/P = x_hi/2 一致；
+     且 tp/(g/P)-1 med -2.9e-7..-3.8e-5 ⇒ 二阶截断的平稳角就是精确极小者的方向，到 4e-5。
+     这是本轮最强的可引用陈述（比 §48.10 的 B-CLAIM-59 更强，因为它有闭式）。
+
+[T6] #(P<=0)=0 且 #(L2<=0)=0 在全部一般格（8 格 x 40）；ladder 的近退化格才出现 P<=0，
+     且 P<=0 与「二分值不存在」逐格同数（13/13、18/18、1/1）。
+     ⇒ B-CLAIM-56(i) 的 L2>0 在此归约为标量不等式，且一般方向上实测成立；
+     等式侧 P>0 ⟺ A2<0 ⟺ 层有界，这一条现在有 8 格 x 40 抽样的 0 例外支持（不是证明）。
+
+判读结论：本轮**没有**证伪 lem:cubic 的任何部分；四次自我缺陷全部在检查侧，其中缺陷 #3
+（左端点）是我上一轮刚立的规则的重犯，值得进 community.md 的规则清单。
+下一轮：(a) 把缺陷 #3 的修法实现（要求下降持续 >=2 网格点）并重跑一次以确认 470 抽样的
+max implied <= 1e-15；(b) 顶特征值间距作为参量的正式陈述 —— 需要 Wielandt/夹角界，先查文献
+（本轮仍未爬：两次查询都被 Rate exceeded 挡住，见 §48.8）；(c) 不再投射线腿的闭式拟合。
+

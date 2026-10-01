@@ -1,0 +1,10 @@
+=== d=10 p=4 q=3: ||Lambda_E^-1 H||_2^2 median=0.12809 mean=0.12959 q90=0.14896 (1/d=0.1000) ===
+ alpha      q4_pred q4_meas(b28)         diff
+     2      0.94770       0.9478     -0.00010
+     5      0.94797         None            -
+    20      0.95277         None            -
+    45      0.97120         None            -
+    85      0.99951       0.9996     -0.00009
+
+if |q4_pred - q4_meas| < 1e-3 the slack of the certificate is fully analytic:
+it is the eps=1 Young step, and nothing else (no sampling, no noise, no dictionary scale).

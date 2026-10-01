@@ -1,0 +1,6 @@
+numpy>=1.26
+scipy>=1.11
+
+# Only two exploratory scripts in scripts/agent_a/ (d13_nonlinear_corrector.py,
+# d16_ranks_and_H_sweep.py) import torch; neither supports a claim in the paper.
+# torch>=2.0

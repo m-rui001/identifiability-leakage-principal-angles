@@ -1,0 +1,26 @@
+==============================================================================
+[D5] 400 组随机谱 (d=8, n=20, ||E||=1e-3, tau=1) 的相对脆弱性 frag=|dI|/I
+  frag:  min=7.945e-07  median=2.158e-04  max=1.509e-03  跨度=1899.8x
+
+  相关（frag 对 谱崩塌度）：
+    Spearman(frag, 参与率 PR)      = -0.088  p=7.87e-02
+    Spearman(frag, d_eff@tau=1)    = -0.263  p=9.61e-08
+    Spearman(frag, I_n)            = -0.296  p=1.58e-09
+
+  按 d_eff 分组的 frag 中位数：
+    d_eff=1: n=  32   median frag=4.907e-04   IQR=[1.87e-04, 8.04e-04]
+    d_eff=2: n=  41   median frag=2.919e-04   IQR=[1.73e-04, 4.92e-04]
+    d_eff=3: n=  42   median frag=2.379e-04   IQR=[1.13e-04, 4.52e-04]
+    d_eff=4: n=  53   median frag=2.911e-04   IQR=[1.18e-04, 4.95e-04]
+    d_eff=5: n=  45   median frag=2.091e-04   IQR=[1.01e-04, 3.10e-04]
+    d_eff=6: n=  61   median frag=2.041e-04   IQR=[9.80e-05, 4.33e-04]
+    d_eff=7: n=  53   median frag=1.573e-04   IQR=[8.77e-05, 2.57e-04]
+    d_eff=8: n=  73   median frag=1.837e-04   IQR=[1.10e-04, 3.11e-04]
+
+  按 PR 四分位分组：
+    PR∈[6.36,7.43]: median frag=2.502e-04  I_n 中位数=5.879
+    PR∈[7.43,7.75]: median frag=2.277e-04  I_n 中位数=9.494
+    PR∈[7.75,7.94]: median frag=2.556e-04  I_n 中位数=10.245
+    PR∈[7.94,8.00]: median frag=1.835e-04  I_n 中位数=14.023
+
+  判定：若 Spearman(frag, PR) 显著为负且跨度 ≥2x => A-CLAIM-7 成立；否则否证。

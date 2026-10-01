@@ -1,0 +1,52 @@
+=== QUERY: Welch lower bounds on the maximum cross correlation of signals IEEE Transactions Information Theory 1974
+  1974 | 10.1109/tit.1974.1055219 | Welch L | Lower bounds on the maximum cross correlation of signals (Corresp.) | IEEE Transactions on Information Theory
+  1990 | 10.1109/18.54881 | Kumar P | On lower bounds to the maximum correlation of complex roots-of-unity sequences | IEEE Transactions on Information Theory
+  None | 10.1109/isit.1994.394898 | Levenshtein V | Lower bounds on the cross-correlation for codes of a given size | Proceedings of 1994 IEEE International Symposium on Inf
+  1967 | 10.1109/tit.1967.1054020 | Yates R | Correlation function bounds for aperiodic signals (Corresp.) | IEEE Transactions on Information Theory
+=== QUERY: Gautschi orthogonal polynomials applications and computation Acta Numerica 1996
+  1996 | 10.1017/s0962492900002622 | Gautschi W | Orthogonal polynomials: applications and computation | Acta Numerica
+  2004 | 10.1093/oso/9780198506720.003.0005 | Gautschi W | Applications | Orthogonal Polynomials
+  2004 | 10.1093/oso/9780198506720.001.0001 | Gautschi W | Orthogonal Polynomials | ?
+  2004 | 10.1093/oso/9780198506720.003.0004 | Gautschi W | Computational Methods | Orthogonal Polynomials
+=== QUERY: Krein Nudelman Markov moment problem extremal problemsTranslations of Mathematical Monographs
+Traceback (most recent call last):
+  File "<string>", line 13, in <module>
+    print(f'  {y} | {it.get("DOI")} | {a} | {t} | {j}')
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'gbk' codec can't encode character '\u010c' in position 40: illegal multibyte sequence
+=== QUERY: Frisch Waugh 1933 partial time trends and marginal functions Review of Economic Statistics
+  1933 | 10.2307/1907330 | Frisch R | Partial Time Regressions as Compared with Individual Trends | Econometrica
+  2014 | 10.1002/9781118445112.stat03285 | ? | Partial Time Regression, Frisch©\Waugh Theorem for | Wiley StatsRef: Statistics Reference Online
+  2021 | 10.1016/j.spl.2020.108945 | Ding P | The Frisch¨CWaugh¨CLovell theorem for standard errors | Statistics &amp; Probability Letters
+  2025 | 10.1016/j.csda.2025.108208 | Song Y | A Frisch-Waugh-Lovell theorem for empirical likelihood | Computational Statistics &amp; Data Analysis
+=== QUERY: Lovell 1963 Seasonal adjustment of linear regression models and some partial tests Journal American Statistical Association
+  1963 | 10.1080/01621459.1963.10480682 | Lovell M | Seasonal Adjustment of Economic Time Series and Multiple Regression Analysis | Journal of the American Statistical Association
+  1966 | 10.2307/2282788 | Lovell M | Alternative Axiomatizations of Seasonal Adjustment | Journal of the American Statistical Association
+  1967 | 10.2307/2283819 | Lovell M | Corrigenda: Alternative Axiomatizations of Seasonal Adjustment | Journal of the American Statistical Association
+  1966 | 10.1080/01621459.1966.10480906 | Lovell M | Alternative Axiomatizations of Seasonal Adjustment | Journal of the American Statistical Association
+=== QUERY: Karpatne physics-guided deep learning knowledge incorporation spatio-temporal ecosystems IEEE Transactions Neural Networks
+  2023 | 10.1109/tnnls.2022.3153985 | Bohnstingl T | Online Spatio-Temporal Learning in Deep Neural Networks | IEEE Transactions on Neural Networks and Learning Syste
+  2022 | 10.1201/9781003143376-15 | Daw A | Physics-Guided Neural Networks (PGNN): An Application in Lake Temperature Modeling | Knowledge-Guided Machine Learning
+  2022 | 10.1201/9781003143376-16 | Jia X | Physics-Guided Recurrent Neural Networks for Predicting Lake Water Temperature | Knowledge-Guided Machine Learning
+  2018 | 10.1109/tie.2017.2716907 | Costilla-Reyes O | Deep Neural Networks for Learning Spatio-Temporal Features From Tomography Sensors | IEEE Transactions on Industrial Electronics
+=== QUERY: Willard integrating physics-based modeling and machine learning Journal of Machine Learning Research 2022
+  2022 | 10.3030/101001890 | ? | ? | ?
+  2022 | 10.52843/cassyni.ftzlk9 | Brunton S | Discrepancy Modeling with Physics Informed Machine Learning | ?
+  2022 | 10.2139/ssrn.4003919 | Tu H | Integrating Physics-Based Modeling with Machine Learning for Lithium-Ion Batteries | SSRN Electronic Journal
+  2025 | 10.1029/2025jh000732 | Willard J | Machine Learning Ensembles Can Enhance Hydrologic Predictions and Uncertainty Quantification | Journal of Geophysical Research: Machine Learning and C
+=== QUERY: Ljung gray-box modelling of nonlinear systems review
+  2006 | 10.1049/cp:20060456 | Mangourova V | Gray box modelling of arterial vasoaction | IET Irish Signals and Systems Conference (ISSC 2006)
+  2017 | 10.1016/j.ifacol.2017.08.1469 | Yu C | Gray Box Identification Using Difference of Convex Programming | IFAC-PapersOnLine
+  2009 | 10.3182/20090706-3-fr-2004.00215 | Ohlsson H | Gray-Box Identification for High-Dimensional Manifold Constrained Regression | IFAC Proceedings Volumes
+  1997 | 10.1007/978-1-4615-6281-8_26 | Ljung L | Some Aspects of Nonlinear Black-Box Modeling in System Identification | Communications, Computation, Control, and Signal Proces
+=== QUERY: Szego orthogonal polynomials colloquium publications
+  1939 | 10.1090/coll/023/06 | ? | Zeros of orthogonal polynomials | Colloquium Publications
+  1939 | 10.1090/coll/023/03 | ? | General properties of orthogonal polynomials | Colloquium Publications
+  1939 | 10.1090/coll/023/12 | ? | Asymptotic properties of general orthogonal polynomials | Colloquium Publications
+  1939 | 10.1090/coll/023/11 | ? | Polynomials orthogonal on the unit circle | Colloquium Publications
+=== QUERY: Kato perturbation theory linear operators Springer classics
+  1995 | 10.1007/978-3-642-66282-9_9 | Kato T | Perturbation theory for semigroups of operators | Classics in Mathematics
+  1995 | 10.1007/978-3-642-66282-9_8 | Kato T | Asymptotic perturbation theory | Classics in Mathematics
+  1995 | 10.1007/978-3-642-66282-9_7 | Kato T | Analytic perturbation theory | Classics in Mathematics
+  1995 | 10.1007/978-3-642-66282-9 | Kato T | Perturbation Theory for Linear Operators | Classics in Mathematics
+ALLDONE

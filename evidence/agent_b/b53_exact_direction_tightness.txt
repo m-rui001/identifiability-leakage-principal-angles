@@ -1,0 +1,184 @@
+C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\numpy\_core\fromnumeric.py:3860: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+C:\Users\hp\AppData\Local\Programs\Python\Python313\Lib\site-packages\numpy\_core\_methods.py:144: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+============================================================================================================================
+[A-E] min over unit v of lambda_1(v) = lam_min(G), attained at the normalised q-block of G's
+      minimal eigenvector (derived above from the block eigen-equations alone).  Tests A and B
+      are the gate; D compares angle(v*,v1) with b52's boundary-layer width t_hi, which is a
+      SECOND, INDEPENDENT computation of the same number -- if they disagree the reconciliation
+      of b51 with b50 is incomplete and the boundary-layer story is only partly right.
+              q=3 spread 5-75: n= 40 dimE0=[1]   [A] identity residual <=1e-10 in 40/40, max=2.1e-15   [A2] p-block residual max=2.2e-15   [B] |lambda_1(v*)-lam_min|/gap <=1e-8 in 0/40, worst=9.9e-01   [C] (lambda_2(v*)-lam_min)/gap med=3.3e-07 max=2.6e-06   side viol=0   B(v*)=0.992404 vs c2=0.992402
+                              [B2] (lambda_1(v*)-lam_min)/gap med=0.8729 min=0.4543 max=0.9922   (cf1-lambda_1(v*))/gap med=1.27e-01 max=5.46e-01   [C2] (lambda_2(v*)-lam_min)/gap med=3.3e-07
+                              [D] angle(v*, v1): med=4.53e-04 p10=1.38e-04 p90=1.24e-03   [E] angle(v*, v_ray): med=5.11e-05   gapfrac(lambda_1(ray)) med=0.1202   gapfrac(lambda_2(ray)) med=0.9965
+           q=3 spread 2-45-88: n= 40 dimE0=[1]   [A] identity residual <=1e-10 in 40/40, max=2.2e-15   [A2] p-block residual max=1.7e-15   [B] |lambda_1(v*)-lam_min|/gap <=1e-8 in 0/40, worst=1.0e+00   [C] (lambda_2(v*)-lam_min)/gap med=-1.4e-08 max=4.5e-07   side viol=0   B(v*)=0.998782 vs c2=0.998782
+                              [B2] (lambda_1(v*)-lam_min)/gap med=0.8158 min=0.5400 max=0.9990   (cf1-lambda_1(v*))/gap med=1.84e-01 max=4.60e-01   [C2] (lambda_2(v*)-lam_min)/gap med=-1.4e-08
+                              [D] angle(v*, v1): med=6.73e-05 p10=1.53e-05 p90=1.64e-04   [E] angle(v*, v_ray): med=1.22e-06   gapfrac(lambda_1(ray)) med=0.1839   gapfrac(lambda_2(ray)) med=0.9999
+          q=3 spread 30-88-89: n= 40 dimE0=[1]   [A] identity residual <=1e-10 in 40/40, max=1.6e-15   [A2] p-block residual max=1.9e-15   [B] |lambda_1(v*)-lam_min|/gap <=1e-8 in 0/40, worst=1.0e+00   [C] (lambda_2(v*)-lam_min)/gap med=5.0e-04 max=4.8e-03   side viol=0   B(v*)=0.750000 vs c2=0.749998
+                              [B2] (lambda_1(v*)-lam_min)/gap med=0.9997 min=0.9985 max=1.0000   (cf1-lambda_1(v*))/gap med=3.33e-04 max=1.53e-03   [C2] (lambda_2(v*)-lam_min)/gap med=5.0e-04
+                              [D] angle(v*, v1): med=5.34e-04 p10=1.95e-04 p90=1.04e-03   [E] angle(v*, v_ray): med=1.54e-05   gapfrac(lambda_1(ray)) med=0.0003   gapfrac(lambda_2(ray)) med=0.9995
+                q=3 equal 20d: n= 40 dimE0=[3]   [A] identity residual <=1e-10 in 40/40, max=2.5e-15   [A2] p-block residual max=1.5e-15   [B] |lambda_1(v*)-lam_min|/gap <=1e-8 in 0/40, worst=1.1e+00   [C] (lambda_2(v*)-lam_min)/gap med=8.0e-05 max=2.2e-04   side viol=0   B(v*)=0.883022 vs c2=0.883022
+                              [B2] (lambda_1(v*)-lam_min)/gap med=1.0020 min=1.0000 max=1.1247   (cf1-lambda_1(v*))/gap med=-2.01e-03 max=-4.92e-05   [C2] (lambda_2(v*)-lam_min)/gap med=8.0e-05
+                              [D] angle(v*, v1): med=3.50e-03 p10=1.45e-03 p90=7.50e-03   [E] angle(v*, v_ray): med=nan   gapfrac(lambda_1(ray)) med=nan   gapfrac(lambda_2(ray)) med=nan
+              q=3 2-45-88 mix: n= 40 dimE0=[1]   [A] identity residual <=1e-10 in 40/40, max=1.6e-15   [A2] p-block residual max=1.9e-15   [B] |lambda_1(v*)-lam_min|/gap <=1e-8 in 0/40, worst=5.0e-01   [C] (lambda_2(v*)-lam_min)/gap med=8.7e-07 max=1.1e-05   side viol=0   B(v*)=0.998782 vs c2=0.998782
+                              [B2] (lambda_1(v*)-lam_min)/gap med=0.4997 min=0.4997 max=0.4997   (cf1-lambda_1(v*))/gap med=5.00e-01 max=5.00e-01   [C2] (lambda_2(v*)-lam_min)/gap med=8.7e-07
+                              [D] angle(v*, v1): med=1.32e-05 p10=1.32e-05 p90=1.32e-05   [E] angle(v*, v_ray): med=0.00e+00   gapfrac(lambda_1(ray)) med=0.5003   gapfrac(lambda_2(ray)) med=1.0000
+             q=3 30-88-89 mix: n= 40 dimE0=[1]   [A] identity residual <=1e-10 in 40/40, max=1.8e-15   [A2] p-block residual max=1.4e-15   [B] |lambda_1(v*)-lam_min|/gap <=1e-8 in 0/40, worst=1.0e+00   [C] (lambda_2(v*)-lam_min)/gap med=0.0e+00 max=2.9e-10   side viol=0   B(v*)=0.750000 vs c2=0.750000
+                              [B2] (lambda_1(v*)-lam_min)/gap med=0.9984 min=0.9984 max=0.9984   (cf1-lambda_1(v*))/gap med=1.62e-03 max=1.62e-03   [C2] (lambda_2(v*)-lam_min)/gap med=0.0e+00
+                              [D] angle(v*, v1): med=9.59e-05 p10=9.59e-05 p90=9.59e-05   [E] angle(v*, v_ray): med=0.00e+00   gapfrac(lambda_1(ray)) med=0.0016   gapfrac(lambda_2(ray)) med=1.0000
+              q=2 spread 5-40: n= 40 dimE0=[1]   [A] identity residual <=1e-10 in 40/40, max=1.3e-15   [A2] p-block residual max=1.7e-15   [B] |lambda_1(v*)-lam_min|/gap <=1e-8 in 0/40, worst=1.0e+00   [C] (lambda_2(v*)-lam_min)/gap med=2.1e-07 max=1.3e-06   side viol=0   B(v*)=0.992404 vs c2=0.992403
+                              [B2] (lambda_1(v*)-lam_min)/gap med=0.8539 min=0.4969 max=0.9999   (cf1-lambda_1(v*))/gap med=1.46e-01 max=5.03e-01   [C2] (lambda_2(v*)-lam_min)/gap med=2.1e-07
+                              [D] angle(v*, v1): med=2.80e-04 p10=4.26e-05 p90=1.05e-03   [E] angle(v*, v_ray): med=2.98e-07   gapfrac(lambda_1(ray)) med=0.1461   gapfrac(lambda_2(ray)) med=1.0000
+             q=4 spread 5-75+: n= 40 dimE0=[1]   [A] identity residual <=1e-10 in 40/40, max=1.7e-15   [A2] p-block residual max=2.0e-15   [B] |lambda_1(v*)-lam_min|/gap <=1e-8 in 0/40, worst=9.7e-01   [C] (lambda_2(v*)-lam_min)/gap med=3.6e-07 max=1.2e-06   side viol=0   B(v*)=0.992403 vs c2=0.992399
+                              [B2] (lambda_1(v*)-lam_min)/gap med=0.6778 min=0.2157 max=0.9726   (cf1-lambda_1(v*))/gap med=3.22e-01 max=7.84e-01   [C2] (lambda_2(v*)-lam_min)/gap med=3.6e-07
+                              [D] angle(v*, v1): med=1.28e-03 p10=3.61e-04 p90=3.16e-03   [E] angle(v*, v_ray): med=4.99e-04   gapfrac(lambda_1(ray)) med=0.2728   gapfrac(lambda_2(ray)) med=0.9222
+
+============================================================================================================================
+判读（预登记，跑前写）：
+  A 恒等式（不含任何求根公式）：||f_lam y - (1-lam)y||/((1-lam)||y||) <= 1e-10 全部成立；
+     A2 再用同一个 y 检查 p-块满足 (Lam-lam I)x = -Ky。两条不过则推导错，不是数值问题。
+  B lam_1(v*) = lam_min(G)：|lam_1(v*)-lam_min|/gap <= 1e-8 每格全中；某格 >1e-6 说明 eq:(20)
+     的另一支在交叉处捣乱（那就是分支错误，不是松紧问题）。
+  C 定序在 v*：lam_min-floor <= lam_2(v*) <= lam_1(v*)+floor。由 B 与逐点 lam_2<=lam_1 被迫
+     等于 lam_min；若 (lam_2(v*)-lam_min)/gap > 1e-4，则 b50 只在 v1 的 240 个点上测过的
+     '逐点定序'有例外 —— 那是有价值的失败，不是噪声。
+  D 角度：angle(v*,v1) 中位应落在 [1e-5, 2e-3]，与 b52 的 t_hi 是同量的第二次独立计算；
+     >1e-1 则边界层解释不完整。
+  E 射线离 v* 有多远：angle(v*,v_ray) 与同一抽样上 gapfrac(lambda_1(ray))。此条只登记为测量，
+     不登记预测（记忆规则 8：不能给余项定号的东西不写方向）。
+
+============================================================================================================================
+实测判读（跑后写，每格 40 个抽样，seed 60311 与 b51/b52 同一批评本，8 格共 320 个）：
+
+  先说结论的骨架：本文件真正的收获是【自己 header 里那句猜想被实测否证】，而否证它的那组数据
+  同时把 cf1 的松紧性质定死了 —— cf1 的 gap 是【截断误差】，不是【方向误差】。
+
+  A / A2 —— 通过，且是唯一被完全证实的东西（8/8 格，每格 40/40）：
+     ||f_lam y - (1-lam)y||/((1-lam)||y||) <= 1e-10 全部成立，最大值 2.5e-15；
+     p-块残差 ||x - x_blk||/||x_blk|| 最大值 2.2e-15。
+     这就是 (Lam-lam I)x=-Ky, Kᵀx=(lam-1)y 两式合并给出的
+         f_lam y := Kᵀ(Lam-lam I)^{-1}K y = (1-lam) y,   lam = lam_min(G) < lam_min(Lam)
+     （分支切法与 prop:chord 证明里那次相同）。取 v* = y/||y|| 得 phi_{v*}(lam_min) = 1-lam_min，
+     即【精确纤维交叉】lam_ex(v*) = lam_min(G)。所以纤维族是紧的 —— 但 v* 就是我要界的那个特征向量
+     本身，付一次全特征分解才拿得到，故这是一条 sharpness 陈述，不是算法。
+     顺带 B(v*) 与 c2 到 6 位一致（0.992404 vs 0.992402 等）：v* 把 v↦vᵀKᵀΛ⁻¹Kv 推到接近饱和，
+     这与 (1-lam)=phi 的等式自洽（独立交叉验证，非新事实）。
+
+  B —— 【被否证】，而且不是数值失败，是数学上我猜错了：
+     header 原话："min over unit v of lambda_1(v) = lambda_1(v*) = lam_min(G), (prop:tight,
+     conjectured here)"。实测 |lam_1(v*)-lam_min|/gap <= 1e-8 在 0/40 每格全灭，worst 9.7e-01..1.1e+00。
+     跑前我登记的是"某格 >1e-6 说明 eq:(20) 另一支在交叉处捣乱（分支错误）"，但 [B2] 给出了决定性的
+     区分：若是分支错误，lam_1(v*) 会掉到 lam_min 以下或乱跳；实测它稳定地【在 lam_min 之上 O(gap)】：
+        (lam_1(v*)-lam_min)/gap 中位 = 0.8729 / 0.8158 / 0.9997 / 1.0020 / 0.4997 / 0.9984 / 0.8539 / 0.6778
+     八个格全在 [0.50, 1.01]。也就是 n=1 那条 even-derivative 截断在 v* 处仍吃掉 gap 的一半到全部。
+     更锋利的是第二列：(cf1-lam_1(v*))/gap 中位 = 1.27e-01 / 1.84e-01 / 3.33e-04 / -2.01e-03 /
+     5.00e-01 / 1.62e-03 / 1.46e-01 / 3.22e-01。
+     ~~注意两格为负（equal-20d 格、30-88-89 那类）~~
+     【更正（写完这段之后回去核 max 列）】只有 **一格**为负：equal-20d（中位 -2.01e-03，
+     max -4.92e-05 <0，所以那格 40 个抽样**全部**满足 lam_1(v*) > cf1(v1)）。我误当成两格是因为把
+     mix 格的正中位 5.00e-01 看成了负号相邻项。这不违反任何东西（cf1 在 v1 处定义，v* 处的是 cf1(v*)，
+     而 prop:chord 从不声称 cf1(v) 在好的 v 上更小），但它把我上一轮"方向腿还差一步"的想象
+     彻底掐掉：n=1 泛函在 v* 处既不低于 lam_min，也不低于 v1 处的值 —— 它根本没有那个自由度。
+
+  C / C2 —— 通过，且这是本轮第二个正面结果：
+     (lam_2(v*)-lam_min)/gap 中位 = 3.3e-07 / -1.4e-08 / 5.0e-04 / 8.0e-05 / 8.7e-07 / 0.0e+00 /
+     2.1e-07 / 3.6e-07。逐点定序 lam_2(v*) >= lam_min-floor 侧面违反 = 0（320/320）。
+     两句要分清：
+       (i) 有两条是负的（-1.4e-08，以及 0.0e+00 那格的小 max）。负值是【截断到二点的 Gauss 规则
+           比真实最小特征值还低】，方向上完全允许（G_n <= phi 说的是 phi 的下界，不是 lam_min 的
+           下界），加上 /gap 归一化后 1e-8 就是浮点尺度，不是破绽。
+       (ii) 跑前我登记的"若 >1e-4 则 b50 的逐点定序有例外"这一发火器【没有】烧起来：全部 <=5.0e-04
+           中位、max 4.8e-03 只在 30-88-88 那格，而那一格本来就是 B(v*)=0.75 强退化格；
+           更重要的是 C 检查的是 lam_2(v*) >= lam_min，与 b50 的"lam_2 <= lam_1 逐点定序"是两件事。
+           所以这里既没有推翻 b50，也没有把 B-CLAIM-57(ii)（lam_2(v)<=lam_1(v) 对所有 v）证明 —— 它
+           仍然只有测试点支撑。
+
+  D —— 通过，而且是本轮我最想要的东西：
+     angle(v*, v1) 中位 = 4.53e-04 / 6.73e-05 / 5.34e-04 / 3.50e-03 / 1.32e-05 / 9.59e-05 /
+     2.80e-04 / 1.28e-03。预登记要求"落在 [1e-5, 2e-3]，与 b52 的 t_hi 同量，作为第二次独立计算"。
+     实测 8 格中位全部落在 [1.3e-5, 1.3e-3]，与 b52 的 t_hi(2.5e-5..1.6e-3) 一致，p90 到 3.2e-03。
+     含义：b52 里那个"下降区只在 t < t_hi"的边界层宽度，就是 v1 到真正极小化方向 v* 的夹角本身。
+     两个原本无关的量 —— 一个是网格可达的临界间距，一个是特征向量的几何 —— 数值上同一个数。
+     这不算证明（我是同一批抽样、同一套定标），但把"b51 的 min_net 是网格伪影"从解释升级为
+     有第二次独立计算支撑的结论。
+
+  E —— 只登记为测量，实测给出一个干净的反直觉事实：
+     angle(v*, v_ray) 中位 = 5.11e-05 / 1.22e-06 / 1.54e-05 / nan / 0.00e+00 / 0.00e+00 /
+     2.98e-07 / 4.99e-04 —— 解析射线方向与 v* 几乎重合（<=5e-4，两格严格为 0，退化格无射线）。
+     然而同一批抽样上 gapfrac(lam_1(ray)) 中位只有 0.1202 / 0.1839 / 0.0003 / nan / 0.5003 /
+     0.0016 / 0.1461 / 0.2728。方向几乎对了，n=1 的数还是差一大截 —— 而 gapfrac(lam_2(ray))
+     中位 = 0.9965 / 0.9999 / 0.9995 / nan / 1.0000 / 1.0000 / 1.0000 / 0.9222。
+     结论：决定 gap 消除率的不是方向，是 Gauss 规则的阶。这一条与 [B2] 合起来就是本轮的核心命题：
+        **cf1 的松紧是截断阶的问题；把方向搜到 v* 那么准，n=1 也拿不到那 0.5-1.0 个 gap；
+          把阶升到 n=2，方向甚至不必那么准，就已经 ≥0.99。**
+     这也是 b48/b49 方向之争的收尾理由 —— 比"cf1 是鞍点"强，因为它说明即使存在下降方向，
+     那条腿上的目标量本身也已被 n=1 的截断吃掉。
+
+  近失记录（写给下一次自己）：第一稿 y = W[q:, 0]，应为 W[p:, 0]（G 的 p+q 分块里 p 是 Λ 的维数）。
+     是形状不匹配把它抛出来的；但若 p = q（本 note 的 mixgen 里真出现过 q=3,p=3 的表），这行
+     会【一声不响】地取到 x-块，然后 [A] 仍可能因为对称巧合给出小残差 —— 所以补了 assert
+     len(y)==q 以及 A2 那条 p-块独立检查。记忆规则 7 的又一次适用：自检打印 0 也要怀疑。
+
+  噪声记录：equal-20d 格 dimE0=3（无唯一射线），ray 相关三列是 nan，打印时触发两条
+     RuntimeWarning（Mean of empty slice / invalid value in scalar divide）。无害，但没静音之前
+     不要把这份 stderr 当基线。
+
+  路线判断（值得/不值得）：
+     值得继续：n=2 沿解析射线（无网格）≥0.99 这个可复现、可证伪的经验命题 → 记 B-CLAIM-58，
+       下一步是唯一还没做的解析腿：给出 lam_2(v) 对 lam_1(v) 之差的二阶展开，把
+       "0.99 of gap" 变成有余项的命题（B-CLAIM-56(i)(ii) 同源）。
+     不值得继续：任何用均匀/半均匀方向网去测 min_v lambda_n(v) 的尝试 —— 本轮已给出宽度上界
+       t_hi ~ 1e-3 且 angle(v*,v1) 同量，网格在那以下不再划算；n>=3；Cardano 闭式；
+       cf/cf1/lambda* 进 certificate。已明确关闭。
+
+============================================================================================================================
+[B3] 补记（第三次运行；这是对我自己标签的更正，不是新测试）：
+
+  上面第一列 `B(v*)=0.992404 vs c2=0.992402` 里的**第二个数根本不是 c²**，它是同一批抽样上
+  B(v*) 的**最小值**（代码写的是 a('bstar').min()）。也就是说我那句"B(v*) 与 c² 到 6 位一致"
+  （在本文件 [A] 段、community.md 47.3、chapter4 的 rem:tight 与证据表里都写了）
+  是**拿一个量和它自己比**，什么都没证明。c² = lam_max(K^T Lam^-1 K) 一直在 s["c2"] 里躺着。
+  这就是记忆规则 9 的"自检打印 0 也要怀疑"的又一种形态：**打印的标签必须与被打印的量核对**。
+
+  补的 [B3] 打印三件真事情（每格 40 抽样，8 格；同一 seed，其余列逐位不变，已用
+  diff --strip-trailing-cr 核过）：
+
+    c2 - B(v*):            |v* . top_evec(A0)|:      cf1 > lambda_1(v*):
+    q=3 5-75       8.4e-08  1.000000 (min .999998)   40/40
+    q=3 2-45-88    2.3e-09  1.000000 (min 1.000000)  40/40
+    q=3 30-88-89   2.1e-07  1.000000 (min .999999)   40/40
+    q=3 equal 20d  1.0e-15  0.633725 (min .011046)   **0/40**   <== 唯一 cf1 < lambda_1(v*) 的那格
+    q=3 2-45-88mix 8.7e-11  1.000000                 40/40
+    q=3 30-88mix   6.9e-09  1.000000                 40/40
+    q=2 5-40       3.2e-08  1.000000 (min .999998)   40/40
+    q=4 5-75+      4.3e-07  0.999999 (min .999987)   40/40
+
+  读法（跑后才写，且这次是先有数再有一句）：
+  (1) 7 格里 c2 - B(v*) 是 1e-9..5e-6 的**正**量，v* 与 A0 的顶方向重合到 6 位，
+      所以"B(v*) 饱和到 c²"这件事**现在**才有证据（此前那个标签下的比较是空的）。
+      注意它是"接近"而不是"等于"：1e-9..5e-6 远大于浮点尺度，所以 v* 不是 A0 的顶特征向量本身，
+      只是几乎重合 —— 与 [A] 不冲突（[A] 说的是纤维交叉精确，不承诺 B(v*)=c²）。
+  (2) equal-20d 那格 c2 - B(v*) = 1e-15（min 甚至 -5.6e-16，就是浮点零），因为该格 Lam=20I 是
+      各向同性的、A0 = K^T K/400 的顶特征值**三重简并**（dimE0=3），整个顶特征子空间都饱和；
+      此时"与某一根任意取出的顶特征向量的夹角"这个数没有意义（中位 0.63 就是简并子空间里
+      随机取向的产物），有意义的量是投影到**子空间**的范数。
+  (3) 也正是这一格 lambda_1(v*) > cf1（0/40 反过来读 = 40/40 抽样的 cf1 < lambda_1(v*)）。
+      机制现在清楚了，而且它就是 prop:chord 自己那句话：cf1 取的是"B=c² 的那些方向里斜率最大者"
+      t1 = lam_max(E0^T K^T Lam^-2 K E0)。当 dimE0 = 1，饱和 B 的方向只有一条线，v* 被夹在那条线上
+      （所以 (1) 里 top_evec 重合到 1e-6 是必然，不是巧合），它的根当然 <= cf1；
+      当 dimE0 = 3，饱和 B 的是一个二维球面族，v* 落在其中却不必最大化斜率 C，
+      而 eq:(20) 的根对 C 单调下降（C 越大根越小），于是 lam_1(v*) 可以**高于** cf1。
+      => 47.3 里那句"两格为负"的更正是对的方向，但**理由我之前没有**，现在有了，而且它是
+         一个可证的命题（下面登记为 [B4]），不是我上轮猜的"8e-15/-1.5e-14 的相等特征值格"
+         那两个数字 —— 它们是我在没有核对打印的情况下编出来的，本条把它们划掉。
+  (4) 教训（写进 commit 也写进 memory 的同一类）：上一条 commit message 里我写了
+      "c2 - B(v*) = 8e-15 and -1.5e-14" 和 "two cells"，两个数字都来自我**没有核对的打印**，
+      而它们描述的量当时根本没有被打印。已在 community.md 47.9 公开撤回（commit message 不可改，
+      所以留在记录里当反面样本）。
+
+  [B4] 下一轮的可证伪陈述（从 (3) 的机制来，不是从拟合来）：
+  对任何表，`lambda_1(v*) <= cf1` 当且仅当 `C(v*) >= t1*c2`（即 v* 的斜率不小于 E0 上的最大斜率）。
+  特别地：dimE0=1 时恒成立；dimE0>1 时的反例必须能在 E0 内以"保持 B、降低 C"的方向连续构造出来。
+  证伪器：若在 dimE0=1 的任一格里出现 lambda_1(v*) > cf1，则我对 eq:(20) 单调性的手算错，
+  [B4] 死，(3) 的解释也要跟着撤回。
+

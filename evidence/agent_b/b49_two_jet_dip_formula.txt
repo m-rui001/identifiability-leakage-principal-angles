@@ -1,0 +1,97 @@
+======================================================================================================================
+[A-E] two-jet prediction of the steepest-ray dip: dip_pred = -L1^2/(4 L2), L1 = -F_C c1/F_lam.
+    Predicted ratios meas/pred -> 1 (dip) and t_meas/t_pred -> 1, with the dip ratio below 1
+    for large c1 (u is steepest only to first order).  FALSIFIER: a ratio near 0.7 or 1.3 at
+    small c1 -- then the implicit second derivative is wrong.
+              q=3 spread 5-75: n= 40 dimE0=[1] stationary=0 saddles=40  L2>0 in 40/40  viol=0  max| |v|-1 |=3.3e-16
+                              dip ratio meas/pred: all med= 1.000004 [small c1:  1.000000 | large c1:  1.000045]  range=[ 0.99996, 1.00026]  max|ratio-1|=2.60e-04
+                              t* ratio: med= 0.998967 range=[ 0.99355, 1.00717]   |c1| range=[1.80e-02,3.75e-01]   origin |lam(v1)-cf1| max=2.9e-16
+                              SIZE: med|dip_meas|=4.52e-08 med dip/gap=-0.1618 (b48 net: 0.07-0.50) min dip/gap=-0.5644 max=-0.0033
+                              [E] net vs ray: net beats ray in 32/40 draws (by >floor); med ray/net =  0.935  med|net dip|=4.70e-08  formula-predicted-gain > gap (impossible) in 0 draws
+           q=3 spread 2-45-88: n= 40 dimE0=[1] stationary=0 saddles=40  L2>0 in 40/40  viol=0  max| |v|-1 |=4.4e-16
+                              dip ratio meas/pred: all med= 0.999991 [small c1:  0.999985 | large c1:  0.999995]  range=[ 0.99988, 1.00007]  max|ratio-1|=1.23e-04
+                              t* ratio: med= 1.002201 range=[ 0.99331, 1.00772]   |c1| range=[1.48e-03,2.85e-01]   origin |lam(v1)-cf1| max=3.4e-16
+                              SIZE: med|dip_meas|=5.22e-10 med dip/gap=-0.1216 (b48 net: 0.07-0.50) min dip/gap=-0.4109 max=-0.0001
+                              [E] net vs ray: net beats ray in 7/40 draws (by >floor); med ray/net =  1.003  med|net dip|=5.23e-10  formula-predicted-gain > gap (impossible) in 0 draws
+          q=3 spread 30-88-89: n= 40 dimE0=[1] stationary=0 saddles=40  L2>0 in 40/40  viol=0  max| |v|-1 |=3.3e-16
+                              dip ratio meas/pred: all med= 0.999993 [small c1:  0.999994 | large c1:  0.999992]  range=[ 0.99996, 1.00001]  max|ratio-1|=4.04e-05
+                              t* ratio: med= 0.999315 range=[ 0.99322, 1.00665]   |c1| range=[6.95e-04,1.46e-02]   origin |lam(v1)-cf1| max=2.9e-16
+                              SIZE: med|dip_meas|=1.12e-07 med dip/gap=-0.0004 (b48 net: 0.07-0.50) min dip/gap=-0.0014 max=-0.0000
+                              [E] net vs ray: net beats ray in 0/40 draws (by >floor); med ray/net =  1.003  med|net dip|=1.11e-07  formula-predicted-gain > gap (impossible) in 0 draws
+                q=3 equal 20d: n= 40 dimE0=[3] stationary=40 saddles=0  L2>0 in 0/0  viol=0  max| |v|-1 |=0.0e+00
+              q=3 2-45-88 mix: n= 40 dimE0=[1] stationary=0 saddles=40  L2>0 in 40/40  viol=0  max| |v|-1 |=3.3e-16
+                              dip ratio meas/pred: all med= 0.999965 [small c1:  0.999965 | large c1:  0.999965]  range=[ 0.99995, 0.99997]  max|ratio-1|=4.53e-05
+                              t* ratio: med= 0.994018 range=[ 0.99402, 0.99402]   |c1| range=[2.18e-02,2.18e-02]   origin |lam(v1)-cf1| max=3.1e-16
+                              SIZE: med|dip_meas|=4.33e-11 med dip/gap=-0.5002 (b48 net: 0.07-0.50) min dip/gap=-0.5002 max=-0.5002
+                              [E] net vs ray: net beats ray in 0/40 draws (by >floor); med ray/net =  1.009  med|net dip|=4.29e-11  formula-predicted-gain > gap (impossible) in 0 draws
+             q=3 30-88-89 mix: n= 40 dimE0=[1] stationary=0 saddles=40  L2>0 in 40/40  viol=0  max| |v|-1 |=3.3e-16
+                              dip ratio meas/pred: all med= 0.999994 [small c1:  0.999994 | large c1:  0.999994]  range=[ 0.99999, 0.99999]  max|ratio-1|=5.86e-06
+                              t* ratio: med= 1.002419 range=[ 1.00242, 1.00242]   |c1| range=[9.35e-04,9.35e-04]   origin |lam(v1)-cf1| max=4.2e-16
+                              SIZE: med|dip_meas|=3.95e-09 med dip/gap=-0.0016 (b48 net: 0.07-0.50) min dip/gap=-0.0016 max=-0.0016
+                              [E] net vs ray: net beats ray in 0/40 draws (by >floor); med ray/net =  1.002  med|net dip|=3.94e-09  formula-predicted-gain > gap (impossible) in 0 draws
+              q=2 spread 5-40: n= 40 dimE0=[1] stationary=0 saddles=40  L2>0 in 40/40  viol=0  max| |v|-1 |=3.3e-16
+                              dip ratio meas/pred: all med= 1.000003 [small c1:  0.999982 | large c1:  1.000085]  range=[ 0.99997, 1.00034]  max|ratio-1|=3.38e-04
+                              t* ratio: med= 0.998239 range=[ 0.99368, 1.00611]   |c1| range=[3.67e-03,4.15e-01]   origin |lam(v1)-cf1| max=2.8e-16
+                              SIZE: med|dip_meas|=3.17e-08 med dip/gap=-0.2287 (b48 net: 0.07-0.50) min dip/gap=-0.5689 max=-0.0010
+                              [E] net vs ray: net beats ray in 2/40 draws (by >floor); med ray/net =  1.004  med|net dip|=3.16e-08  formula-predicted-gain > gap (impossible) in 0 draws
+             q=4 spread 5-75+: n= 40 dimE0=[1] stationary=0 saddles=40  L2>0 in 40/40  viol=0  max| |v|-1 |=2.2e-16
+                              dip ratio meas/pred: all med= 1.000048 [small c1:  1.000012 | large c1:  1.000153]  range=[ 0.99998, 1.00100]  max|ratio-1|=9.98e-04
+                              t* ratio: med= 1.001482 range=[ 0.99338, 1.00571]   |c1| range=[2.59e-02,5.46e-01]   origin |lam(v1)-cf1| max=3.7e-16
+                              SIZE: med|dip_meas|=1.13e-07 med dip/gap=-0.2298 (b48 net: 0.07-0.50) min dip/gap=-0.7642 max=-0.0068
+                              [E] net vs ray: net beats ray in 31/40 draws (by >floor); med ray/net =  0.906  med|net dip|=1.20e-07  formula-predicted-gain > gap (impossible) in 0 draws
+
+======================================================================================================================
+判读（预登记，跑前写的；实测判读附在文件末尾）：
+  A 小 |c1| 处 dip 比值应在 1 附近（[0.9,1.1]）；大 |c1| 处允许偏低（u 只一阶最陡）。
+     若小 c1 处比值≈0.7 或 1.3 => 我的隐函数二阶导账目错，公式作废。
+  B t* 比值应 -> 1；这是更锐的检验（不含小量平方）。
+  C L2<=0 的抽样不参与判读（射线上无内点极小），但要报告比例。
+  D 射线上 viol 必须为 0，否则 prop:chord 重开。
+  E 与 b48 的网对照：网里的真实竞争者若系统性低于本射线，说明 u 不是最优方向，
+     公式低估可得收益 —— 这正是我判断'要不要继续追家族最优'所需的信息。
+     本文件在同一批抽样上重跑网（64 方向 x 64 半径，含该射线），可逐抽样比较。
+  F dip_pred 不得大于存在的收益 gap=cf1-lam_min(G)（prop:chord 的下界），违反即账目错。
+
+======================================================================================================================
+实测判读（跑后追加；两次独立运行逐位一致）：
+
+  [A/B 通过，锐度如预期] dip 比值 med 在七个鞍点单元为 0.999965..1.000048，全部单元
+      max|ratio-1| = {2.60e-04, 1.23e-04, 4.04e-05, 4.53e-05, 5.86e-06, 3.38e-04, 9.98e-04}
+      （按单元顺序），即二阶账目在 1e-4..1e-3 相对精度上被独立数值检验坐实；
+      预登记的证伪值 0.7/1.3 远在范围之外。t* 比值 med 0.9940..1.0024，全体抽样范围
+      [0.99322, 1.00772]，确实比 dip 比值钝一个量级 —— 与我说的"t* 不含小量平方所以更锐"
+      相反：**实测是 dip 比值更锐**。这是一处预登记判断错（见末尾自我更正）。
+      小/大 |c1| 分半后比值不单调：q=3 5-75 (1.000000→1.000045)、q=4 (1.000012→1.000153) 升，
+      2-45-88 (0.999985→0.999995) 升，q=2 (0.999982→1.000085) 升但另一半方向亦升，
+      30-88-89 (0.999994→0.999992) 降 —— 截断误差**无定号**，因为我没给 L3 任何界。
+
+  [C] L2 > 0 在 280/280 个鞍点抽样成立：最陡射线上恒有内点极小，不存在"边界效应"的抽样。
+  [D] viol = 0：射线 ~5.0e5 点 + 同抽样网 ~1.15e6 点，没有任何家族成员落到 lam_min(G) 以下。
+  [F] dip_pred 超过 gap 的抽样 0/280。
+  [入口自检] max|lam(v1)-cf1| <= 3.7e-16，max| ||v||-1 | <= 4.4e-16（网+射线一起）。
+  [等角单元] q=3 equal 20d：40/40 stationary，公式前提 |P_perp B2 v1|>0 失败 —— 与 b48 一致，
+      slack=0 的loci 上 cf1 本身就是驻点，没有下降方向，也没有本公式可言。
+
+  [规模 —— 这才是路线判据] med|dip_meas| = 4.29e-11 .. 1.20e-07；相对 gap 的份额
+      med dip/gap = -0.0004 .. -0.5002（最差单抽样 -0.7642，q=4）。
+      与 b48 网（0.07/0.00/0.16..0.23/0.50，最差 0.581）对照：两个不同 seed、两种不同方法
+      （网搜索 vs 射线+闭式）给出同一量级 —— 这条**独立复现**成立。
+
+  [E 同抽样网对照 —— 部分失败，如实报] "网严格优于射线"发生在 32/40 (q=3 5-75)、7/40 (2-45-88)、
+      0/40 (30-88-89)、0、0、2/40 (q=2)、31/40 (q=4)，但 med ray/net = 0.906..1.009，
+      即网即便赢也只深 ~10%；且 med ray/net > 1 的三个单元说明 64 方向/5.6° 分辨率的网
+      **没有覆盖最陡方向本身**（它不是射线的超集）。所以这是"抽样网未见显著更优"，
+      不是穷尽结论（规则 3）：可断言的是"离开最陡射线再优化，在这些抽样上至多再拿 ~10%"。
+
+  [判读结论]
+   1) B-CLAIM-55(a) **成立但必须换个定义才成立**。不可把 `cf1 + dip_pred` 记为界：那要求截断
+      误差定号，而上面实测它无定号，且我对 A 的批评正是"闭型代理记为界必须说清站在哪一侧"。
+      正确写法：`cf2 := lam(cos t* v1 + sin t* u)`，t* = -L1/(2L2)。它是家族 (20) 在**一个显式
+      单位方向**上的成员，故 `lam_min(G) <= cf2` 由 prop:chord 直接给出，**不需要新证明**；
+      二阶公式只负责"往哪里走"（t*，实测 ±0.7%）与"能拿多少"（dip = -L1^2/(4L2)，实测 ±1e-3）。
+   2) 收益真实但有界：射线一步就拿走 cf1 过估的 0.0004..0.50（最差 0.76）份额，绝对值仅
+      1e-11..1e-7；再全局优化的边际 ≤10%。**家族最优的闭式/优化器这条腿到此关闭**（§44.6(b)
+      的答复：沿最陡射线内点极小存在，全局 argmin 无闭式且不值得）。
+   3) 自我更正（第 24 次，未污染任何已发表文本）：我在 docstring A 里同时写了"大 |c1| 比值应
+      低于 1"与"u 次优 ⇒ 真实 dip 更深 ⇒ 比值 > 1"两句互斥的话，并且给一个我未加界的量
+      （L3 截断）预登记了符号。**教训：预登记只能给"有推导支撑的方向"记符号，否则只记区间。**

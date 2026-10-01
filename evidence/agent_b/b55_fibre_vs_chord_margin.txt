@@ -1,0 +1,227 @@
+============================================================================================================================
+[T0] r(B,t) must be the SAME root as crossings(B, B t), and r(c2,t) the same as cf_of(t,c2):
+     my rewrite of eq:(family) is otherwise just a new name for an old formula.
+     max |r_bt - crossings| = 1.021e-13   (as a fraction of the root: 1.915e-11)   max |r_bt(c2,t) - cf_of(t,c2)| = 1.110e-13
+     DISCRIMINANT: D_(20) vs B^2*(1-t)^2+4tB): max |ratio-1| = 8.082e-14   (the raw diff, which my first draft printed, is max 9.734e+05 -- NOT an identity, my check was wrong)
+
+============================================================================================================================
+[T1] both partials of r at the smaller root are negative: dr/dt = r(1-r)/(2tr-1-t),
+     dr/dB = 1/(2tr-1-t), and 2tr-1-t<0 because the smaller root is left of the vertex (1+t)/2t.
+     Sweeps are 20000-point and cover the whole branch, so this leg is exhaustive in 1-D.
+     t-sweep at B=0.5: increases on 0/19999 steps, range r = 5.000e-07..0.500000
+     B-sweep at t=3.0: increases on 0/19999 steps, range r = 0.000000..0.333333
+     finite-difference vs closed form (relative steps): max rel err dr/dt=1.65e-05 dr/dB=2.44e-07   median dr/dt err=1.41e-09
+     worst dr/dt pair: B=0.0077 t=0.0167 r=0.992191 closed=-7.878e-03 fd=-7.878e-03   (2tr-1-t >= 0, i.e. root at/right of vertex, in 0/2000 pairs -- those are the LARGER root by construction of r_bt, so they are excluded, not averaged)
+
+============================================================================================================================
+[T2/T3] the exact criterion on b53's SAME draws: lambda_1(v*) <= cf_1 <=> T >= 0, with
+        T := t_* - t_1 - (d/c^2)(1-t_1 mu)/mu, d = c^2 - B(v_*).  #(T<0) must equal
+        #(cf_1 > lambda_1(v_*)) cell by cell ([B3] printed 40/40 for 'equal 20d', 0 elsewhere).
+              q=3 spread 5-75: n= 40 skip= 0 dimE0=[1]   [T3] all hypotheses: True   [T0'] max |lambda_1(v*)-r(B*,t*)|/lambda_1 = 6.3e-14
+                              [T2] sign mismatches = 0/40   #(T<0)=0 vs #(lambda_1(v*)>cf1)=0 [#(cf1>lambda_1)=40]   d=c2-B(v*): med=8.43e-08 max=1.60e-06   med|lambda_1(v*)-cf1|/gap=1.27e-01
+                              [T2b] first-order |lambda_1(v*)-cf1| / |mu(1-mu)T/(2t1mu-1-t1)|: med=1.0000 min=0.9996 max=1.0000   #(>0.5 or <2)=0
+                              [ray] gapfrac(lambda_2(v_ray)) med=0.9965 min=0.9762 (#ray=40) #<0.90=0   gapfrac(lambda_2(v*)) med=1.00e+00 max=1.00e+00
+           q=3 spread 2-45-88: n= 40 skip= 0 dimE0=[1]   [T3] all hypotheses: True   [T0'] max |lambda_1(v*)-r(B*,t*)|/lambda_1 = 2.8e-13
+                              [T2] sign mismatches = 0/40   #(T<0)=0 vs #(lambda_1(v*)>cf1)=0 [#(cf1>lambda_1)=40]   d=c2-B(v*): med=2.26e-09 max=2.20e-08   med|lambda_1(v*)-cf1|/gap=1.84e-01
+                              [T2b] first-order |lambda_1(v*)-cf1| / |mu(1-mu)T/(2t1mu-1-t1)|: med=1.0000 min=1.0000 max=1.0000   #(>0.5 or <2)=0
+                              [ray] gapfrac(lambda_2(v_ray)) med=0.9999 min=0.9994 (#ray=40) #<0.90=0   gapfrac(lambda_2(v*)) med=1.00e+00 max=1.00e+00
+          q=3 spread 30-88-89: n= 40 skip= 0 dimE0=[1]   [T3] all hypotheses: True   [T0'] max |lambda_1(v*)-r(B*,t*)|/lambda_1 = 1.8e-15
+                              [T2] sign mismatches = 0/40   #(T<0)=0 vs #(lambda_1(v*)>cf1)=0 [#(cf1>lambda_1)=40]   d=c2-B(v*): med=2.14e-07 max=1.73e-06   med|lambda_1(v*)-cf1|/gap=3.33e-04
+                              [T2b] first-order |lambda_1(v*)-cf1| / |mu(1-mu)T/(2t1mu-1-t1)|: med=1.0000 min=1.0000 max=1.0000   #(>0.5 or <2)=0
+                              [ray] gapfrac(lambda_2(v_ray)) med=0.9995 min=0.9952 (#ray=40) #<0.90=0   gapfrac(lambda_2(v*)) med=1.00e+00 max=1.00e+00
+                q=3 equal 20d: n= 40 skip= 0 dimE0=[3]   [T3] all hypotheses: True   [T0'] max |lambda_1(v*)-r(B*,t*)|/lambda_1 = 4.8e-15
+                              [T2] sign mismatches = 0/40   #(T<0)=40 vs #(lambda_1(v*)>cf1)=40 [#(cf1>lambda_1)=0]   d=c2-B(v*): med=9.99e-16 max=3.00e-15   med|lambda_1(v*)-cf1|/gap=2.01e-03
+                              [T2b] first-order |lambda_1(v*)-cf1| / |mu(1-mu)T/(2t1mu-1-t1)|: med=1.0000 min=1.0000 max=1.0001   #(>0.5 or <2)=0
+              q=3 2-45-88 mix: n= 40 skip= 0 dimE0=[1]   [T3] all hypotheses: True   [T0'] max |lambda_1(v*)-r(B*,t*)|/lambda_1 = 4.0e-13
+                              [T2] sign mismatches = 0/40   #(T<0)=0 vs #(lambda_1(v*)>cf1)=0 [#(cf1>lambda_1)=40]   d=c2-B(v*): med=8.72e-11 max=8.72e-11   med|lambda_1(v*)-cf1|/gap=5.00e-01
+                              [T2b] first-order |lambda_1(v*)-cf1| / |mu(1-mu)T/(2t1mu-1-t1)|: med=1.0000 min=1.0000 max=1.0000   #(>0.5 or <2)=0
+                              [ray] gapfrac(lambda_2(v_ray)) med=1.0000 min=1.0000 (#ray=40) #<0.90=0   gapfrac(lambda_2(v*)) med=1.00e+00 max=1.00e+00
+             q=3 30-88-89 mix: n= 40 skip= 0 dimE0=[1]   [T3] all hypotheses: True   [T0'] max |lambda_1(v*)-r(B*,t*)|/lambda_1 = 2.3e-15
+                              [T2] sign mismatches = 0/40   #(T<0)=0 vs #(lambda_1(v*)>cf1)=0 [#(cf1>lambda_1)=40]   d=c2-B(v*): med=6.89e-09 max=6.89e-09   med|lambda_1(v*)-cf1|/gap=1.62e-03
+                              [T2b] first-order |lambda_1(v*)-cf1| / |mu(1-mu)T/(2t1mu-1-t1)|: med=1.0000 min=1.0000 max=1.0000   #(>0.5 or <2)=0
+                              [ray] gapfrac(lambda_2(v_ray)) med=1.0000 min=1.0000 (#ray=40) #<0.90=0   gapfrac(lambda_2(v*)) med=1.00e+00 max=1.00e+00
+              q=2 spread 5-40: n= 40 skip= 0 dimE0=[1]   [T3] all hypotheses: True   [T0'] max |lambda_1(v*)-r(B*,t*)|/lambda_1 = 7.2e-14
+                              [T2] sign mismatches = 0/40   #(T<0)=0 vs #(lambda_1(v*)>cf1)=0 [#(cf1>lambda_1)=40]   d=c2-B(v*): med=3.20e-08 max=1.23e-06   med|lambda_1(v*)-cf1|/gap=1.46e-01
+                              [T2b] first-order |lambda_1(v*)-cf1| / |mu(1-mu)T/(2t1mu-1-t1)|: med=1.0000 min=0.9997 max=1.0000   #(>0.5 or <2)=0
+                              [ray] gapfrac(lambda_2(v_ray)) med=1.0000 min=1.0000 (#ray=40) #<0.90=0   gapfrac(lambda_2(v*)) med=1.00e+00 max=1.00e+00
+             q=4 spread 5-75+: n= 40 skip= 0 dimE0=[1]   [T3] all hypotheses: True   [T0'] max |lambda_1(v*)-r(B*,t*)|/lambda_1 = 7.7e-14
+                              [T2] sign mismatches = 0/40   #(T<0)=0 vs #(lambda_1(v*)>cf1)=0 [#(cf1>lambda_1)=40]   d=c2-B(v*): med=4.25e-07 max=4.61e-06   med|lambda_1(v*)-cf1|/gap=3.22e-01
+                              [T2b] first-order |lambda_1(v*)-cf1| / |mu(1-mu)T/(2t1mu-1-t1)|: med=0.9999 min=0.9988 max=1.0000   #(>0.5 or <2)=0
+                              [ray] gapfrac(lambda_2(v_ray)) med=0.9222 min=0.7804 (#ray=40) #<0.90=13   gapfrac(lambda_2(v*)) med=1.00e+00 max=1.00e+00
+
+============================================================================================================================
+[T4] equal-angle cells: A0 = K^T Lam^-1 K = M^T M = c^2 I_q EXACTLY, so B(v)=c^2 for every unit v
+     (d=0 identically), E_0 = R^q, and min over the sphere of lambda_1(v) = cf_1, attained at the
+     Rayleigh maximisers of B2.  Tested on nets dense enough that the claim is searched, not sampled:
+     q=2 on a 20000-point circle (exhaustive up to the 3.1e-4 rad spacing), q=3 on 20000 random +
+     40000 spiral points.  Falsifier: one competitor below cf_1 - floor.
+               equal 20d, q=2: draws=12 max|A0-c2 I|=2.11e-15   B(v)=c2 fails on 0 grid pts   C(v)>lam_max(B2) on 0   lambda_1(v)<cf1-floor on 0   (T>=0 at v*: never)
+               equal 20d, q=3: draws=12 max|A0-c2 I|=5.77e-15   B(v)=c2 fails on 0 grid pts   C(v)>lam_max(B2) on 0   lambda_1(v)<cf1-floor on 0   (T>=0 at v*: never)
+
+============================================================================================================================
+[T5] B-CLAIM-58(i): NEW seed, doubled p, doubled q, and a spread whose rows are not equal-angled.
+     Same criterion T2 must hold; the registered falsifier for the 0.99 gapfrac is a cell whose
+     lambda_2(v_ray) drops below 0.90 of the gap.
+         q=3 p=12 spread 5-75: n= 30 skip= 0 dimE0=[1]   [T3] all hypotheses: True   [T0'] max |lambda_1(v*)-r(B*,t*)|/lambda_1 = 6.7e-14
+                              [T2] sign mismatches = 0/30   #(T<0)=0 vs #(lambda_1(v*)>cf1)=0 [#(cf1>lambda_1)=30]   d=c2-B(v*): med=5.71e-08 max=1.15e-06   med|lambda_1(v*)-cf1|/gap=5.38e-02
+                              [T2b] first-order |lambda_1(v*)-cf1| / |mu(1-mu)T/(2t1mu-1-t1)|: med=1.0000 min=0.9997 max=1.0000   #(>0.5 or <2)=0
+                              [ray] gapfrac(lambda_2(v_ray)) med=0.9992 min=0.9857 (#ray=30) #<0.90=0   gapfrac(lambda_2(v*)) med=1.00e+00 max=1.00e+00
+      q=3 p=12 spread 2-45-88: n= 30 skip= 0 dimE0=[1]   [T3] all hypotheses: True   [T0'] max |lambda_1(v*)-r(B*,t*)|/lambda_1 = 4.7e-13
+                              [T2] sign mismatches = 0/30   #(T<0)=0 vs #(lambda_1(v*)>cf1)=0 [#(cf1>lambda_1)=30]   d=c2-B(v*): med=1.77e-09 max=2.46e-08   med|lambda_1(v*)-cf1|/gap=3.85e-02
+                              [T2b] first-order |lambda_1(v*)-cf1| / |mu(1-mu)T/(2t1mu-1-t1)|: med=1.0000 min=1.0000 max=1.0000   #(>0.5 or <2)=0
+                              [ray] gapfrac(lambda_2(v_ray)) med=1.0000 min=0.9998 (#ray=30) #<0.90=0   gapfrac(lambda_2(v*)) med=1.00e+00 max=1.00e+00
+         q=6 p=7 spread 6-col: n= 25 skip= 0 dimE0=[1]   [T3] all hypotheses: True   [T0'] max |lambda_1(v*)-r(B*,t*)|/lambda_1 = 2.2e-13
+                              [T2] sign mismatches = 0/25   #(T<0)=0 vs #(lambda_1(v*)>cf1)=0 [#(cf1>lambda_1)=25]   d=c2-B(v*): med=2.17e-07 max=7.36e-07   med|lambda_1(v*)-cf1|/gap=6.06e-01
+                              [T2b] first-order |lambda_1(v*)-cf1| / |mu(1-mu)T/(2t1mu-1-t1)|: med=0.9998 min=0.9995 max=1.0000   #(>0.5 or <2)=0
+                              [ray] gapfrac(lambda_2(v_ray)) med=0.7387 min=0.5571 (#ray=25) #<0.90=22   gapfrac(lambda_2(v*)) med=1.00e+00 max=1.00e+00
+           q=3 p=12 equal 20d: n= 25 skip= 0 dimE0=[3]   [T3] all hypotheses: True   [T0'] max |lambda_1(v*)-r(B*,t*)|/lambda_1 = 4.8e-15
+                              [T2] sign mismatches = 0/25   #(T<0)=25 vs #(lambda_1(v*)>cf1)=25 [#(cf1>lambda_1)=0]   d=c2-B(v*): med=1.33e-15 max=3.77e-15   med|lambda_1(v*)-cf1|/gap=2.12e-03
+                              [T2b] first-order |lambda_1(v*)-cf1| / |mu(1-mu)T/(2t1mu-1-t1)|: med=1.0000 min=1.0000 max=1.0003   #(>0.5 or <2)=0
+
+============================================================================================================================
+[T6] POST-RUN LEG (added AFTER [T5] fired, so it is exploration, not evidence for the registered
+     falsifier): the q=6 cell gave gapfrac(lambda_2(v_ray)) median 0.7387, min 0.5571, so the
+     0.99 of B-CLAIM-58 is not table-independent.  The question is now whether the loss is
+     MONOTONE in q, i.e. whether the analytic ray degrades as the number of columns grows.  No
+     sign registered (rule 8): I cannot bound the remainder of the two-jet ray in q.
+            T6 q=2 p=3 spread: n= 20 skip= 0 dimE0=[1]   [T3] all hypotheses: True   [T0'] max |lambda_1(v*)-r(B*,t*)|/lambda_1 = 1.6e-13
+                              [T2] sign mismatches = 0/20   #(T<0)=0 vs #(lambda_1(v*)>cf1)=0 [#(cf1>lambda_1)=20]   d=c2-B(v*): med=3.65e-11 max=6.00e-10   med|lambda_1(v*)-cf1|/gap=2.38e-03
+                              [T2b] first-order |lambda_1(v*)-cf1| / |mu(1-mu)T/(2t1mu-1-t1)|: med=1.0000 min=1.0000 max=1.0002   #(>0.5 or <2)=0
+                              [ray] gapfrac(lambda_2(v_ray)) med=1.0000 min=1.0000 (#ray=20) #<0.90=0   gapfrac(lambda_2(v*)) med=1.00e+00 max=1.00e+00
+            T6 q=3 p=4 spread: n= 20 skip= 0 dimE0=[1]   [T3] all hypotheses: True   [T0'] max |lambda_1(v*)-r(B*,t*)|/lambda_1 = 2.0e-13
+                              [T2] sign mismatches = 0/20   #(T<0)=0 vs #(lambda_1(v*)>cf1)=0 [#(cf1>lambda_1)=20]   d=c2-B(v*): med=9.91e-09 max=8.95e-08   med|lambda_1(v*)-cf1|/gap=2.86e-01
+                              [T2b] first-order |lambda_1(v*)-cf1| / |mu(1-mu)T/(2t1mu-1-t1)|: med=1.0000 min=0.9999 max=1.0000   #(>0.5 or <2)=0
+                              [ray] gapfrac(lambda_2(v_ray)) med=0.9995 min=0.9968 (#ray=20) #<0.90=0   gapfrac(lambda_2(v*)) med=1.00e+00 max=1.00e+00
+            T6 q=4 p=5 spread: n= 20 skip= 0 dimE0=[1]   [T3] all hypotheses: True   [T0'] max |lambda_1(v*)-r(B*,t*)|/lambda_1 = 2.0e-13
+                              [T2] sign mismatches = 0/20   #(T<0)=0 vs #(lambda_1(v*)>cf1)=0 [#(cf1>lambda_1)=20]   d=c2-B(v*): med=4.67e-08 max=1.97e-07   med|lambda_1(v*)-cf1|/gap=3.41e-01
+                              [T2b] first-order |lambda_1(v*)-cf1| / |mu(1-mu)T/(2t1mu-1-t1)|: med=1.0000 min=0.9999 max=1.0000   #(>0.5 or <2)=0
+                              [ray] gapfrac(lambda_2(v_ray)) med=0.9715 min=0.8879 (#ray=20) #<0.90=1   gapfrac(lambda_2(v*)) med=1.00e+00 max=1.00e+00
+            T6 q=5 p=6 spread: n= 20 skip= 0 dimE0=[1]   [T3] all hypotheses: True   [T0'] max |lambda_1(v*)-r(B*,t*)|/lambda_1 = 2.3e-13
+                              [T2] sign mismatches = 0/20   #(T<0)=0 vs #(lambda_1(v*)>cf1)=0 [#(cf1>lambda_1)=20]   d=c2-B(v*): med=8.06e-08 max=3.90e-07   med|lambda_1(v*)-cf1|/gap=4.46e-01
+                              [T2b] first-order |lambda_1(v*)-cf1| / |mu(1-mu)T/(2t1mu-1-t1)|: med=0.9999 min=0.9997 max=1.0000   #(>0.5 or <2)=0
+                              [ray] gapfrac(lambda_2(v_ray)) med=0.8932 min=0.7560 (#ray=20) #<0.90=10   gapfrac(lambda_2(v*)) med=1.00e+00 max=1.00e+00
+            T6 q=6 p=7 spread: n= 20 skip= 0 dimE0=[1]   [T3] all hypotheses: True   [T0'] max |lambda_1(v*)-r(B*,t*)|/lambda_1 = 2.2e-13
+                              [T2] sign mismatches = 0/20   #(T<0)=0 vs #(lambda_1(v*)>cf1)=0 [#(cf1>lambda_1)=20]   d=c2-B(v*): med=7.45e-08 max=2.58e-07   med|lambda_1(v*)-cf1|/gap=4.66e-01
+                              [T2b] first-order |lambda_1(v*)-cf1| / |mu(1-mu)T/(2t1mu-1-t1)|: med=0.9999 min=0.9998 max=1.0000   #(>0.5 or <2)=0
+                              [ray] gapfrac(lambda_2(v_ray)) med=0.9034 min=0.6544 (#ray=20) #<0.90=10   gapfrac(lambda_2(v*)) med=1.00e+00 max=1.00e+00
+            T6 q=8 p=9 spread: n= 20 skip= 0 dimE0=[1]   [T3] all hypotheses: True   [T0'] max |lambda_1(v*)-r(B*,t*)|/lambda_1 = 2.5e-13
+                              [T2] sign mismatches = 0/20   #(T<0)=0 vs #(lambda_1(v*)>cf1)=0 [#(cf1>lambda_1)=20]   d=c2-B(v*): med=3.21e-07 max=1.17e-06   med|lambda_1(v*)-cf1|/gap=7.00e-01
+                              [T2b] first-order |lambda_1(v*)-cf1| / |mu(1-mu)T/(2t1mu-1-t1)|: med=0.9998 min=0.9991 max=0.9999   #(>0.5 or <2)=0
+                              [ray] gapfrac(lambda_2(v_ray)) med=0.6547 min=0.4722 (#ray=20) #<0.90=20   gapfrac(lambda_2(v*)) med=1.00e+00 max=1.00e+00
+
+============================================================================================================================
+[T7] POST-RUN, and it exists because [T2b]'s ratio was 0.9996-1.0003 on EVERY cell: a first-order
+     law that is exact to 4 decimals on the draws I happen to sample is not yet a law, it is a
+     smallness of |T|.  So I drive T large on purpose -- v(theta) = cos(th) v_* + sin(th) w with
+     w a unit vector orthogonal to v_* (so ||v||=1 by construction, and that is printed) -- and
+     measure the ratio (lambda_1(v)-cf_1) / (coef * T(v)) against |T|.  Reading registered before
+     running: if the 1%-band ends at |T| ~ 1e-2 the linear law is a REGIME statement and the
+     chapter may only carry the sign statement (main); if the band is flat out to |T| ~ 1 the
+     collapse is structural and I will state the closed form with its remainder.  NB the RNG has
+     advanced through [T5]/[T6], so these are NEW draws, not b53's -- labelled as such.
+   q=3 (12000 pts, max |T|=1.552e+03, max ||v||-1|=3.3e-16): ratio in [0.99,1.01] up to |T|<=3.589e+02   ratio range over all pts: [0.9886,1.6692]   #(sign flip)=0
+        |T| < 1e-06:     1 pts, max |ratio-1| = 9.79e-06
+        |T| < 1e-04:     6 pts, max |ratio-1| = 3.09e-05
+        |T| < 1e-02:    26 pts, max |ratio-1| = 4.03e-04
+        |T| < 1e-01:    78 pts, max |ratio-1| = 1.48e-03
+        |T| < 1e+00:   239 pts, max |ratio-1| = 4.77e-03
+   q=4 (12000 pts, max |T|=2.470e+02, max ||v||-1|=3.3e-16): ratio in [0.99,1.01] up to |T|<=1.964e+01   ratio range over all pts: [0.9973,1.5619]   #(sign flip)=0
+        |T| < 1e-06:     1 pts, max |ratio-1| = 1.11e-04
+        |T| < 1e-04:    10 pts, max |ratio-1| = 5.90e-04
+        |T| < 1e-02:    60 pts, max |ratio-1| = 6.05e-04
+        |T| < 1e-01:   185 pts, max |ratio-1| = 1.41e-03
+        |T| < 1e+00:   580 pts, max |ratio-1| = 5.52e-03
+
+============================================================================================================================
+判读（预登记，跑前写）：
+  T0 若 |r_bt - crossings| 任一点 >1e-10，则我对 eq:(family) 的改写读错了，后面全部作废——
+     这正是 (p) 号撤回的失败模式，所以这条必须先跑。
+  T1 两个偏导都应为负（小根在顶点左边）。1D 全程扫描是穷尽的：任何一处上升即 (mono) 死，
+     [B4] 与 rem:tight 里那句「固定 B 时根随 C 递减」同时撤。中心差分对不上只杀闭式，不杀单调。
+  T2 每格 #(T<0) 必须等于 #(cf1 > lambda_1(v*))，且 sign 不一致数 = 0。尤其 equal 20d 那格
+     应恰好 40 个 T<0（d=0 而 t*<t1，(a) 的预言），其余七格 T>=0。若有 dimE0=1 的格出现
+     T<0（即 v* 用截距换斜率换输了），那不是失败——是 (main) 抓到了一个新机制，我要单独报。
+  T3 三个前提逐抽样打印通过与否；不通过的抽样从 T2 的计数里剔除，不混进平均。
+  T4 等角格里 A0 与 c^2 I 的差应在 1e-15（这是构造，不是拟合）；网上 min lambda_1 不得跌破
+     cf1-floor；v* 处 T 应 <0（于是 cf1 是整球面 n=1 族的严格最小，v* 反而更差）。
+  T5 新表上 T2 仍 0 失配则 (main) 与 b53 的表族无关；若 lambda_2(v_ray) 的 gapfrac 出现 <0.90，
+     B-CLAIM-58 的 0.99 按 (i) 降级为「平均更好」。两种结果都写，不挑。
+  登记本身的三处缺陷（跑前发现两处、跑后发现一处，都改在代码里并注明，不改登记的原话）：
+   (1) T0 的绝对阈值 1e-13 写在 (B,C) 形式上，而 (B,C) 的求根必然比 (B,t) 形式多一次乘除；
+       真正的门是相对量与 1e-10 的证伪器，两者都按原样报。
+   (2) 我登记的计数关系 #(T<0)=#(cf1>lambda_1) 是 (main) 的反面，正确关系是 #(T<0)=
+       #(lambda_1(v*)>cf1)；两个计数都印出来，让误登记可见。
+   (3) 判据里那条「判别式恒等」把 D_(20) 与 (1-t)^2+4tB 直接相减，差了 B^2 因子——印出 9.7e+05
+       就是它；现改为按 B^2 归一后比，另把原始差留着当 specimen（记忆规则 9 的推论：读表达式，
+       不读标签）。
+
+============================================================================================================================
+实测判读（跑后写）：
+
+  [T0] 通过，但带一处我自己的检查缺陷。|r_bt - crossings| 绝对最大 1.02e-13、按根归一 1.9e-11，
+       距我登记的 1e-10 证伪器有两个数量级；我原先写在 (B,C) 形式上的 1e-13 绝对阈值被越过一位，
+       原因见登记缺陷 (1)。判别式按 B^2 归一后 8.1e-14 ✓。r(c2,t) 与 cf_of(t,c2) 最大差 1.1e-13。
+       ⇒ 我对 eq:(family) 的改写确实是同一个根，只是换了坐标；下面的单调与 margin 才有意义。
+
+  [T1] 单调性成立，而且这一腿是**穷尽**的：两条 1-D 全程扫描（B=0.5 时 t∈[1e-6,1e6] 两万点、
+       t=3.0 时 B∈(0,1) 两万点）各 19999 步，上升 0 次。闭式偏导这一腿要打折：dr/dB 最大相对误差
+       2.4e-07 ✓，dr/dt 中位 1.4e-09 但最大 1.65e-05；最坏那对 (B=0.0077, t=0.0167, r=0.992191)
+       处 dr/dt = r(1-r)/(2tr-1-t) 的分子 r(1-r) 本身趋 0，打印里 closed 与 fd 前六位相同，
+       所以那是差商在导数趋零处的条件数，不是闭式的错。**结论：单调性由扫描支撑（可发布），
+       闭式系数由中位误差支撑（当 corroboration 用，不当门用）。**
+
+  [T2] 20 格 / 550 抽样（b53 原 8 格 320 + T5 新 4 格 110 + T6 6 格 120）符号失配 = 0，
+       且 #(T<0) 与 #(lambda_1(v*)>cf1) 每格相等：等角两格 40=40、25=25，其余 18 格 0=0。
+       T3 的三个前提在 550 抽样里全 True，没有剔除任何抽样。
+       预登记里"若 dimE0=1 的格出现 T<0 就单独报"没有触发——一次也没有。
+
+  [T4] 等角表族的方向问题是**闭的**：max|A0 - c2 I| = 2.1e-15 (q=2) / 5.8e-15 (q=3)（这是构造量，
+       不是拟合：K = Lam^{1/2} M, M = Q1 diag(c) Q2^T ⇒ A0 = M^T M = c^2 I）；
+       B(v)=c^2 在 20000 个圆网点 ×12 抽样、60000 个球面点 ×12 抽样上 0 例外；
+       C(v) ≤ lam_max(B2) 0 例外；lambda_1(v) < cf1 - floor 的网点 **0 个**；v* 处 T<0 在 24 个
+       可用抽样里 24 次。⇒ min over 整球面 lambda_1(v) = cf1，在 B2 的 Rayleigh 极大方向取到，
+       而纤维方向 v* 在等角表里严格更差。这一轮"方向腿"唯一的正面结论就是这个。
+
+  [T2b] + [T7] 一阶塌缩（lambda_1(v*) - cf1 ≈ [mu(1-mu)/(2 t1 mu - 1 - t1)] · T，系数与 corr(d)
+       的相容性是代数的：dr/dt = mu(1-mu)·dr/dB 且 (1-mu)(1-t1 mu) = c^2 ⇒ (dr/dt)·corr(d) = d）：
+       比值 20 格全部落在 [0.9996, 1.0003]，中位 1.0000。**我没有把它写成定理**，因为一个
+       在我抽到的样本上精确到第四位的一阶律，说的只是 |T| 小。于是 [T7] 沿过 v* 的大圆
+       （v(th)=cos·v*+sin·w，w⊥v*，||v||-1 ≤ 3.3e-16 已印）主动把 |T| 拉到 1.5e3，两万四千点：
+         |T|<1e-6 → max|ratio-1| = 1.0e-5；<1e-4 → 3.1e-5；<1e-2 → 4.0e-4；<1e-1 → 1.5e-3；<1 → 4.8e-3
+         （q=4 那一列分别 1.1e-04 / 5.9e-04 / 6.1e-04 / 1.4e-03 / 5.5e-03），
+         比值全域 [0.9886, 1.6692]，**符号翻转 0 次（24000 点，|T| 跨 1e-8..1.5e3）**。
+       ⇒ 符号陈述是可发布的引理（并且现在在大圆族的非抽样方向上也成立）；大小陈述只能带实测余项
+          （|T|≤1 时相对 ≤5.5e-3）。1% 带实际延伸到 |T|≈359(q=3)/19.6(q=4)，比我登记的两个分支
+          都宽，所以"regime 还是结构"这个问题我给的答案是：**两者都不是干净成立**——按注册的
+          读法我该说：band 在 |T|~1 之后仍不塌，但也不平；余项只在 |T|≤1 内有用。
+
+  [T5] + [T6] 证伪器 (i) **触发**。lambda_2(v_ray) 的 gapfrac 随 q 退化：
+       q=2 1.0000(0/20<0.90) / q=3 0.9995(0/20) / q=4 0.9715(1/20) / q=5 0.8932(10/20)
+       / q=6 0.9034(10/20) / q=8 0.6547(20/20)；另 T5 的 q=6 六列表 0.7387(22/25)。
+       并且回头看 b53 原表：q=4 格中位 0.9222、最小 0.7804、40 抽样里 13 个 <0.90。
+       ⇒ 两件事都要改：(a) B-CLAIM-58 的"0.99"按它自己的 (i) 降级为"平均更好"，不配进章节命题；
+          (b) 我在 rem:tight (iv) 写的"lambda_2(ray) removes 0.9965--1.0000"是**格中位数**的区间，
+              没标"中位"就会被读成逐点保证——逐点最小是 0.7804。这是标签缺陷，不是数字错。
+       同一批 20 格上 lambda_2(v*) 的 gapfrac 中位与最大仍是 1.00e+00。
+
+  一句话路线判断：射线腿（b49/b50/b52 的两-喷流解析方向）到此降级并停止投入——它是 q≤3 的
+  现象，不是表无关的现象。留下并可发布的三件：等角表族方向问题已闭（min = cf1，v* 更差）、
+  margin T 的符号判据可证且有 550 抽样 + 24000 大圆点支持、n=1 残差随 q 单调恶化的机制现在
+  有了定量表达式（T 与一阶系数）。
+
+  [B-CLAIM-59]（下一轮的可证伪陈述，从 T 的结构来，不是从拟合来）：
+  min over {||v||=1} lambda_1(v) 是否等于 lambda_min(G)？已知 lambda_1(v) >= lambda_min(G) 对一切 v
+  （eq:chain1），且 lambda_1(v*) - lambda_min = 0.5--1.0 个 gap。因为 r(B,t) 对两旋钮都严格递减，
+  "把 T 推向最大"就是这个最小化问题的线性化目标：
+        T(v) = C(v)/B(v) - t1 - kappa·(c^2 - B(v)),   kappa := (1 - t1 mu)/(c^2 mu) > 0,
+  即最大化 C/B + kappa·B —— 一个广义 Rayleigh 商加线性项，代价只到 q×q，不需要 (p+q) 全特征分解。
+  证伪器：
+   (i) 若存在 v 使 lambda_1(v) < lambda_min(G) - floor，则 eq:chain1 死，我整轮的单调引理也要跟着
+       重证（这是最贵的失败，所以放在第一条）；
+   (ii) 若在 q>=5 的表上 T-极大化方向的 lambda_1 值比 lambda_1(v*) 只低 <1e-6·gap，则 T 没有算法
+       增量，"方向腿"就真的关闭，我按 (o)/(p) 的先例把这一项写进停止投入；
+   (iii) 若 T-极大化需要 (p+q) 级别的逐次求解（我预想的 q×q 迭代不收敛或需重启 >50 次），则
+       "便宜"这一半不成立，T 只作排序用，不作算法用；
+   (iv) 逐点检验 1% 带：在 |T|≤1 内 max|ratio-1| 若 >1e-2（目前实测 5.5e-3），余项陈述撤回，
+       只保留符号引理。
+

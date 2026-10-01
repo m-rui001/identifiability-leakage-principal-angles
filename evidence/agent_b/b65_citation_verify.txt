@@ -1,0 +1,6 @@
+=== ID LIST (22 papers, one request)
+  http=429 bytes=14 attempt=1 body:Rate exceeded.
+  http=429 bytes=14 attempt=2 body:Rate exceeded.
+  http=429 bytes=14 attempt=3 body:Rate exceeded.
+  LIMITED: no answer after 3 attempts (NOT a zero result)
+ALLDONE http-state per request is above

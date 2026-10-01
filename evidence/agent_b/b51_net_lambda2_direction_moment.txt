@@ -1,0 +1,101 @@
+============================================================================================================================
+[A-E] min over a polar net of the explicit-cubic lambda_2(v), against lambda_2(v1) and
+      min_net lambda_1 (b48/b49's object).  Route question C: gapfrac(min_net lambda_2) >= 0.99
+      median, >= 0.90 every draw, else the direction knob is dead even with the moment free.
+                              [V] moments m_k(v1), running product vs atoms vs repeated solves: max rel dev = 4.47e-15 / 6.64e-15   m(v1) = [0.99240388 1.20926948 1.51393078 1.93941667]
+                              [V] |lambda_1(v1) - cf1| = 1.74e-16   (both routes must agree before anything below is evidence)
+              q=3 spread 5-75: n= 40 dimE0=[1] degen(rho_v1 has <2 atoms, lambda_2:=lambda_1)=0   [A] SIDE viol: v1:0   [B] superset fails in 0   max||v||-1|=2.2e-16   root-filter rejections: v1 0 / net 0
+                              [n=1 at v1 (=cf1)] gapfrac med= 0.0000 min=-0.0000 max= 0.0000
+                              [       n=2 at v1] gapfrac med= 0.8727 min= 0.4530 max= 0.9923
+                              [net 32u x 64t, dirs=[2080]]   min_nets lambda_1: med= 0.0000 min=-0.0000   min_nets lambda_2: med= 0.9499 min= 0.7166   [A] viol=0
+                              [net 64u x 128t, dirs=[8256]]   min_nets lambda_1: med= 0.0000 min=-0.0000   min_nets lambda_2: med= 0.9499 min= 0.7221   [A] viol=0
+                              [E] fine minus coarse net: 0 draws WORSE (expected NONZERO -- the two t-lists do not nest, see audit item 5; this is a measure of how unsaturated the coarse net is, not a stability test)   |gain| med = 0.0000 of the gap   residual (1-gapfrac) med on fine net = 0.0501   0.01 s/draw
+           q=3 spread 2-45-88: n= 40 dimE0=[1] degen(rho_v1 has <2 atoms, lambda_2:=lambda_1)=0   [A] SIDE viol: v1:0   [B] superset fails in 0   max||v||-1|=2.2e-16   root-filter rejections: v1 0 / net 0
+                              [n=1 at v1 (=cf1)] gapfrac med= 0.0000 min=-0.0000 max= 0.0000
+                              [       n=2 at v1] gapfrac med= 0.8158 min= 0.5399 max= 0.9990
+                              [net 32u x 64t, dirs=[2080]]   min_nets lambda_1: med= 0.0000 min=-0.0000   min_nets lambda_2: med= 0.8158 min= 0.5399   [A] viol=0
+                              [net 64u x 128t, dirs=[8256]]   min_nets lambda_1: med= 0.0000 min=-0.0000   min_nets lambda_2: med= 0.8158 min= 0.5399   [A] viol=0
+                              [E] fine minus coarse net: 0 draws WORSE (expected NONZERO -- the two t-lists do not nest, see audit item 5; this is a measure of how unsaturated the coarse net is, not a stability test)   |gain| med = 0.0000 of the gap   residual (1-gapfrac) med on fine net = 0.1842   0.02 s/draw
+          q=3 spread 30-88-89: n= 40 dimE0=[1] degen(rho_v1 has <2 atoms, lambda_2:=lambda_1)=0   [A] SIDE viol: v1:0   [B] superset fails in 0   max||v||-1|=2.2e-16   root-filter rejections: v1 0 / net 0
+                              [n=1 at v1 (=cf1)] gapfrac med= 0.0000 min=-0.0000 max= 0.0000
+                              [       n=2 at v1] gapfrac med= 0.9992 min= 0.9942 max= 0.9997
+                              [net 32u x 64t, dirs=[2080]]   min_nets lambda_1: med= 0.0000 min=-0.0000   min_nets lambda_2: med= 0.9993 min= 0.9952   [A] viol=0
+                              [net 64u x 128t, dirs=[8256]]   min_nets lambda_1: med= 0.0000 min=-0.0000   min_nets lambda_2: med= 0.9993 min= 0.9952   [A] viol=0
+                              [E] fine minus coarse net: 0 draws WORSE (expected NONZERO -- the two t-lists do not nest, see audit item 5; this is a measure of how unsaturated the coarse net is, not a stability test)   |gain| med = 0.0000 of the gap   residual (1-gapfrac) med on fine net = 0.0007   0.02 s/draw
+                q=3 equal 20d: n= 40 dimE0=[3] degen(rho_v1 has <2 atoms, lambda_2:=lambda_1)=0   [A] SIDE viol: v1:0   [B] superset fails in 0   max||v||-1|=2.2e-16   root-filter rejections: v1 0 / net 0
+                              [n=1 at v1 (=cf1)] gapfrac med=-0.0000 min=-0.0000 max= 0.0000
+                              [       n=2 at v1] gapfrac med= 0.9979 min= 0.8815 max= 0.9999
+                              [net 32u x 64t, dirs=[2080]]   min_nets lambda_1: med=-0.0000 min=-0.0000   min_nets lambda_2: med= 0.9988 min= 0.9914   [A] viol=0
+                              [net 64u x 128t, dirs=[8256]]   min_nets lambda_1: med=-0.0000 min=-0.0000   min_nets lambda_2: med= 0.9992 min= 0.9965   [A] viol=0
+                              [E] fine minus coarse net: 0 draws WORSE (expected NONZERO -- the two t-lists do not nest, see audit item 5; this is a measure of how unsaturated the coarse net is, not a stability test)   |gain| med = 0.0000 of the gap   residual (1-gapfrac) med on fine net = 0.0008   0.01 s/draw
+              q=3 2-45-88 mix: n= 40 dimE0=[1] degen(rho_v1 has <2 atoms, lambda_2:=lambda_1)=0   [A] SIDE viol: v1:0   [B] superset fails in 0   max||v||-1|=2.2e-16   root-filter rejections: v1 0 / net 0
+                              [n=1 at v1 (=cf1)] gapfrac med= 0.0000 min=-0.0000 max= 0.0000
+                              [       n=2 at v1] gapfrac med= 0.4997 min= 0.4997 max= 0.4997
+                              [net 32u x 64t, dirs=[2080]]   min_nets lambda_1: med= 0.0000 min=-0.0000   min_nets lambda_2: med= 0.4997 min= 0.4997   [A] viol=0
+                              [net 64u x 128t, dirs=[8256]]   min_nets lambda_1: med= 0.0000 min=-0.0000   min_nets lambda_2: med= 0.4997 min= 0.4997   [A] viol=0
+                              [E] fine minus coarse net: 0 draws WORSE (expected NONZERO -- the two t-lists do not nest, see audit item 5; this is a measure of how unsaturated the coarse net is, not a stability test)   |gain| med = 0.0000 of the gap   residual (1-gapfrac) med on fine net = 0.5003   0.02 s/draw
+             q=3 30-88-89 mix: n= 40 dimE0=[1] degen(rho_v1 has <2 atoms, lambda_2:=lambda_1)=0   [A] SIDE viol: v1:0   [B] superset fails in 0   max||v||-1|=2.2e-16   root-filter rejections: v1 0 / net 0
+                              [n=1 at v1 (=cf1)] gapfrac med= 0.0000 min=-0.0000 max= 0.0000
+                              [       n=2 at v1] gapfrac med= 0.9984 min= 0.9984 max= 0.9984
+                              [net 32u x 64t, dirs=[2080]]   min_nets lambda_1: med= 0.0000 min=-0.0000   min_nets lambda_2: med= 0.9984 min= 0.9984   [A] viol=0
+                              [net 64u x 128t, dirs=[8256]]   min_nets lambda_1: med= 0.0000 min=-0.0000   min_nets lambda_2: med= 0.9984 min= 0.9984   [A] viol=0
+                              [E] fine minus coarse net: 0 draws WORSE (expected NONZERO -- the two t-lists do not nest, see audit item 5; this is a measure of how unsaturated the coarse net is, not a stability test)   |gain| med = 0.0000 of the gap   residual (1-gapfrac) med on fine net = 0.0016   0.02 s/draw
+              q=2 spread 5-40: n= 40 dimE0=[1] degen(rho_v1 has <2 atoms, lambda_2:=lambda_1)=0   [A] SIDE viol: v1:0   [B] superset fails in 0   max||v||-1|=2.2e-16   root-filter rejections: v1 0 / net 0
+                              [n=1 at v1 (=cf1)] gapfrac med= 0.0000 min=-0.0000 max= 0.0000
+                              [       n=2 at v1] gapfrac med= 0.8536 min= 0.4977 max= 0.9999
+                              [net 32u x 64t, dirs=[130]]   min_nets lambda_1: med= 0.0000 min=-0.0000   min_nets lambda_2: med= 0.9790 min= 0.7368   [A] viol=0
+                              [net 64u x 128t, dirs=[258]]   min_nets lambda_1: med= 0.0000 min=-0.0000   min_nets lambda_2: med= 0.9790 min= 0.7368   [A] viol=0
+                              [E] fine minus coarse net: 0 draws WORSE (expected NONZERO -- the two t-lists do not nest, see audit item 5; this is a measure of how unsaturated the coarse net is, not a stability test)   |gain| med = 0.0000 of the gap   residual (1-gapfrac) med on fine net = 0.0210   0.00 s/draw
+             q=4 spread 5-75+: n= 40 dimE0=[1] degen(rho_v1 has <2 atoms, lambda_2:=lambda_1)=0   [A] SIDE viol: v1:0   [B] superset fails in 0   max||v||-1|=2.2e-16   root-filter rejections: v1 0 / net 0
+                              [n=1 at v1 (=cf1)] gapfrac med= 0.0000 min=-0.0000 max= 0.0000
+                              [       n=2 at v1] gapfrac med= 0.6773 min= 0.2148 max= 0.9726
+                              [net 32u x 64t, dirs=[2080]]   min_nets lambda_1: med= 0.2173 min=-0.0000   min_nets lambda_2: med= 0.8330 min= 0.4880   [A] viol=0
+                              [net 64u x 128t, dirs=[8256]]   min_nets lambda_1: med= 0.2468 min=-0.0000   min_nets lambda_2: med= 0.8559 min= 0.4855   [A] viol=0
+                              [E] fine minus coarse net: 9 draws WORSE (expected NONZERO -- the two t-lists do not nest, see audit item 5; this is a measure of how unsaturated the coarse net is, not a stability test)   |gain| med = 0.0264 of the gap   residual (1-gapfrac) med on fine net = 0.1441   0.02 s/draw
+
+============================================================================================================================
+判读（预登记，跑前写的；实测判读附在文件末尾）：
+  A 侧面：min_net lambda_2 与 lambda_2(v1) 都不得低于 lam_min(G)（超 floor 即违反）。
+     违反 => 我的三次方程根筛选挑了'穿过极点'的假根，先修实现再谈证据。
+  B 包含：网里含 t=0，故 min_net lambda_2 <= lambda_2(v1)；否则 net 组装错（b49 的 E 教训）。
+  C 路线判据：gapfrac(min_net lambda_2) 中位数 >= 0.99 且每格 min >= 0.90。
+     中位数 < 0.90 => 方向旋钮在矩自由之后仍然不买任何东西，方向腿第二次关闭。
+  D 哪个旋钮更强：min_net lambda_1（方向，n=1） vs lambda_2(v1)（矩，固定方向）。
+     若后者更大，结论是'公布 n=2 at v1，不宣传方向搜索'。
+  E 密度：细网 vs 粗网不是超集关系（t 列嵌套不成立，见 audit 5），故'细网更差'的样本数只反映粗网
+     未饱和的程度，不是稳定性判据；超集断言只对 t=0（测试 B）成立，那是构造级的。
+     所有搜索标为 SAMPLED：网不解析球面，'min' 只是'未找到更好成员'，方向数按实际存储的 nv 报。
+  V 前置校验（非定理测试）：m_k(v1) 由 Lambda 原子的闭式 sum (k_i.v1)^2/l_i^(k+1) 独立算一遍，
+     与递推乘积 Mm 的对偶形式比到 ~1e-14，且 lambda_1(v1) 与 cf1 同值。不同则下面全不作数。
+
+====================================================================================================
+实测判读（跑后补写；两次运行逐字节相同，仅 s/draw 计时行不同）
+
+V 前置校验通过：m_k(v1) 三种独立算法（running product / Lambda 原子 / 反复线性求解）最大相对偏差
+4.47e-15 与 6.64e-15；|lambda_1(v1) - cf1| = 1.74e-16，与 b50 的 [B] 一致。此前 b51 有三处会静默出错
+的代码（见文件头 audit 1–5），其中 missing 4th moment 不会报错，是这次校验把它拦下来的。
+
+A 侧面：320/320 个抽样的 lambda_2(v1) 与 min_net lambda_2 全部 >= lam_min(G)（超 floor 违反数 0）；
+根筛选拒绝数 0（v1）与 0（网）。B 包含：0 次失败。max||v||-1| = 2.2e-16。所以下列数字是可信的测量。
+
+D 哪个旋钮更强（结论清晰）：把 8 格的 med(gapfrac) 并列 ——
+  min_net lambda_1（方向，n=1）：0.0000, 0.0000, 0.0000, -0.0000, 0.0000, 0.0000, 0.0000, 0.2468
+  lambda_2(v1)（矩，固定方向）：0.8727, 0.8158, 0.9992, 0.9979, 0.4997, 0.9984, 0.8536, 0.6773
+  min_net lambda_2（两者一起）  ：0.9499, 0.8158, 0.9993, 0.9992, 0.4997, 0.9984, 0.9790, 0.8559
+即：n=1 的方向旋钮在我的网上一动不动（中位数 0.0000），n=2 的矩旋钮一步就到 0.50–0.999。
+
+C 路线判据（按预登记的字面判）：中位数 >= 0.99 未达成（8 格中 4 格 <0.99，最低 0.4997），
+"每格 min >= 0.90"亦未达成；但预登记的证伪阈值 med < 0.90 没有触发（跨格 med 的中位数 0.9645）。
+按字面：联合方案没有被证伪，也没有被确认。
+
+但这正是本轮最重要的产出，而且是负面的、对我自己的：'min over a uniform net' 这个量根本不是
+min_v lambda_2(v) 的测量，而是我的 t 列性质的测量。b50 在同一批 cell 上报告解析射线 cf2 去除 cf1
+gap 的 0.13–0.27（中位），而这里 2080–8256 个方向的网对 lambda_1 给出 0.0000 —— 两个数字用同一个
+crossings() 函数，不可能同时对，除非下降集被网格漏掉。b52 专门对账并证实：下降只发生在
+t < t_hi ~ 2.5e-5..1.6e-3 的边界层内，而 linspace(1e-3, pi/2, nt) 无论 nt 多大都不低于 1e-3。
+因此本文件 [C] 的 gapfrac(min_net lambda_2) 与 nt 的关系是平的（b52 的 [D]），"方向腿关闭"这句
+话在本文件的证据强度下不成立；成立的是"均匀网看不见它"。判读以 b52 为准，本文件的 [C]/[D] 数字
+保留但不作为路线依据（self-correction #26）。
+
+E 密度：细网比粗网更差的抽样数 = 0（7/8 格），q=4 格 9/40；|gain| 中位 = 0.0000（除 q=4 为
+0.0264）。这与 audit 5 的事前修正一致：两网非超集，故该数不是稳定性判据。

@@ -1,0 +1,22 @@
+=== restricted-minimum mu vs exact lambda_min(Gcal), 200 draws per cell ===
+  d   p   q alpha  lam/UB-1    lam/mu-1 max|lam/mu-1|     mu/cf-1 max|mu/cf-1|    H1 fails    w>u
+  8   4   3   2  5.10e-05    5.86e-12    7.74e-11    4.75e-07    4.43e-06      0      0/200
+  8   4   3  20  7.81e-03    4.01e-08    8.68e-07    4.08e-05    3.76e-04      0      0/200
+  8   4   3  45  2.26e-02    6.21e-07    1.00e-05    1.11e-04    1.10e-03      0      0/200
+  8   4   3  85  7.46e-04    6.76e-08    1.26e-06    6.69e-06    1.80e-04      0      0/200
+ 10   4   3   2  2.71e-05    1.56e-12    1.35e-11    1.78e-07    1.53e-06      0      0/200
+ 10   4   3  20  2.48e-03    1.31e-08    7.71e-07    1.41e-05    1.33e-04      0      0/200
+ 10   4   3  45  6.72e-03    2.59e-07    1.77e-05    4.86e-05    4.27e-04      0      0/200
+ 10   4   3  85  2.73e-04    2.81e-08    4.56e-07    2.19e-06    2.56e-05      0      0/200
+ 12   5   4   2  1.87e-05    1.49e-12    6.47e-11    9.29e-08    7.57e-07      0      0/200
+ 12   5   4  20  1.68e-03    6.67e-09    1.90e-07    7.88e-06    6.98e-05      0      0/200
+ 12   5   4  45  4.67e-03    9.29e-08    1.47e-06    2.45e-05    1.75e-04      0      0/200
+ 12   5   4  85  2.15e-04    8.28e-09    1.26e-07    8.75e-07    5.69e-06      0      0/200
+  6   3   3   2  1.54e-04    5.98e-14    2.20e-12    1.30e-13    4.08e-13      0      0/200
+  6   3   3  20  1.06e-02    1.54e-15    2.29e-14    1.30e-15    4.00e-15      0      0/200
+  6   3   3  45  4.81e-02    2.86e-16    4.66e-15    3.17e-16    1.22e-15      0      0/200
+  6   3   3  85  3.02e-03    3.39e-17    2.22e-15    1.74e-16    4.44e-16      0      0/200
+
+columns: lam/UB-1 = worst relative slack of the chapter's upper branch (Theorem 3.1);
+lam/mu-1 = the SAME for the restricted minimisation mu. H1 fails = draws where lam>mu (must be 0).
+w>u = draws where a RANDOM unit w gave a SMALLER restricted minimum than w0 (H3 violation rate).

@@ -1,0 +1,26 @@
+2012/04/23 | 1204.5052 | Frommer, A.; Kahl, K.; Lippert, Th.; Rittich, H. | 2-norm error bounds and estimates for Lanczos approximations to linear systems and rational matrix functions
+2013/02/28 | 1302.7203 | Stor, Nevena Jakovcevic; Slapnicar, Ivan; Barlow, Jesse L. | Accurate eigenvalue decomposition of arrowhead matrices and applications
+2017/07/19 | 1707.06000 | Fritzsche, Bernd; Kirstein, Bernd; Schr?der, Torsten; M?dler, Conrad | On the truncated matricial Stieltjes moment problem $\mathsf{M}[[\alpha,\infty);(s_j)_{j=0}^m,\leq]$
+2021/06/17 | 2106.09806 | Chen, Tyler; Greenbaum, Anne; Musco, Cameron; Musco, Christopher | Error bounds for Lanczos-based matrix function approximation
+2021/10/26 | 2110.13328 | Bradley, Susanne; Greif, Chen | Eigenvalue Bounds for Double Saddle-Point Systems
+2022/11/28 | 2211.15643 | Xu, Qichen; Chen, Tyler | A posteriori error bounds for the block-Lanczos method for matrix function approximation
+2023/07/27 | 2307.14688 | Helanow, Christian; Ahlkrona, Josefin | Theoretical results on a block preconditioner used in ice-sheet modeling: eigenvalue bounds for singular power-law fluids
+2023/09/21 | 2309.11864 | Van Assche, Walter | A Golub-Welsch version for simultaneous Gaussian quadrature
+2023/11/05 | 2311.02701 | Simunec, Igor | Error bounds for the approximation of matrix functions with rational Krylov methods
+2024/01/31 | 2401.17757 | Li, Wenhao; Han, Zongyuan; Zhu, Shengxin | When Lanczos Iterations Generate Symmetric Quadrature Nodes?
+2025/01/10 | 2501.05860 | Kovalyov, Ivan | Multidimensional moment problem and Stieltjes transform
+2025/06/03 | 2506.02816 | Bergamaschi, L.; Martinez, A.; Pearson, J. W.; Potschka, A. | Eigenvalue bounds for preconditioned symmetric multiple saddle-point matrices
+2026/03/29 | 2603.27715 | Zheng, Beichen | A finite-precision Lanczos-Golub-Welsch route to probability-table construction in resonance self-shielding
+2026/03/30 | 2603.29001 | Shah, Dhruv; Cortes, Jorge | A Unified Algebraic Framework for Subspace Pruning in Koopman Operator Approximation via Principal Vectors
+2026/04/02 | 2604.02041 | Webb, Marcus; Maierhofer, Georg | Stable Hermite transforms via the Golub-Welsch algorithm
+2026/04/13 | 2604.11464 | Tudela-Pi, Marc; Colombaro, Ivano | Passive two-plateau relaxation from Tricomi confluent hypergeometric kernels
+2026/06/08 | 2606.09369 | Lorenzo-Sanchez, Paula; Colbrook, Matthew J.; Navarra, Antonio | Residual Pseudospectra Reveal a Physics-Informed Koopman Backbone for Tropical Pacific Variability and ENSO Prediction
+2026/06/25 | 2606.27285 | Pan, Yang; B?lcskei, Helmut | Recovering Governing Equations from Solution Data: Identifiability Bounds for Linear and Nonlinear ODEs
+2026/08/05 | 2608.04360 | Fang, Kaixiao; Jia, Zhongxiao | The Refined Joint Bidiagonalization Method and an Implicitly Restarted Algorithm for Large GSVD Computations
+2026/08/25 | 2608.24203 | Bergamaschi, Luca; Bergamaschi, Michele; Pearson, John W. | Eigenvalue bounds for preconditioned symmetric multiple saddle-point matrices with block-triangular preconditioners
+2026/08/25 | 2608.24529 | Gubler, Moritz; Park, Taejun; Bussy, Augustin; Laute, Johannes; Marzari, Nicola; Timrov, Iurii; Grigori, Laura | Randomized Block Davidson Eigensolvers for Plane-Wave Density-Functional Theory
+2026/09/21 | 2609.24947 | Mousavi, S. Mohammad; Kadeethum, Teeratorn; Bouklas, Nikolaos; Goswami, Somdatta | Learning Physics from an Imperfect Ancestor
+
+missing=0 of 22
+wrote E:\pdf\topics\out\rc\B\absauthors.txt
+RC=0

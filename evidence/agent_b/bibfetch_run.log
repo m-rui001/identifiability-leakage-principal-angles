@@ -1,0 +1,106 @@
+=== arXiv id_list: http=429 bytes=32
+FAILED - nothing written; a 400/429 is never a bibliographic result
+### golubwelsch1969 | 10.1090/s0025-5718-69-99647-1
+    authors: Gene H. Golub; John H. Welsch
+    title  : Calculation of Gauss quadrature rules
+    journal: Mathematics of Computation  vol=23  page=221-230  issued=1969
+    pubtype: journal-article  publisher=American Mathematical Society (AMS)
+### gueisenstat1995 | 10.1137/s0895479892241287
+    authors: Ming Gu; Stanley C. Eisenstat
+    title  : A Divide-and-Conquer Algorithm for the Symmetric Tridiagonal Eigenproblem
+    journal: SIAM Journal on Matrix Analysis and Applications  vol=16  page=172-191  issued=1995
+    pubtype: journal-article  publisher=Society for Industrial & Applied Mathematics (SIAM)
+### bunch1978 | 10.1007/bf01396012
+    authors: James R. Bunch; Christopher P. Nielsen; Danny C. Sorensen
+    title  : Rank-one modification of the symmetric eigenproblem
+    journal: Numerische Mathematik  vol=31  page=31-48  issued=1978
+    pubtype: journal-article  publisher=Springer Science and Business Media LLC
+### cuppen1980 | 10.1007/bf01396757
+    authors: J. J. M. Cuppen
+    title  : A divide and conquer method for the symmetric tridiagonal eigenproblem
+    journal: Numerische Mathematik  vol=36  page=177-195  issued=1980
+    pubtype: journal-article  publisher=Springer Science and Business Media LLC
+### daviskahan1963 | 10.1016/0022-247x(63)90001-5
+    authors: Chandler Davis
+    title  : The rotation of eigenvectors by a perturbation
+    journal: Journal of Mathematical Analysis and Applications  vol=6  page=159-173  issued=1963
+    pubtype: journal-article  publisher=Elsevier BV
+### daviskahan1965 | 10.1016/0022-247x(65)90066-1
+    authors: Chandler Davis
+    title  : The rotation of eigenvectors by a perturbation?II
+    journal: Journal of Mathematical Analysis and Applications  vol=11  page=20-27  issued=1965
+    pubtype: journal-article  publisher=Elsevier BV
+### daviskahan1970 | 10.1137/0707001
+    authors: Chandler Davis; W. M. Kahan
+    title  : The Rotation of Eigenvectors by a Perturbation. III
+    journal: SIAM Journal on Numerical Analysis  vol=7  page=1-46  issued=1970
+    pubtype: journal-article  publisher=Society for Industrial & Applied Mathematics (SIAM)
+### wedin1972 | 10.1007/bf01932678
+    authors: Per-?ke Wedin
+    title  : Perturbation bounds in connection with singular value decomposition
+    journal: BIT  vol=12  page=99-111  issued=1972
+    pubtype: journal-article  publisher=Springer Science and Business Media LLC
+### bjorck1973 | 10.2307/2005662
+    authors: Ake Bjorck; Gene H. Golub
+    title  : Numerical Methods for Computing Angles Between Linear Subspaces
+    journal: Mathematics of Computation  vol=27  page=579  issued=1973
+    pubtype: journal-article  publisher=JSTOR
+### knyazevharresh2002 | 10.1137/s1064827500377332
+    authors: Andrew V. Knyazev; Merico E. Argentati
+    title  : Principal Angles between Subspaces in an
+                    <i>A</i>
+                    -Based Scalar Product: Algorithms and Perturbation Estimates
+    journal: SIAM Journal on Scientific Computing  vol=23  page=2008-2040  issued=2002
+    pubtype: journal-article  publisher=Society for Industrial & Applied Mathematics (SIAM)
+### knyazev2006 | 10.1137/060649070
+    authors: Andrew V. Knyazev; Merico E. Argentati
+    title  : Majorization for Changes in Angles Between Subspaces, Ritz Values, and Graph Laplacian Spectra
+    journal: SIAM Journal on Matrix Analysis and Applications  vol=29  page=15-32  issued=2006
+    pubtype: journal-article  publisher=Society for Industrial & Applied Mathematics (SIAM)
+### drmac2000 | 10.1137/s0895479897320824
+    authors: Zlatko Drmac
+    title  : On Principal Angles between Subspaces of Euclidean Space
+    journal: SIAM Journal on Matrix Analysis and Applications  vol=22  page=173-194  issued=2000
+    pubtype: journal-article  publisher=Society for Industrial & Applied Mathematics (SIAM)
+### welch1974 | 10.1109/tit.1974.1055219
+    authors: L. Welch
+    title  : Lower bounds on the maximum cross correlation of signals (Corresp.)
+    journal: IEEE Transactions on Information Theory  vol=20  page=397-399  issued=1974
+    pubtype: journal-article  publisher=Institute of Electrical and Electronics Engineers (IEEE)
+### gautschi1996 | 10.1017/s0962492900002622
+    authors: Walter Gautschi
+    title  : Orthogonal polynomials: applications and computation
+    journal: Acta Numerica  vol=5  page=45-119  issued=1996
+    pubtype: journal-article  publisher=Cambridge University Press (CUP)
+### frisch1933 | 10.2307/1907330
+    authors: Ragnar Frisch; Frederick V. Waugh
+    title  : Partial Time Regressions as Compared with Individual Trends
+    journal: Econometrica  vol=1  page=387  issued=1933
+    pubtype: journal-article  publisher=JSTOR
+### lovell1963 | 10.1080/01621459.1963.10480682
+    authors: Michael C. Lovell
+    title  : Seasonal Adjustment of Economic Time Series and Multiple Regression Analysis
+    journal: Journal of the American Statistical Association  vol=58  page=993-1010  issued=1963
+    pubtype: journal-article  publisher=Informa UK Limited
+### ding2021 | 10.1016/j.spl.2020.108945
+    authors: Peng Ding
+    title  : The Frisch?Waugh?Lovell theorem for standard errors
+    journal: Statistics &amp; Probability Letters  vol=168  page=108945  issued=2021
+    pubtype: journal-article  publisher=Elsevier BV
+### ljung2010 | 10.1016/j.arcontrol.2009.12.001
+    authors: Lennart Ljung
+    title  : Perspectives on system identification
+    journal: Annual Reviews in Control  vol=34  page=1-12  issued=2010
+    pubtype: journal-article  publisher=Elsevier BV
+### kato1995 | 10.1007/978-3-642-66282-9
+    authors: Tosio Kato
+    title  : Perturbation Theory for Linear Operators
+    journal: Classics in Mathematics  vol=?  page=?  issued=1995
+    pubtype: book  publisher=Springer Berlin Heidelberg
+### sun1998 | 10.1137/s0895479895291303
+    authors: Ji-guang Sun
+    title  : Perturbation Theory for Algebraic Riccati Equations
+    journal: SIAM Journal on Matrix Analysis and Applications  vol=19  page=39-65  issued=1998
+    pubtype: journal-article  publisher=Society for Industrial & Applied Mathematics (SIAM)
+
+wrote E:\pdf\topics\out\rc\B\bibfetch.txt

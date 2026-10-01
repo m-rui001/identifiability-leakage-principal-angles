@@ -1,0 +1,19 @@
+=== candidate lambda_min(Gcal) closed form, d=8 p=4 q=3, 300 draws/alpha ===
+sqRt = sqrt(lam/sin^2 alpha) (exact), invm15 = (1+t)^(-1/2) (dictionary-only);
+the two agree to within the last column, which is the block-mass surrogate used by the
+chapter's Corollary 'the observed looseness of (star) is one dictionary scalar'.
+ alpha max|lam/UB-1| max|lam/cf-1| mean(lam/cf-1)  lam>cf  lam<cf  lam<LB  mean sqRt mean invm15   max|dev| min lam(Lam)/2    max UB
+     1    1.1732e-05    1.4084e-06   -1.0410e-07       0     300       0    0.92364    0.92362     0.0000        1.7686    0.0003
+     2    8.6096e-05    5.0383e-06   -4.4115e-07       0     300       0    0.92261    0.92254     0.0001        1.3802    0.0011
+     5    3.8880e-04    2.7702e-05   -2.6094e-06       0     300       0    0.92275    0.92231     0.0007        1.7062    0.0068
+    10    1.8117e-03    1.3780e-04   -1.1987e-05       0     300       0    0.92381    0.92204     0.0028        1.5087    0.0271
+    20    5.2153e-03    4.3662e-04   -4.4519e-05       0     300       0    0.93029    0.92337     0.0103        1.7326    0.1056
+    45    1.5107e-02    2.2032e-03   -1.4475e-04       0     300       0    0.95548    0.92264     0.0486        1.6493    0.4724
+    60    1.5041e-02    1.1992e-03   -1.1028e-04       0     300       0    0.97600    0.92329     0.0842        1.7283    0.7290
+    70    9.3014e-03    1.9585e-03   -8.5074e-05       0     300       0    0.98800    0.92234     0.1056        1.5963    0.8712
+    85    7.4850e-04    7.8627e-05   -6.7818e-06       0     300       0    0.99920    0.92327     0.1249        1.7695    0.9915
+
+lam<cf on every draw is the interesting column: cf is then a candidate UPPER bound, strictly
+sharper than Theorem 4.5's, and its direction agrees (it never underestimates lambda_min).
+the min() in the lower branch is never active on this grid if min lam(Lam)/2 > max UB for every alpha.
+cf is a CANDIDATE: matching a quantity in Monte-Carlo is not evidence that it bounds it.

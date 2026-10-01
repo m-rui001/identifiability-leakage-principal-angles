@@ -1,0 +1,45 @@
+### SST4  d=4  n=900  rho=0.9587  cond(eig)=3.21
+   n ER(err ratio)         NG       I_true       I_norm   MI optim.%
+   1      1.103      1.006      2.89226      2.85382        -1.33
+   2      1.111      1.012      1.84202      1.69803        -7.82
+   4      1.113      1.021      1.02585      0.97416        -5.04
+   6      1.107      1.028      0.67660      0.67390        -0.40
+  12      1.095      1.037      0.28338      0.29976         5.78
+  18      1.094      1.039      0.14862      0.15635         5.20
+  24      1.095      1.040      0.08442      0.08775         3.94
+  bootstrap ER(n=6): median=1.323  CI95=[0.948, 14.444]  P(>1.05)=0.86
+  bootstrap ER(n=12): median=1.463  CI95=[0.895, 64.306]  P(>1.05)=0.83
+  bootstrap NG(n=12): median=1.884  CI95=[1.048, 4.077]  P(>1.05)=0.97
+  control: normal truth A_N -> fitted ER(n=12) median=0.962  IQR=[0.899, 1.262]  (detection power of the pipeline)
+  control: non-normal truth A -> fitted ER(n=12) median=1.274  IQR=[1.051, 1.529]  (detection power of the pipeline)
+
+### SST4+ONI+SOI  d=6  n=888  rho=0.9713  cond(eig)=7.83
+   n ER(err ratio)         NG       I_true       I_norm   MI optim.%
+   1      1.372      1.502      3.57873      3.27803        -8.40
+   2      1.575      1.834      2.33221      2.11757        -9.20
+   4      1.619      2.042      1.38996      1.28921        -7.25
+   6      1.581      2.054      0.96688      0.92235        -4.60
+  12      1.505      2.042      0.45019      0.46131         2.47
+  18      1.493      2.068      0.26133      0.27437         4.99
+  24      1.500      2.095      0.16689      0.17478         4.73
+  bootstrap ER(n=6): median=2.983  CI95=[0.971, 10.677]  P(>1.05)=0.95
+  bootstrap ER(n=12): median=3.376  CI95=[0.951, 29.548]  P(>1.05)=0.96
+  bootstrap NG(n=12): median=2.755  CI95=[1.543, 5.651]  P(>1.05)=1.00
+  control: normal truth A_N -> fitted ER(n=12) median=1.555  IQR=[1.245, 2.235]  (detection power of the pipeline)
+  control: non-normal truth A -> fitted ER(n=12) median=2.216  IQR=[1.803, 3.179]  (detection power of the pipeline)
+
+### ENSO8  d=8  n=516  rho=0.9623  cond(eig)=14.8
+   n ER(err ratio)         NG       I_true       I_norm   MI optim.%
+   1      0.908      1.951      4.26900      4.13738        -3.08
+   2      0.894      2.646      2.67273      2.55062        -4.57
+   4      0.992      3.500      1.53454      1.42263        -7.29
+   6      1.124      4.012      1.05710      0.95245        -9.90
+  12      1.402      4.720      0.47462      0.41680       -12.18
+  18      1.515      4.915      0.25029      0.22211       -11.26
+  24      1.562      4.966      0.14192      0.12684       -10.62
+  bootstrap ER(n=6): median=2.432  CI95=[0.869, 22.100]  P(>1.05)=0.89
+  bootstrap ER(n=12): median=2.731  CI95=[0.787, 58.750]  P(>1.05)=0.90
+  bootstrap NG(n=12): median=5.794  CI95=[2.971, 11.508]  P(>1.05)=1.00
+  control: normal truth A_N -> fitted ER(n=12) median=1.499  IQR=[1.296, 2.005]  (detection power of the pipeline)
+  control: non-normal truth A -> fitted ER(n=12) median=4.908  IQR=[1.870, 25.206]  (detection power of the pipeline)
+

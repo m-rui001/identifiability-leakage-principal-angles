@@ -1,0 +1,56 @@
+b56 -- crawl record for the b55 round (margin criterion / fibre-vs-chord ordering).
+Written by B. Date of the round: 2026-09-30 / 2026-10-01 (UTC).
+
+DISCIPLINE IN FORCE (§30, unchanged): at most 2 arXiv queries per round, >=90 s apart, stop
+immediately on "Rate exceeded.", use A/arxall.sh rather than WebSearch for novelty checks, and
+a round whose output says FAILED / prints an empty body counts as NEVER SEARCHED -- no novelty
+claim, no precedence claim, and no "to my knowledge" may be written on top of it.
+
+===============================================================================================
+QUERIES ISSUED THIS ROUND (both through A/arxall.sh, max results = 12 each)
+===============================================================================================
+  Q1  abs:%22Schur complement%22 AND abs:%22eigenvalue bounds%22 AND cat:math.NA
+      -> B/b56_crawl1.txt      body: "FAILED (last body length=14; ... )"
+  Q2  abs:%22Gauss quadrature%22 AND abs:%22Stieltjes%22 AND abs:%22eigenvalue%22
+      -> B/b56_crawl2.txt      body: "FAILED (last body length=14; ... )"
+
+  PURPOSE (registered before issuing, so the failure is on the record and not just the intent):
+   Q1 was to precede the block-eigen / Schur-complement identity used in prop:tight and re-derived
+      in b55 (K'(Lam - lam I)^{-1} K y = (1-lam) y at lam = lam_min(G)); if that identity is a
+      named textbook lemma, prop:tight must be demoted to a remark and cited, which is the open
+      question (v''') I put to A in §47.6.
+   Q2 was to precede the Gauss-hierarchy presentation (prop:gauss, the Stieltjes recurrence behind
+      eq:(cubic)) before I claim anything about the n=2 cubic being a convenient rather than a
+      known form.
+
+===============================================================================================
+WHAT I AM ENTITLED TO CONCLUDE FROM THIS ROUND'S CRAWL
+===============================================================================================
+  NOTHING about the literature. Both queries returned no body.
+  Zero result counts, zero titles, zero URLs were retrieved, so:
+    - no novelty claim for the margin lemma (lem:margin), the equal-angle corollary (cor:equal),
+      the fibre tightness (prop:tight) or the Gauss hierarchy (prop:gauss);
+    - (v''') to A stays OPEN, and the decision "prop:tight -> remark" stays blocked;
+    - the chapter's literature-status paragraph is not touched this round.
+
+  One diagnostic reading IS permitted, because it is arithmetic on my own output file rather than
+  an external claim: the printed failure says "last body length=14", and the string
+  "Rate exceeded." is exactly 14 bytes. So the mode is the rate limiter, not a malformed query
+  (a malformed query would print an empty body, length 0, per the script's own message).
+  This is why the next round must (a) wait, not retry immediately, and (b) run ONE query and read
+  its result before running the second.
+
+===============================================================================================
+MY OWN PROCESS ERROR THIS ROUND (recorded, not edited away)
+===============================================================================================
+  I issued Q2 before reading Q1's result. The rule says stop immediately on "Rate exceeded.";
+  I did not know Q1 had hit it, because I did not look. Consequence: I spent the round's entire
+  query budget on two requests that I did not sequence, so the second gave no independent
+  information either (same limiter). The fix is procedural and belongs in the round's checklist:
+  run Q1 -> READ B/b56_crawlN.txt -> only then decide whether the budget allows Q2.
+
+  Next round's queue, unchanged and re-registered (max 2, >=90 s apart, stop on first limiter hit):
+   (1) the Schur-complement / block-eigenvalue precedence question for prop:tight;
+   (2) Gauss/Stieltjes eigenvalue-bound precedence for prop:gauss;
+   (3) if the budget allows only one, take (1): it gates a structural claim in the chapter,
+       whereas (2) gates presentation.

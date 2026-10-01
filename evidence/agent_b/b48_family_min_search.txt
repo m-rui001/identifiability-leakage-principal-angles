@@ -1,0 +1,152 @@
+======================================================================================================================
+[A/B/C/D] exhaustive polar search around v1 over the whole unit sphere, q=3 and q=2 and q=4.
+    The net INCLUDES t=0, i.e. v1 itself: 'max|d0|' checks that lam(v1) reproduces cf1, then
+    'best competitor' compares every other net point against lam(v1), not against a grid hint.
+    (i) #below v1 by >floor must be 0 for every draw  => cf1 IS the family minimum (claim A).
+    (ii) #blow-up-before-cf1 must be 0: a direction whose chord blows up before cf1 would
+         cross earlier and beat cf1 by construction, so this count IS the competitor detector.
+    (iii) viol = #{lam(v) < lam_min(G)} must be 0 -- that is prop:chord, re-audited on a dense net.
+    (iv) where the competitor sits: B(v*)/c^2 (1.000 means v* is in E0) and |sin| to v1.
+                  q=3 spread 5-75: n= 40 dimE0=[1]  v1 self-check max|d0|=4.81e-16  competitor d: max= 2.00e-07 min=-5.29e-07  #below v1>floor=19/40  #blow-up=0 viol(prop:chord)=0  max| |v|-1 |=5.6e-16
+                                    at v*: B/c^2= 1.000 C/(c^2 t1)= 1.000 |sin to v1|= 0.001 t*= 0.00 (ring  1.1% of grid)  frac of cf1 gap removed: med=-0.082 max= 0.449  med gap1= 2.70e-07
+                                    competitors (n=19): B/c^2 in [9.999996e-01,9.999996e-01]  C/(c^2 t1) in [1.000111e+00,1.000383e+00]
+               q=3 spread 2-45-88: n= 40 dimE0=[1]  v1 self-check max|d0|=4.29e-16  competitor d: max= 2.54e-07 min= 1.28e-07  #below v1>floor=0/40  #blow-up=0 viol(prop:chord)=0  max| |v|-1 |=4.4e-16
+                                    at v*: B/c^2= 1.000 C/(c^2 t1)= 1.000 |sin to v1|= 0.001 t*= 0.00 (ring  1.1% of grid)  frac of cf1 gap removed: med=-26.005 max=-3.340  med gap1= 8.00e-09
+              q=3 spread 30-88-89: n= 40 dimE0=[1]  v1 self-check max|d0|=3.05e-16  competitor d: max= 3.68e-07 min=-1.68e-06  #below v1>floor=18/40  #blow-up=0 viol(prop:chord)=0  max| |v|-1 |=4.4e-16
+                                    at v*: B/c^2= 1.000 C/(c^2 t1)= 1.000 |sin to v1|= 0.001 t*= 0.00 (ring  1.1% of grid)  frac of cf1 gap removed: med=-0.000 max= 0.001  med gap1= 3.54e-04
+                                    competitors (n=18): B/c^2 in [9.999990e-01,9.999990e-01]  C/(c^2 t1) in [1.000005e+00,1.000031e+00]
+                    q=3 equal 20d: n= 40 dimE0=[3]  v1 self-check max|d0|=1.63e-15  competitor d: max= 1.11e-08 min= 1.24e-09  #below v1>floor=0/40  #blow-up=0 viol(prop:chord)=0  max| |v|-1 |=4.4e-16
+                                    at v*: B/c^2= 1.000 C/(c^2 t1)= 1.000 |sin to v1|= 0.001 t*= 0.00 (ring  1.1% of grid)  frac of cf1 gap removed: med=-0.000 max=-0.000  med gap1= 4.09e-05
+                  q=3 2-45-88 mix: n= 40 dimE0=[1]  v1 self-check max|d0|=3.49e-16  competitor d: max= 2.41e-07 min= 2.41e-07  #below v1>floor=0/40  #blow-up=0 viol(prop:chord)=0  max| |v|-1 |=5.6e-16
+                                    at v*: B/c^2= 1.000 C/(c^2 t1)= 1.000 |sin to v1|= 0.001 t*= 0.00 (ring  1.1% of grid)  frac of cf1 gap removed: med=-2786.879 max=-2786.712  med gap1= 8.65e-11
+                 q=3 30-88-89 mix: n= 40 dimE0=[1]  v1 self-check max|d0|=3.05e-16  competitor d: max= 3.47e-07 min= 3.47e-07  #below v1>floor=0/40  #blow-up=0 viol(prop:chord)=0  max| |v|-1 |=6.7e-16
+                                    at v*: B/c^2= 1.000 C/(c^2 t1)= 1.000 |sin to v1|= 0.001 t*= 0.00 (ring  1.1% of grid)  frac of cf1 gap removed: med=-0.143 max=-0.143  med gap1= 2.43e-06
+               q=3 2d/84d/88d mix: n= 40 dimE0=[1]  v1 self-check max|d0|=5.97e-16  competitor d: max= 4.89e-07 min= 4.89e-07  #below v1>floor=0/40  #blow-up=0 viol(prop:chord)=0  max| |v|-1 |=6.7e-16
+                                    at v*: B/c^2= 1.000 C/(c^2 t1)= 1.000 |sin to v1|= 0.001 t*= 0.00 (ring  1.1% of grid)  frac of cf1 gap removed: med=-11164.337 max=-11164.116  med gap1= 4.38e-11
+                  q=2 spread 5-40: n= 40 dimE0=[1]  v1 self-check max|d0|=3.12e-16  competitor d: max= 1.63e-16 min=-4.06e-07  #below v1>floor=11/11  #blow-up=0 viol(prop:chord)=0  max| |v|-1 |=3.3e-16
+                                    at v*: B/c^2= 1.000 C/(c^2 t1)= 1.000 |sin to v1|= 0.000 t*= 6.28 (ring 100.0% of grid)  frac of cf1 gap removed: med= 0.000 max= 0.553  med gap1= 2.21e-07
+                                    competitors (n=11): B/c^2 in [9.999996e-01,9.999999e-01]  C/(c^2 t1) in [1.000031e+00,1.000315e+00]
+                     q=2 equal 5d: n= 40 dimE0=[2]  v1 self-check max|d0|=9.90e-16  competitor d: max= 1.92e-16 min=-2.13e-16  #below v1>floor=0/0  #blow-up=0 viol(prop:chord)=0  max| |v|-1 |=3.3e-16
+                                    at v*: B/c^2= 1.000 C/(c^2 t1)= 1.000 |sin to v1|= 0.000 t*= 6.28 (ring 100.0% of grid)  frac of cf1 gap removed: med=-0.000 max= 0.000  med gap1= 1.59e-07
+                 q=4 spread 5-75+: n= 40 dimE0=[1]  v1 self-check max|d0|=4.12e-16  competitor d: max= 2.12e-08 min=-8.62e-07  #below v1>floor=37/40  #blow-up=0 viol(prop:chord)=0  max| |v|-1 |=7.8e-16
+                                    at v*: B/c^2= 1.000 C/(c^2 t1)= 1.000 |sin to v1|= 0.001 t*= 0.00 (ring  1.1% of grid)  frac of cf1 gap removed: med= 0.299 max= 0.530  med gap1= 5.82e-07
+                                    competitors (n=37): B/c^2 in [9.999996e-01,9.999998e-01]  C/(c^2 t1) in [1.000063e+00,1.000499e+00]
+   [D] control: isotropy ZK=0 (cf1 exact, so the family minimum must sit AT v1 with no slack)
+                  iso ZK=0 spread: n= 40 dimE0=[1]  v1 self-check max|d0|=3.68e-16  competitor d: max= 2.50e-07 min= 2.49e-07  #below v1>floor=0/40  #blow-up=0 viol(prop:chord)=0  max| |v|-1 |=5.6e-16
+                                    at v*: B/c^2= 1.000 C/(c^2 t1)= 1.000 |sin to v1|= 0.001 t*= 0.00 (ring  1.1% of grid)  frac of cf1 gap removed: med=   nan max=   nan  med gap1= 1.81e-14
+                   iso ZK=0 equal: n= 40 dimE0=[1]  v1 self-check max|d0|=3.68e-16  competitor d: max= 4.55e-10 min= 8.28e-12  #below v1>floor=0/40  #blow-up=0 viol(prop:chord)=0  max| |v|-1 |=5.6e-16
+                                    at v*: B/c^2= 1.000 C/(c^2 t1)= 1.000 |sin to v1|= 0.001 t*= 0.00 (ring  1.1% of grid)  frac of cf1 gap removed: med=-0.477 max=-0.262  med gap1= 3.98e-10
+
+======================================================================================================================
+[E] IS v1 STATIONARY for lam on the sphere?  the ORDER of the dip decides what cf1 is.
+    Along v(t) = cos t v1 + sgn sin t u with u _|_ v1:
+      B'(0) = 2 v1^T A0 u = 2 c^2 (v1.u) = 0   (A0 v1 = c^2 v1: v1 is a top eigenvector)
+      C'(0) = 2 sgn v1^T B2 u  = 2 sgn |P_perp B2 v1|   for u along that component, and
+      dlam/dC = lam(lam-1)/|F_lam| < 0  =>  lam'(0+) = C'(0) lam(lam-1)/|F_lam|.
+    PREDICTION (before running): |P_perp B2 v1| > 0 whenever dim E0 < q, because t1 maximises C
+    over E0 ONLY -- so v1 is a SADDLE, not a minimum, and cf1 is beaten at FIRST order along
+    the steepest-descent ray, with lam'(0+) matching the formula above; the dip must then
+    saturate at t* = O(|slope|/curvature) and prop:chord must still hold along the ray
+    (viol = 0).  In the degenerate cells (dim E0 = q: equal angles) B2 v1 = lam_max(B2) v1 for
+    the C-maximising v1, so the slope is 0 and NO competitor exists -- [A] already showed 0/40
+    there, which is the consistency check this section is designed to fail on.  Falsifier of
+    the saddle reading: a cell with dim E0 < q and |P_perp B2 v1| at round-off.
+   [E1] generic cells where [A] found competitors:
+                q=3 spread 5-75: n=12 dimE0=[1]  stationary(v1 is a true local min)=0  saddle=12  lam'(0+)<0 in 12/12 saddles
+                                  |P_perp B2 v1|: min=7.085e-03 max=7.612e-02   ray origin |lam(0)-cf1| max=3.38e-16   viol(prop:chord) on rays=0
+                                  lam'(0+) vs prediction: max rel err=1.66e-02  slope med=-1.797e-04 pred med=-1.799e-04
+                                  dip along steepest ray: med=-4.014e-08 (#<0 12/12)  t* med=3.978e-04  frac of cf1 gap removed med=0.179 max=0.321
+            q=3 spread 30-88-89: n=12 dimE0=[1]  stationary(v1 is a true local min)=0  saddle=12  lam'(0+)<0 in 12/12 saddles
+                                  |P_perp B2 v1|: min=1.473e-03 max=7.501e-03   ray origin |lam(0)-cf1| max=1.39e-16   viol(prop:chord) on rays=0
+                                  lam'(0+) vs prediction: max rel err=1.70e-03  slope med=-4.676e-04 pred med=-4.680e-04
+                                  dip along steepest ray: med=-1.319e-07 (#<0 12/12)  t* med=5.716e-04  frac of cf1 gap removed med=0.000 max=0.001
+                q=2 spread 5-40: n=12 dimE0=[1]  stationary(v1 is a true local min)=0  saddle=12  lam'(0+)<0 in 12/12 saddles
+                                  |P_perp B2 v1|: min=1.069e-02 max=9.954e-02   ray origin |lam(0)-cf1| max=2.44e-16   viol(prop:chord) on rays=0
+                                  lam'(0+) vs prediction: max rel err=5.04e-03  slope med=-1.431e-04 pred med=-1.433e-04
+                                  dip along steepest ray: med=-2.463e-08 (#<0 12/12)  t* med=3.402e-04  frac of cf1 gap removed med=0.234 max=0.408
+               q=4 spread 5-75+: n=12 dimE0=[1]  stationary(v1 is a true local min)=0  saddle=12  lam'(0+)<0 in 12/12 saddles
+                                  |P_perp B2 v1|: min=4.054e-02 max=2.067e-01   ray origin |lam(0)-cf1| max=2.12e-16   viol(prop:chord) on rays=0
+                                  lam'(0+) vs prediction: max rel err=2.27e-03  slope med=-3.084e-04 pred med=-3.087e-04
+                                  dip along steepest ray: med=-1.065e-07 (#<0 12/12)  t* med=7.261e-04  frac of cf1 gap removed med=0.202 max=0.581
+   [E2] generic cells where [A] found NONE (must still be saddles, just shallower than floor):
+             q=3 spread 2-45-88: n=12 dimE0=[1]  stationary(v1 is a true local min)=0  saddle=12  lam'(0+)<0 in 12/12 saddles
+                                  |P_perp B2 v1|: min=2.796e-03 max=1.477e-01   ray origin |lam(0)-cf1| max=1.80e-16   viol(prop:chord) on rays=0
+                                  lam'(0+) vs prediction: max rel err=1.49e-01  slope med=-1.934e-05 pred med=-1.960e-05
+                                  dip along steepest ray: med=-3.675e-10 (#<0 12/12)  t* med=3.743e-05  frac of cf1 gap removed med=0.073 max=0.428
+                q=3 2-45-88 mix: n=12 dimE0=[1]  stationary(v1 is a true local min)=0  saddle=12  lam'(0+)<0 in 12/12 saddles
+                                  |P_perp B2 v1|: min=1.091e-02 max=1.091e-02   ray origin |lam(0)-cf1| max=3.49e-16   viol(prop:chord) on rays=0
+                                  lam'(0+) vs prediction: max rel err=3.78e-02  slope med=-6.302e-06 pred med=-6.550e-06
+                                  dip along steepest ray: med=-4.329e-11 (#<0 12/12)  t* med=1.325e-05  frac of cf1 gap removed med=0.500 max=0.500
+   [E3] degenerate control (dim E0 = q): slope must be 0 and no competitor:
+                  q=3 equal 20d: n=12 dimE0=[3]  stationary(v1 is a true local min)=12  saddle=0  lam'(0+)<0 in 0/0 saddles
+                                  |P_perp B2 v1| max=6.223e-16 (round-off => no descent direction exists; [A]'s 0 competitors is the matching observation)
+
+======================================================================================================================
+判读（预登记，跑前写的；实测判读附在文件末尾）：
+  A 每格 min_v lam - cf1 的最大值应在地板内（>=0 且 t* ~ 0，B(v*)/c^2 ~ 1）=> cf1 即家族最小元。
+  B 若某格出现 min_v lam < cf1 - 地板 => 存在更紧的可证单侧代理（家族最小值），报比值与位置。
+  C 任何 viol>0 => prop:chord 被推翻，正文必须重开，本文件其余内容无意义。
+  D ZK=0 控制组：cf1 = lam_min，故家族最小值应紧贴 cf1（差在地板），这是搜索本身的对照。
+  机制预登记（改完 v1 之后、跑之前写的）：dlam/dC<0、dlam/dB 在 B>(1-lam)/2 时也 <0，
+     而 t1 只最大化 E0 内的 C，所以 off-E0 方向可用 B 换 C；预言每个竞争者 Cratio>1 且 Bratio<1。
+     证伪：出现 Cratio<=1 的竞争者（脚本会单行打印 FALSIFIER）=> 机制解释错。
+  v1 自证 max|d0| 必须在地板内：首版我把 v1 取成 E0[:,-1]，退化 E0 下不是 C 的最大方向，
+     自证抓到 1.38e-02 的偏差，那一格的'竞争者'是我自己的错方向，不是真结果。
+  E 鞍点判据（跑前写的）：t1 只在 E0 内最大化 C，所以 |P_perp B2 v1| 一般非零 => v1 不是驻点，
+     lam 沿最陡下降射线一阶下降；预测 slope 与公式 lam'(0+)=C'(0)lam(lam-1)/|F_lam| 一致，
+     且射线上 viol 仍为 0（prop:chord 不破）。退化格（dim E0=q）斜率应为 0、无竞争者。
+     证伪：dim E0<q 而 |P_perp B2 v1| 落在舍入误差；或 slope 与公式不符；或射线上出现 viol。
+  已知局限（先写）：q>=4 的垂直球用的是 240 个随机点的网，不是覆盖网；t 网格 96 点。
+
+======================================================================================================================
+实测判读（跑后追加；两次独立运行逐字节一致）：
+
+0  一句话结论：**cf1 不是家族 (20) 的最小元，甚至不是局部极小 —— v1 一般是鞍点**；而在
+   dim E0 = q 的格（等角、各向同性）v1 是真正的局部最小且搜索找不到竞争者。
+   分支 A（cf1=家族最小）在一般位置**被否**；分支 C（prop:chord 被推翻）**未触发**：
+   7,380,480 个网点 + 144,000 个射线点，viol 全为 0（每格 max| |v|-1 | ≤ 7.8e-16，网确在球面上）。
+
+1  [A] 首版的错（已由脚本头记录）：v1 取成 E0[:,-1]，退化 E0 下它不是 C 的最大方向，
+   equal 20d 那格 100% 的"竞争者"是 my own wrong direction；v1 自证 max|d0| = 1.38e-02 抓到它。
+   改成 v1 = E0 @ (E0^T B2 E0 的顶特征向量) 后：所有格 max|d0| ≤ 1.6e-15，即 cf1 = lam(v1) 得证，
+   且 b46/b47 的 t1 用的是压缩矩阵的特征值（不是特征向量），那两轮的 cf1 数值不受此错影响。
+
+2  [A] 修正后仍有真实竞争者，且只在一般位置：
+   q=3 5-75 19/40 (min d=-5.29e-07)、q=3 30-88-89 18/40 (-1.68e-06)、
+   q=2 5-40 11/40 (-4.06e-07)、q=4 5-75+ 37/40 (-8.62e-07)；
+   其余 6 格 0 个（equal 20d dimE0=3、equal 5d dimE0=2、三个 mix、两个 ZK=0 控制）。
+   每个竞争者都满足预登记的 (B,C) 交换：6 位小数下 B/c^2 ∈ [9.999990e-01, 9.999999e-01]（<1）、
+   C/(c^2 t1) ∈ [1.000005e+00, 1.000499e+00]（>1），FALSIFIER 行一次都没打印。
+
+3  [E] 机制比 (2) 更强：不是一阶"用 B 换 C"的二阶折衷，而是**一阶方向导数非零**。
+   沿 v(t)=cos t·v1 + sin t·u, u ⊥ v1：B'(0)=2c^2(v1·u)=0（A0 v1 = c^2 v1）而
+   C'(0)=2 v1^T B2 u ≠ 0，因为 t1 只在 E0 内最大化 C。
+   84/84 个一般位置抽样都是鞍点：|P_perp B2 v1| ∈ [1.473e-03, 2.067e-01]，
+   实测 lam'(0+)（t=1e-6 差商）与公式 -2|P_perp|·lam(1-lam)/|F_lam| 的最大相对误差
+   = 1.66e-02 / 1.70e-03 / 5.04e-03 / 2.27e-03 / 1.49e-01 / 3.78e-02（按格），
+   最差那格 slope 仅 1.9e-05，差商的 O(t) 二阶污染不可忽略 —— 该格的定性结论（负）仍与其余一致。
+   射线原点自证 |lam(0)-cf1| ≤ 3.5e-16。
+
+4  [E] 家族最小值能救回多少：最陡下降射线去掉 cf1 过估比例的中位 = 0.179 / 0.000 / 0.234 / 0.202 /
+   0.073 / 0.500，最大 0.581；t* 中位 1.3e-05…7.3e-04（偶极子饱和尺度）。
+   即：家族最优确实更紧，但收益有限且**要一维优化 + 方向搜索**，不再是闭式；
+   在 cf1 本身已近乎精确的格（30-88-89，gap1=3.54e-04）几乎没有收益。
+
+5  [E3] 记录一个陷阱（本项目第三次同类）：退化格 |gp| ~ 1e-16 时 u = gp/|gp| 把残余 v1 分量放大到
+   O(1)，v(t) 不再单位 → B(v) > 1 → F(0) = B(1-B) < 0 → 小根变负 → 首版在 equal 20d 报出
+   15,793 个 "prop:chord 反例"，全是这个伪影。修正：两次正交投影 + |gp| 判据（低于 1e-12|B2 v1|
+   就判为驻点，不再沿噪声射线走）+ v 归一化。判据本身给出正确对照：12/12 stationary，
+   |P_perp B2 v1| ≤ 6.2e-16，与 [A] 在该格 0/40 竞争者一致。
+
+6  由此得到一个可证的小命题（正文 rem:chord 采用）：
+   v ↦ lam(v) 在 v1 处的一阶变分为 -2 (v1^T B2 u)·lam(1-lam)/|F_lam|，故
+   **v1 是家族在球面上的驻点 ⟺ P_{v1^⊥} B2 v1 = 0 ⟺ v1 是 B2 的特征向量**；
+   等角/各向同性时 E0 = R^q，v1 = B2 的顶特征向量，条件成立（真局部最小）；
+   dim E0 = 1 < q 时一般不成立（鞍点），所以 "cf1 = 家族最小" 这条猜想**只在 slack=0 的轨迹上成立**。
+
+7  局限照写：q=2 的网是 96 点的圆周（v1 附近最小步 1e-3）；q>=4 的垂直球是 240 个随机点，不是覆盖网；
+   [E] 只测一条最陡下降射线，不是全局优化 —— 但 (6) 的方向导数是解析的，鞍点结论不依赖抽样。
+
+8  路线判断：不再追"家族最小元的闭式"（(4) 显示收益 ≤ 0.58 且要优化，性价比低于 §43.6(c) 的
+   余项常数问题）；cf1 的地位改为"闭式、单侧、且在 slack=0 轨迹上即家族局部最小"，
+   正文必须把"cf1 是否家族最小"这个 open item 从疑问句改为已否（附 (6) 的判据）。

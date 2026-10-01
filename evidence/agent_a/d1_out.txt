@@ -1,0 +1,81 @@
+E:\pdf\topics\out\rc\A\d1_koopman_info.py:36: RuntimeWarning: divide by zero encountered in divide
+  inv_a = m_of_gamma(-np.log(np.abs(mu)), n, sigma2) / np.abs(mu) ** (2 * n)
+E:\pdf\topics\out\rc\A\d1_koopman_info.py:78: RuntimeWarning: overflow encountered in exp
+  return sigma2 * (np.exp(2 * n * gamma) - 1) - theta * (1 - np.exp(-2 * gamma))
+E:\pdf\topics\out\rc\A\d1_koopman_info.py:29: RuntimeWarning: invalid value encountered in divide
+  sigma2 * (1 - np.exp(-2 * n * gamma)) / (1 - np.exp(-2 * gamma)),
+
+================================================================================
+[A1] 闭式 MI  vs  蒙特卡洛抽样
+  closed-form=2.972484   analytic-per-coord=2.972484   empirical-MC=2.969837   (empirical rel.err=0.089%)
+
+================================================================================
+[A2] 闭式 water-filling  vs  数值优化 (SLSQP)
+  tau=1.0   : closed-form I*=3.640592693  SLSQP I*=3.640592693  |dc|max=1.08e-08
+           c*=[0.351189 0.346749 0.302062 0.       0.      ]  theta=0.371615
+  tau=0.1   : closed-form I*=1.170758448  SLSQP I*=1.170758448  |dc|max=1.06e-09
+           c*=[0.051189 0.046749 0.002062 0.       0.      ]  theta=0.071615
+  tau=0.01  : closed-form I*=0.204326152  SLSQP I*=0.204326153  |dc|max=2.59e-09
+           c*=[0.00722 0.00278 0.      0.      0.     ]  theta=0.027646
+
+================================================================================
+[A3] 精确留存判据 vs 双区制渐近预测
+   n     d_eff  theta      n*_slow=theta/sigma^2   exact-kept(gamma)
+      1     8   0.126112         126.11            [0.0005 0.002  0.005  0.01   0.02   0.05   0.1    0.2   ]   exact==kept:True
+      5     8   0.132733         132.73            [0.0005 0.002  0.005  0.01   0.02   0.05   0.1    0.2   ]   exact==kept:True
+     20     6   0.197760         197.76            [0.0005 0.002  0.005  0.01   0.02   0.05  ]   exact==kept:True
+    100     4   0.430943         430.94            [0.0005 0.002  0.005  0.01  ]   exact==kept:True
+    500     2   1.624753        1624.75            [0.0005 0.002 ]   exact==kept:True
+   2000     1   7.392251        7392.25            [0.0005]   exact==kept:True
+
+  [A3b] 双区制验证：慢模态共通视界 n*≈theta/sigma^2  vs  快模态个体阈值 gamma*(n)
+    n=20: theta/sigma^2=197.8
+       gamma=0.0005  keep=True  fast-pred=False slow-pred=True  n*gamma=   0.010
+       gamma=0.002   keep=True  fast-pred=False slow-pred=True  n*gamma=   0.040
+       gamma=0.005   keep=True  fast-pred=True  slow-pred=True  n*gamma=   0.100
+       gamma=0.01    keep=True  fast-pred=True  slow-pred=True  n*gamma=   0.200
+       gamma=0.02    keep=True  fast-pred=True  slow-pred=True  n*gamma=   0.400
+       gamma=0.05    keep=True  fast-pred=True  slow-pred=True  n*gamma=   1.000
+       gamma=0.1     keep=False fast-pred=False slow-pred=True  n*gamma=   2.000
+       gamma=0.2     keep=False fast-pred=False slow-pred=True  n*gamma=   4.000
+    n=100: theta/sigma^2=430.9
+       gamma=0.0005  keep=True  fast-pred=False slow-pred=True  n*gamma=   0.050
+       gamma=0.002   keep=True  fast-pred=True  slow-pred=True  n*gamma=   0.200
+       gamma=0.005   keep=True  fast-pred=True  slow-pred=True  n*gamma=   0.500
+       gamma=0.01    keep=True  fast-pred=True  slow-pred=True  n*gamma=   1.000
+       gamma=0.02    keep=False fast-pred=False slow-pred=True  n*gamma=   2.000
+       gamma=0.05    keep=False fast-pred=False slow-pred=True  n*gamma=   5.000
+       gamma=0.1     keep=False fast-pred=False slow-pred=True  n*gamma=  10.000
+       gamma=0.2     keep=False fast-pred=False slow-pred=True  n*gamma=  20.000
+    n=500: theta/sigma^2=1624.8
+       gamma=0.0005  keep=True  fast-pred=False slow-pred=True  n*gamma=   0.250
+       gamma=0.002   keep=True  fast-pred=False slow-pred=True  n*gamma=   1.000
+       gamma=0.005   keep=False fast-pred=False slow-pred=True  n*gamma=   2.500
+       gamma=0.01    keep=False fast-pred=False slow-pred=True  n*gamma=   5.000
+       gamma=0.02    keep=False fast-pred=False slow-pred=True  n*gamma=  10.000
+       gamma=0.05    keep=False fast-pred=False slow-pred=True  n*gamma=  25.000
+       gamma=0.1     keep=False fast-pred=False slow-pred=True  n*gamma=  50.000
+       gamma=0.2     keep=False fast-pred=False slow-pred=True  n*gamma= 100.000
+
+================================================================================
+[A4] 守恒模态 (|mu|=1) 的有限信息视界：I*(n) 何时塌到 0（单模态, tau=1）
+   单模态 |mu|=1: I* = 1/2 log(1 + tau/(n sigma^2))  (预测) vs 数值
+   n        I*(num)      I*(pred)      rel.err     I*=0.35nats 时 n=tau/sigma^2=?
+       1   3.45437739   3.45437739   0.000e+00%
+      10   2.30756026   2.30756026   0.000e+00%
+     100   1.19894764   1.19894764   0.000e+00%
+    1000   0.34657359   0.34657359   0.000e+00%
+   10000   0.04765509   0.04765509   0.000e+00%
+   => 信息视界 n_H = tau/sigma^2 = 1000.0（此处 I* 恰为 1/2 log 2 = 0.346574 nats）
+
+================================================================================
+[A5] 有效维度预算：给定 d_eff 目标，需要多少 IB 预算 tau（sigma^2=1e-3, n=100）
+   target d_eff   required tau      theta
+        1               1e-09       0.105224
+        2           0.0179787       0.123202
+        3            0.116952       0.172689
+        4            0.566859       0.322658
+        5             4.74395        1.36693
+        6             1155.16        231.451
+        7               1e+06         166706
+        8               1e+06         166706

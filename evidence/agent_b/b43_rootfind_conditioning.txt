@@ -1,0 +1,67 @@
+========================================================================================================
+[Q1] alpha -> 0 at well-conditioned Lam.  relerr = |pred/eigvalsh(G) - 1|, 60 draws/cell.
+     The last column tests the mechanism: an ABSOLUTE error floor would make relerr*lam_min
+     constant (independent of alpha).
+    alpha(deg)  lam_min (mean)   ABS tol (b42)     REL tol     max ABS   relerr*lam_min
+        45.000       2.584e-01       6.387e-15   8.086e-16   1.776e-14        1.632e-15
+         5.000       3.312e-03       5.051e-13   6.089e-14   1.391e-12        1.653e-15
+         1.000       1.352e-04       1.352e-11   1.468e-12   3.189e-11        1.825e-15
+         0.100       1.348e-06       1.239e-09   1.559e-10   3.768e-09        1.636e-15
+         0.010       1.370e-08       1.138e-07   2.114e-08   2.495e-07        1.554e-15
+         0.001       1.345e-10       1.394e-05   1.630e-06   4.134e-05        1.837e-15
+
+[Q2] ill-conditioned dictionary (kappa(Lam) large) at fixed alpha=5deg.  'shrunk' = draws whose
+     bracket endpoint had to be pulled off min(lam_min(L),1) because the resolvent was singular.
+    kappa target  kappa measured     ABS tol     REL tol     lam_min   shrunk/n
+         1.0e+00       1.566e+00   4.629e-13   5.787e-14   3.355e-03      0/40 
+         1.0e+03       4.210e+03   3.268e+00   3.268e+00   3.680e-06      2/40 
+         1.0e+06       4.214e+06   5.226e+01   5.226e+01   3.660e-09      0/40 
+         1.0e+09       4.186e+09   7.186e+01   7.186e+01   3.680e-12      3/40 
+         1.0e+12       4.196e+12   8.164e+01   8.162e+01   3.557e-15      4/40 
+
+[Q2b] localising the Q2 failure: is it MY bracket, or the reduction?  One failing draw per cell.
+   kappa~1e+03: true=3.6273e-06 pred=4.7774e-04 lam_min(L)=4.7774e-04 hi=4.7774e-04
+      h(1e-16)=+7.5961e-03  h(true)=+3.3729e-13  h(pred)=+8.5281e-04  h(hi*(1-1e-12))=+8.5281e-04
+      eigvalsh(G) residual check: ||G v - true v||/||v|| = 9.704e-16  cond(L)=4.19e+03
+   kappa~1e+06: true=3.5943e-09 pred=4.7317e-07 lam_min(L)=4.7317e-07 hi=4.7317e-07
+      h(1e-16)=+7.5961e-03  h(true)=+2.5157e-10  h(pred)=+7.4680e-03  h(hi*(1-1e-12))=+7.4680e-03
+      eigvalsh(G) residual check: ||G v - true v||/||v|| = 3.418e-16  cond(L)=4.29e+06
+   kappa~1e+12: true=3.6305e-15 pred=4.8128e-13 lam_min(L)=4.8128e-13 hi=4.8128e-13
+      h(1e-16)=+6.9090e-03  h(true)=-4.7970e-04  h(pred)=+7.5959e-03  h(hi*(1-1e-12))=+7.5959e-03
+      eigvalsh(G) residual check: ||G v - true v||/||v|| = 3.229e-16  cond(L)=4.15e+12
+
+[Q2c] the same cells with the pole guarded (endpoint at lam_min(L)*(1-1e-6) instead of (1-1e-12)).
+     If Q2's failure was my bracket rather than the reduction, the errors must collapse to the
+     absolute floor of Q1, i.e. relerr ~ 1.7e-15/lam_min.  Last column: relerr*lam_min.
+    lam_min (mean)   relerr (guarded)   relerr*lam_min   1.7e-15/lam_min
+         3.359e-03          5.770e-14        1.918e-16         5.061e-13
+         3.669e-06          5.464e-11        2.009e-16         4.634e-10
+         3.684e-09          4.473e-08        1.650e-16         4.614e-07
+         3.689e-12          1.633e+01        6.050e-11         4.609e-04
+         3.645e-15          7.616e+01        2.729e-13         4.664e-01
+
+[Q3] the same scan measured against the CLOSED FORM cf(t,alpha) instead of eigvalsh, to
+     separate 'my root find is loose' from 'the two are genuinely different objects'.
+    alpha(deg)   |cf/true-1|   |rootfind/true-1|   |rootfind/cf-1|
+        45.000     1.538e-15           7.105e-16         1.335e-15
+         5.000     1.126e-13           6.311e-14         7.465e-14
+         1.000     2.691e-12           1.314e-12         2.372e-12
+         0.100     2.245e-10           1.702e-10         2.507e-10
+         0.010     2.910e-08           1.726e-08         2.436e-08
+
+判读（实测，非预登记的期望）：
+  Q1  两个停止准则的**相对**误差都随 alpha 变小而上升（ABS 6.4e-15 -> 1.4e-5，REL 8.1e-16 -> 1.6e-6），
+     我预登记的'REL 列保持 1e-14'不成立。真正不变的量是最后一列：relerr*lam_min 恒在
+     [1.55,1.84]e-15 跨六个数量级，即误差是**绝对**地板 ~1.7e-15*||G||，相对精度 ~1/sin^2 alpha。
+     所以正文那句'到舍入误差可得'必须写成**绝对**舍入误差；b42 的 1.6e-12 只是中等角度下的
+     相对读数，不能外推到 alpha->0。
+  Q2  REL 列确实随 kappa(Lam) 上升（3.3 -> 82），但 Q2b 证明这不是约化本身的极限： pred 恰等于
+     lam_min(L)（=区间端点），而 h 在 true 处 +3.4e-13、在端点处 +8.5e-4，eigvalsh 残差 1e-16 ——
+     是我把端点取进了预解式的奇点邻域（(Lam-lam)^-1 近奇异），**我的括号 bug**，数学无恙。
+  Q2c 端点内缩到 lam_min(L)*(1-1e-6) 之后地板回来了：lam_min 3.4e-3/3.7e-6/3.7e-9 三档
+     relerr*lam_min = 1.9e-16/2.0e-16/1.7e-16。但 lam_min 3.7e-12/3.6e-15 两档 relerr = 16/76，
+     任何 guard 都救不回来 —— 那里 λ 已低于 eps*||Lam||，'绝对地板'不再是可用的数。
+     预登记的'换停止准则救不回来'对中段是错的（guard 就是解），只对最深两档成立。
+  Q3  三列在同一数量级上相等（|cf/true-1| ~ |rootfind/true-1| ~ |rootfind/cf-1|，1.5e-15..3e-8），
+     所以 b42 里小角度处的 cf 与根之差**就是数值地板本身**，不是 cf 与根两个对象的真实间隔；
+     与'我的求根松'也区分不开——三者松紧一致。这不动 (★)：cf 在证书里只走上界侧。

@@ -1,0 +1,27 @@
+### 1. pooled d=6 spectrum (d=6, T=516)
+rho=0.9602  max Re lambda=0.9602  ||A||_2=1.741  numerical abscissa(max eig sym)=1.430
+ER(12)=28.06  NG(12)=2.93   [normal proxy would give ER=1 exactly]
+  |lam|=0.9602  lam=0.9602+0.0000j  period~nan yr
+  |lam|=0.9453  lam=0.9453+0.0000j  period~nan yr
+  |lam|=0.7595  lam=0.7580-0.0471j  period~8.4 yr
+  |lam|=0.7595  lam=0.7580+0.0471j  period~8.4 yr
+  |lam|=0.3276  lam=0.3276+0.0000j  period~nan yr
+  |lam|=0.2054  lam=0.2054+0.0000j  period~nan yr
+
+### 2. epoch split (re-fit independently, same pipeline)
+  first half (1982-2003, T=258): rho=0.9457  ER(12)=10.50  NG(12)=4.40
+  second half (2003-2024, T=258): rho=0.9205  ER(12)=1.42  NG(12)=2.87
+
+### 3. leave-one-variable-out (which variable carries the effect?)
+  drop Nino1+2  d=5: rho=0.9626  ER(12)=    1.14  NG(12)=2.83
+  drop Nino3    d=5: rho=0.9611  ER(12)=    1.09  NG(12)=2.70
+  drop Nino3.4  d=5: rho=0.9719  ER(12)=    0.76  NG(12)=2.22
+  drop Nino4    d=5: rho=0.9630  ER(12)=    8.07  NG(12)=2.45
+  drop ONI      d=5: rho=0.9613  ER(12)=    1.52  NG(12)=1.67
+  drop SOI      d=5: rho=0.9599  ER(12)=   11.71  NG(12)=2.82
+
+### 4. moving-block bootstrap of the OBSERVED statistic (block=36 months, 200 reps)
+  ER(12): point 28.06   CI 5-95% [0.86, 71.85]   median 4.82
+  NG(12): point 2.93   CI 5-95% [2.25, 5.49]   median 3.32
+  bootstrap resampling destroys month order => block=36 keeps 3 yr of seasonality intact;
+  if the CI still excludes the b19 seasonal-normal 95%% (1.92) the effect is not one epoch.

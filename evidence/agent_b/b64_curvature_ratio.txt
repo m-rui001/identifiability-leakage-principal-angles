@@ -1,0 +1,206 @@
+====================================================================================================================================
+[G] gates (a failure voids the round)
+====================================================================================================================================
+  G1 max(|cos(th)v_b+sin(th)u - sign(v_b.v*)v*|_inf, ||u||-1, |u.v_b|) = 4.023e-13  (<=1e-12) n=40  -> PASS
+  G2 max |lam_of_v - np.roots| over v_b and v* = 2.776e-17  (<=1e-13)  -> PASS
+  G3 b61 gradient identity, max rel defect = 1.611e-15  (<=1e-8)  n=480  -> PASS
+
+====================================================================================================================================
+[S1] the G1 failure was a SIGN convention, measured not argued.  lambda_1(v) sees v only through
+     B(v), C(v), so lambda_1(-v) = lambda_1(v): the descent may return either sign, theta is the
+     angle to the LINE {+-v*}, and u must point at sign(v_b.v*)*v*.
+====================================================================================================================================
+  #draws with v_b.v* < 0 (descent returned the opposite sign of v*): 15/40
+  max |geo(v_b, u_new, th) - sign*v*| = 4.023e-13  (G1, PASS side)
+  max |geo(v_b, u_OLD, th) - v*|      = 1.978e+00  <- what the first run measured
+  reach of the defect: max |k_values(u_new) - k_values(u_old)| = 0.000e+00,  |k_grad(u_new) - k_grad(u_old)| = 0.000e+00
+                   max |d1(u_new) + d1(u_old)| on the sign-flipped draws = 0.000e+00  (the stencils are symmetric in h, so u -> -u must flip d1 only -- as measured)
+  max |ratio_old_convention - ratio_new| over 40 draws = 2.220e-16  -> the registered ratio is UNAFFECTED (it uses only kappa and theta), so [B-CLAIM-65]'s numbers below stand as measured; only my G1 sentence was wrong
+
+====================================================================================================================================
+[P1] FIRST RESULT, BEFORE ANY RATIO: is kappa measurable at all?  (routes: Richardson values vs
+     gradients, both evaluated at v_b along the geodesic toward v*)
+====================================================================================================================================
+  n=40   |k_v/k_g - 1|: med=9.844e-05 p90=1.090e-04 max=1.132e-04
+  k_values: med=1.7904e-02  range=[3.3379e-03, 9.0838e-02]   sign: 40 positive / 0 negative
+  floor of k (= max(|k_v-k_g|, value-route Richardson spread)): med=1.775e-06
+  -> P1 PASS: kappa is a measured quantity here
+
+  C4 draws excluded because the LINEAR term |d1|th exceeds 0.1*beat: 0 of 40 draws with th>1e-9 and beat>0
+
+====================================================================================================================================
+[P2] leverage (rule 17: a prediction below its own floor is NOT a test, never a pass)
+====================================================================================================================================
+  draws built = 40/40   testable (th>1e-9, beat>0, linear term negligible) = 40
+  with leverage (pred_q > 10*floor) = 40/40   -> registered STOP CONDITION (<20 of 40): NOT TRIGGERED
+  band-resolvable (pred_q > 100*floor, needed to read a +-2% band) = 40/40
+  pred_q/floor over testable draws: min=3.355e+03 med=9.413e+03 max=1.426e+04
+
+====================================================================================================================================
+[P3] [B-CLAIM-65]: ratio = beat / (0.5*k*th^2) PER DRAW
+====================================================================================================================================
+  with leverage (10x): n=40  ratio med=1.0000 min=0.9996 max=1.0095  #in[0.98,1.02]=40/40
+      |beat-pred_q|/floor(pred): med=1.375e+00 max=8.207e+01  #>1 (=C1, a deviation above the floor is REAL) = 27
+  band-resolvable (100x): n=40  ratio med=1.0000 min=0.9996 max=1.0095  #in[0.98,1.02]=40/40
+      |beat-pred_q|/floor(pred): med=1.375e+00 max=8.207e+01  #>1 (=C1, a deviation above the floor is REAL) = 27
+  -> C3 (band): ratio med INSIDE [0.98,1.02]
+  C1 #( |beat - pred_q| > floor(pred) on draws with leverage ) = 27/40
+  #(beat<=0) = 0   #(th==0) = 0   #(stationary v_b: |grad|<=1e-6|lam|) = 38/40
+
+====================================================================================================================================
+[P3b] POST-RUN, NOT REGISTERED -- what the residual  beat - pred_q  is.
+      C1 fired on 27/40 while the ratio stayed inside the +-2% band, so the
+      deviation is real but small; the natural candidate is the THIRD term of the same
+      geodesic Taylor series.
+====================================================================================================================================
+  d3 (values route, Richardson): med=-6.3527e-06  range=[-1.3051e-03, 4.5119e-04]   #(d3>0)=18/40
+  cubic term / quadratic term  = (1/6)d3 th^2 / (1/2 k) : med=-5.263e-07  max=6.866e-05
+  pred3 / (beat - pred_q): med=-1.220e-03  range=[-3.695e-01,1.295e+00]   #in[0.5,2]=1/40
+  after removing the cubic term: #(|beat-pred_q-pred3| > floor+floor3) = 26/40
+  |ratio-1|: med=1.503e-04 max=9.459e-03   (theta range here ['5.50e-04', '6.53e-02'])
+  slope of log|ratio-1| vs log theta = 0.085   (1.0 would say the residual is the cubic term; NO exponent claim is made from a pooled slope -- 55.5 item 4 -- and k itself spans 27x in this family, which is the confound)
+  regressor ranges (must be non-degenerate before any correlation is read):
+     linear share |d1|th/beat: [2.248e-05,9.382e-03]  ratio max/min=417.3
+     |d1|                    : [2.880e-09,8.294e-07]  ratio max/min=288.0
+     |grad(v_b)|             : [2.904e-09,8.294e-07]
+     theta                   : [5.501e-04,6.531e-02]
+  Spearman(|ratio-1|, .): linear share=+0.745   |d1|=+0.407   theta=-0.136   k=-0.417
+  the two largest |ratio-1| draws are #36, #18; dropping them: max|ratio-1|=9.292e-04  (a SENSITIVITY reading, not a re-gate -- the drop is by the size of the very quantity tested)
+  and those two draws' linear shares are 9.382e-03, 7.205e-03 against a median 1.245e-04; #(|grad(v_b)|>1e-6|lam|) in the family = 2
+  WITH the linear term restored: #(|beat - (d1*th + 0.5*k*th^2)| > floor) = 4/40   (without it, C1 was 27/40)
+     med |beat-(d1 th+pred_q)|/floor = 6.815e-02   max = 1.247e+01
+  the identity the two-term law predicts, ratio-1 = 2*d1/(k*th), per draw:
+     max |LHS - RHS| = 1.416e-03   med |LHS| = 1.503e-04   med |RHS| = 1.245e-04   Spearman(LHS, RHS) = +0.946
+     -> the residual C1 measured is NOT a third-order term (pred3 explains 1/40);
+        it is the first-order term d1*th, i.e. exactly the fact that v_b is not a critical point.
+  LOCALITY of kappa: kappa is measured with stencil step h=1e-02 at v_b, while the travel
+     to v* is theta.  #(theta > h) = 11/40,  max theta/h = 6.53,  med = 0.520
+     -> on those draws the law is an EXTRAPOLATION of a locally measured coefficient, not a
+        local statement, so a +-1% agreement there is stronger than registered, not weaker;
+        the matching test (h adapted so that h >= theta) is the next registration.
+     three largest |ratio-1|: #36 theta/h=0.72 lin share=9.38e-03; #18 theta/h=6.53 lin share=7.20e-03; #6 theta/h=1.22 lin share=9.87e-04
+
+====================================================================================================================================
+[P4] every draw (units: gap for beat/pred/floor; lambda for k, d1)
+====================================================================================================================================
+    #         th   beat/gap  deficit       |d1|  lin share    k_values      k_grad |k_v/k_g-1|  pred_q/gap     fl/gap   pred/fl    ratio  |dev|/fl          d3  pred3/dev
+    1  2.540e-03  1.303e-05   0.0128  4.691e-09  1.144e-04  3.2294e-02  3.2291e-02   8.352e-05   1.303e-05  1.096e-09  1.19e+04   1.0001 1.349e+00
+    2  1.712e-02  4.247e-03   0.7769  5.060e-09  3.337e-05  1.7717e-02  1.7715e-02   9.909e-05   4.247e-03  4.286e-07  9.91e+03   0.9999 5.942e-01
+    3  3.630e-02  1.335e-02   0.4064  6.264e-09  2.847e-05  1.2126e-02  1.2125e-02   1.042e-04   1.336e-02  1.397e-06  9.56e+03   0.9996 3.368e+00
+    4  8.301e-03  4.606e-04   0.5887  7.263e-09  2.183e-04  8.0135e-03  8.0126e-03   1.087e-04   4.605e-04  5.084e-08  9.06e+03   1.0002 1.837e+00
+    5  2.959e-02  8.999e-04   0.0402  8.721e-09  1.055e-04  5.5870e-03  5.5864e-03   1.113e-04   9.002e-04  1.005e-07  8.96e+03   0.9996 3.247e+00
+    6  1.216e-02  3.887e-04   0.2795  3.007e-08  9.873e-04  5.0035e-03  5.0030e-03   1.123e-04   3.884e-04  4.445e-08  8.74e+03   1.0009 8.118e+00
+    7  7.630e-03  1.005e-04   0.2225  4.912e-09  1.295e-04  9.9418e-03  9.9408e-03   1.071e-04   1.004e-04  1.091e-08  9.21e+03   1.0001 1.008e+00
+    8  4.978e-03  2.650e-05   0.0087  5.143e-09  1.541e-04  1.3405e-02  1.3404e-02   1.036e-04   2.650e-05  2.816e-09  9.41e+03   1.0002 1.413e+00
+    9  2.222e-03  3.561e-05   0.0938  5.828e-09  1.998e-04  2.6252e-02  2.6250e-02   9.246e-05   3.560e-05  5.341e-09  6.66e+03   1.0002 1.401e+00
+   10  1.039e-03  1.517e-06   0.0390  3.667e-09  1.758e-04  4.0152e-02  4.0149e-02   7.224e-05   1.516e-06  1.540e-10  9.85e+03   1.0002 1.742e+00
+   11  1.799e-03  4.194e-06   0.0207  5.107e-09  3.166e-04  1.7928e-02  1.7926e-02   9.834e-05   4.192e-06  4.635e-10  9.04e+03   1.0003 2.843e+00
+   12  2.480e-03  6.514e-06   0.0061  3.651e-09  1.655e-04  1.7787e-02  1.7785e-02   9.853e-05   6.513e-06  6.845e-10  9.51e+03   1.0002 1.545e+00
+   13  1.580e-02  1.155e-02   0.3613  6.047e-09  5.814e-05  1.3168e-02  1.3167e-02   1.031e-04   1.155e-02  1.193e-06  9.68e+03   0.9999 1.224e+00
+   14  2.385e-03  5.798e-06   0.0026  4.665e-09  1.340e-04  2.9201e-02  2.9199e-02   8.456e-05   5.797e-06  5.106e-10  1.14e+04   1.0001 1.519e+00
+   15  6.139e-03  5.173e-05   0.0208  5.689e-09  8.897e-05  2.0834e-02  2.0832e-02   9.587e-05   5.174e-05  5.369e-09  9.64e+03   0.9999 8.258e-01
+   16  5.501e-04  1.879e-05   0.0620  3.984e-09  1.595e-04  9.0838e-02  9.0831e-02   8.045e-05   1.879e-05  5.601e-09  3.35e+03   0.9998 5.263e-01
+   17  7.056e-03  4.664e-05   0.0101  4.660e-09  5.850e-05  2.2579e-02  2.2577e-02   9.300e-05   4.664e-05  4.389e-09  1.06e+04   0.9999 7.118e-01
+   18  6.531e-02  4.264e-03   0.0808  8.294e-07  7.205e-03  3.5049e-03  3.5045e-03   1.132e-04   4.239e-03  4.817e-07  8.80e+03   1.0058 5.131e+01
+   19  1.566e-02  2.656e-04   0.0280  5.262e-09  5.202e-05  1.2916e-02  1.2915e-02   1.040e-04   2.656e-04  2.773e-08  9.58e+03   1.0000 9.859e-02
+   20  9.293e-03  8.930e-05   0.0199  4.965e-09  4.302e-05  2.4835e-02  2.4833e-02   9.061e-05   8.929e-05  8.418e-09  1.06e+04   1.0000 4.049e-01
+   21  8.667e-04  8.786e-07   0.0052  2.880e-09  1.733e-04  3.8342e-02  3.8339e-02   8.164e-05   8.784e-07  9.771e-11  8.99e+03   1.0002 1.565e+00
+   22  4.104e-03  4.572e-04   0.7605  5.921e-09  1.016e-04  2.8392e-02  2.8389e-02   9.994e-05   4.572e-04  8.621e-08  5.30e+03   1.0000 2.445e-01
+   23  4.182e-03  1.590e-05   0.0071  4.034e-09  6.851e-05  2.8160e-02  2.8158e-02   8.945e-05   1.590e-05  1.526e-09  1.04e+04   0.9999 7.974e-01
+   24  1.117e-02  3.558e-03   0.7673  4.401e-09  3.544e-05  2.2233e-02  2.2231e-02   9.399e-05   3.558e-03  3.364e-07  1.06e+04   0.9999 6.946e-01
+   25  1.038e-03  3.227e-06   0.0136  5.219e-09  4.613e-04  2.1796e-02  2.1794e-02   9.586e-05   3.225e-06  3.434e-10  9.39e+03   1.0005 4.336e+00
+   26  7.106e-03  1.365e-03   0.2112  5.951e-09  7.452e-05  2.2479e-02  2.2477e-02   9.280e-05   1.365e-03  1.300e-07  1.05e+04   0.9999 8.423e-01
+   27  6.645e-03  8.279e-05   0.0789  4.957e-09  8.297e-05  1.7985e-02  1.7983e-02   1.038e-04   8.280e-05  1.120e-08  7.39e+03   0.9998 1.112e+00
+   28  1.999e-03  4.211e-06   0.0086  4.246e-09  1.158e-04  3.6681e-02  3.6678e-02   7.995e-05   4.211e-06  4.119e-10  1.02e+04   0.9999 1.161e+00
+   29  3.811e-03  1.837e-05   0.0154  5.634e-09  1.678e-04  1.7617e-02  1.7615e-02   1.015e-04   1.838e-05  2.175e-09  8.45e+03   0.9998 1.533e+00
+   30  2.435e-03  8.647e-06   0.0552  4.676e-09  2.148e-04  1.7881e-02  1.7879e-02   9.737e-05   8.649e-06  8.941e-10  9.67e+03   0.9998 2.105e+00
+   31  2.894e-02  8.540e-04   0.0576  5.341e-09  2.248e-05  1.6421e-02  1.6419e-02   9.746e-05   8.542e-04  8.347e-08  1.02e+04   0.9998 1.893e+00
+   32  1.657e-03  8.452e-06   0.0311  4.164e-09  1.195e-04  4.2040e-02  4.2036e-02   8.493e-05   8.453e-06  1.177e-09  7.18e+03   0.9999 8.189e-01
+   33  1.213e-03  7.325e-06   0.0191  5.670e-09  6.032e-04  1.5494e-02  1.5493e-02   1.013e-04   7.321e-06  8.411e-10  8.70e+03   1.0006 5.243e+00
+   34  3.057e-03  5.183e-04   0.4676  6.119e-09  3.629e-04  1.1034e-02  1.1033e-02   1.060e-04   5.184e-04  5.554e-08  9.33e+03   0.9996 3.415e+00
+   35  1.127e-02  1.789e-04   0.0465  5.637e-09  8.388e-05  1.1929e-02  1.1928e-02   1.051e-04   1.789e-04  1.899e-08  9.42e+03   1.0001 5.116e-01
+   36  7.153e-03  7.854e-05   0.0258  1.131e-07  9.382e-03  3.3379e-03  3.3375e-03   1.131e-04   7.781e-05  8.968e-09  8.68e+03   1.0095 8.207e+01
+   37  1.045e-02  1.176e-04   0.0168  7.474e-09  1.644e-04  8.6986e-03  8.6977e-03   1.082e-04   1.176e-04  1.294e-08  9.09e+03   1.0001 1.134e+00
+   38  5.420e-03  4.583e-05   0.0336  4.701e-09  7.588e-05  2.2860e-02  2.2858e-02   9.251e-05   4.582e-05  4.486e-09  1.02e+04   1.0001 7.761e-01
+   39  1.734e-03  2.753e-05   0.0867  3.541e-09  9.404e-05  4.3419e-02  4.3416e-02   6.517e-05   2.753e-05  1.930e-09  1.43e+04   1.0001 1.347e+00
+   40  4.074e-03  2.096e-05   0.0018  5.454e-09  1.927e-04  1.3890e-02  1.3888e-02   1.031e-04   2.095e-05  2.250e-09  9.31e+03   1.0002 1.728e+00
+
+====================================================================================================================================
+[DIAGNOSTIC -- NOT REGISTERED, cannot be quoted as a claim]
+====================================================================================================================================
+  pooled log beat vs log th over ALL 40 draws = 1.910 -- PRINTED ONLY TO BE EXPLICITLY NOT USED:
+     55.5 item 4 forbids a pooled slope as evidence for or against the law (kappa is itself
+     correlated with th within the family, so a slope mixes the exponent with the coefficient).
+  ratio spread over all draws with pred_q>0: med=1.000 min=0.9996 max=1.0095  (n=40)
+  theta here vs b63b DEGEN: this run med=5.199e-03; b63b printed median 4.912e-03 --
+     the streams differ (61206 here, 61204 there) so this is a CONSISTENCY reading, not a claim.
+
+====================================================================================================================================
+判读（预登记，跑前写下；跑后只填数，不改方向）
+  P1 是第一结果：`kappa` 的两条路线（值 Richardson vs 梯度）若在本族上 disagreement 相对自身
+     超过 5%/25%，那 `beat/(½kappa th²)` 的分母就不是一个被测出的量，[B-CLAIM-65] 直接作废；
+     我不许自己在那之后还去报 ratio 的位数。
+  P2 的停止条件 (<20/40 有杠杆) 是 55.8 原样：触发就不是负结果，而是**本族上律未被检验**，
+     正文保持 b61 现在的措辞（律只在 10/50 上有杠杆），并把这句写进 open item 1。
+  P3 才是 claim：C1（|beat-pred_q|>floor）在 b61 的 50 抽样上是 0；本轮的近重合族里若有，
+     那就是二项展开在 `v*` 与 `v_b` 几乎同向、但 θ 比 b61 大两个数量级处失效 —— 这比 C3
+     出带更硬：C1 说展开不对，C3 只说常数不对。
+  C4 是混淆项计数：`|d1|th > 0.1 beat` 的抽样剔除并计数，绝不平均掉（b61 K3 的教训：
+     v_b 未达驻点时我拿一次项主导的数去验二次律，是量具在骗我）。
+  注意本轮把 55.8 的 ±2% 带和 floor 摆在一起看：pred 的地板必须 <1% 的 pred 才谈得上分辨 2%，
+     所以 band-resolvable(100x) 是**我为读带而加的第二计数**，跑前写在本文件 docstring 里，
+     它只会减少可报的抽样，不会增加（rule 17：能加通过数的改动才需要撤回）。
+  不注册：θ 的大小、deficit 的大小、pooled 斜率、组内 ρ_A（b63b 已证它在固定余弦下不可变）。
+
+====================================================================================================================================
+IMPLEMENTATION / REGISTRATION HISTORY (post-run additions, disclosed per the stick-change rule)
+====================================================================================================================================
+  1. The FIRST run's G1 printed 1.978 and VOIDed the round.  Cause: I wrote the check as
+     |cos(th)v_b+sin(th)u - v*| with u from the SIGNED projection w = v* - (v_b.v*)v_b, but
+     lambda_1(v) depends on v only through B(v), C(v), so lambda_1(-v) = lambda_1(v) and the
+     descent returns either sign -- here 15/40 draws came back with v_b.v* < 0.
+     Fixed by pointing u at sign(v_b.v*)*v*.  THIS CHANGED A SENTENCE, NOT THE MEASUREMENT:
+     kappa's two routes are symmetric stencils in h, so u -> -u leaves them unchanged
+     ([S1] prints both differences as 0.000e+00 and 0.000e+00), d1 flips sign exactly
+     (|d1(u_new)+d1(u_old)| = 0.000e+00 on the flipped draws), and the registered ratio
+     uses only kappa and theta, so all 40 ratios agree with the old convention to 2.220e-16.
+     The claim's numbers are the ones the first run would have produced had I written the
+     check correctly.
+  2. The [P3b] residual block (third derivative by a 4-point antisymmetric stencil, its
+     Richardson floor, the cubic share, and the Spearman of |ratio-1| against its candidate
+     regressors) was added AFTER P1-P3 printed.  It consumes NO rng draws (it only calls
+     lam_of_v on designs already built), it registers nothing, and rule 19 is applied inside it:
+     every regressor's range is printed before any correlation is read, because in b63b I
+     registered a Spearman against a quantity that could not vary.
+  3. NOT a post-hoc change: the band-resolvable gate (pred_q > 100*floor) was written into the
+     docstring BEFORE the first run, with the reason (a +-2% band cannot be read with a floor at
+     10% of the prediction).  It can only REMOVE draws from the band count, never add them
+     (rule 17: a gate that adds passes is the one that needs a retraction).  Here it removes none.
+  4. The testable set, the 10x leverage gate, the 6-start set, the exclusion of linear-share > 0.1
+     and the [0.98, 1.02] band are exactly as registered in community.md 55.8; none of them was
+     touched after the numbers existed.
+  5. Prose in this file hard-coded three counts (C1's, the cubic's, and kappa's span) instead of
+     binding them: they read 27/40, 1/40, 27.2x.  The VALUES were right, the
+     PRACTICE was not -- an unbound literal in a printout is a claim that cannot survive a
+     re-run, and community.md 56.4 item 4 records what that style cost me this round.
+
+====================================================================================================================================
+判读（跑后填数，方向为上面预登记的原话；只填数，不改方向）
+====================================================================================================================================
+  P1: 未触发作废 —— |k_v/k_g-1| med=9.844e-05 <= 0.05, max=1.132e-04 <= 0.25。所以 ratio 的分母
+      是一个被测出的量，P3 的位数才允许引用。
+  P2: 停止条件未触发（有杠杆 40/40，注册门槛 20）。=> 与 b61 的 10/50 不同，
+      律在本族**被检验了**，所以 b61 的措辞可以被本轮替换（这是本轮的实质收获）。
+  P3: C3 未触发（ratio med=1.0000 在带内），[B-CLAIM-65] **按注册成立**；
+      但 C1 触发 27/40，且 C1 用的是我自己两路线的地板，所以这个偏差是真的：
+      **律是 ±1% 的律，不是恒等式**。我不用 C1 去否证自己注册的带（两者问的是不同问题：
+      C3 问常数，C1 问展开是否到此为止），也不把 C1 藏起来。
+  C4: 剔除 0 个（一次项主导），所以本轮的 40 个可测抽样里没有'拿一次项主导的数
+      去验二次律'这一类污染 —— 然而 [P3b] 显示一次项仍以 |d1|th/beat ~ 1e-4 的量级在场，
+      恢复它把 C1 从 27/40 降到 4/40。这两件事不矛盾：
+      门槛 0.1 是**混淆项**的门槛，地板 1 是**测量**的门槛，后者灵敏三个数量级。
+  预登记里的三条方向，逐条对数：C1=0 的预期（b61 的 50 抽样）在本族不成立（27/40）；
+      三次项候选被否（解释 1/40）；一次项候选被支持（身份 ratio-1=2d1/(k th) 的
+      Spearman=+0.946，且 |ratio-1| 对 linear share 的 Spearman=+0.745）。
+  下一步（不注册在本轮）：11/40 个抽样的 theta 超过模板步长 h，
+      所以 kappa 在那里是外推。把 h 自适应到 h>=theta 的检验已注册为 community.md 56.9 的 [B-CLAIM-67]。

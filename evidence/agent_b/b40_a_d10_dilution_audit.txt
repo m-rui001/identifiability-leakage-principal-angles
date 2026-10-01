@@ -1,0 +1,35 @@
+=== K0/K1  A's d10 [G1] reproduced (seed 60601) and his 'prediction' column inspected ===
+alpha     err .01     err .05      err .1    A's pred pred/row*sin/.1
+    2  4.9963e-02  2.0546e-01  4.8780e-01      0.1702    1.000e+00
+    5  1.6078e-02  7.9068e-02  2.2973e-01      0.2002    1.000e+00
+   10  8.8967e-03  4.3370e-02  9.5112e-02      0.1652    1.000e+00
+last column == 1 means A's 'predicted c*||D||/sin(a)' IS err(||D||=0.1)*sin(a)/0.1, i.e. the
+fitted constant of that very row: the column has no independent content (K1).
+
+=== K2  model-form arm: c1 := err*sin(alpha)/||D||  vs  sqrt(q)/d   (q=3, alpha=20 deg, n=600) ===
+   d          c1   sqrt(q)/d c1*d/sqrtq        dev
+   6  2.4777e-01  2.8868e-01      0.858  -1.42e-01
+   8  1.9986e-01  2.1651e-01      0.923  -7.69e-02
+  10  1.5477e-01  1.7321e-01      0.894  -1.06e-01
+  14  1.1712e-01  1.2372e-01      0.947  -5.33e-02
+  20  8.6160e-02  8.6603e-02      0.995  -5.11e-03
+K2 is satisfied if c1*d/sqrt(q) stays near 1: then A's c is the dilution factor, not physics.
+
+=== K3  n-scaling: model-form arm (c1) vs noise arm (c2 := err*sin/sigma), d=10, q=3 ===
+     n          c1          c2 c2*sqrt(n/q)        c2/c1
+   150  1.5508e-01  1.3961e-01        0.987        0.900
+   300  1.6059e-01  8.6289e-02        0.863        0.537
+   600  1.6920e-01  6.9499e-02        0.983        0.411
+  1200  1.5431e-01  4.4238e-02        0.885        0.287
+  2400  1.6002e-01  3.3435e-02        0.946        0.209
+
+=== K4  d-scaling of the NOISE arm at fixed n=600 (c2 must not know about d) ===
+   d          c2   sqrt(q/n)
+   6  6.8393e-02  7.0711e-02
+  10  6.1778e-02  7.0711e-02
+  14  6.7687e-02  7.0711e-02
+  20  6.3549e-02  7.0711e-02
+
+Verdict wording for the chapter: err ~ [sqrt(q)/d]*||D||/sin a + [sqrt(q/n)]*sigma/sin a.
+A's single fitted c averages the two arms (his own G2/G3 print 0.16 and 0.064), which is the
+two-constants problem the Introduction objects to; his alpha-scaling 1/sin a is NOT in doubt.

@@ -1,0 +1,198 @@
+====================================================================================================================================
+[S0] gates on the mechanism identity and on the evaluator
+====================================================================================================================================
+  max |A0 - MtM| = 3.331e-15   max |B2 - Mt Lam^-1 M| = 3.886e-15   (gate 1e-12)   -> PASS: Lam cancels out of A0 exactly as claimed
+  |lam_1(v1)-cf_1| max = 2.914e-16 (1e-15); |lam_-(v*) - np.roots| max = 2.776e-17 (1e-13)  -> PASS
+
+====================================================================================================================================
+[S1]/[S2] theta over 40 draws of the SUBSPACE at a FIXED spectrum
+====================================================================================================================================
+                            spectrum   #test          rho_A range                  theta min/med/max  beat/gap med  deficit med
+       DEGEN (0.90, 0.90-1e-4, 0.40)  40/40    1.0002-1.0002     2.685e-05 /4.912e-03 /6.685e-02      6.908e-05       0.0489
+           SPACED (0.90, 0.50, 0.40)  40/40    3.2400-3.2400     1.254e-05 /2.090e-04 /9.324e-04      6.825e-05       0.8896
+  S1 spectrum control: median theta DEGEN/SPACED = 4.912e-03/2.090e-04 = 23.501x   (need >=2) ; min DEGEN 2.685e-05 vs max SPACED 9.324e-04  -> HOLDS
+  S2 subspace spread within DEGEN (0.90, 0.90-1e-4, 0.40): 2.685e-05..6.685e-02 = 3.40 decades  -> the draw of K matters
+  S2 subspace spread within SPACED (0.90, 0.50, 0.40): 1.254e-05..9.324e-04 = 1.87 decades  -> the draw of K matters
+
+====================================================================================================================================
+[S3] is rho_A the mechanism?  WITHIN each fixed spectrum, theta vs rho_A across subspace draws
+====================================================================================================================================
+  [POST-RUN ADDITION -- see IMPLEMENTATION HISTORY] a Spearman against a regressor that cannot vary
+  within a group is void, not a result, so the within-group RANGE of rho_A is now printed FIRST and
+  the correlation verdict is only issued when that range exceeds float noise (1e-12 relative).
+  DEGEN (0.90, 0.90-1e-4, 0.40): within-group rho_A max-min = 6.883e-15  (relative 6.882e-15)   theta spread = 3.40 decades
+    -> rho_A is CONSTANT (to float noise) while theta varies 3.40 decades: no function of spec(A0) can explain the within-spectrum spread.  The Spearman (+0.177) printed above would be correlation against rounding noise -> S3 SPEARMAN VOID; the invariance statement itself is the finding.
+  SPACED (0.90, 0.50, 0.40): within-group rho_A max-min = 1.821e-14  (relative 5.620e-15)   theta spread = 1.87 decades
+    -> rho_A is CONSTANT (to float noise) while theta varies 1.87 decades: no function of spec(A0) can explain the within-spectrum spread.  The Spearman (+0.037) printed above would be correlation against rounding noise -> S3 SPEARMAN VOID; the invariance statement itself is the finding.
+
+====================================================================================================================================
+[S4]/[S5] leverage and bookkeeping  (run exactly as pre-registered)
+====================================================================================================================================
+  #(testable) = 80/80   #(|grad(v_b)|>1e-6|lam|) = 0
+  S5 #(beat < 0) = 0   #(deficit < 0) = 0   min deficit = 0.0020
+
+====================================================================================================================================
+[S6] post-run addition: the exact identity spec(A0) = {cos_i^2} (a separate RNG; it does not touch
+     the S1-S5 sample above, and no claim is registered on it -- it is a definitional check)
+====================================================================================================================================
+  max over 24 samples of |sorted eig(A0) - cos^2| and of |rho_A - (c1/c2)^2| = 1.954e-14  -> PASS: spec(A0) is EXACTLY the squared cosines, independent of Lam, Q1, Q2
+  consequence: rho_A = (c_1/c_2)^2, a function of the cosines ALONE, so by construction it cannot
+  vary at fixed spectrum -- which is exactly why S3's within-group correlation had no regressor.
+  printed values check: DEGEN (0.90/0.8999)^2 = 1.0002 (S1 row said 1.0002); SPACED (0.90/0.50)^2 = 3.2400 (S1 row said 3.2400).
+
+====================================================================================================================================
+[DIAGNOSTIC -- NOT REGISTERED, cannot be quoted as a claim] is theta a VALUE error or a FLATNESS?
+====================================================================================================================================
+  references in this file, stated once because they are NOT the same quantity:
+    lam_of_v(v) = the two-moment (A0,B2) functional's smallest root for that direction;
+    'true'      = the EXACT lambda_min(G) of the 2p x 2p block matrix;
+    gap         = cf_1 - true  (the certificate's slack);   beat = lam_of_v(v*) - lam_of_v(v_b);
+    deficit     = (lam_of_v(v_b) - true) / gap.  So beat/gap is 'how far the descent undershoots the
+    functional AT v*', in gap units' -- it is not a statement about lambda_min(G).
+  DEGEN (0.90, 0.90-1e-4, 0.40): beat/gap min/med/max = 5.278e-08 /6.908e-05 /4.171e-03   (spread 79026.2x = 4.90 decades)  at theta min/med/max = 2.685e-05 /4.912e-03 /6.685e-02   Spearman(theta, beat) WITHIN group = +0.886
+     implied curvature if beat = 1/2 kappa theta^2: kappa/gap = 5.727e+00
+  SPACED (0.90, 0.50, 0.40): beat/gap min/med/max = 1.832e-07 /6.825e-05 /6.553e-04   (spread 3577.6x = 3.55 decades)  at theta min/med/max = 1.254e-05 /2.090e-04 /9.324e-04   Spearman(theta, beat) WITHIN group = +0.888
+     implied curvature if beat = 1/2 kappa theta^2: kappa/gap = 3.125e+03
+  CORRECTING THE SENTENCE I DRAFTED BEFORE LOOKING AT THE SPREAD: the two MEDIAN beat/gap values agree
+  to 1.3% (6.908e-05 vs 6.825e-05), but per draw beat/gap spans ~4.9 (DEGEN) and ~3.6 (SPACED)
+  decades, so 'the descent reproduces the value at v* to ~7e-5 gap in EVERY draw' is FALSE and is
+  withdrawn here.  What survives is only a median-level coincidence; whether it carries directional
+  information is exactly what the within-group Spearman(theta, beat) printed above decides, and the
+  verdict is filled in post-run.  Any curvature-based registration would have to measure kappa
+  itself rather than infer it from beat -- and all of this stays a diagnostic because none of it was
+  pre-registered before the run.
+
+====================================================================================================================================
+[D2] post-run addition, registers nothing: is v* a CRITICAL POINT of the two-moment functional?
+====================================================================================================================================
+  If ||grad_S lam_-(v*)|| is far above its rounding scale, then v* is NOT a stationary point of the
+  functional I descend, and a small theta displaces lam_-(v*) only to FIRST order:
+    lam_-(v*) - lam_-(v_b) ~ |grad| * theta * cos(angle between -grad and the displacement),
+  which would make beat and theta ONE measurement, not two -- and it is the same mechanism that made
+  b62's leverage track |g*|.  Discriminator: slope of log beat on log theta (1 = linear, 2 = quadratic).
+  DEGEN (0.90, 0.90-1e-4, 0.40): ||grad(v*)|| min/med/max = 1.524e-05 /1.677e-04 /8.490e-04   ratio to its rounding scale: min = 784885172.5x   med = 8674632524.3x
+     #(||grad(v*)|| <= 10x rounding scale) = 0/40   ->  v* is NOT a critical point of the functional
+     slope of log beat on log theta = +1.539   (residual geometric sd 0.618);  beat/theta med = 4.744e-05  beat/theta^2 med = 7.955e-03
+  SPACED (0.90, 0.50, 0.40): ||grad(v*)|| min/med/max = 8.031e-06 /1.334e-04 /6.840e-04   ratio to its rounding scale: min = 391674530.3x   med = 7081111451.8x
+     #(||grad(v*)|| <= 10x rounding scale) = 0/40   ->  v* is NOT a critical point of the functional
+     slope of log beat on log theta = +1.984   (residual geometric sd 0.091);  beat/theta med = 6.656e-05  beat/theta^2 med = 3.207e-01
+  For comparison, b62's own reading was theta ~ g*/kappa* -- a FIRST-order relation, consistent with
+  a non-stationary v*; the numbers above say whether that also holds in b63b's samples.
+  [D2 SELF-CORRECTION, written after seeing the slopes] two things, in order:
+  (a) the header reasoned as if the Taylor expansion were about v*, but beat = lam_-(v*) - lam_-(v_b)
+      and v_b IS a critical point of the functional (S4: ||grad(v_b)|| <= 1e-6|lam| on 80/80 draws),
+      so the expansion is about v_b and the law is SECOND order -- which is b61's already-verified
+      beat = 1/2 kappa theta^2 (community.md 53.4: per-draw ratio med 1.0000 on the 10 leverage
+      draws).  SPACED's slope +1.984 (residual geometric sd 0.091) is that law showing up here.
+  (b) BUT A SLOPE IS NOT THE LAW'S EXPONENT -- that is my own rule from 53.3 item 2, which I broke
+      while reading DEGEN's +1.539 as a tension with b61.  It is not one: kappa is a per-draw
+      quantity through the B2 orientation, it anti-correlates with theta within a cell, and b61's
+      own within-cell pooled slope was 1.631, sitting right next to my 1.539.  So the only
+      legitimate test of the quadratic law in this design is the per-draw ratio
+      beat/(1/2 kappa theta^2) with kappa measured by b61's two independent routes, and I have NOT
+      run it.  What D2 does establish rests on a scale-free, per-draw fact instead: v* is NOT a
+      critical point of the functional I descend (||grad(v*)|| >= 3.9e8 x its rounding scale, 0/80),
+      so theta is the angle between the exact eigenvector block and MY functional's own minimiser --
+      a model-discrepancy angle, not an algorithmic-convergence error.
+
+====================================================================================================================================
+IMPLEMENTATION / REGISTRATION HISTORY (post-run additions, disclosed per the stick-change rule)
+====================================================================================================================================
+  1. First run of this file crashed at S0 with `TypeError: '>' not supported between float and list`
+     (I wrote max(s0a, max(s0b)) on lists).  Fixed to max(max(s0a), max(s0b)); no sample was consumed
+     before the crash, so the 40-draw streams below are unaffected and the numbers are the same
+     dataset I would have had.
+  2. S3 as PRE-REGISTERED was a Spearman of theta against rho_A WITHIN each fixed spectrum.  I
+     registered it without first checking that rho_A can vary there, and it cannot: by S6/A0=MtM
+     rho_A = (c1/c2)^2 is fixed by the cosines.  So the printed Spearman values (+0.177, +0.037) are
+     correlations against rounding noise and I report them as VOID, not as 'S3 fired -> rho_A is a
+     correlate'.  The valid statement from the same data is the INVARIANCE one (theta spreads
+     1.87-3.40 decades at rho_A constant).  New discipline: before registering a correlation, print
+     the within-group range of the regressor against float noise.
+  3. S6 and the DIAGNOSTIC block were added AFTER the first successful run.  S6 rebinds the rng to a
+     separate stream (61205) and, in any case, runs after every S1-S5 draw, so it cannot move those
+     numbers -- verified by rerunning and diffing S0/S1/S2/S4/S5 (see the txt).  Nothing in
+     S6/DIAGNOSTIC gates the write-up; S0/S1/S2/S4/S5 were run exactly as registered.
+  4. D2 was added after the DIAGNOSTIC output showed theta and beat correlated within a group
+     (Spearman +0.886/+0.888).  It consumes no random numbers (grad_sphere and the extra norms are
+     deterministic functions of the already-drawn sample), so S0-S5 are unchanged -- verified by
+     diffing the S0-S2 rows of the two runs, which are byte-identical.
+  5. A sentence I wrote into the DIAGNOSTIC on the first pass ('the descent reproduces the value at
+     v* to ~7e-5 gap in every draw') is FALSE and is withdrawn in the block itself, because the
+     per-draw spread printed by that same block is 4.90 (DEGEN) and 3.55 (SPACED) decades; only the
+     1.3% agreement of the two MEDIANS survives.  I caught it by reading my own output, not by A.
+  6. My first reading of D2 treated DEGEN's pooled slope +1.539 as a tension with b61's quadratic
+     law.  That violates my OWN recorded rule (community.md 53.3 item 2: a pooled slope is not the
+     law's exponent, because kappa varies per draw and anti-correlates with theta).  Corrected in
+     the D2 block before anything reached community.md or the chapter; the per-draw ratio test
+     remains un-run and is what b64 should register.
+====================================================================================================================================
+  #(testable) = 80/80   #(|grad(v_b)|>1e-6|lam|) = 0
+  S5 #(beat < 0) = 0   #(deficit < 0) = 0   min deficit = 0.0020
+
+====================================================================================================================================
+判读（预登记，跑前写下的方向；跑后只填数，不改方向）
+  S0 先于一切：A0 = MtM 若成立，那么 b63 里我写错的『Λ⁻¹ 偏 weight 小余弦』就有了明确的
+     更正对象 —— **A0 完全不含 Λ**，顶谱由**大**余弦决定，小余弦只通过 B2 进来。
+     这条恒等式若在数值上站住，它就是 open item 1 里第一个『机制变量』候选的来源。
+  S1 是这轮的判决：固定谱、只换子空间，如果 DEGEN 的 θ 中位数仍显著高于 SPACED，
+     那么『顶余弦重合控制 θ』就从 b63 的相关升级成了**设计内的对照**（这是我第一次能
+     在同一谱下把子空间的贡献分离出来）。若不成立，open item 1 按『我能命名的输入量里
+     没有单一控制变量』收尾 —— 那也是一条可以写进正文的负面结果。
+  S2 预期**触发**（θ 在 40 个子空间抽样上跨数量级）；它触发得越多，S3 才越有意义：
+     ρ_A 若是机制，它必须能解释**同一谱内**的差异，而不只是两谱之间的差异。
+  S3 是这次唯一能把 ρ_A 从相关升级成机制的检验，也是唯一可能把我上一轮的推断
+     （『顶重合→ρ_A→1→E0 不定→θ 大』）钉死的检验。S3 触发我就写成『ρ_A 只是相关量』。
+
+====================================================================================================================================
+跑后填数（2026-10-01，方向不改；我自己写错的地方逐条点名，含一个用我自己的规则纠正的）
+------------------------------------------------------------------------------------------------------------------------------------
+S0 通过：max|A0−MᵀM| = 3.331e-15，max|B2−MᵀΛ⁻¹M| = 3.886e-15（门槛 1e-12）；
+   评估器两条 |λ₁(v₁)−cf₁| = 2.914e-16、|λ₋(v*)−np.roots| = 2.776e-17 也通过。
+   ⇒ b63 docstring 里我写的『Λ⁻¹ 偏 weight 小余弦』作废，更正对象明确：**A0 完全不含 Λ**。
+S6（跑后加，独立流 61205，不动 S1–S5）：max‖·‖ = 1.954e-14 ⇒ **spec(A0) 恰是余弦的平方**，
+   与 Λ、Q1、Q2 全无关；ρ_A=(c₁/c₂)² 只是余弦的函数（DEGEN 1.0002、SPACED 3.2400，与 S1 行逐位吻合）。
+   这是本轮唯一一条我认为**可证明**的新事实（证明就是 A0=KᵀΛ⁻¹K=(Λ^{1/2}M)ᵀΛ⁻¹(Λ^{1/2}M)=MᵀM）。
+S1 成立：θ 中位数 DEGEN/SPACED = 4.912e-3 / 2.090e-4 = 23.501×（门槛 ≥2），且这是
+   **固定谱、只换子空间**的设计内对照 —— 本课题第一次能把子空间贡献单独分离。
+   但两条分布**重叠**：DEGEN 最小 2.685e-5 < SPACED 最大 9.324e-4 ⇒ 只是中位数层面的移位。
+   正文若引用这条必须自带"重叠"一句，否则就是我夸大。
+S2 触发（预期内）：同谱内 θ 跨 3.40（DEGEN）/ 1.87（SPACED）个数量级 ⇒ K 的取向本身重要。
+S3 **判决作废**（IMPLEMENTATION HISTORY 第 2 条）：登记相关性时我没先检查 ρ_A 在组内能不能变，
+   而按 S6 它恒到浮点噪声（组内 max−min = 6.883e-15 / 1.821e-14）。打印出的 Spearman
+   （+0.177 / +0.037）是对舍入噪声求相关，**不得引用**。同一段数据里有效的是不变性陈述：
+   ρ_A 组内恒定而 θ 跨 1.87–3.40 个数量级 ⇒ spec(A0) 的任何函数都解释不了组内差异。
+   新纪律：登记任何相关性之前，先打印回归量的组内极差与浮点噪声之比。
+S4/S5：杠杆 **80/80 全部可测**（本课题第一次没有一个抽样因分辨率被剔除），
+   |∇(v_b)|>1e-6|λ| 0 个，beat<0 与 deficit<0 各 0 个，最小 deficit = 0.0020。
+   对照 b62 的 11/50：这里 |∇(v*)| 是 8.0e-6..8.5e-4（见 D2），比 b62 的 θ~1e-5 尺度上的
+   g* 大了若干个数量级 —— 与 b62 的判读（瓶颈在测 g* 不在律）完全一致。
+D2（跑后加，不登记 claim）：**v* 对我正在下降的两点矩泛函不是临界点** ——
+   |∇_S λ₋(v*)| = 8.031e-6..8.490e-4，是它自身舍入尺度的 ≥3.9e8 倍，0/80 落在临界。
+   本轮最重的结构性结论：b60–b63 一直在量的 θ **不是算法收敛误差**，而是"精确箭头矩阵的
+   本征向量块 v*"与"我这个泛函自己的极小点 v_b"之间的夹角 ⇒ **模型偏差角**（model discrepancy）。
+   θ 大 ⇏ 下降法失败；θ 大 ⇔ 两点矩模型与精确模型在方向上不一致。
+   组内 log beat 对 log θ 的斜率：SPACED +1.984（残差几何 sd 0.091），DEGEN +1.539（sd 0.618）。
+   **我差点把 DEGEN 的 1.539 读成与 b61 的二次律冲突 —— 这违反我自己的 53.3 第 2 条**
+   （pooled 斜率不是律的指数；κ 逐抽样通过 B2 取向变化，且在格内与 θ 反相关；b61 自己单格的
+   pooled 斜率就是 1.631，与我的 1.539 同侧）。所以本设计里检验二次律的唯一合法方式是
+   **逐抽样 ratio = beat/(½κθ²)**，κ 走 b61 的两条独立路线 —— 这一轮我**没跑**。
+路线判断（写入 community.md §55）：
+   1. θ 这条线不再当作算法误差写，改写成"两点矩泛函与精确箭头矩阵之间的夹角偏差"；
+      依据是 D2 的 0/80（尺度无关、逐抽样）与 S6 的恒等式，这个改法比原叙述更弱、更可辩护。
+   2. open item 1 现在有两个可写的部分答案，且不可归并：谱（=余弦，S1 设计内对照 23.5×，但分布重叠）
+      与子空间取向（S2 的 1.87–3.40 个数量级）；S3 的不变性排除"任何 spec(A0) 的函数"这一整类候选。
+      ⇒ 不提"单一控制变量"的 claim；只提"谱移中位数、取向填范围"的双因素陈述。
+   3. b64 注册（下一轮）：逐抽样 ratio 检验 —— b61 的二次律在近重合顶余弦设计里是否仍成立；
+      先决条件用 b61 的杠杆门禁，κ 双路线比值必须先于 ratio 报出。
+文献腿（本轮 2 发，已用满）：
+   Q1 `all:"Lanczos" AND all:"error bounds" AND cat:math.NA` → **TOTAL=23**，且前几发正中我的位置：
+      2106.09806 Chen–Greenbaum–Musco「Error bounds for Lanczos-based matrix function approximation」、
+      2211.15643 Xu–Chen「A posteriori error bounds for the block-Lanczos …」、
+      1204.5052 Frommer–Kahl–Lippert–Rittich、2311.02701 Simunec（rational Krylov）。
+      ⇒ 诚实的后果：我的"A₀,B₂ 两点矩 ⇒ 认证上界"框架在 Krylov/矩阵函数一侧有成熟的
+      a posteriori 误差界先例，认证侧的新颖性比我原先假设的低；这条先例**削弱**我而不是加强我。
+      另 2609.08066（2026-09-08，有限精度对称 Krylov / Block Paige 恒等式）与我的地板纪律直接相关，待读。
+   Q2 `all:"arrowhead" AND all:"Lanczos"` → **TOTAL=0**，但按我的既有纪律这条**尚未生效**：
+      宽字段版仍可能是 0 只是因为措辞（"Krylov" 而非 "Lanczos"）。下一轮必须用
+      `all:"arrowhead matrix" AND all:"Krylov"` 复跑，才能写任何"未被占"。

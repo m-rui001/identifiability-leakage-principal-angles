@@ -1,0 +1,109 @@
+======================================================================================================================
+[C1] implementation control: q=1 (single cosine).  t1 == t EXACTLY, so cf1 must equal cf and
+     the numbers must reproduce b45/B0 (0 resolved flips, gaps > 0).
+                          cos=0.999: n=100  flips cf/cf1=0/0  med|gap| cf/cf1= 6.58e-09/ 6.58e-09  min gap1= 8.14e-11  mism1(res/n)=0/100  med|gap1/gap|=  1.000  med cf1= 0.0010
+                          cos=0.990: n=100  flips cf/cf1=0/0  med|gap| cf/cf1= 8.21e-07/ 8.21e-07  min gap1= 2.66e-08  mism1(res/n)=0/100  med|gap1/gap|=  1.000  med cf1= 0.0098
+                          cos=0.900: n=100  flips cf/cf1=0/0  med|gap| cf/cf1= 8.73e-05/ 8.73e-05  min gap1= 3.64e-06  mism1(res/n)=0/100  med|gap1/gap|=  1.000  med cf1= 0.0985
+                          cos=0.700: n=100  flips cf/cf1=0/0  med|gap| cf/cf1= 9.14e-04/ 9.14e-04  min gap1= 9.09e-05  mism1(res/n)=0/100  med|gap1/gap|=  1.000  med cf1= 0.2980
+                          cos=0.200: n= 51  flips cf/cf1=0/0  med|gap| cf/cf1= 2.36e-02/ 2.36e-02  min gap1= 1.40e-03  mism1(res/n)=0/51  med|gap1/gap|=  1.000  med cf1= 0.7774
+     max |cf1-cf| over q=1 cells = 1.332e-15   (predicted: 0 to round-off)
+
+======================================================================================================================
+[C2] general Lam (unit-norm Gram), five spectra.  CLAIM: flips(cf1) == 0 among resolved draws.
+                          equal 20d: n=100  flips cf/cf1=0/0  med|gap| cf/cf1= 5.82e-06/ 5.82e-06  min gap1= 1.92e-09  mism1(res/n)=0/100  med|gap1/gap|=  1.000  med cf1= 0.0551
+                                    t-1 range=[4.967e-02,5.884e-01]  t-t1 (=slack/c2) range=[-1.554e-15,1.776e-15]  cf1>=cf in 61/100
+                           equal 5d: n=100  flips cf/cf1=0/0  med|gap| cf/cf1= 1.37e-08/ 1.37e-08  min gap1= 1.05e-10  mism1(res/n)=0/100  med|gap1/gap|=  1.000  med cf1= 0.0035
+                                    t-1 range=[2.626e-02,5.110e-01]  t-t1 (=slack/c2) range=[-1.998e-15,1.332e-15]  cf1>=cf in 58/100
+                        spread 5-75: n=100  flips cf/cf1=100/0  med|gap| cf/cf1= 9.56e-06/ 1.87e-07  min gap1= 2.57e-09  mism1(res/n)=0/100  med|gap1/gap|=  0.017  med cf1= 0.0038
+                                    t-1 range=[-1.724e-01,3.420e-01]  t-t1 (=slack/c2) range=[6.094e-05,1.052e-01]  cf1>=cf in 100/100
+                     spread 2-45-88: n=100  flips cf/cf1=98/0  med|gap| cf/cf1= 8.11e-07/ 3.18e-09  min gap1= 9.85e-11  mism1(res/n)=0/100  med|gap1/gap|=  0.004  med cf1= 0.0006
+                                    t-1 range=[-1.435e-01,4.019e-01]  t-t1 (=slack/c2) range=[1.978e-06,7.910e-02]  cf1>=cf in 100/100
+                    spread 30-88-89: n=100  flips cf/cf1=0/0  med|gap| cf/cf1= 1.76e-04/ 1.77e-04  min gap1= 4.49e-06  mism1(res/n)=0/100  med|gap1/gap|=  1.004  med cf1= 0.1332
+                                    t-1 range=[-2.003e-01,3.274e-01]  t-t1 (=slack/c2) range=[5.720e-08,1.447e-04]  cf1>=cf in 100/100
+
+======================================================================================================================
+[C3] the cells that flipped 100/100 in b45: multi-atom 'mix' geometry, b45's 2x2, both ladders.
+                 2-45-88 mix d=1e-2: n=100  flips cf/cf1=100/0  med|gap| cf/cf1= 7.69e-09/ 9.41e-12  min gap1= 9.41e-12  mism1(res/n)=0/100  med|gap1/gap|=  0.001  med cf1= 0.0006
+                 2-45-88 mix d=3e-2: n=100  flips cf/cf1=100/0  med|gap| cf/cf1= 7.02e-08/ 8.65e-11  min gap1= 8.65e-11  mism1(res/n)=0/100  med|gap1/gap|=  0.001  med cf1= 0.0006
+                30-88-89 mix d=3e-2: n=100  flips cf/cf1=0/0  med|gap| cf/cf1= 2.40e-06/ 2.43e-06  min gap1= 2.43e-06  mism1(res/n)=0/100  med|gap1/gap|=  1.011  med cf1= 0.1329
+             top .9994/2nd .105 mix: n=100  flips cf/cf1=100/0  med|gap| cf/cf1= 7.37e-10/ 4.38e-11  min gap1= 4.38e-11  mism1(res/n)=0/100  med|gap1/gap|=  0.060  med cf1= 0.0006
+              top .866/2nd .816 mix: n=100  flips cf/cf1=100/0  med|gap| cf/cf1= 2.34e-05/ 7.20e-06  min gap1= 7.20e-06  mism1(res/n)=0/100  med|gap1/gap|=  0.308  med cf1= 0.1329
+   top .866/2nd .121 mix (b45 no-flip): n=100  flips cf/cf1=0/0  med|gap| cf/cf1= 2.23e-06/ 2.46e-06  min gap1= 2.46e-06  mism1(res/n)=0/100  med|gap1/gap|=  1.103  med cf1= 0.1329
+
+======================================================================================================================
+[C4] isotropy null: Lam = gamma*I_p must give t1 == t == 1/gamma, cf1 == cf, exact (D1 at floor).
+                gamma=1.0 equal 20d: n=100  flips cf/cf1=0/0  med|gap| cf/cf1= 1.73e-16/ 1.87e-16  min gap1=-3.82e-16  mism1(res/n)=0/0  med|gap1/gap|=    nan  med cf1= 0.0603
+                                    max|t1-1/gamma|=1.332e-15  max|cf1-cf|=1.596e-16  max|D1|=8.882e-16
+           gamma=1.0 spread 2-45-88: n=100  flips cf/cf1=0/0  med|gap| cf/cf1= 2.58e-16/ 2.58e-16  min gap1=-9.13e-16  mism1(res/n)=0/0  med|gap1/gap|=    nan  med cf1= 0.0006
+                                    max|t1-1/gamma|=1.110e-15  max|cf1-cf|=9.758e-19  max|D1|=1.221e-15
+                gamma=1.5 equal 20d: n=100  flips cf/cf1=0/0  med|gap| cf/cf1= 1.73e-16/ 1.87e-16  min gap1=-6.52e-16  mism1(res/n)=0/0  med|gap1/gap|=    nan  med cf1= 0.0723
+                                    max|t1-1/gamma|=8.882e-16  max|cf1-cf|=2.498e-16  max|D1|=7.772e-16
+           gamma=1.5 spread 2-45-88: n=100  flips cf/cf1=0/0  med|gap| cf/cf1= 4.79e-16/ 4.54e-16  min gap1=-1.43e-15  mism1(res/n)=0/0  med|gap1/gap|=    nan  med cf1= 0.0007
+                                    max|t1-1/gamma|=9.992e-16  max|cf1-cf|=1.670e-16  max|D1|=9.992e-16
+                gamma=0.6 equal 20d: n=100  flips cf/cf1=0/0  med|gap| cf/cf1= 1.39e-16/ 1.32e-16  min gap1=-3.89e-16  mism1(res/n)=0/0  med|gap1/gap|=    nan  med cf1= 0.0451
+                                    max|t1-1/gamma|=1.554e-15  max|cf1-cf|=1.527e-16  max|D1|=9.992e-16
+           gamma=0.6 spread 2-45-88: n=100  flips cf/cf1=0/0  med|gap| cf/cf1= 1.68e-16/ 1.71e-16  min gap1=-6.74e-16  mism1(res/n)=0/0  med|gap1/gap|=    nan  med cf1= 0.0005
+                                    max|t1-1/gamma|=1.998e-15  max|cf1-cf|=1.337e-16  max|D1|=1.332e-15
+
+======================================================================================================================
+[C5] scaling along the top-cosine ladder (second cosine held near 0.71, mix geometry): if cf1's
+     residual is the second-order term, log|gap1| vs log(cf1) should have slope ~= 2, not 1.
+                      ladder top=2d: n=100  flips cf/cf1=100/0  med|gap| cf/cf1= 7.02e-08/ 8.65e-11  min gap1= 8.65e-11  mism1(res/n)=0/100  med|gap1/gap|=  0.001  med cf1= 0.0006
+                      ladder top=3d: n=100  flips cf/cf1=100/0  med|gap| cf/cf1= 1.58e-07/ 4.39e-10  min gap1= 4.39e-10  mism1(res/n)=0/100  med|gap1/gap|=  0.003  med cf1= 0.0014
+                      ladder top=5d: n=100  flips cf/cf1=100/0  med|gap| cf/cf1= 4.42e-07/ 3.41e-09  min gap1= 3.41e-09  mism1(res/n)=0/100  med|gap1/gap|=  0.008  med cf1= 0.0038
+                      ladder top=8d: n=100  flips cf/cf1=100/0  med|gap| cf/cf1= 1.14e-06/ 2.27e-08  min gap1= 2.27e-08  mism1(res/n)=0/100  med|gap1/gap|=  0.020  med cf1= 0.0097
+                     ladder top=12d: n=100  flips cf/cf1=100/0  med|gap| cf/cf1= 2.63e-06/ 1.19e-07  min gap1= 1.19e-07  mism1(res/n)=0/100  med|gap1/gap|=  0.045  med cf1= 0.0217
+                     ladder top=20d: n=100  flips cf/cf1=100/0  med|gap| cf/cf1= 8.01e-06/ 1.04e-06  min gap1= 1.04e-06  mism1(res/n)=0/100  med|gap1/gap|=  0.130  med cf1= 0.0598
+                     ladder top=30d: n=100  flips cf/cf1=100/0  med|gap| cf/cf1= 2.34e-05/ 7.20e-06  min gap1= 7.20e-06  mism1(res/n)=0/100  med|gap1/gap|=  0.308  med cf1= 0.1329
+     log-log slope of |gap1| vs cf1 = 2.081   (2 = first-order bias removed, 1 = still biased)
+
+======================================================================================================================
+判读（预登记，跑前写的；实测判读附在文件末尾）：
+  C1 |cf1-cf| 必须在地板以下，否则 t1 的实现是错的，后面全部作废。
+  C2/C3 flips(cf1) 只要出现 1 个 resolved 反例 => 'cf1 是无等角假设的上界估计' 死亡，
+     只准写成'方差更小的估计'；全 0 => 正文 prop:plane 的上界侧可以推广到一般 Lam（新结论）。
+  C3 |gap1/gap| 若 ~1（没有压缩）=> 我的 (B) 一阶相消推导错，gap 的主体不是 slack 项。
+  C4 若 gamma != 1 时 t1 != 1/gamma => b45 的 (ii)/cor:iso 里 E0-max 不是右导数，必须再撤。
+  C5 斜率 ~= 2 => 余项确实二阶；~= 1 => cf1 仍带一阶偏置，'修正'无效，按 §41.8 规矩停手。
+
+======================================================================================================================
+实测判读（跑后写，种子 48902，两次运行逐字节一致；判读只允许引用上面印出的数）：
+
+C1 实现对照通过：q=1 五格 max|cf1-cf| = 1.332e-15，在地板（~2e-16*||G||）之内，即 t1 == t 恒等，
+   翻转计数与 b45/B0 完全一致（0 resolved flips，gap>0，min gap1 = 8.14e-11 @ cos=0.999）。
+   => 后面的格子有意义。
+
+C2 主张格：一般 Lam × 五谱。flips(cf) = 100/100, 100/100, 98/100（spread 三格）与 0/100（等角两格、
+   30-88-89），而 flips(cf1) = 0/100 在**全部五格**；min gap1 = 9.85e-11（spread 2-45-88）。
+   slack 的两面看清楚了：等角两格 t-t1 = ±2e-15（A(0)=c^2 I_q => E0=R^q => t1≡t），所以那里的
+   "cf1>=cf 只有 61/100、58/100" 是纯舍入抛硬币，不是反例；spread 三格 t-t1 ∈ [2.0e-6, 1.05e-1]
+   且 cf1>=cf 100/100。=> 单调性 (A) 只在 slack 越过地板处是可检验的，这条要写进正文。
+
+C3 b45 的六个 mix 格：flips(cf1) = 0/100 全格（原格 flips(cf) = 100/100 或 98/100）。
+   med|gap1|/med|gap| = 0.001, 0.001, 0.060, 0.308 在 slack 主导的四格；而 b45 **解释不了**的两格
+   （30-88-89 mix、top .866/2nd .121 mix）分别是 1.011 与 1.103 —— 一模一样，纹丝不动。
+   这正是推导预言的：修正只消掉"斜率放大"放进去的那一阶，消不掉 o(lam) 余项。两格的 gap 来自后者，
+   b45 留下的悬案没有被本脚本顺手解决，不许声称解决。
+
+C4 各向零假：gamma = 1, 1.5, 0.6 × 两谱，|t1-1/gamma| ≤ 2.0e-15，|cf1-cf| ≤ 2.5e-16，
+   max|D1| ≤ 1.3e-15，所有格 flips = 0/0（gap≡0，全部在地板下）。
+   => b45 的 (ii)（E0 上取最大＝Lidskii–Danskin 右导数）与 cor:iso 的 t=1/gamma 同时独立复核通过，
+      不需要再撤任何东西；min gap1 的 -9.13e-16 是零间隙的符号噪声，与控制组的角色一致。
+
+C5 沿顶余弦阶梯（第二余弦固定 ~0.71，mix 几何）：med|gap| 从 7.02e-08（2d）到 2.34e-05（30d），
+   med|gap1| 从 8.65e-11 到 7.20e-06，flips(cf)=100/100 => flips(cf1)=0/100 七格全通过，
+   log-log 斜率 = 2.081。预登记说 2 = 一阶偏置已除，1 = 没修好。=> 取 2 那一支。
+
+判读：B-CLAIM-53(d) 的经验分支成立（0 翻转 + 二阶残差），按 §42.9 的约定这**不足以**立命题——
+   我只被允许写"cf1 是一个符号受控、无等角假设的替代代理"。可证性由 b47 单独处理，结论是它确实
+   可证（正文 prop:chord），且证明用的方向比这里的经验方向更强：cf1 是**上界**。
+
+已知缺陷（写下来，不改数）：
+ (a) flips 的判定用 |gap|>floor 的 resolved 子集，min gap1 未过滤地板 —— 各向格因此出现 -9e-16 这类
+     地板下的负值，读者须与 flips=0/0 一起看；
+ (b) mix 生成器对 K 的缩放是 min(1, cs[0]/sqrt(ev[-1]))，只保证顶余弦**不超过**目标值，不保证相等；
+ (c) C2/C3 的每格 n=100 未做多重比较校正，0/100 的置信区间上界约 3%（单侧），单格不足以支撑
+     "对所有格成立"——那句话只有 b47 的证明支持，不是这些计数支持；
+ (d) cf1 依赖 E0 的简并结构信息；本脚本用 1e-9 相对阈值取 E0，这个阈值**没有扫描过**，因此
+     "阈值不敏感"是未检验的断言，不是结论。唯一相关的实测事实是 C2 里等角两格的 t-t1 = ±2e-15，
+     即那两格的 E0 判定与 b45 一致。

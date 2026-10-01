@@ -1,0 +1,28 @@
+### Control A: ONE scalar AR(1) (phi=.95).  Truth is 1x1 => normal, true NG=1.00 everywhere.
+A0  [x]                                rho=0.9253  NG4= 1.00  NG12= 1.00  AG4=1.000  ER12=22328835077914.61  commutator=0.000
+A1  [x, m]                             rho=0.9758  NG4= 1.36  NG12= 1.40  AG4=0.887  ER12=13529082.11  commutator=1.284
+A2  [m, m(-1)]                         rho=0.8177  NG4= 8.08  NG12=19.73  AG4=6.799  ER12=    1.00  commutator=0.957
+A3  [m, m(-1), m(-2)]                  rho=0.9128  NG4= 6.80  NG12= 7.62  AG4=5.272  ER12=  119.51  commutator=0.896
+A4  [x, m, m(-1)]                      rho=0.8172  NG4= 9.84  NG12=23.27  AG4=5.894  ER12=    1.37  commutator=1.311
+A5  [m, m(-1..-4)]                     rho=0.8569  NG4=11.23  NG12=31.51  AG4=8.200  ER12=    1.86  commutator=0.679
+A6  [m12, m12(-1..-2)] (12-mo mean)    rho=0.9410  NG4= 9.10  NG12=24.68  AG4=7.325  ER12=    4.27  commutator=0.846
+
+### Control B: TWO independent scalar AR(1)s (block-diagonal truth, still normal).
+B0  [a, b]                             rho=0.9450  NG4= 1.00  NG12= 1.00  AG4=0.638  ER12=    1.05  commutator=0.000
+B1  [a, b3]                            rho=0.9427  NG4= 1.01  NG12= 1.03  AG4=0.982  ER12=    1.99  commutator=0.000
+B2  [a, b3, a3]                        rho=0.9807  NG4= 1.35  NG12= 1.40  AG4=0.852  ER12=    2.83  commutator=1.017
+B3  [a, a(-1), b, b3]                  rho=0.9386  NG4= 1.51  NG12= 1.58  AG4=1.065  ER12=    1.97  commutator=0.875
+B4  [a, b] + both smoothed (d=4)       rho=0.9807  NG4= 1.35  NG12= 1.40  AG4=0.769  ER12=    3.94  commutator=0.905
+
+### Control C: TRUE non-normal generator A=[[.98,g],[0,.80]] (true NG4 shown).
+  g=0.0  TRUE NG4=1.00  ->  fitted:
+     fitted                            rho=0.9700  NG4= 1.00  NG12= 1.00  AG4=0.580  ER12=    1.08  commutator=0.000
+  g=2.0  TRUE NG4=6.27  ->  fitted:
+     fitted                            rho=0.9717  NG4= 1.00  NG12= 1.00  AG4=0.530  ER12=    1.13  commutator=0.001
+  g=6.0  TRUE NG4=18.56  ->  fitted:
+     fitted                            rho=0.9808  NG4= 1.00  NG12= 1.00  AG4=0.503  ER12=    1.14  commutator=0.001
+
+### Reference: the real ENSO numbers b22 had to beat
+  SST4+ONI  d=5 T=900 : NG4=2.121 (H0 p95 1.549, p=0.000)
+  SST4+ONI+SOI d=6    : NG4=2.559 (H0 p95 1.510, p=0.000)
+  SST4 only d=4 T=900 : NG4=1.058 (H0 med 1.364, p=1.000)

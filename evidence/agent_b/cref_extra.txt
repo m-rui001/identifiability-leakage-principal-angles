@@ -1,0 +1,40 @@
+=== QUERY: kutz brunton protopapas probert dynamic mode decomposition theoretical analysis generalizations 2016
+    2016 | 10.1137/1.9781611974508 | J. Nathan Kutz; Steven L. Brunton; Bingni W. Brunton; Joshua L. Proctor | Dynamic Mode Decomposition | ? vol=? p=?
+    2021 | 10.26226/morressier.612f6736bc981037241007f8 | Andy Goldschmidt; Eurika Kaiser; Jonathan DuBois; Steven Brunton; Nathan Kutz | Bilinear dynamic mode decomposition and quantum control | ? vol=? p=?
+    2016 | 10.1137/15m1023543 | J. Nathan Kutz; Xing Fu; Steven L. Brunton | Multiresolution Dynamic Mode Decomposition | SIAM Journal on Applied Dynamical Systems vol=15 p=713-735
+    2016 | 10.1137/15m1013857 | Joshua L. Proctor; Steven L. Brunton; J. Nathan Kutz | Dynamic Mode Decomposition with Control | SIAM Journal on Applied Dynamical Systems vol=15 p=142-161
+=== QUERY: dynamic mode decomposition data-driven modeling of complex systems SIREAM Kutz 2016
+    2016 | 10.1137/1.9781611974508 | J. Nathan Kutz; Steven L. Brunton; Bingni W. Brunton; Joshua L. Proctor | Dynamic Mode Decomposition | ? vol=? p=?
+    2016 | 10.1137/1.9781611974508.ch5 |  | Chapter 5: Multiresolution Dynamic Mode Decomposition | Dynamic Mode Decomposition vol=? p=71-89
+    2016 | 10.1137/1.9781611974508.ch1 |  | Chapter 1: Dynamic Mode Decomposition: An Introduction | Dynamic Mode Decomposition vol=? p=1-24
+    2016 | 10.1137/1.9781611974508.bm |  | Back Matter | Dynamic Mode Decomposition vol=? p=207-234
+=== QUERY: temple algebraic numerical variational method quantum mechanical eigenvalue problems 1923
+    None | 10.1007/3-540-49541-x_4 |  | Stochastic variational method | Lecture Notes in Physics, Stochastic Variational vol=? p=39-63
+    2020 | 10.3389/fphy.2020.00390 | Asif Mushtaq; Amna Noreen; Kåre Olaussen | Numerical Solutions of Quantum Mechanical Eigenvalue Problems | Frontiers in Physics vol=8 p=?
+    1966 | 10.3138/9781487596002-005 |  | II. VARIATIONAL PRINCIPLES FOR FINITE-DIMENSIONAL SYSTEMS | Variational Methods for Eigenvalue Problems vol=? p=31-40
+    1966 | 10.3138/9781487596002-019 |  | BIBLIOGRAPHY | Variational Methods for Eigenvalue Problems vol=? p=265-270
+=== QUERY: temple bounds eigenvalues Proceedings London Mathematical Society 1953 bracketing
+    1953 | 10.1112/jlms/s1-28.2.134 | G. Temple | Theories and Applications of Generalized Functions | Journal of the London Mathematical Society vol=s1-28 p=134-148
+    2000 | 10.1112/s0024609399006402 | Ludwig Elsner; Daniel Hershkowitz; Hans Schneider | Bounds on Norms of Compound Matrices and on Products of Eigenvalues | Bulletin of the London Mathematical Society vol=32 p=15-24
+    1953 | 10.1098/rspa.1953.0203 | D. J. Howarth | Electronic eigenvalues of copper | Proceedings of the Royal Society of London. Seri vol=220 p=513-529
+    2021 | 10.1112/jlms.12493 | Bruno Colbois; Luigi Provenzano | Conformal upper bounds for the eigenvalues of the p‐Laplacian | Journal of the London Mathematical Society vol=104 p=2128-2147
+=== QUERY: gautschi computational aspects of classical orthogonal polynomials 2004
+    1990 | 10.1007/978-94-009-0501-6_9 | Walter Gautschi | Computational Aspects of Orthogonal Polynomials | Orthogonal Polynomials vol=? p=181-216
+    2004 | 10.1093/oso/9780198506720.003.0004 | Walter Gautschi | Computational Methods | Orthogonal Polynomials vol=? p=?
+    2004 | 10.1093/oso/9780198506720.001.0001 | Walter Gautschi | Orthogonal Polynomials | ? vol=? p=?
+    2004 | 10.1093/oso/9780198506720.003.0005 | Walter Gautschi | Applications | Orthogonal Polynomials vol=? p=?
+=== QUERY: szego orthogonal polynomials 1939 american mathematical society
+    1935 | 10.2307/1989699 | G. Szego | A Problem Concerning Orthogonal Polynomials | Transactions of the American Mathematical Societ vol=37 p=196
+    1950 | 10.2307/2031975 | G. Szego | On Certain Special Sets of Orthogonal Polynomials | Proceedings of the American Mathematical Society vol=1 p=731
+    1936 | 10.2307/1989765 | Gabriel Szego | Correction to the Paper "A Problem Concerning Orthogonal Polynomials" | Transactions of the American Mathematical Societ vol=39 p=500
+    1995 | 10.2307/2160672 | A. Sri Ranga | Symmetric Orthogonal Polynomials and the Associated Orthogonal L-Polynomials | Proceedings of the American Mathematical Society vol=123 p=3135
+=== QUERY: markov chebyshev moment problem positive measures quadrature
+    2022 | 10.1007/s11075-022-01393-w | André Pierro de Camargo | A Chebyshev-Markov-Stieltjes separation type theorem for classical Romberg quadrature | Numerical Algorithms vol=92 p=2365-2376
+    1982 | 10.1007/bf01895220 | F. Peherstorfer | On an extremal problem for nonnegative trigonometric polynomials and the characterization of po | Acta Mathematica Academiae Scientiarum Hungarica vol=39 p=107-116
+    1977 | 10.1090/mmono/050/06 |  | The Čebyšev-Markov problem | Translations of Mathematical Monographs, The Mar vol=? p=107-171
+    1975 | 10.2140/pjm.1975.59.317 | Aharon Atzmon | A moment problem for positive measures on the unit disc | Pacific Journal of Mathematics vol=59 p=317-325
+=== QUERY: golub van loan matrix computations
+    1986 | 10.2307/2008107 | David F. Mayers; Gene H. Golub; Charles F. van Loan | Matrix Computations. | Mathematics of Computation vol=47 p=376
+    1986 | 10.1137/1028073 | James W. Demmel | Matrix Computations (Gene H. Golub And Charles F. van Loan) | SIAM Review vol=28 p=252-255
+    1990 | 10.1137/1032141 | James W. Demmel | Matrix Computations; Second Edition (Gene Golub and Charles F. Van Loan) | SIAM Review vol=32 p=690-691
+    1988 | 10.1016/0024-3795(88)90371-0 |  | Matrix computations Stewart, G.W.: by Gene H. Golub and Charles Van Loan, 95:211–215 (1987) | Linear Algebra and its Applications vol=100 p=5

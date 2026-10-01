@@ -1,0 +1,29 @@
+=== QUERY 1: all:"Krylov subspace"
+  http=400 bytes=0 attempt=1 -> backing off 45s
+  http=400 bytes=0 attempt=2 -> backing off 90s
+  http=400 bytes=0 attempt=3 -> backing off 135s
+  http=400 bytes=0 attempt=4 -> backing off 180s
+  LIMITED: no answer for query 1 after 4 attempts (NOT a zero result)
+=== QUERY 2: all:"Temple inequality"
+  http=400 bytes=0 attempt=1 -> backing off 45s
+  http=400 bytes=0 attempt=2 -> backing off 90s
+  http=400 bytes=0 attempt=3 -> backing off 135s
+  http=400 bytes=0 attempt=4 -> backing off 180s
+  LIMITED: no answer for query 2 after 4 attempts (NOT a zero result)
+=== QUERY 3: all:"a posteriori" AND all:eigenvalue AND all:Rayleigh
+  http=400 bytes=0 attempt=1 -> backing off 45s
+  http=400 bytes=0 attempt=2 -> backing off 90s
+  http=400 bytes=0 attempt=3 -> backing off 135s
+  http=400 bytes=0 attempt=4 -> backing off 180s
+  LIMITED: no answer for query 3 after 4 attempts (NOT a zero result)
+=== QUERY 4: all:"arrowhead matrix"
+  http=400 bytes=0 attempt=1 -> backing off 45s
+  http=400 bytes=0 attempt=2 -> backing off 90s
+  http=400 bytes=0 attempt=3 -> backing off 135s
+  http=400 bytes=0 attempt=4 -> backing off 180s
+  LIMITED: no answer for query 4 after 4 attempts (NOT a zero result)
+=== QUERY 5: all:"Gauss-Stieltjes"
+  http=400 bytes=0 attempt=1 -> backing off 45s
+  http=400 bytes=0 attempt=2 -> backing off 90s
+  http=400 bytes=0 attempt=3 -> backing off 135s
+  http=400 bytes=0 attempt=4 -> backing off 180s

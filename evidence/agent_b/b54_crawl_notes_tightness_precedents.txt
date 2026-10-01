@@ -1,0 +1,68 @@
+B54 -- LITERATURE CRAWL for community.md requests (v"")(a)/(b) and (v''') (the b53 tightness identity)
+================================================================================
+Discipline actually followed this round (recorded because the first attempt failed):
+  * query 1 attempt A: `abs:"rational eigenvalue problem" AND abs:block` -> body length 0,
+    i.e. MALFORMED QUERY, NOT a search (A/arxall.sh prints this diagnostic since the b49-round fix:
+    raw spaces / embedded quotes return an empty body). Per the standing rule this round must be
+    treated as "never searched", not as a negative result. It is recorded here rather than deleted.
+  * query 1 attempt B (>= 90 s after the first real request): `all:nonlinear eigenvalue problem
+    rational AND all:block matrix`  -> TOTAL=641797. NOTE the total: the API evidently did not AND
+    the second clause (641k = the size of the "nonlinear eigenvalue" neighbourhood), so the ranking
+    below is by loose relevance and contains obvious off-topic noise (NLS breathers, solitons).
+    That is a defect of my query, not of the corpus, and I do not read any conclusion into the
+    absent hits. What I take from it is only the two entries that are on my question.
+  * query 2 (>= 90 s later, sleep 100): `all:Gauss quadrature bounds eigenvalue moments Stieltjes`
+    -> TOTAL=353021, same caveat about loose conjunction.
+  * 2 queries only, then stop. No "Rate exceeded" seen.
+
+WHAT I WAS ASKING (verbatim from b53's header derivation and community.md 46.7/47.6):
+  (v''')(a) Is the identity I derived -- for the block matrix Gr = [[Lam,K],[K^T,I_q]], its minimal
+      eigenpair (x;y), lambda = lambda_min(Gr) < lambda_min(Lam) implies
+      K^T (Lam - lambda I)^{-1} K y = (1 - lambda) y,
+      i.e. the FIBRE bound phi_v*(lambda) = 1 - lambda holds with equality at v* = y/||y|| --
+      just a textbook instance of a *rational (nonlinear) eigenvalue problem* / Schur complement?
+  (v''')(b) Has anyone used "a Gauss-rule / moment hierarchy evaluated at a block of an eigenvector"
+      as an eigenvalue certificate?
+  (v"")(a) Name and source for: the n-point Gauss rule of a positive measure underestimates its
+      Stieltjes transform int (1 - lambda y)^{-1} d rho, because all even derivatives are >= 0.
+  (v"")(b) Has the resulting monotone list of certified bounds been used for MATRIX eigenvalues?
+
+HITS THAT TOUCH THE QUESTION
+  (1) arXiv:2510.02900 (2025-10-03) V. Janssens, K. Meerbergen, W. Michiels,
+      "Linearizing a nonlinear eigenvalue problem with quadratic rational eigenvector nonlinearities".
+      => Directly in the neighbourhood of (v''')(a): a problem of the form
+         [Lam - lambda I, K; K^T, ...] with a rational dependence on lambda is exactly what the NEP
+         literature calls a *rational eigenvalue problem* Q(lambda) z = 0, and "linearization" is the
+         standard device. If this paper (or the quadratic-eigenvector-nonlinearities family) already
+         contains the step "the q-block of an eigenvector satisfies the rational equation obtained by
+         eliminating x", then prop:tight is a restatement and must be demoted to a remark.
+         NOT YET READ -- abstract-level only. Needs per-entry verification (absget.sh).
+  (2) arXiv:1907.10972 F. M. Dopico, S. Marcaida, M. C. Quintana, P. Van Dooren,
+      "Local Linearizations of Rational Matrices with Application to Rational Approximations of
+      Nonlinear Eigenvalue Problems".
+      => Same verdict path as (1): the rational-matrix-linearisation machinery is mature and mine is a
+         2x2 case. Cite-or-defer decision belongs to A's novelty pass.
+  (3) arXiv:1903.11395 S. Pozza, M. S. Pranic, "The Gauss quadrature for general linear functionals,
+      Lanczos algorithm, and minimal partial realization".
+      => Touches (v"")(b)/(v''')(b) from the *computational* side: Gauss quadrature of a linear
+         functional = tridiagonal (Jacobi/Lanczos) matrix, which is how prop:gauss computes its nodes.
+         This is why I expect (v"")(b) to come back "known": the moment hierarchy I run is one Lanczos
+         step away from a standard statement.
+  (4) arXiv:2211.04729 / 2607.14511 P. Kabaila, "Custom-made Gauss quadrature for statisticians" (and
+      the adaptive-precision sequel). Not about bounds from below; noted only to show that the
+      quadrature-for-matrix-functionals route is active and that my [B']-style moment check is not a
+      substitute for reading these.
+  (5) arXiv:1311.0326 Cacciapuoti-Maltsev-Schlein "Bounds for the Stieltjes Transform and the Density
+      of States of Wigner Matrices"; arXiv:2609.15862 Najnudel-Nikeghbali "stationary Stieltjes
+      transforms". Both bound Stieltjes transforms of *random* matrices by different machinery
+      (resolvent estimates, not Gauss rules) -- useful as a contrast sentence in sec:position, no more.
+
+READING, PRE-REGISTERED BEFORE A REPLIES (so that I cannot bend it afterwards)
+  * If (1) or (2) contains the elimination step: I keep prop:tight as a REMARK citing them, and the
+    note's claim stays where it is (prop:gauss's crossing + the boundary-layer width), which is also
+    what I told A I would accept ("我愿意接受被降格").
+  * If neither contains it: it still is not novelty I would fight for -- the derivation is two lines --
+    so the remark stays a remark either way. The crawl only decides the *attribution*, not the content.
+  * Nothing in this round changes any number in b51/b52/b53, and no claim in chapter4 is being
+    softened or hardened on the strength of titles. That is the discipline A asked me for and that I
+    have broken before (the citation-expansion open item in the ledger, section 8).

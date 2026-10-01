@@ -1,0 +1,165 @@
+============================================================================================================================
+[A-E] reconciliation of b51 (uniform direction net finds NOTHING for lambda_1) with b50
+      (the analytic ray removes 0.13-0.27 of cf1's gap).  Hypothesis: the descent set of
+      lambda_1 at v1 is a boundary layer of width t_hi << pi/(2*64) = 2.46e-2 in t, so no
+      uniform grid of ~2000 directions resolves it -- whereas lambda_2's gain is an open-set
+      effect.  Test D is the route question: if lambda_2's net gain also needs nt>=32, the
+      b51 gain is a grid artifact and there is no direction search to advertise at any n.
+              q=3 spread 5-75: n= 40 dimE0=[1] no-ray(stationary or L2<=0)=0 q=2(no u-rotation)=0   [A] viol prof:0 net:0 net-geom:0 rot:0   max||v||-1| on the un-normalised polar form = 2.2e-16
+                              [B] gapfrac lambda_1: at t* exactly (b50's cf2) med=0.1202   300-pt fine profile med=0.1201   b51-t-list-on-the-same-ray med=0.0000   (=0 => the coarse grid is blind, b51's net story confirmed)   [C] t_hi(lambda_1): med=8.59e-04 p90=2.36e-03 vs spacing51=2.45e-02   draws with t_hi < spacing51 = 40/40
+                              [C2] t_hi(lambda_2): med=8.59e-04 p90=2.36e-03   draws with t_hi < spacing51 = 40/40   gapfrac lambda_2 on the ray med=0.9965   b51-t-list on the ray, lambda_2 med=0.9446
+                              [D] gapfrac(min over the 32u x nt net): columns are the UNIFORM t-list (1e-3..pi/2) | the GEOMETRIC list (1e-6..pi/2), same number of points:
+                                    nt=   4  l1  0.0000 |  0.0581     l2  0.9499 |  0.9380
+                                    nt=   8  l1  0.0000 |  0.1150     l2  0.9499 |  0.9795
+                                    nt=  16  l1  0.0000 |  0.1180     l2  0.9499 |  0.9921
+                                    nt=  32  l1  0.0000 |  0.1249     l2  0.9499 |  0.9982
+                                    nt=  64  l1  0.0000 |  0.1263     l2  0.9499 |  0.9990
+                                    nt= 128  l1  0.0000 |  0.1262     l2  0.9499 |  0.9994
+                              [D2] saturation: (min_net lambda_2 - lam_min)/gap on the geometric grid, nt=128: med=5.51e-04 max=6.77e-03   (this is HOW FAR the best found member still sits above the certificate; 1e-3 means the gap is removed to a per-mille)
+                              [E] fraction of the ray descent retained after rotating u by delta:   d=0.01 med= 1.000 p10= 0.993   d=0.05 med= 0.996 p10= 0.960   d=0.2 med= 0.936 p10= 0.795   (b51's u-spacing was 2pi/32 = 0.20 rad)
+           q=3 spread 2-45-88: n= 40 dimE0=[1] no-ray(stationary or L2<=0)=0 q=2(no u-rotation)=0   [A] viol prof:0 net:0 net-geom:0 rot:0   max||v||-1| on the un-normalised polar form = 2.2e-16
+                              [B] gapfrac lambda_1: at t* exactly (b50's cf2) med=0.1839   300-pt fine profile med=0.1838   b51-t-list-on-the-same-ray med=0.0000   (=0 => the coarse grid is blind, b51's net story confirmed)   [C] t_hi(lambda_1): med=1.29e-04 p90=3.17e-04 vs spacing51=2.45e-02   draws with t_hi < spacing51 = 40/40
+                              [C2] t_hi(lambda_2): med=1.29e-04 p90=3.17e-04   draws with t_hi < spacing51 = 40/40   gapfrac lambda_2 on the ray med=0.9998   b51-t-list on the ray, lambda_2 med=0.8158
+                              [D] gapfrac(min over the 32u x nt net): columns are the UNIFORM t-list (1e-3..pi/2) | the GEOMETRIC list (1e-6..pi/2), same number of points:
+                                    nt=   4  l1  0.0000 |  0.0737     l2  0.8158 |  0.9443
+                                    nt=   8  l1  0.0000 |  0.1588     l2  0.8158 |  0.9916
+                                    nt=  16  l1  0.0000 |  0.1621     l2  0.8158 |  0.9923
+                                    nt=  32  l1  0.0000 |  0.1788     l2  0.8158 |  0.9983
+                                    nt=  64  l1  0.0000 |  0.1836     l2  0.8158 |  0.9993
+                                    nt= 128  l1  0.0000 |  0.1838     l2  0.8158 |  0.9997
+                              [D2] saturation: (min_net lambda_2 - lam_min)/gap on the geometric grid, nt=128: med=2.62e-04 max=1.05e-03   (this is HOW FAR the best found member still sits above the certificate; 1e-3 means the gap is removed to a per-mille)
+                              [E] fraction of the ray descent retained after rotating u by delta:   d=0.01 med= 1.000 p10= 0.998   d=0.05 med= 0.994 p10= 0.987   d=0.2 med= 0.916 p10= 0.894   (b51's u-spacing was 2pi/32 = 0.20 rad)
+          q=3 spread 30-88-89: n= 40 dimE0=[1] no-ray(stationary or L2<=0)=0 q=2(no u-rotation)=0   [A] viol prof:0 net:0 net-geom:0 rot:0   max||v||-1| on the un-normalised polar form = 2.2e-16
+                              [B] gapfrac lambda_1: at t* exactly (b50's cf2) med=0.0003   300-pt fine profile med=0.0003   b51-t-list-on-the-same-ray med=0.0000   (=0 => the coarse grid is blind, b51's net story confirmed)   [C] t_hi(lambda_1): med=1.01e-03 p90=2.08e-03 vs spacing51=2.45e-02   draws with t_hi < spacing51 = 40/40
+                              [C2] t_hi(lambda_2): med=1.04e-03 p90=1.99e-03   draws with t_hi < spacing51 = 40/40   gapfrac lambda_2 on the ray med=0.9995   b51-t-list on the ray, lambda_2 med=0.9993
+                              [D] gapfrac(min over the 32u x nt net): columns are the UNIFORM t-list (1e-3..pi/2) | the GEOMETRIC list (1e-6..pi/2), same number of points:
+                                    nt=   4  l1  0.0000 |  0.0001     l2  0.9993 |  0.9993
+                                    nt=   8  l1  0.0000 |  0.0003     l2  0.9993 |  0.9994
+                                    nt=  16  l1  0.0000 |  0.0003     l2  0.9993 |  0.9994
+                                    nt=  32  l1  0.0000 |  0.0003     l2  0.9993 |  0.9995
+                                    nt=  64  l1  0.0000 |  0.0003     l2  0.9993 |  0.9995
+                                    nt= 128  l1  0.0000 |  0.0003     l2  0.9993 |  0.9995
+                              [D2] saturation: (min_net lambda_2 - lam_min)/gap on the geometric grid, nt=128: med=5.00e-04 max=4.80e-03   (this is HOW FAR the best found member still sits above the certificate; 1e-3 means the gap is removed to a per-mille)
+                              [E] fraction of the ray descent retained after rotating u by delta:   d=0.01 med= 1.000 p10= 1.000   d=0.05 med= 0.998 p10= 0.997   d=0.2 med= 0.960 p10= 0.960   (b51's u-spacing was 2pi/32 = 0.20 rad)
+                q=3 equal 20d: no usable draw
+              q=3 2-45-88 mix: n= 40 dimE0=[1] no-ray(stationary or L2<=0)=0 q=2(no u-rotation)=0   [A] viol prof:0 net:0 net-geom:0 rot:0   max||v||-1| on the un-normalised polar form = 2.2e-16
+                              [B] gapfrac lambda_1: at t* exactly (b50's cf2) med=0.5003   300-pt fine profile med=0.5002   b51-t-list-on-the-same-ray med=0.0000   (=0 => the coarse grid is blind, b51's net story confirmed)   [C] t_hi(lambda_1): med=2.51e-05 p90=2.51e-05 vs spacing51=2.45e-02   draws with t_hi < spacing51 = 40/40
+                              [C2] t_hi(lambda_2): med=2.51e-05 p90=2.51e-05   draws with t_hi < spacing51 = 40/40   gapfrac lambda_2 on the ray med=1.0000   b51-t-list on the ray, lambda_2 med=0.4997
+                              [D] gapfrac(min over the 32u x nt net): columns are the UNIFORM t-list (1e-3..pi/2) | the GEOMETRIC list (1e-6..pi/2), same number of points:
+                                    nt=   4  l1  0.0000 |  0.0728     l2  0.4997 |  0.5726
+                                    nt=   8  l1  0.0000 |  0.4123     l2  0.4997 |  0.9120
+                                    nt=  16  l1  0.0000 |  0.4515     l2  0.4997 |  0.9512
+                                    nt=  32  l1  0.0000 |  0.4809     l2  0.4997 |  0.9806
+                                    nt=  64  l1  0.0000 |  0.4965     l2  0.4997 |  0.9962
+                                    nt= 128  l1  0.0000 |  0.5003     l2  0.4997 |  1.0000
+                              [D2] saturation: (min_net lambda_2 - lam_min)/gap on the geometric grid, nt=128: med=2.39e-06 max=1.64e-05   (this is HOW FAR the best found member still sits above the certificate; 1e-3 means the gap is removed to a per-mille)
+                              [E] fraction of the ray descent retained after rotating u by delta:   d=0.01 med= 1.000 p10= 1.000   d=0.05 med= 0.995 p10= 0.995   d=0.2 med= 0.921 p10= 0.921   (b51's u-spacing was 2pi/32 = 0.20 rad)
+             q=3 30-88-89 mix: n= 40 dimE0=[1] no-ray(stationary or L2<=0)=0 q=2(no u-rotation)=0   [A] viol prof:0 net:0 net-geom:0 rot:0   max||v||-1| on the un-normalised polar form = 2.2e-16
+                              [B] gapfrac lambda_1: at t* exactly (b50's cf2) med=0.0016   300-pt fine profile med=0.0016   b51-t-list-on-the-same-ray med=0.0000   (=0 => the coarse grid is blind, b51's net story confirmed)   [C] t_hi(lambda_1): med=1.89e-04 p90=1.89e-04 vs spacing51=2.45e-02   draws with t_hi < spacing51 = 40/40
+                              [C2] t_hi(lambda_2): med=1.89e-04 p90=1.89e-04   draws with t_hi < spacing51 = 40/40   gapfrac lambda_2 on the ray med=1.0000   b51-t-list on the ray, lambda_2 med=0.9984
+                              [D] gapfrac(min over the 32u x nt net): columns are the UNIFORM t-list (1e-3..pi/2) | the GEOMETRIC list (1e-6..pi/2), same number of points:
+                                    nt=   4  l1  0.0000 |  0.0016     l2  0.9984 |  0.9999
+                                    nt=   8  l1  0.0000 |  0.0014     l2  0.9984 |  0.9998
+                                    nt=  16  l1  0.0000 |  0.0016     l2  0.9984 |  0.9999
+                                    nt=  32  l1  0.0000 |  0.0016     l2  0.9984 |  1.0000
+                                    nt=  64  l1  0.0000 |  0.0016     l2  0.9984 |  1.0000
+                                    nt= 128  l1  0.0000 |  0.0016     l2  0.9984 |  1.0000
+                              [D2] saturation: (min_net lambda_2 - lam_min)/gap on the geometric grid, nt=128: med=3.09e-06 max=3.09e-06   (this is HOW FAR the best found member still sits above the certificate; 1e-3 means the gap is removed to a per-mille)
+                              [E] fraction of the ray descent retained after rotating u by delta:   d=0.01 med= 1.000 p10= 1.000   d=0.05 med= 0.997 p10= 0.997   d=0.2 med= 0.960 p10= 0.960   (b51's u-spacing was 2pi/32 = 0.20 rad)
+              q=2 spread 5-40: n= 40 dimE0=[1] no-ray(stationary or L2<=0)=0 q=2(no u-rotation)=40   [A] viol prof:0 net:0 net-geom:0 rot:0   max||v||-1| on the un-normalised polar form = 3.3e-16
+                              [B] gapfrac lambda_1: at t* exactly (b50's cf2) med=0.1461   300-pt fine profile med=0.1461   b51-t-list-on-the-same-ray med=0.0000   (=0 => the coarse grid is blind, b51's net story confirmed)   [C] t_hi(lambda_1): med=5.53e-04 p90=2.09e-03 vs spacing51=2.45e-02   draws with t_hi < spacing51 = 40/40
+                              [C2] t_hi(lambda_2): med=5.53e-04 p90=2.09e-03   draws with t_hi < spacing51 = 40/40   gapfrac lambda_2 on the ray med=1.0000   b51-t-list on the ray, lambda_2 med=0.9790
+                              [D] gapfrac(min over the 32u x nt net): columns are the UNIFORM t-list (1e-3..pi/2) | the GEOMETRIC list (1e-6..pi/2), same number of points:
+                                    nt=   4  l1  0.0000 |  0.0648     l2  0.9790 |  0.9360
+                                    nt=   8  l1  0.0000 |  0.1079     l2  0.9790 |  0.9848
+                                    nt=  16  l1  0.0000 |  0.1234     l2  0.9790 |  0.9973
+                                    nt=  32  l1  0.0000 |  0.1403     l2  0.9790 |  0.9994
+                                    nt=  64  l1  0.0000 |  0.1451     l2  0.9790 |  0.9998
+                                    nt= 128  l1  0.0000 |  0.1459     l2  0.9790 |  0.9999
+                              [D2] saturation: (min_net lambda_2 - lam_min)/gap on the geometric grid, nt=128: med=6.57e-05 max=1.25e-03   (this is HOW FAR the best found member still sits above the certificate; 1e-3 means the gap is removed to a per-mille)
+                              [E] no q>=3 draw to rotate in
+             q=4 spread 5-75+: n= 40 dimE0=[1] no-ray(stationary or L2<=0)=0 q=2(no u-rotation)=0   [A] viol prof:0 net:0 net-geom:0 rot:0   max||v||-1| on the un-normalised polar form = 3.3e-16
+                              [B] gapfrac lambda_1: at t* exactly (b50's cf2) med=0.2728   300-pt fine profile med=0.2727   b51-t-list-on-the-same-ray med=0.2142   (=0 => the coarse grid is blind, b51's net story confirmed)   [C] t_hi(lambda_1): med=1.57e-03 p90=4.35e-03 vs spacing51=2.45e-02   draws with t_hi < spacing51 = 40/40
+                              [C2] t_hi(lambda_2): med=1.57e-03 p90=4.60e-03   draws with t_hi < spacing51 = 40/40   gapfrac lambda_2 on the ray med=0.9221   b51-t-list on the ray, lambda_2 med=0.8038
+                              [D] gapfrac(min over the 32u x nt net): columns are the UNIFORM t-list (1e-3..pi/2) | the GEOMETRIC list (1e-6..pi/2), same number of points:
+                                    nt=   4  l1  0.2053 |  0.0521     l2  0.8287 |  0.7507
+                                    nt=   8  l1  0.2053 |  0.1714     l2  0.8287 |  0.8644
+                                    nt=  16  l1  0.2053 |  0.2367     l2  0.8287 |  0.9057
+                                    nt=  32  l1  0.2053 |  0.2446     l2  0.8287 |  0.9133
+                                    nt=  64  l1  0.2053 |  0.2488     l2  0.8287 |  0.9150
+                                    nt= 128  l1  0.2053 |  0.2499     l2  0.8287 |  0.9164
+                              [D2] saturation: (min_net lambda_2 - lam_min)/gap on the geometric grid, nt=128: med=8.36e-02 max=3.69e-01   (this is HOW FAR the best found member still sits above the certificate; 1e-3 means the gap is removed to a per-mille)
+                              [E] fraction of the ray descent retained after rotating u by delta:   d=0.01 med= 1.000 p10= 0.992   d=0.05 med= 0.998 p10= 0.954   d=0.2 med= 0.929 p10= 0.698   (b51's u-spacing was 2pi/32 = 0.20 rad)
+
+============================================================================================================================
+判读（预登记，跑前写）：
+  A 侧面：细剖面、旋转点、各 nt 网格上的 min 都不得低于 lam_min(G)（超 floor 即违反）。
+     任何违反 => 三次方程根筛选挑了假根，本文件的 D 结论作废，回到 b51 的 C 也未决。
+  B 对账：同一批抽样（同 seed、同调用顺序）上，沿解析射线 u 的 300 点几何级数剖面必须复现 b50
+     的 cf2；而 b51 的 t 列（0, 然后 64 点 1e-3..pi/2）在同一 u 上的 min 若'恰好等于 cf1'，
+     就说明 b51 不是算错，而是网格看不见下降区。反向：若该 t 列能找到下降，b51 的 u 网有 bug，
+     必须撤回其 [C]/[D]。
+  C 宽度：t_hi(lambda_1) 中位数 < 2.46e-2（b51 的 t 间距）才叫边界层；> 1e-1 则假设死。
+  D 路线：把两个旋钮按'网格敏感度'对比 —— lambda_1 的网增益应随 nt 增大仍是 0（边界层），
+     lambda_2 的增益应在 nt=4 或 8 就出现并平滑增长（开集效应）。
+     反向证伪：若 lambda_2 也要 nt>=32 才有增益，那 b51 的 +0.08..0.18 同样是网格伪影，
+     结论退化为'只公布 lambda_2(v1)，任何 n 都不宣传方向搜索'。
+  E u 方向宽度：固定 t=t*，把 u 转 delta；b51 的 u 间距是 0.20 rad，若 delta=0.2 处下降保留
+     仍 >0.9，则 u 分辨率从来不是问题，问题只在 t。
+
+====================================================================================================
+实测判读（跑后补写；两次运行逐字节相同 = 确定性通过）
+
+A 侧面：全部为 0。细剖面、旋转点、均匀网、几何网四种新对象上 min 都 >= lam_min(G)（超 floor）。
+    未归一化的 polar 形式 cos t v1 + sin t u 给出 max||v||-1| = 2.2e-16：正交单位向量的锥公式天然
+    是单位的，这是一个免费的自证。280 个可用抽样，no-ray=0（射线在每格都存在）。
+
+B 对账成功 —— b51 的"网什么都没找到"是 t 网格问题，不是 u-网 bug：
+    格                        t* 处的 cf2     300 点几何剖面    b51 的 t 列在同一 u 上
+    q=3 spread 5-75              0.1202            0.1201              0.0000
+    q=3 spread 2-45-88           0.1839            0.1838              0.0000
+    q=3 spread 30-88-89          0.0003            0.0003              0.0000
+    q=3 2-45-88 mix              0.5003            0.5002              0.0000
+    q=3 30-88-89 mix             0.0016            0.0016              0.0000
+    q=2 spread 5-40              0.1461            0.1461              0.0000
+    q=4 spread 5-75+             0.2728            0.2727              0.2142
+    注：b50 用 seed 50799，本文件与 b51 用 60311，随机格的抽样不同（中位数因此有差）；两格 mix 由
+    确定性生成器给出，0.5003 与 0.0016 逐位复现 —— 对账在这两格是精确的。唯一"部分看见"的 q=4 格
+    也正是 t_hi 最大的格（1.6e-3），与边界层解释自洽。
+
+C 边界层确认（预登记：med t_hi < 2.46e-2；证伪阈 > 1e-1，未触发）：
+    t_hi(lambda_1) 中位 = 8.59e-4 / 1.29e-4 / 1.01e-3 / 2.51e-5 / 1.89e-4 / 5.53e-4 / 1.57e-3，
+    每格 40/40 抽样满足 t_hi < spacing51。下降集比 b51 网格的最小非零角小 1–3 个数量级。
+C2 t_hi(lambda_2) 与 t_hi(lambda_1) 在打印位数上相同 → 下降集的宽度是方向泛函 phi_v 的性质，与矩的
+    阶 n 无关；n=2 并没有把下降锥撑宽。
+
+D 预登记的敏感性检验是退化的（这一条是本轮对我自己的主要产出）：l2 的 gapfrac 在 nt=4..128 上完全
+    不变。原因：linspace(1e-3, pi/2, nt) 对任何 nt 都含左端点 1e-3，而下降集在 t<1e-3 之内，于是
+    网的最小非零角就是它的天花板，加钱无用。按字面：D 的证伪阈（"要 nt>=32 才出现"）没有触发，
+    但 D 的确认阈（"随 nt 平滑增长"）也没有满足 —— 检验统计量本身无效，D 悬置，结论由 D2 承担。
+    D2（"ADDED AFTER THE FIRST RUN"，代码里已标注）把同一批点数的 t 列下探到 1e-6：
+    格                        lambda_1: 均匀 -> 几何      lambda_2: 均匀 -> 几何
+    q=3 spread 5-75           0.0000 -> 0.1262            0.9499 -> 0.9994
+    q=3 spread 2-45-88        0.0000 -> 0.1838            0.8158 -> 0.9997
+    q=3 spread 30-88-89       0.0000 -> 0.0003            0.9993 -> 0.9995
+    q=3 2-45-88 mix           0.0000 -> 0.5003            0.4997 -> 1.0000
+    q=3 30-88-89 mix          0.0000 -> 0.0016            0.9984 -> 1.0000
+    q=2 spread 5-40           0.0000 -> 0.1459            0.9790 -> 0.9999
+    q=4 spread 5-75+          0.2053 -> 0.2499            0.8287 -> 0.9164
+    且随 nt 单调；lambda_1 的几何网值收敛到解析射线的值（0.1262 vs 0.1202 等），这正是剖面解析性
+    的交叉验证。
+    残余 (min_net lambda_2 - lam_min)/gap 中位 = 5.5e-4 / 2.6e-4 / 5.0e-4 / 2.4e-6 / 3.1e-6 /
+    6.6e-5 / 8.4e-2（q=4 未饱和，max 3.7e-1）。
+    由 prop:gauss 的定序 lambda_2(v) >= lambda_ex(v) >= lam_min：把 cf1 的 gap 只剩 1e-3（mix 格
+    1e-6）意味着最好的那个方向已经几乎达到 phi_v 的方向下确界 —— 这是对 b49 射线方向的定性新说法，
+    不再只是"一个下降方向"。
+    无网格版本（解析射线 + n=2，纯闭式链条）：0.9965 / 0.9998 / 0.9995 / 1.0000 / 1.0000 / 1.0000 /
+    0.9221，6/7 格中位 >= 0.99，q=4 唯一例外；n=1 沿任何方向封顶在 0.13–0.50。
+
+E 下降在 u 上是宽的：delta=0.2 rad 处保留 0.936 / 0.916 / 0.960 / 0.921 / 0.960 / 0.929
+    （p10 最低 0.698）=> 网格失败完全发生在 t 维，u 分辨率从来不是瓶颈；b51 的 32 个 u 够用。
+
+路线判读：方向腿没有关闭，"用均匀方向网去测它"这个做法关闭了。可发表/可复现的联合对象有两个，
+    且必须分清：（i）解析版 —— lambda_2 取在 b49 两焦射线方向，无搜索、无网格参数；
+    （ii）离散版 —— 以"几何 t 列从 1e-6 起"为条件，代码不给 t 列就不可复现。
+    b51 的 [C]/[D] 数字保留在档但不作路线依据（self-correction #26）。

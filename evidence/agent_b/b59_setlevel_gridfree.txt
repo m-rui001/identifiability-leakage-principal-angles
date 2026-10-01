@@ -1,0 +1,110 @@
+==================================================================================================================================
+[A0/A1/A2] SET-LEVEL iff test of lem:cubic  (B-CLAIM-60(i));  [B] grid-free ray minimiser
+           BOTH grids (linspace from 1e-9 + geomspace from 1e-13, ~3000 theta per ray),
+           12 draws per cell, rays = steepest (ray_L) + 2 random per draw.
+==================================================================================================================================
+           q=3 spread 5-75  draws=12
+        q=3 spread 2-45-88  draws=12
+       q=3 spread 30-88-89  draws=12
+             q=3 equal 20d  draws=12
+           q=2 spread 5-40  draws=12
+          q=4 spread 5-75+  draws=12
+           q=3 2-45-88 mix  draws=12
+          q=3 30-88-89 mix  draws=12
+
+==================================================================================================================================
+[A0] closed-form B(x),C(x) vs direct:            worst rel err = 3.872e-12   (gate: <1e-10)  PASS
+[A1] points tested = 791736  (264 rays x 2999 theta)   #(set-level exceptions) = 13757
+     MEASURED two-route floor: max|lam_stable - lam_note| over all points = 3.331e-16 in lambda  =  3.849e-06 in units of that cell's gap
+     worst exception deviation = 4.598e-16 in lambda = 5.313e-06 of ITS OWN CELL's gap;   ratio to measured floor = 1.381e+00   -> PASS: every exception sits within my evaluator noise (ratio <= 3)
+     (absolute lambda is the only comparable unit here: gaps range over 3 orders across cells,
+      so the per-cell relative column is reported for readability and NOT pooled.)
+     exception-count sweep, |lam-cf_1| in lambda > thr:  1e-16:4364  3e-16:298  1e-15:0  1e-14:0  1e-12:0  1e-10:0  1e-08:0
+     exceptions' x-range: min=1.000e-13 max=2.180e-07   #(with x < 1e-6) = 13757
+[A2] #(rays whose descent set is NOT a single interval) = 0/264   (A2 is a count, not a registered direction; multi-interval sets are handled by (B) anyway)
+[B0] GATE exact-vs-exact: max over rays |G/((1+x^2)^2 F_lam) - d lam/dx (closed-form root derivative)| / (|lam|/x) = 9.620e-16   (gate: <=1e-8)  PASS
+     [context] same quantity against a FINITE difference, in units of the measured FD floor: max = 9.099e+02 (median floor med=2.3514e-10 min=6.139e-11 max=4.594e-10 n=264)  -- the FD route is the one with the unusable floor, not G
+     sign agreement where |d lam/dx| > 20*floor: 5221/5221   (must be full: a sign flip means G is not F_x)
+[B1] grid-min minus exact ray-min, in units of gap: med=8.6062e-09 min=-4.147e-06 max=6.240e-05 n=264   (must be >=0: the grid cannot beat the exact minimiser; negative = my root finder is wrong)
+     #(rays where the exact min needed a discarded candidate) = 0   #(grid better than exact by >10x the ray's own measured floor) = 0   <- the registered B1 test
+[C1] deficit (ray min - lambda_min(G))/gap: med=9.9937e-01 min=2.357e-01 max=1.000e+00 n=264   #(ray min BELOW lambda_min(G)) = 0  (must be 0)
+[B2] (lambda_1(v*) - best ray min)/gap: med=-1.6238e-03 min=-7.291e-01 max=8.749e-03 n=264   #(best beats v*) = 24/264
+     (equal-angle draws skipped from the ray count: 12; their dim E0 = [3])
+
+==================================================================================================================================
+[E] PER-CELL table (rule 13: these are PER-RAY values grouped by cell; the pooled medians
+    above must not be read as a per-cell guarantee):
+      cell                       rays   min/med/max deficit/gap   #(below lam_min(G))   #(ray beats v*)  max beat/gap
+      q=3 spread 5-75              36   0.5135 /0.9948 /1.0000            0                    0              -9.3549e-04
+      q=3 spread 2-45-88           36   0.5123 /0.9950 /1.0000            0                    0              -4.0910e-07
+      q=3 spread 30-88-89          36   0.9988 /0.9999 /1.0000            0                   12              4.6827e-06
+      q=3 equal 20d                12   1.0000 /1.0000 /1.0000            0                   12              8.7486e-03
+      q=2 spread 5-40              36   0.4315 /0.9862 /1.0000            0                   19              6.9025e-07
+      q=4 spread 5-75+             36   0.2357 /0.9707 /1.0000            0                    0              -3.9934e-04
+      q=3 2-45-88 mix              36   0.4997 /0.8184 /1.0000            0                    3              2.9191e-07
+      q=3 30-88-89 mix             36   0.9984 /0.9990 /1.0000            0                    8              1.0282e-10
+     #(rays undercutting lambda_1(v*)) = 54/264   #(with beat > 1e-12 in lambda) = 24
+       largest beats: q=3 equal 20d            8.7486e-03 of gap   (6.311e-07 in lambda)
+       largest beats: q=3 equal 20d            8.3850e-03 of gap   (1.050e-06 in lambda)
+       largest beats: q=3 equal 20d            5.8794e-03 of gap   (2.895e-07 in lambda)
+       largest beats: q=3 equal 20d            3.5273e-03 of gap   (1.791e-08 in lambda)
+       largest beats: q=3 equal 20d            3.2026e-03 of gap   (2.644e-07 in lambda)
+       beats OUTSIDE the equal-angle cell: q=3 spread 30-88-89      4.6827e-06 of gap   (2.838e-09 in lambda)
+       beats OUTSIDE the equal-angle cell: q=3 spread 30-88-89      1.8339e-06 of gap   (5.360e-10 in lambda)
+       beats OUTSIDE the equal-angle cell: q=3 spread 30-88-89      1.5763e-06 of gap   (6.745e-10 in lambda)
+
+==================================================================================================================================
+[D] 120 Monte-Carlo rays on the STEEPEST-ray cell of q=4, plus the steepest ray itself:
+    Does the best-of-many-rays beat v*?  (open item 1 wants inf over the whole sphere,
+    and rays through v1 only cover a 2-plane -- stated as a limitation, not hidden.)
+    q=4 single draw, 120 random rays:  min over rays = 0.003675568071   lambda_min(G) = 0.003675032091   cf_1 = 0.003676813300   lambda_1(v*) = 0.003675520296
+    deficit of the BEST RAY over lambda_min(G) = 0.300908 of gap;  deficit of lambda_1(v*) = 0.274086
+    #(rays beating v*) = 0/120;  median ray deficit = 0.998833
+    argmin x over rays: med=6.7950e-05 min=0.0000e+00 max=3.8130e-03
+    NOTE the sphere is p=4-dim; rays through v1 are a 2-plane family.
+
+==================================================================================================================================
+判读（跑后补，实测；本文件由脚本重跑覆盖，判读以这一段为准）
+
+[A1] **PASS，但结论强度只到"我的求值器能分辨的精度"。** 791,736 个点里 13,757 个符号不一致，
+     全部满足 |λ₁−cf₁| ≤ 4.598e-16，且 >1e-15 的为 **0**；两条求根路线自身的不一致最大 3.331e-16，
+     所以"最差不一致 / 噪声底 = 1.38"。所有不一致落在 tanθ ≤ 2.18e-7，也就是 λ₁ 与 cf₁ 只差在
+     舍入之内的那一段。⇒ **B-CLAIM-60(i) 结掉：lem:cubic 的 iff 没有集合级例外**（在此精度意义下，
+     这句话比 iff 本身弱，正文按弱的写）。
+     我自己的第一版判据是 1e-11·gap ≈ 1.8e-17，比求值器噪声低 **6 个数量级** —— 规则 14 的同一块
+     石头（阈值写在假设上而不是写在实测上）。修法不是挪 band，而是换求值器：有理化根
+     λ₋ = 2B(1−B)/((B+C)+√disc) 与章节里 (B+C−√disc)/(2C) 互为独立路线（后者用两个 O(1) 数相减
+     得到 3.7e-3，天生丢 2.5 位）。
+
+[B0] **G=(1+x²)²F_x 成立**，用"精确 vs 精确"验：对理化根的闭式导数 dλ/dx 对比 −F_x/F_λ，
+     264 条射线上最大相对（尺度 |λ|/x）偏差 **9.620e-16**，符号一致 5221/5221。
+     第一版拿中心差分当参照，报 910 倍"实测差分底"——那是差分在驻点附近失灵（λ 曲率大、
+     步长截断主导），不是 G 错。**教训：门禁用两条解析路线互验，差分只做旁证。**
+     推导上我错过一次：对 C 本身求导得到的是 b−t₁c²，而 C−t₁B 里是 b−t₁a，两者别混。
+
+[B1] 注册判据（网格不得比精确解更低，超过该射线自身噪声底 10 倍即算失败）：**0/264**，
+     中位差 8.6e-9 of gap。第一版有 103 条射线"网格更优"，原因是**我的候选集缺了 x=0**：
+     下降集为空时射线上的下确界就在端点 x=0（值 cf₁），我代码注释里"x=0 永远不是最小值"
+     只在下降区间内部成立。补回后 13 条越线全部消失。
+
+[C1] **open item 1 的数**：264 条射线的 ray min **全部严格高于 λ_min(𝒢)**，最小亏
+     **0.2357 of gap**（q=4 格；q=2 0.4315；spread 格 0.5123–0.5135；near-degenerate
+     0.9984–0.9988；等角格恰好 1.0000，因为那条射线的下确界=cf₁）。#(below floor)=0。
+
+[D]  单格 q=4、120 条随机射线：最好 0.300908 of gap，λ₁(v*) = 0.274086，**0/120 优于 v*；
+     中位射线亏 0.9988**。
+
+[E]  全样本 #(ray 严格优于 λ₁(v*)) = 54/264（其中 λ 单位 >1e-12 的 24 条）。
+     **等角格外**最大优于量只有 4.6827e-6 of gap（2.838e-9 in λ，出现在 near-degenerate 的
+     30-88-89 格），四个 spread/mix 格里有三个是 0 条。**等角格内**最大 8.7486e-3 of gap，
+     那就是已知的"等角格里 λ₁(v*)>cf₁"（retraction (o)），不是新现象。
+
+⇒ 路线结论：在过 v₁ 的二维平面族里，下确界**不触及** λ_min(𝒢)，且 v* 仍是已找到的最好方向；
+   全球面问题仍 open，因为搜索空间只是 2-平面族 —— 这条限制写进正文 (vii)，不藏。
+
+缺陷清单（三条都是我的量具，不是数学）：#1 band 写在假设上（1e-11·gap）；
+   #2 B0 用有限差分当精确参照；#3 候选集缺 x=0。
+   三条都在看到结果之后才改，改的是量具与候选集、不是判据方向；已在脚本
+   REGISTRATION HISTORY 里逐条留下 v1/v2/v3。
+下一轮：把 (vii) 的 2-平面限制去掉 —— 用 G 的驻点方程做**逐点**内层求解、外层对
+   sphere 做流形上的梯度步（不是随机射线），这才配得上 open item 1 的"inf over the sphere"。

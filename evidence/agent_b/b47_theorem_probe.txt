@@ -1,0 +1,68 @@
+======================================================================================================================
+[A] TEST OF (T') cf1 >= lam_min(G), plus the two inequalities it rests on:
+    (i) Jensen: phi_v(lam) >= B^2/(B - lam C) for the v1 used and for 200 random v   [min >= 0]
+    (ii) the whole family lam(v) sits above lam_min(G), counted over ALL draws (A3)   [0 below]
+    (iii) cf <= cf1 (A4) and max|C(v1) - t1|, the tie-break check when E0 degenerates.
+                      spread 5-75: n=100  min gap1= 5.37e-09  flips(res/n)=0/100  min(cf1-cf)= 9.16e-08  worst J(v1)= 8.79e-10  worst J(rand)= 1.31e-11  fam_below_true=0  fam_below_cf1=0  max|C1-t1|= 0.00e+00  max dim(E0)=1
+                   spread 2-45-88: n=100  min gap1= 1.15e-11  flips(res/n)=0/100  min(cf1-cf)= 3.03e-09  worst J(v1)= 1.30e-12  worst J(rand)= 1.94e-13  fam_below_true=0  fam_below_cf1=0  max|C1-t1|= 0.00e+00  max dim(E0)=1
+                  spread 30-88-89: n=100  min gap1= 5.44e-06  flips(res/n)=0/100  min(cf1-cf)= 8.06e-10  worst J(v1)= 7.00e-07  worst J(rand)= 3.08e-10  fam_below_true=0  fam_below_cf1=0  max|C1-t1|= 0.00e+00  max dim(E0)=1
+                        equal 20d: n=100  min gap1= 1.09e-11  flips(res/n)=0/100  min(cf1-cf)=-2.15e-16  worst J(v1)= 1.29e-08  worst J(rand)= 7.34e-09  fam_below_true=0  fam_below_cf1=0  max|C1-t1|= 5.46e-01  max dim(E0)=3
+               2-45-88 mix d=3e-2: n=100  min gap1= 8.65e-11  flips(res/n)=0/100  min(cf1-cf)= 7.03e-08  worst J(v1)= 7.84e-12  worst J(rand)=-2.22e-16  fam_below_true=0  fam_below_cf1=0  max|C1-t1|= 0.00e+00  max dim(E0)=1
+              30-88-89 mix d=3e-2: n=100  min gap1= 2.43e-06  flips(res/n)=0/100  min(cf1-cf)= 2.53e-08  worst J(v1)= 3.23e-07  worst J(rand)= 4.26e-15  fam_below_true=0  fam_below_cf1=0  max|C1-t1|= 0.00e+00  max dim(E0)=1
+            2d/84d/88d mix d=3e-2: n=100  min gap1= 4.38e-11  flips(res/n)=0/100  min(cf1-cf)= 7.80e-10  worst J(v1)= 7.86e-12  worst J(rand)=-3.17e-17  fam_below_true=0  fam_below_cf1=0  max|C1-t1|= 0.00e+00  max dim(E0)=1
+                gamma=1.0 2-45-88: n=100  min gap1=-9.38e-16  flips(res/n)=0/0  min(cf1-cf)=-5.42e-19  worst J(v1)=-4.44e-16  worst J(rand)=-5.55e-16  fam_below_true=0  fam_below_cf1=0  max|C1-t1|= 0.00e+00  max dim(E0)=1
+                gamma=0.6 2-45-88: n=100  min gap1=-8.47e-16  flips(res/n)=0/0  min(cf1-cf)=-1.34e-16  worst J(v1)=-4.44e-16  worst J(rand)=-5.55e-16  fam_below_true=0  fam_below_cf1=0  max|C1-t1|= 0.00e+00  max dim(E0)=1
+                gamma=1.5 2-45-88: n=100  min gap1=-1.28e-15  flips(res/n)=0/0  min(cf1-cf)=-1.66e-16  worst J(v1)=-3.33e-16  worst J(rand)=-5.55e-16  fam_below_true=0  fam_below_cf1=0  max|C1-t1|= 0.00e+00  max dim(E0)=1
+   [A3] unconditional version: nothing skipped, capped branch included.
+                  ALL spread 5-75: n=100  min gap1= 1.02e-08  flips(res/n)=0/100  min(cf1-cf)= 1.88e-07  worst J(v1)= 8.11e-10  worst J(rand)= 6.00e-12  fam_below_true=0  fam_below_cf1=0  max|C1-t1|= 0.00e+00  max dim(E0)=1
+               ALL spread 2-45-88: n=100  min gap1= 8.88e-11  flips(res/n)=0/100  min(cf1-cf)= 1.83e-09  worst J(v1)= 1.36e-11  worst J(rand)= 1.25e-13  fam_below_true=0  fam_below_cf1=0  max|C1-t1|= 0.00e+00  max dim(E0)=1
+              ALL spread 30-88-89: n=100  min gap1= 7.08e-06  flips(res/n)=0/100  min(cf1-cf)= 2.48e-08  worst J(v1)= 9.10e-07  worst J(rand)= 2.74e-11  fam_below_true=0  fam_below_cf1=0  max|C1-t1|= 0.00e+00  max dim(E0)=1
+                    ALL equal 20d: n=100  min gap1= 3.27e-10  flips(res/n)=0/100  min(cf1-cf)=-2.43e-16  worst J(v1)= 1.52e-07  worst J(rand)= 3.95e-09  fam_below_true=0  fam_below_cf1=0  max|C1-t1|= 6.57e-01  max dim(E0)=3
+                  ALL 2-45-88 mix: n=100  min gap1= 8.65e-11  flips(res/n)=0/100  min(cf1-cf)= 7.03e-08  worst J(v1)= 7.84e-12  worst J(rand)=-3.33e-16  fam_below_true=0  fam_below_cf1=0  max|C1-t1|= 0.00e+00  max dim(E0)=1
+                 ALL 30-88-89 mix: n=100  min gap1= 2.43e-06  flips(res/n)=0/100  min(cf1-cf)= 2.53e-08  worst J(v1)= 3.23e-07  worst J(rand)= 1.21e-16  fam_below_true=0  fam_below_cf1=0  max|C1-t1|= 0.00e+00  max dim(E0)=1
+
+======================================================================================================================
+判读（预登记，跑前写的；实测判读附在文件末尾）：
+  A1 任一格 min gap1 出现 resolved 负值 => (T') 死，cf1 只能写回'经验上更好'。
+  A2 任一 resolved 负 Jensen 残差 => 凸性/归一化方向错，(T') 与整条推论作废，必须重推。
+  A3 fam_below_true 必须恒为 0（含 capped 分支）；这是 (T') 的全部内容，1 个反例即致命。
+  A4 min(cf1-cf) 必须 >= -地板；负到 resolved 说明 t1>t 的实现或 t1 的定义有错。
+     max|C1-t1| 非零说明我取的 v1 不是 E0 上 C 的最大者 => 命题要写成 sup/max over E0。
+  全部通过 => 正文新增一个无条件命题：cf1 是 lam_min(G) 的上界估计，且 cf 的翻转偏差被解释为
+     '用 E0 外的斜率冒充同一条弦的斜率'，一阶符号为负。
+
+======================================================================================================================
+实测判读（跑后写，种子 49377，两次运行逐字节一致）：
+
+0）本脚本的第一版把一个单调性写反了：我原先以为"下弦 => 早交叉 => 下界"。随机方向探针第一次运行就把
+   这件事暴露出来：200/200 个方向的 lam(v) 全部落在 lam_min(G) **之上**（above_true=20000，无一在
+   其下）。事实是 f >= s_v 使 f 的交叉**更早**，所以 lam(v) >= lam* —— 方向正好是我想要的反面，也就是
+   命题需要的正面：cf1 是 lam_min(G) 的**上界**。上面 148-152 行保留了错误版本的说法以留痕；正确推导
+   已重写进 docstring 与正文 prop:chord。这是 §41.8 那条老规矩的一次执行：探针先于命题。
+
+1）A1 主张本身：16 格（4 谱 + 3 mix + 3 各向零假 + 4 不跳格谱 + 2 不跳格 mix）共 1600 draws，
+   resolved 符号翻转 = 0/100 **每一格**；13 个间隙越过地板的格里 min gap1 的最小值是 1.09e-11
+   （等角 20d）与 1.15e-11（spread 2-45-88），不跳格版本 8.65e-11（ALL 2-45-88 mix）。
+   三个各向零假格 flips=0/0、min gap1 = -9.4e-16 —— 间隙恒为 0，符号是地板下噪声，与控制组角色一致。
+
+2）A2 Jensen 不等式（整条推导唯一的不等式输入）：phi_v - s_v 在 lam = 0.3/0.7/0.95 * cf1 三处，
+   对所取的 v1 与每格 200 个随机方向，最坏值 -5.55e-16（只在 gamma 格出现；那里的量本身是 0），
+   越过地板的格里最坏 +1.94e-13 > 0。=> 凸性方向与测度归一化都对，(J) 成立。
+
+3）A3 家族命题：lam(v) >= lam_min(G) 在 320,000 次检验（16 格 × 100 draws × 200 方向）中违反 0 次，
+   且**包含 capped 分支**（不跳格的那五格）；同时 fam_below_cf1 = 0，即没有一个随机方向比 cf1 更小。
+   后一条只是"cf1 可能是整座球上的最小元"的经验线索，200 个随机点在 5 维球上不构成优化搜索，
+   正文只把它列为开放项（§8），不列为结论。
+
+4）A4 min(cf1-cf)：slack>0 的格全部 >= +8.06e-10；等角两格 -2.2e-16/-2.4e-16 —— 那里 E0=R^q 使
+   t1 ≡ t，cf1=cf 是恒等式，负号是舍入。=> cf <= cf1 成立，且只在 slack=0 处取等，与命题一致。
+
+5）简并警告（必须在正文里体现，不能藏在脚本里）：等角格 dim(E0)=3，顶特征值三重简并，
+   eigh 返回的单个向量在 E0 上**不**最大化 C：max|C(v1) - c^2 t1| = 6.57e-1。因此命题必须写成
+   "对 E0 取 lambda_max"（t1 的定义本来就是压缩后的最大元），不能写成"取任一顶特征向量"。
+   非简并格（dim E0 = 1）该偏差 = 0.00e+00，逐格如此。
+
+判读：A1–A4 全部通过 => prop:chord 可以立命题（cf1 >= lam_min(G)，无等角/无各向同性/无单重假设，
+   且不需要在 bar-lambda 处分类讨论）。b46 的经验分支由此升级为定理；cf 的翻转偏差获得一个符号层面
+   的解释：eq:cf 把截距 c^2 与在**别的方向**上测得的斜率 c^2 t 配成同一条弦，而 (J) 只覆盖同方向的
+   (B(v), C(v)) 配对。仍未得到的是：cf1 是否家族的最小元（见 3），以及 o(lam) 余项的闭形界。

@@ -1,0 +1,123 @@
+======================================================================================================================
+[T1+T2] 2 x 5 design: Lam isotropic (I_4) vs general (unit-norm Gram); 5 cosine spectra;
+        100 draws/cell, p=4, q=3.  cf uses the MOST GENEROUS alpha: the top cosine.
+
+  Lam = I_p   (predicted: gap identically 0 in EVERY cell, spread included)
+                    equal 20d  n=100 skip= 0  min lam_min= 6.03e-02  med|rel gap|= 5.47e-15  max|gap|= 1.09e-15  min|gap|= 0.00e+00
+                               max floor= 4.31e-14  unresolved(|gap|<floor)=100  cf<true: all=  9 / resolved-only=  0  min|gap|/max-floor=  0.000e+00
+                     equal 5d  n=100 skip= 0  min lam_min= 3.81e-03  med|rel gap|= 8.09e-14  max|gap|= 1.33e-15  min|gap|= 4.34e-18
+                               max floor= 4.43e-14  unresolved(|gap|<floor)=100  cf<true: all=  7 / resolved-only=  0  min|gap|/max-floor=  9.784e-05
+                  spread 5-75  n=100 skip= 0  min lam_min= 3.81e-03  med|rel gap|= 8.11e-14  max|gap|= 1.12e-15  min|gap|= 5.64e-18
+                               max floor= 4.43e-14  unresolved(|gap|<floor)=100  cf<true: all= 50 / resolved-only=  0  min|gap|/max-floor=  1.272e-04
+               spread 2-45-88  n=100 skip= 0  min lam_min= 6.09e-04  med|rel gap|= 3.98e-13  max|gap|= 9.33e-16  min|gap|= 1.08e-19
+                               max floor= 4.44e-14  unresolved(|gap|<floor)=100  cf<true: all= 35 / resolved-only=  0  min|gap|/max-floor=  2.442e-06
+              spread 30-88-89  n=100 skip= 0  min lam_min= 1.34e-01  med|rel gap|= 2.07e-15  max|gap|= 9.44e-16  min|gap|= 0.00e+00
+                               max floor= 4.14e-14  unresolved(|gap|<floor)=100  cf<true: all= 47 / resolved-only=  0  min|gap|/max-floor=  0.000e+00
+
+  Lam = general spd (predicted: spread rows ~1e-3..3e-2 and cf<true; equal rows small)
+                    equal 20d  n=100 skip= 0  min lam_min= 4.72e-02  med|rel gap|= 1.32e-04  max|gap|= 7.96e-05  min|gap|= 3.23e-09
+                               max floor= 5.08e-14  unresolved(|gap|<floor)=  0  cf<true: all=  0 / resolved-only=  0  min|gap|/max-floor=  6.345e+04
+                     equal 5d  n=100 skip= 0  min lam_min= 2.87e-03  med|rel gap|= 8.83e-06  max|gap|= 3.88e-07  min|gap|= 2.38e-15
+                               max floor= 5.52e-14  unresolved(|gap|<floor)=  1  cf<true: all=  0 / resolved-only=  0  min|gap|/max-floor=  4.315e-02
+                  spread 5-75  n=100 skip= 0  min lam_min= 3.16e-03  med|rel gap|= 2.66e-03  max|gap|= 1.23e-04  min|gap|= 4.68e-08
+                               max floor= 5.14e-14  unresolved(|gap|<floor)=  0  cf<true: all=100 / resolved-only=100  min|gap|/max-floor=  9.089e+05
+               spread 2-45-88  n=100 skip= 0  min lam_min= 5.29e-04  med|rel gap|= 1.77e-03  max|gap|= 1.70e-05  min|gap|= 5.62e-10
+                               max floor= 5.01e-14  unresolved(|gap|<floor)=  0  cf<true: all= 99 / resolved-only= 99  min|gap|/max-floor=  1.121e+04
+              spread 30-88-89  n=100 skip= 0  min lam_min= 1.18e-01  med|rel gap|= 1.42e-03  max|gap|= 9.89e-04  min|gap|= 4.39e-07
+                               max floor= 4.69e-14  unresolved(|gap|<floor)=  0  cf<true: all=  0 / resolved-only=  0  min|gap|/max-floor=  9.374e+06
+
+[T4] dose of anisotropy.  Lam = diag(1,1,1,1-delta), delta=1e-3 / 1e-6, with the weak
+     direction ALIGNED with K's top right-singular direction vs TRANSVERSE to it.
+     Predicted ONLY IF T2 lands: aligned >> transverse, and growing with delta.
+     equal 5d aligned d=1e-03  n=100 skip= 0  min lam_min= 3.80e-03  med|rel gap|= 2.67e-10  max|gap|= 1.82e-12  min|gap|= 6.62e-16
+                               max floor= 4.43e-14  unresolved(|gap|<floor)= 10  cf<true: all=  0 / resolved-only=  0  min|gap|/max-floor=  1.493e-02
+   equal 5d transverse d=1e-03  n=100 skip= 0  min lam_min= 3.80e-03  med|rel gap|= 1.98e-10  max|gap|= 1.82e-12  min|gap|= 1.98e-15
+                               max floor= 4.43e-14  unresolved(|gap|<floor)= 13  cf<true: all=  0 / resolved-only=  0  min|gap|/max-floor=  4.475e-02
+     equal 5d aligned d=1e-06  n=100 skip= 0  min lam_min= 3.81e-03  med|rel gap|= 6.50e-14  max|gap|= 1.08e-15  min|gap|= 6.51e-18
+                               max floor= 4.43e-14  unresolved(|gap|<floor)=100  cf<true: all= 46 / resolved-only=  0  min|gap|/max-floor=  1.468e-04
+   equal 5d transverse d=1e-06  n=100 skip= 0  min lam_min= 3.81e-03  med|rel gap|= 6.72e-14  max|gap|= 9.68e-16  min|gap|= 1.73e-18
+                               max floor= 4.43e-14  unresolved(|gap|<floor)=100  cf<true: all= 58 / resolved-only=  0  min|gap|/max-floor=  3.914e-05
+
+   spread 2-45-88 aligned d=1e-03  n=100 skip= 0  min lam_min= 6.09e-04  med|rel gap|= 6.66e-09  max|gap|= 6.58e-11  min|gap|= 3.19e-15
+                               max floor= 4.44e-14  unresolved(|gap|<floor)=  9  cf<true: all=100 / resolved-only= 91  min|gap|/max-floor=  7.195e-02
+   spread 2-45-88 transverse d=1e-03  n=100 skip= 0  min lam_min= 6.09e-04  med|rel gap|= 7.11e-09  max|gap|= 6.90e-11  min|gap|= 1.68e-16
+                               max floor= 4.44e-14  unresolved(|gap|<floor)= 10  cf<true: all=100 / resolved-only= 90  min|gap|/max-floor=  3.795e-03
+   spread 2-45-88 aligned d=1e-06  n=100 skip= 0  min lam_min= 6.09e-04  med|rel gap|= 4.25e-13  max|gap|= 8.68e-16  min|gap|= 5.64e-18
+                               max floor= 4.44e-14  unresolved(|gap|<floor)=100  cf<true: all= 42 / resolved-only=  0  min|gap|/max-floor=  1.270e-04
+   spread 2-45-88 transverse d=1e-06  n=100 skip= 0  min lam_min= 6.09e-04  med|rel gap|= 4.03e-13  max|gap|= 9.08e-16  min|gap|= 1.08e-19
+                               max floor= 4.44e-14  unresolved(|gap|<floor)=100  cf<true: all= 65 / resolved-only=  0  min|gap|/max-floor=  2.442e-06
+
+判读（**预登记**判据，跑之前写的；实测结果在文件末尾 '实测判读'）：
+  T1/T2 若 isotropic 列全部 |gap| ~ 1e-16 而 general 列的 spread 行到 1e-3 ——
+     则 'spread 造成 3.4% 与符号翻转' 是**误标**：变量是 Λ 的各向异性，角度分布本身不动 cf。
+  T1 若在 isotropic 列出现任何一个 |gap| > 1e-14 —— 我上面那段手推（cf(1,alpha_top)=1-c_1=lambda_min）
+     就是错的，必须先收回它，再谈 b42 的归因。
+  T3 若 violation 全落在 unresolved 里 —— b42 的符号翻转是 eigvalsh 地板，rem:multi (ii) 撤回。
+
+[T5] is the exactness locus 'Lambda = I_p' or the weaker 'Lambda = gamma * I_p'?
+     Lambda = gamma*I_p, spread 2-45-88 and equal 20d, gamma = 1 / 1.5 / 0.6.
+     Under Lambda = I the truth is analytic (1 - c_1); for gamma != 1 the block
+     [[gamma, s],[s, 1]] gives lambda = ((gamma+1) - sqrt((gamma+1)^2 - 4(gamma - s^2)))/2
+     with s = gamma^{1/2} c_1, so a genuine closed form exists -- compare it to cf(t, alpha_top),
+     where t = ||Lam^{-1}K||_2^2 / c_1^2 = 1/gamma here.  Prediction: cf is NOT exact for
+     gamma != 1 -- the locus is isotropy AND the unit-norm normalisation together (Lam = I_p),
+     because cf has no knowledge of gamma.
+   gamma=1.0 spread 2-45-88: n=100  med|rel gap|= 3.94e-13  max|gap|= 1.17e-15  min|gap|/floor= 3.17e-05  mean t= 1.0000  cf<true= 54
+   gamma=1.5 spread 2-45-88: n=100  med|rel gap|= 5.32e-13  max|gap|= 2.04e-15  min|gap|/floor= 5.47e-05  mean t= 0.6667  cf<true= 64
+   gamma=0.6 spread 2-45-88: n=100  med|rel gap|= 4.42e-13  max|gap|= 8.95e-16  min|gap|/floor= 3.51e-05  mean t= 1.6667  cf<true= 39
+   gamma=1.0 equal 20d: n=100  med|rel gap|= 5.06e-15  max|gap|= 1.05e-15  min|gap|/floor= 0.00e+00  mean t= 1.0000  cf<true=  3
+   gamma=1.5 equal 20d: n=100  med|rel gap|= 5.18e-15  max|gap|= 1.46e-15  min|gap|/floor= 2.57e-04  mean t= 0.6667  cf<true= 16
+   gamma=0.6 equal 20d: n=100  med|rel gap|= 6.53e-15  max|gap|= 9.78e-16  min|gap|/floor= 0.00e+00  mean t= 1.6667  cf<true=  5
+
+[T6] the T5 reading must hold for an ARBITRARY block K, not only for my prescribed-spectrum
+     construction.  Claim under test: if Lam = gamma*I_p then, with NO hypothesis on the
+     singular values of K (equal angles / spread / rank-deficient) and no hypothesis on which
+     of p, q is larger,
+        lambda_min(Gr) = ((gamma+1) - sqrt((gamma-1)^2 + 4*gamma*c^2))/2,
+        c^2 = lam_max(K^T Lam^{-1} K),   i.e. c = sigma_max(K)/gamma^{1/2}, the top cosine.
+     Proof: K = U diag(sigma) V^T is an orthogonal change of variables on Gr, which reduces to
+     blocks [[gamma, sigma_i],[sigma_i, 1]] (minus branch above at c = sigma_i/gamma^{1/2}),
+     plus gamma on ker K^T and 1 on ker K; the minus branch is <= gamma for every gamma > 0
+     (square both sides: (1-gamma)^2 <= (1-gamma)^2 + 4 gamma c^2), so the overall minimum is
+     the sigma_max branch.  cf has t = ||Lam^{-1}K||_2^2/c^2 = 1/gamma in this case, and
+     cf(1/gamma, alpha) expands to the same branch, so this is cf being EXACT, not a new formula.
+   p=4 q=3 top cosine=0.300 rank= 3  max|branch-eigvalsh|= 6.66e-16  max|cf-eigvalsh|= 7.77e-16
+   p=4 q=3 top cosine=0.300 rank= 1  max|branch-eigvalsh|= 6.66e-16  max|cf-eigvalsh|= 7.77e-16
+   p=4 q=3 top cosine=0.900 rank= 3  max|branch-eigvalsh|= 1.17e-15  max|cf-eigvalsh|= 1.14e-15
+   p=4 q=3 top cosine=0.900 rank= 1  max|branch-eigvalsh|= 8.19e-16  max|cf-eigvalsh|= 9.58e-16
+   p=4 q=3 top cosine=0.999 rank= 3  max|branch-eigvalsh|= 1.30e-15  max|cf-eigvalsh|= 1.25e-15
+   p=4 q=3 top cosine=0.999 rank= 1  max|branch-eigvalsh|= 9.38e-16  max|cf-eigvalsh|= 7.72e-16
+   p=3 q=3 top cosine=0.300 rank= 3  max|branch-eigvalsh|= 9.99e-16  max|cf-eigvalsh|= 1.11e-15
+   p=3 q=3 top cosine=0.300 rank= 1  max|branch-eigvalsh|= 6.66e-16  max|cf-eigvalsh|= 7.77e-16
+   p=3 q=3 top cosine=0.900 rank= 3  max|branch-eigvalsh|= 1.28e-15  max|cf-eigvalsh|= 1.30e-15
+   p=3 q=3 top cosine=0.900 rank= 1  max|branch-eigvalsh|= 8.19e-16  max|cf-eigvalsh|= 8.47e-16
+   p=3 q=3 top cosine=0.999 rank= 3  max|branch-eigvalsh|= 1.65e-15  max|cf-eigvalsh|= 1.65e-15
+   p=3 q=3 top cosine=0.999 rank= 1  max|branch-eigvalsh|= 7.77e-16  max|cf-eigvalsh|= 7.22e-16
+   p=3 q=5 top cosine=0.300 rank= 3  max|branch-eigvalsh|= 9.44e-16  max|cf-eigvalsh|= 9.44e-16
+   p=3 q=5 top cosine=0.300 rank= 1  max|branch-eigvalsh|= 6.66e-16  max|cf-eigvalsh|= 7.77e-16
+   p=3 q=5 top cosine=0.900 rank= 3  max|branch-eigvalsh|= 1.33e-15  max|cf-eigvalsh|= 1.25e-15
+   p=3 q=5 top cosine=0.900 rank= 1  max|branch-eigvalsh|= 5.83e-16  max|cf-eigvalsh|= 5.97e-16
+   p=3 q=5 top cosine=0.999 rank= 3  max|branch-eigvalsh|= 1.72e-15  max|cf-eigvalsh|= 1.72e-15
+   p=3 q=5 top cosine=0.999 rank= 1  max|branch-eigvalsh|= 8.88e-16  max|cf-eigvalsh|= 7.91e-16
+
+实测判读（本节数字来自本文件同一次运行，seed 46211，可逐位复现）：
+  T1 isotropic 列：五个 spectrum 全部 max|gap| <= 1.33e-15，且 100/100 落在各自 floor 之下
+     （cf<true 50/35/47 这类数字是**零间隔的硬币**，见 T1 控制组的意义）。手推成立：
+     Λ 标量化之后 cf 与 λ_min(𝒢) 恒等，与角度分布**无关**。
+  T2 general Λ：equal 行 med 相对 gap 1.3e-4(20d)/8.8e-6(5d)，spread 行 1.4e-3..2.7e-3；
+     符号翻转只在 5-75（100/100 resolved）与 2-45-88（99/100，resolved 99）出现，
+     30-88-89 **不翻**（0/100）。=> 变量是 Λ 的各向异性 × '第二个不小的余弦'，
+     不是'角度是否分散'本身；b42/§39 把它写成 angle-distribution effect 是**误标**。
+  T3 分辨率审计：这两个翻转格的 min|gap|/max-floor = 9.1e5 与 1.1e4，unresolved = 0
+     => 翻转是代数事实，不是 eigvalsh 地板。rem:multi (ii) 站得住，但归因要改。
+  T4 **设计失败，如实记录**：'aligned / transverse' 没有控制任何东西 —— blocks() 里的 Q1 是
+     独立随机 QR，弱方向 e_4 并不与 K 的 top right-singular direction 对齐；我把 Λ 旋转 45°
+     之后，随机 Q1 把旋转吸收掉了，两格其实是同一个 ensemble（数字 6.66e-9 vs 7.11e-9）
+     这正是'控制无效'的签名。alignment 这个问题**没有被检验**，仍属 open。
+  T5 预登记说'γ≠1 时 cf 不再精确，因为 cf 不知道 γ' —— **被自己的数据推翻**：γ=1.5/0.6 的
+     gap 全在 1e-15 地板，t 实测恰为 1/γ（0.6667/1.6667）。手推之后明白为什么：
+     cf(1/γ, α) 展开恰好等于 [[γ,σ],[σ,1]] 的 minus 分支。所以精确性 locus 是
+     **Λ 标量（任意 γ）**，不是 'Λ=I 且 diag=1'。
+  T6 任意 K（含 q>p、rank=1、top cosine 0.3/0.9/0.999）× γ∈{1,1.5,0.6}，18 格：分支式与 cf 都到
+     eigvalsh 的 1.7e-15 级 => 上面那段 SVD 约化证明成立，且不依赖我的 prescribe-spectrum 构造。
+  证书 (★) 不受影响：cf 走上界侧。本节的后果全在'如何描述 cf 的精确性 locus'。

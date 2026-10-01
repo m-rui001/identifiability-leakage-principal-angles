@@ -1,0 +1,8 @@
+per-trial comparison, 60 trials each (means, then the per-trial discrepancy)
+alpha=2   n=200   | mean eb 0.8905  mean pr 0.9407  mean(eb-pr) -0.05019 (sd 0.00611) | e/ideal 0.94664+- 0.00658 | ||Fv|| 0.9466 ||v|| 0.9466 | q3/surrogate mean +0.6024% max 2.0276%
+alpha=2   n=1800  | mean eb 0.8952  mean pr 0.9470  mean(eb-pr) -0.05176 (sd 0.00660) | e/ideal 0.94530+- 0.00728 | ||Fv|| 0.9453 ||v|| 0.9453 | q3/surrogate mean +0.2176% max 1.0534%
+alpha=20  n=200   | mean eb 0.9030  mean pr 0.9474  mean(eb-pr) -0.04442 (sd 0.00649) | e/ideal 0.95311+- 0.00689 | ||Fv|| 0.9531 ||v|| 0.9531 | q3/surrogate mean +0.5229% max 2.1339%
+alpha=85  n=200   | mean eb 0.9976  mean pr 0.9983  mean(eb-pr) -0.00066 (sd 0.00035) | e/ideal 0.99934+- 0.00035 | ||Fv|| 0.9993 ||v|| 0.9993 | q3/surrogate mean -0.0100% max 0.0660%
+
+If mean(eb-pr) ~ 0 per trial but the earlier table showed -0.05, the gap was a mean-vs-mean artifact.
+If e/ideal != 1 per trial, the idealization err=(dn/cost)/sigma_min(G) is what fails (F-block geometry).

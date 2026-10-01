@@ -1,0 +1,25 @@
+  TOTAL= 23
+  2021-06-17 | 2106.09806v2 | Error bounds for Lanczos-based matrix function approximation
+      AU: Tyler Chen, Anne Greenbaum, Cameron Musco, Christopher Musco
+  2022-11-28 | 2211.15643v4 | A posteriori error bounds for the block-Lanczos method for matrix function approximation
+      AU: Qichen Xu, Tyler Chen
+  2012-04-23 | 1204.5052v2 | 2-norm error bounds and estimates for Lanczos approximations to linear systems and rational matrix functions
+      AU: A. Frommer, K. Kahl, Th. Lippert, H. Rittich
+  2024-12-05 | 2412.04444v3 | Block Lanczos algorithm for lattice QCD spectroscopy and matrix elements
+      AU: Daniel C. Hackett, Michael L. Wagman
+  2023-11-05 | 2311.02701v1 | Error bounds for the approximation of matrix functions with rational Krylov methods
+      AU: Igor Simunec
+  2019-08-06 | 1908.02094v1 | The convergence of the Generalized Lanczos Trust-Region Method for the Trust-Region Subproblem
+      AU: Zhongxiao Jia, Fa Wang
+  2015-08-26 | 1508.06429v2 | Improved Analyses of the Randomized Power Method and Block Lanczos Method
+      AU: Shusen Wang, Zhihua Zhang, Tong Zhang
+  2020-02-17 | 2002.06738v2 | Shifted Lanczos method for quadratic forms with Hermitian matrix resolvents
+      AU: Keiichi Morikuni
+  2021-05-13 | 2105.06595v2 | Analysis of stochastic Lanczos quadrature for spectrum approximation
+      AU: Tyler Chen, Thomas Trogdon, Shashanka Ubaru
+  2018-12-19 | 1812.07810v1 | Fast Botnet Detection From Streaming Logs Using Online Lanczos Method
+      AU: Zheng Chen, Xinli Yu, Chi Zhang, Jin Zhang, Cui Lin, Bo Song, Jianliang Gao, Xiaohua Hu, Wei-Shih Yang, Erjia 
+  2022-07-26 | 2207.12674v2 | On convergence of the generalized Lanczos trust-region method for trust-region subproblems
+      AU: Bo Feng, Gang Wu
+  2026-09-08 | 2609.08066v1 | Finite-Precision Symmetric Krylov Methods: Exact Rounding Examples, Block Paige Identities,and a Variable-Block Lanczos Model
+      AU: Mohit Sinha

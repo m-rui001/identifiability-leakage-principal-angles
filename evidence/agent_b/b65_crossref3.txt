@@ -1,0 +1,43 @@
+=== QUERY: Knyazev Harresh principal angles between subspaces scalar product SIAM Journal Scientific Computing
+  2002 | 10.1137/s1064827500377332 | Knyazev A | Principal Angles between Subspaces in an
+                    <i>A</i>
+                    -Based Scalar Produc | SIAM Journal on Scientific Computing
+  2000 | 10.1137/s0895479897320824 | Drmac Z | On Principal Angles between Subspaces of Euclidean Space | SIAM Journal on Matrix Analysis and Applications
+  2006 | 10.1137/060649070 | Knyazev A | Majorization for Changes in Angles Between Subspaces, Ritz Values, and Graph Laplacian Spectra | SIAM Journal on Matrix Analysis and Applications
+  2013 | 10.1515/jnum-2013-0013 | Zhu P | Angles between subspaces and their tangents | Journal of Numerical Mathematics
+=== QUERY: Bjorck Sundberg solution for two subspaces 1971
+  1973 | 10.2307/2005662 | Bjorck A | Numerical Methods for Computing Angles Between Linear Subspaces | Mathematics of Computation
+  1986 | 10.21236/ada176527 | Byrd R | Approximate Solution of the Trust Region Problem by Minimization Over Two-Dimensional Subspaces, | ?
+  1971 | 10.1111/j.2042-3306.1971.tb04442.x | BJORCK G | Chronic Progressive Pododermatitis in the Horse | Equine Veterinary Journal
+  1971 | 10.1007/bf01031589 | Meshcheryakov V | Method of local construction of invariant subspaces in the solution space of Chew-Low equations | Theoretical and Mathematical Physics
+=== QUERY: Karpatne physics guided deep neural networks knowledge based spatio temporal data mining IEEE 2018
+  2018 | 10.1109/bigdata.2018.8621955 | Muralidhar N | Incorporating Prior Domain Knowledge into Deep Neural Networks | 2018 IEEE International Conference on Big Data (Big Dat
+  None | 10.25148/etd.fidc007767 | Pouyanfar S | Spatio-Temporal Multimedia Big Data Analytics Using Deep Neural Networks | ?
+  2022 | 10.1201/9781003143376-15 | Daw A | Physics-Guided Neural Networks (PGNN): An Application in Lake Temperature Modeling | Knowledge-Guided Machine Learning
+  2022 | 10.1201/9781003143376-16 | Jia X | Physics-Guided Recurrent Neural Networks for Predicting Lake Water Temperature | Knowledge-Guided Machine Learning
+=== QUERY: Willard physics-informed machine learning survey integrating
+  2022 | 10.52843/cassyni.ftzlk9 | Brunton S | Discrepancy Modeling with Physics Informed Machine Learning | ?
+  2021 | 10.52843/cassyni.4zpjhl | Brunton S | Deep Learning to Discover Coordinates for Dynamics: Autoencoders &amp; Physics Informed Machine Learning | ?
+  2023 | 10.20944/preprints202305.0839.v1 | Ghosh P | A Taxonomic Survey of Physics-Informed Machine Learning | ?
+  2026 | 10.21203/rs.3.rs-9837313/v1 | Dhalpe A | ¦Ð-Net: A Physics-Informed Machine Learning Architecture Integrating Dimensional Analysis and Directed Graphs f | ?
+=== QUERY: Ljung grey box models perspective system identification Annual Reviews Control Engineering 2023
+  2010 | 10.1016/j.arcontrol.2009.12.001 | Ljung L | Perspectives on system identification | Annual Reviews in Control
+  1993 | 10.1016/0967-0661(93)90028-p | ? | 009 Identification of nonlinear stochastic grey box models | Control Engineering Practice
+  2001 | 10.1016/s1367-5788(01)00008-6 | Clarke D | Adaptive control of servohydraulic materials-testing machines: a comparison between black- and grey-box models | Annual Reviews in Control
+  None | 10.17771/pucrio.acad.53217 | CHAVES FERREIRA PINTO W | ENSEMBLE GREY AND BLACK-BOX SYSTEM IDENTIFICATION FOR FRICTION MODELS | ?
+=== QUERY: Stewart Sun matrix perturbation theory Academic Press
+  1994 | 10.1016/0024-3795(94)90445-6 | Stewart G | Perturbation theory for rectangular matrix pencils | Linear Algebra and its Applications
+  1991 | 10.1142/9789812812780_0007 | ? | PERTURBATION THEORY | Matrix Theory
+  None | 10.70675/98928bccz114dz4215z8afezcbb2080efe20 | Dianzinga M | N-representable density matrix perturbation theory | ?
+  1998 | 10.1137/s0895479895291303 | Sun J | Perturbation Theory for Algebraic Riccati Equations | SIAM Journal on Matrix Analysis and Applications
+=== QUERY: Golub Van Loan matrix analysis Cambridge
+  1986 | 10.2307/2008107 | Mayers D | Matrix Computations. | Mathematics of Computation
+  1986 | 10.1137/1028073 | Demmel J | Matrix Computations (Gene H. Golub And Charles F. van Loan) | SIAM Review
+  2007 | 10.1093/oso/9780199206810.003.0015 | Chan R | An analysis of the total least squares problem (withC. Van Loan) | Milestones In Matrix Computation: Selected Works Of Gen
+  1990 | 10.1137/1032141 | Demmel J | Matrix Computations; Second Edition (Gene Golub and Charles F. Van Loan) | SIAM Review
+=== QUERY: Rai Karniadakis learning reduced order models physics-informed Bayesian
+  None | 10.31390/gradschool_theses.5236 | ?  | Development of Reduced Order Models Using Reservoir Simulation and Physics Informed Machine Learning Technique | ?
+  2024 | 10.4208/cicp.oa-2023-0121 | Shekarpaz S | Splitting Physics-Informed Neural Networks for Inferring the Dynamics of Integer- and Fractional-Order Neuron  | Communications in Computational Physics
+  2021 | 10.1101/2021.04.05.21254919 | Kharazmi E | Identifiability and predictability of integer- and fractional-order epidemiological models using physics-infor | ?
+  2025 | 10.52843/cassyni.4fh20q | Karniadakis G | From Physics-Informed Machine Learning to Physics-Informed Machine Intelligence: Quo Vadimus? | ?
+ALLDONE

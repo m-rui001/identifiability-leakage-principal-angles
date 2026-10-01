@@ -1,0 +1,100 @@
+====================================================================================================================================
+[S0] gates.  G1 rationalised root vs np.roots (independent evaluator);
+     G2 |lam_1(v1)-cf_1|;  G3 EXACT-vs-EXACT gradient: grad_sphere.v' == (1+x^2) dlam_exact
+====================================================================================================================================
+  G1 max |rationalised - np.roots| over visited v   = 8.882e-15   (gate <=1e-13)   n=10000   -> PASS
+  G2 max |lam_1(v1) - cf_1|                         = 3.708e-16   (gate <=1e-15)   -> PASS
+  G3 max |grad.v' - (1+x^2)dlam_exact| / (|lam|/x)  = 6.795e-15   (gate <=1e-8)   n=600   -> PASS: 2*lam_B*A0v + 2*lam_C*B2v IS the sphere gradient
+
+====================================================================================================================================
+[S1] the search, PER DRAW within cell (rule 13: no pooling across cells).
+     deficit = (sphere min - lambda_min(G))/gap;  0 would mean the infimum ATTAINS lambda_min(G).
+     beat v* = draws whose sphere min is strictly below lambda_1(v*);  F4 = 200k grid undercut;
+     spread = max minus min over the CONVERGED starts only (a stalled start is not evidence
+     of a second minimum);  nested = sphere min minus b59's 3-ray min
+              (must be <=0: adding directions cannot raise an infimum).
+====================================================================================================================================
+                    cell   n    min/med/max deficit/gap  beat v*  F4    spread/gap  max|grad|  nested max argmin(v*,v1)    #conv
+         q=3 spread 5-75  10 0.6217 /0.7697 /0.9476       10   0     1.085e-09   7.65e-09  -1.358e-03      2/10  60/60
+      q=3 spread 2-45-88  10 0.7983 /0.9218 /0.9981       10   0     7.070e-08   9.53e-09  -1.813e-06      4/10  60/60
+     q=3 spread 30-88-89  10 0.9992 /0.9998 /1.0000       10   0     1.290e-12   7.32e-09   1.071e-13      4/10  60/60
+         q=2 spread 5-40  10 0.6230 /0.9046 /0.9998       10   0     1.319e-09   2.91e-09  -3.450e-10      3/10  60/60
+        q=4 spread 5-75+  10 0.3378 /0.7085 /0.9897       10   0     2.977e-09   5.83e-09  -4.425e-03      5/10  60/60
+
+====================================================================================================================================
+[S2] the falsifiers, counted over all draws:
+  F1 #(sphere min < lambda_1(v*))         = 50   largest beat = 2.095099e-06 of gap
+  F2 #(sphere min < lambda_min(G)-floor)  = 0   (MUST be 0: eq:chain1)
+  F3 spread over CONVERGED starts (|grad|<=1e-4|lam|), units of gap: max=7.070e-08, #(>1e-6) = 0 of 50 testable draws (0 had <2 converged starts -- not testable, reported not guessed)   -> converged starts agree
+  F4 #(grid undercuts optimiser by >10x evaluator floor) = 0   largest = 0.000000e+00 of gap
+  F5 #(reported min with |grad_sphere| > 1e-6*|lam|) = 19
+  nested max (sphere min minus 3-ray min) = 1.071e-13 of gap; in the DRAW's own evaluator floor: max = 6.250e-02, #(>10 floors) = 0   (a positive excess beyond that would mean my optimiser is worse than b59's exact inner solver)
+  angle(v_best, v*) : med=0.000000 rad max=0.000044 rad
+  [not registered] deficit of sphere min over lambda_min(G): med=9.1938e-01 min=3.378e-01 max=1.000e+00 n=50
+
+====================================================================================================================================
+[S3] F1 in detail -- the beat over lambda_1(v*) is attained by a CONCRETE direction, so it does
+     not depend on my optimiser being globally converged; but it must clear the evaluator floor.
+     beat/gap and beat/floor are per draw; 'ang' is the angle between that direction and v*.
+====================================================================================================================================
+                    cell  #beat  max beat/gap  max beat/floor  ang at max beat    med ang
+         q=3 spread 5-75     10  2.095099e-06       2.955e+03        2.108e-06  5.102e-07
+      q=3 spread 2-45-88     10  7.744470e-08       8.154e-01        0.000e+00  0.000e+00
+     q=3 spread 30-88-89     10  8.829247e-07       1.735e+06        2.728e-05  1.048e-05
+         q=2 spread 5-40     10  8.279456e-07       1.259e+03        1.101e-06  2.720e-07
+        q=4 spread 5-75+     10  1.997751e-06       1.549e+03        2.422e-06  1.114e-06
+  overall: #(beat > 10x that draw's evaluator floor) = 38/50   min beat/floor = 2.441e-02
+
+====================================================================================================================================
+判读（预登记，跑前写下的方向；跑后只填数，不改方向）
+  G1/G3 都是**两条独立解析路线互验**（companion 矩阵的根、b59 对理化根的闭式导数），
+     有限差分不参与门禁 —— 规则 16。G3 FAIL 意味着 lam_B/lam_C 或 F_lam=-sqrt(disc) 用错，
+     那么下面的搜索全是无意义的，我会直接宣布本轮作废。
+  F1 是本轮唯一能推动 open item 1 的结果：>0 且幅度显著 => v* 不是下确界方向。
+     F1=0 => 我拿到的是「v* 在一次逐维收敛的独立优化下仍未被击败」，正文按这句写。
+  F2 是数学判据（eq:chain1 对每个单位 v 成立），不是数值判据；出现 1 条就要查评测器。
+  F4 与 nested 是**两个方向**的钳制：随机网只能高估下确界（网格更低=优化器卡局部），
+     b59 的 3 射线内层只能高估球面下确界（球面更大=我的优化器不如精确内层，本轮不可用）。
+  F3 触发则「最好方向」必须改成「从该起点找到的局部极小」，并计入撤回清单。
+
+====================================================================================================================================
+判读（跑后填写，只填数与结论，不改方向）
+====================================================================================================================================
+  门禁：G1 8.882e-15、G2 3.708e-16、G3 6.795e-15 全 PASS，且 G3 是**解析对解析**
+     （我的 2λ_B·A₀v+2λ_C·B₂v 点乘 v'，对上 b59 由 F_λ=-sqrt(disc) 推出的闭式 dλ/dx，
+     换算因子 (1+x²)）。这条等价式是本轮真正的跨模块确认：b59 的射线导数与 b60 的球面梯度
+     是两个独立推导，它们在 6.8e-15（相对 |λ|/x 的自然尺度）上一致。G3 通过 => 搜索有意义。
+
+  F1 = 50/50：**每一个抽样都找到了击败 λ₁(v\*) 的方向**，所以「v\* 是 λ₁ 的下确界方向」这一
+     默认猜测被否证。但否证的强度必须用评测器噪声来量：
+       max beat/gap = 2.095099e-06（= 该次抽样自有两路线地板的 2955 倍），
+       38/50 的 beat 超过该次抽样地板的 10 倍，另有 12 次落在噪声内（不写进结论；
+       全部 50 次里最小的 beat/floor 是 2.441e-02，属于这 12 次之一）。逐格看，
+       2-45-88 那格的 max beat/floor 只有 8.154e-01，所以它的 10 次 beat 全部在噪声内，
+       38 次来自其余四格（该四格的 max beat/floor 分别为 2955 / 1.735e+06 / 1259 / 1549）。所以正文只声称 38/50 那一部分，且给出角度：
+       击败方向与 v\* 的夹角：全部 50 次的 med 打印为 0.000000 rad（即 <5e-7），max 4.4e-5 rad。
+     关键判读：这不是「找到了第二个极小」，而是「v\* 与真正的 λ₁-极小方向只差 4e-5 rad、
+     差值最多 2e-6 的 gap 份额」。λ₁(v\*) 是近最优，但不是精确下确界。
+
+  F2 = 0：eq:chain1（λ₁(v) ≥ λ_min(G) 对每个单位 v）在 50 次抽样、每次独立地板下无一违反。
+  F3 = 收敛起点间的散布 max 7.070e-08（gap 单位），0/50 超 1e-6；60/60 起点全部收敛。
+     => 单盆（single basin），「最好方向」不需要降级成「局部极小」，撤回清单为空。
+  F4 = 0：20 万点随机网没有任何一次把优化器下压超过其自有地板的 10 倍 => 优化器没有被网格击败。
+  nested：球面 min 减 b59 的 3 射线 min，max 1.071e-13 gap = 0.0625 倍地板，0 次超 10 倍地板
+     => 加了方向之后下确界没有变高（单调性成立到评测器精度），我的外层不比 b59 的精确内层差。
+  F5 = 19：19 次报告的最小点 |grad|>1e-6|λ|。这不是数学失败而是**停止准则**——回溯降到
+     1e-9·|λ| 就停了，而 |λ|≈1e-3 时地板就在 1e-16 量级。所以 F5 只削弱「已达驻点」的表述，
+     不影响 F1（F1 用的是一个具体方向的函数值比较，与梯度无关）。正文据此写「收敛到
+     |grad| ≲ 1e-6|λ| 或步长下降停止」，不写「达到驻点」。
+
+  deficit（未注册，只作上下文）：球面 min 相对 λ_min(G) 的 gap 份额 med 0.91938、min 0.3378、
+     max 1.000 => **球面搜索之后下确界仍严格高于 λ_min(G)**，open item 1 没有被 b60 解决；
+     b60 解决的是另一个问题：v\* 不是下确界方向（F1），且下确界在球面上确实被搜到了
+     （上一轮我误称「射线族只是 2-平面」——那 b60 的写法已撤回，u 取遍 v₁ 的正交补时射线族的并
+     就是整个球面，b59 的限制是每抽样只采 3 个 u，是采样限制不是几何限制）。
+
+  下一步（由此判读直接得出，不是新方向）：38 次显著 beat 的幅度按格相差三个数量级
+     （四格的 max beat/floor 分别 1259 / 1.735e+06 / 2955 / 1549，2-45-88 格 0.815），
+     说明「v\* 与极小方向的差」本身有结构；把它按 1/sinα 型的分层定律去拟合，才是
+     open item 1 剩余问题的正确提法——不是「下确界能否触到 λ_min(G)」，而是
+     「λ₁(v) 的下确界方向与 v\* 的偏差由哪个可打印量控制」。

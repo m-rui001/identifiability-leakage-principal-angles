@@ -1,0 +1,20 @@
+=== (a) signed tail of eps = sig_min(G)/sqrt(n lam_min) - 1,  p+q=24 (p=q=12), 400 trials ===
+n= 200  q0.0025=-0.0945 q0.01=-0.0885 q0.05=-0.0766 med=-0.0413 q0.95=-0.0111 q0.99=+0.0030 q0.9975=+0.0088  mean=-0.0432 sd=0.0201
+        -> negative tail magnitude / positive tail magnitude = 1.06   (=> one-sided if >>1)
+n= 600  q0.0025=-0.0461 q0.01=-0.0436 q0.05=-0.0355 med=-0.0149 q0.95=+0.0042 q0.99=+0.0135 q0.9975=+0.0165  mean=-0.0155 sd=0.0123
+        -> negative tail magnitude / positive tail magnitude = 0.99   (=> one-sided if >>1)
+n=1800  q0.0025=-0.0245 q0.01=-0.0208 q0.05=-0.0165 med=-0.0058 q0.95=+0.0056 q0.99=+0.0105 q0.9975=+0.0129  mean=-0.0055 sd=0.0071
+        -> negative tail magnitude / positive tail magnitude = 1.00   (=> one-sided if >>1)
+
+=== (b) Jensen gap: E[lam_min(G'G)/n] / lam_min(Gop)  (p+q=24) ===
+n=  100  ratio = 0.86577   (1-ratio = 0.13423)   vs 1/n = 0.01000   vs 1/sqrt(n) = 0.10000
+n=  200  ratio = 0.91601   (1-ratio = 0.08399)   vs 1/n = 0.00500   vs 1/sqrt(n) = 0.07071
+n=  600  ratio = 0.96559   (1-ratio = 0.03441)   vs 1/n = 0.00167   vs 1/sqrt(n) = 0.04082
+n= 1800  ratio = 0.98976   (1-ratio = 0.01024)   vs 1/n = 0.00056   vs 1/sqrt(n) = 0.02357
+n= 5400  ratio = 0.99485   (1-ratio = 0.00515)   vs 1/n = 0.00019   vs 1/sqrt(n) = 0.01361
+
+=== (c) second-order perturbation prediction of the bias, using the ACTUAL Delta = G'G - n Gop ===
+    bias2 = -E[ sum_{k>=2} <v1,Delta vk>^2 / (lam_k - lam_1) ] / n   compared with measured (1-ratio)*lam_min
+n= 200  measured mean shift = -1.0595e-01   second-order pred = -1.2843e-01   ratio = 0.825   (lam_2-lam_1)/n=0.0000
+n= 600  measured mean shift = -1.1979e-01   second-order pred = -1.3770e-01   ratio = 0.870   (lam_2-lam_1)/n=0.0000
+n=1800  measured mean shift = -1.3519e-01   second-order pred = -1.4270e-01   ratio = 0.947   (lam_2-lam_1)/n=0.0000
