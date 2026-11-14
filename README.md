@@ -41,7 +41,8 @@ to the file, so the scripts run from any working directory). Only the two Agent 
 `requirements.txt` need `torch`; neither supports a claim in the paper.
 
 Build the paper with `pdflatex main.tex` twice (no bibtex; the reference list is inline and every entry
-was verified against its DOI or the publisher's own metadata).
+was verified against its DOI or the publisher's own metadata). The title date is fixed to 2026-10-01 so
+that a rebuild reproduces `main.pdf` text exactly.
 
 ## Data provenance
 
